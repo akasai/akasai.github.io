@@ -4,13 +4,13 @@
         <title>A Gridsome Minimal Blog</title>
         <link>https://akasai.github.io/akasai.github.io</link>
         <description>Best blog feed evah.</description>
-        <lastBuildDate>Mon, 07 Sep 2020 11:20:03 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 07 Sep 2020 11:54:37 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Gridsome Feed Plugin</generator>
         <item>
             <title><![CDATA[Third Post]]></title>
-            <link>https://akasai.github.io/akasai.github.io/blog/2020/01/third-post/</link>
-            <guid>https://akasai.github.io/akasai.github.io/blog/2020/01/third-post/</guid>
+            <link>https://akasai.github.io/akasai.github.io/third-post/</link>
+            <guid>https://akasai.github.io/akasai.github.io/third-post/</guid>
             <pubDate>Thu, 23 Jan 2020 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[
 ```
@@ -20,8 +20,8 @@ print(hello_world)
         </item>
         <item>
             <title><![CDATA[Second Post]]></title>
-            <link>https://akasai.github.io/akasai.github.io/blog/2019/12/second-post/</link>
-            <guid>https://akasai.github.io/akasai.github.io/blog/2019/12/second-post/</guid>
+            <link>https://akasai.github.io/akasai.github.io/second-post/</link>
+            <guid>https://akasai.github.io/akasai.github.io/second-post/</guid>
             <pubDate>Wed, 25 Dec 2019 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla arcu sit amet nunc pulvinar sagittis. Quisque condimentum faucibus posuere. Etiam nisl ex, lobortis a felis a, ornare accumsan turpis. Etiam tristique lobortis nisl eu congue. Vivamus tempus enim pharetra sem rhoncus, eget facilisis turpis commodo. Aenean posuere ultricies erat, a dapibus tortor semper eget. Nullam sed cursus risus. Fusce massa ligula, varius pellentesque magna in, malesuada faucibus magna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed dui turpis, fermentum ut varius non, sollicitudin quis elit. Sed dignissim enim id nulla vehicula, nec accumsan ante vestibulum. Donec luctus mollis mi ut iaculis. Aenean sit amet erat mi.
@@ -36,8 +36,8 @@ Aliquam ultrices ante a libero ultricies molestie. Sed bibendum sollicitudin met
         </item>
         <item>
             <title><![CDATA[First Post]]></title>
-            <link>https://akasai.github.io/akasai.github.io/blog/2019/04/first-post/</link>
-            <guid>https://akasai.github.io/akasai.github.io/blog/2019/04/first-post/</guid>
+            <link>https://akasai.github.io/akasai.github.io/first-post/</link>
+            <guid>https://akasai.github.io/akasai.github.io/first-post/</guid>
             <pubDate>Sat, 20 Apr 2019 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[
 This is the first post, it is written in Markdown.
@@ -53,7 +53,7 @@ This is the first post, it is written in Markdown.
 Yeah we've got that too!
 ```
 
-Inline? ```i think so```
+Inline? `i think so`
 
 ## Images
 ![Motorcycle](https://images.unsplash.com/photo-1558981806-ec527fa84c39?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)
@@ -68,7 +68,8 @@ Inline? ```i think so```
 | three    | third option |
 
 # Blockquotes
-> "You miss 100% of the shots you don't take -Wayne Gretzky" -Michael Scott]]></content:encoded>
+> "You miss 100% of the shots you don't take -Wayne Gretzky" -Michael Scott
+]]></content:encoded>
         </item>
     </channel>
 </rss>
