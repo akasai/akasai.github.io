@@ -1,6 +1,7 @@
 {
   "name": "blog",
   "private": true,
+  "homepage": "https://akasai.github.io/akasai.github.io",
   "scripts": {
     "build": "gridsome build",
     "develop": "gridsome develop",
@@ -13,12 +14,17 @@
     "@gridsome/remark-prismjs": "^0.3.0",
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.5.0",
-    "gridsome": "^0.7.0",
+    "gridsome": "^0.7.20",
     "gridsome-plugin-feed": "^1.0.2"
   },
   "devDependencies": {
     "gh-pages": "^3.1.0",
-    "node-sass": "^4.13.1",
-    "sass-loader": "^8.0.2"
+    "gridsome-plugin-typescript": "^0.4.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2",
+    "ts-loader": "^8.0.3",
+    "typescript": "^4.0.2",
+    "vue-class-component": "^7.2.5",
+    "vue-property-decorator": "^9.0.0"
   }
 }

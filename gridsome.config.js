@@ -1,20 +1,19 @@
-// This is where project configuration and plugin options are located.
-// Learn more: https://gridsome.org/docs/config
-
-// Changes here require a server restart.
-// To restart press CTRL + C in terminal and run `gridsome develop`
-
 module.exports = {
   siteName: 'Developer. akasai',
   siteUrl: 'https://akasai.github.io',
   siteDescription: '',
+  templates: {
+    Post: '/:title'
+  },
   plugins: [
+    {
+      use: 'gridsome-plugin-typescript'
+    },
     {
       use: '@gridsome/source-filesystem',
       options: {
         path: 'content/posts/**/*.md',
         typeName: 'Post',
-        route: '/:title',
         remark: {
           plugins: [
             ['@gridsome/remark-prismjs', {transformInlineCode: true}]
@@ -25,7 +24,7 @@ module.exports = {
     {
       use: '@gridsome/plugin-sitemap',
       options: {
-        cacheTime: 600000, // default
+        cacheTime: 600000 // default
       }
     },
     {

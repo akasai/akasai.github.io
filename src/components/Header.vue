@@ -2,23 +2,33 @@
   <header class="header">
     <g-link to="/"><h1>👨‍💻 {{siteName}}</h1></g-link>
     <ClientOnly>
-      <ThemeToggle />
+      <ThemeToggle/>
     </ClientOnly>
   </header>
 </template>
 
-<script>
-export default {
-  props: ["siteName"],
-  components: {
-    ThemeToggle: () => import('@/components/ThemeToggle')
+<script lang="ts">
+  import { Component, Prop, Vue } from 'vue-property-decorator'
+  import ThemeToggle from './ThemeToggle.vue'
+
+  @Component({
+    name: 'Header',
+    components: {
+      ThemeToggle,
+    },
+  })
+  export default class Header extends Vue {
+    @Prop() siteName!: string
+
+    constructor() {
+      super()
+    }
   }
-};
 </script>
 
 <style lang="scss">
   .header {
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     a {

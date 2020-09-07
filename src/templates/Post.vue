@@ -9,14 +9,17 @@
 </template>
 
 <script>
-import Header from "@/components/Header";
-export default {
-  components: {
-    Header
-  }
-};
-</script>
+  import {Component, Vue} from 'vue-property-decorator'
 
+  @Component({
+    name: 'Post',
+  })
+  export default class Post extends Vue {
+    constructor() {
+      super()
+    }
+  }
+</script>
 
 <page-query>
 query Post ($path: String!) {
@@ -34,7 +37,7 @@ query Post ($path: String!) {
 }
 </page-query>
 
-<style>
+<style lang="scss">
   .article {
     margin-top: 15px;
   }
@@ -79,7 +82,6 @@ query Post ($path: String!) {
   }
 
   .article img {
-    margin:auto;
     width:80%;
     display:block;
     margin:10px auto;

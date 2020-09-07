@@ -17,7 +17,7 @@ This is the first post, it is written in Markdown.
 Yeah we've got that too!
 ```
 
-Inline? ```i think so```
+Inline? `i think so`
 
 ## Images
 ![Motorcycle](https://images.unsplash.com/photo-1558981806-ec527fa84c39?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)

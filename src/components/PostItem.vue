@@ -7,25 +7,34 @@
 </template>
 
 <script>
-export default {
-  props: ["post"],
-  computed: {
-    date() {
-      return this.post.date.substring(0, this.post.date.length - 4);
+  import {Component, Prop, Vue} from 'vue-property-decorator'
+
+  @Component({
+    name: 'PostItem'
+  })
+  export default class PostItem extends Vue {
+    @Prop() post
+
+    constructor () {
+      super()
     }
-  }
-};
+
+    get date () {
+      return this.post.date.substring(0, this.post.date.length - 4)
+    }
+  };
 </script>
 
-<style>
-.date {
-  margin-right:10px;
-  min-width: 60px;
-  display:inline-block;
-}
-.time-to-read {
-  margin-left:10px;
-  color:gray;
-  font-size:.8em;
-}
+<style lang="scss">
+  .date {
+    margin-right: 10px;
+    min-width: 60px;
+    display: inline-block;
+  }
+
+  .time-to-read {
+    margin-left: 10px;
+    color: gray;
+    font-size: .8em;
+  }
 </style>
