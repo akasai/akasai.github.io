@@ -2,15 +2,15 @@
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>A Gridsome Minimal Blog</title>
-        <link>https://akasai.github.io/</link>
+        <link>https://akasai.github.io/akasai.github.io</link>
         <description>Best blog feed evah.</description>
-        <lastBuildDate>Mon, 07 Sep 2020 10:20:56 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 07 Sep 2020 11:20:03 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Gridsome Feed Plugin</generator>
         <item>
             <title><![CDATA[Third Post]]></title>
-            <link>https://akasai.github.io/blog/2020/01/third-post/</link>
-            <guid>https://akasai.github.io/blog/2020/01/third-post/</guid>
+            <link>https://akasai.github.io/akasai.github.io/blog/2020/01/third-post/</link>
+            <guid>https://akasai.github.io/akasai.github.io/blog/2020/01/third-post/</guid>
             <pubDate>Thu, 23 Jan 2020 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[
 ```
@@ -20,8 +20,8 @@ print(hello_world)
         </item>
         <item>
             <title><![CDATA[Second Post]]></title>
-            <link>https://akasai.github.io/blog/2019/12/second-post/</link>
-            <guid>https://akasai.github.io/blog/2019/12/second-post/</guid>
+            <link>https://akasai.github.io/akasai.github.io/blog/2019/12/second-post/</link>
+            <guid>https://akasai.github.io/akasai.github.io/blog/2019/12/second-post/</guid>
             <pubDate>Wed, 25 Dec 2019 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla arcu sit amet nunc pulvinar sagittis. Quisque condimentum faucibus posuere. Etiam nisl ex, lobortis a felis a, ornare accumsan turpis. Etiam tristique lobortis nisl eu congue. Vivamus tempus enim pharetra sem rhoncus, eget facilisis turpis commodo. Aenean posuere ultricies erat, a dapibus tortor semper eget. Nullam sed cursus risus. Fusce massa ligula, varius pellentesque magna in, malesuada faucibus magna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed dui turpis, fermentum ut varius non, sollicitudin quis elit. Sed dignissim enim id nulla vehicula, nec accumsan ante vestibulum. Donec luctus mollis mi ut iaculis. Aenean sit amet erat mi.
@@ -36,8 +36,8 @@ Aliquam ultrices ante a libero ultricies molestie. Sed bibendum sollicitudin met
         </item>
         <item>
             <title><![CDATA[First Post]]></title>
-            <link>https://akasai.github.io/blog/2019/04/first-post/</link>
-            <guid>https://akasai.github.io/blog/2019/04/first-post/</guid>
+            <link>https://akasai.github.io/akasai.github.io/blog/2019/04/first-post/</link>
+            <guid>https://akasai.github.io/akasai.github.io/blog/2019/04/first-post/</guid>
             <pubDate>Sat, 20 Apr 2019 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[
 This is the first post, it is written in Markdown.
