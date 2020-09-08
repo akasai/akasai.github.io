@@ -59,7 +59,7 @@
 
 <style lang="scss">
   .theme-toggle {
-    margin-top: 12px;
+    margin-top: 7px;
 
     svg {
       &:hover {

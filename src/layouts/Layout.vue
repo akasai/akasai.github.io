@@ -5,13 +5,10 @@
     <div class="footer">
       <div>
         <p>
-          Built with
-          <a target="_blank" class="link" href="//gridsome.org">Gridsome</a>
-          & Made with ❤️ by
-          <a target="_blank" class="link" href="//alex.design">Alex Brown</a>
         </p>
       </div>
       <div class="footer-links">
+        Built with <a target="_blank" class="link" href="//gridsome.org">Gridsome</a> /
         <a target="_blank" href="/sitemap.xml">Sitemap</a>
       </div>
     </div>
@@ -36,16 +33,19 @@
   :root {
     --app-background-color: #FFFFFF;
     --app-font-color: black;
+    --app-header-color: rgb(223, 224, 227);
+    --title-color: rgb(126, 187, 235);
+    --post-list-text-color: rgb(175, 176, 177);
+    --main-border-color: rgb(44, 45, 45);
   }
 
   [theme="dark"] {
     --app-background-color: #091A28;
     --app-font-color: white;
-  }
-
-  [theme="sepia"] {
-    --app-background-color: #F1E7D0;
-    --app-font-color: #433422;
+    --app-header-color: rgb(39, 40, 43);
+    --title-color: rgb(32, 201, 151);
+    --post-list-text-color: rgb(175, 176, 177);
+    --main-border-color: rgb(44, 45, 45);
   }
 
   body {
@@ -82,10 +82,9 @@
   }
 
   a {
-    border-bottom: 1px solid currentColor;
+    /*border-bottom: 1px solid currentColor;*/
     color: rgb(32, 201, 151);
     text-decoration: none;
-
   }
 
   a:hover {

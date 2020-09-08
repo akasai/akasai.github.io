@@ -1,7 +1,8 @@
 <template>
   <Layout>
     <section class="posts">
-      <PostList v-for="year in years" :key="year" :year="year"/>
+<!--      <PostList v-for="year in years" :key="year" :year="year"/>-->
+      <PostItem :key="post.node.id" v-for="post in $page.allPost.edges" :post="post.node"/>
     </section>
   </Layout>
 </template>
@@ -9,28 +10,29 @@
 <script>
   import {Component, Vue} from 'vue-property-decorator'
   import PostList from '~/components/PostList.vue'
+  import PostItem from '~/components/PostItem.vue'
 
   @Component({
     name: 'Index',
     components: {
-      PostList
+      PostList,
+      PostItem
     },
   })
   export default class Index extends Vue {
     constructor () {
       super()
-      this.title = 'A simple blog'
     }
 
-    get years () {
-      const years = {}
-      const posts = this.$page.allPost.edges
-      posts.map((post) => {
-        const year = post.node.date.split(' ')[2]
-        years[year] = ''
-      })
-      return Object.keys(years).sort((a, b) => b - a)
-    }
+    // get years () {
+    //   const years = {}
+    //   const posts = this.$page.allPost.edges
+    //   posts.map((post) => {
+    //     const year = post.node.date.split(' ')[2]
+    //     years[year] = ''
+    //   })
+    //   return Object.keys(years).sort((a, b) => b - a)
+    // }
   }
 </script>
 
@@ -56,3 +58,9 @@ query {
   }
 }
 </page-query>
+
+<style lang="scss">
+  .posts {
+    margin-top: 60px;
+  }
+</style>

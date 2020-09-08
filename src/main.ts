@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { VueConstructor } from 'vue'
 import { MetaInfo } from 'vue-meta'
 import VueRouter from 'vue-router'
@@ -13,6 +14,7 @@ export interface ClientContext {
 export type ClientApiConstructor = (Vue: VueConstructor, context: ClientContext) => void;
 
 const client: ClientApiConstructor = (Vue, { router, head }) => {
+  Vue.component('font-awesome-icon', FontAwesomeIcon)
   Vue.component('Layout', Layout)
   // head.title = 'My Awesome Gridsome Project'
 }
