@@ -4,13 +4,14 @@
   "homepage": "https://akasai.github.io/akasai.github.io",
   "scripts": {
     "build": "gridsome build",
-    "develop": "gridsome develop",
+    "start": "gridsome develop",
     "deploy": "gh-pages -b master -d dist",
     "predeploy": "npm run build",
     "explore": "gridsome explore"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
     "@fortawesome/vue-fontawesome": "^0.1.6",
     "@gridsome/plugin-sitemap": "^0.2.3",

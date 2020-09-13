@@ -16,7 +16,6 @@ export type ClientApiConstructor = (Vue: VueConstructor, context: ClientContext)
 const client: ClientApiConstructor = (Vue, { router, head }) => {
   Vue.component('font-awesome-icon', FontAwesomeIcon)
   Vue.component('Layout', Layout)
-  // head.title = 'My Awesome Gridsome Project'
 }
 
 export default client

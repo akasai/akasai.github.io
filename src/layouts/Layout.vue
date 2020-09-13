@@ -17,7 +17,7 @@
 
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator'
-  import Header from '../components/Header.vue'
+  import Header from './Header.vue'
 
   @Component({
     name: 'Layout',
@@ -34,18 +34,28 @@
     --app-background-color: #FFFFFF;
     --app-font-color: black;
     --app-header-color: rgb(223, 224, 227);
+    --profile-bg-color: rgb(241, 242, 243);
+    --profile-img-border-color: rgb(211, 212, 213);
     --title-color: rgb(126, 187, 235);
     --post-list-text-color: rgb(175, 176, 177);
-    --main-border-color: rgb(44, 45, 45);
+    --main-border-color: rgba(145, 146, 146, 0.35);
+    --tag-bg-color: rgba(211, 212, 213, 0.62);
   }
 
   [theme="dark"] {
     --app-background-color: #091A28;
     --app-font-color: white;
     --app-header-color: rgb(39, 40, 43);
+    --profile-bg-color: rgba(19, 48, 75, 0.88);
+    --profile-img-border-color: rgb(32, 62, 106);
     --title-color: rgb(32, 201, 151);
     --post-list-text-color: rgb(175, 176, 177);
     --main-border-color: rgb(44, 45, 45);
+    --tag-bg-color: rgba(32, 62, 106, 0.53);
+  }
+
+  h1 {
+    margin: 0;
   }
 
   body {

@@ -1,5 +1,6 @@
 <template>
   <Layout>
+    <Profile :metaData="$page.metadata"/>
     <section class="posts">
 <!--      <PostList v-for="year in years" :key="year" :year="year"/>-->
       <PostItem :key="post.node.id" v-for="post in $page.allPost.edges" :post="post.node"/>
@@ -7,14 +8,16 @@
   </Layout>
 </template>
 
-<script>
+<script lang="ts">
   import {Component, Vue} from 'vue-property-decorator'
   import PostList from '~/components/PostList.vue'
   import PostItem from '~/components/PostItem.vue'
+  import Profile from '~/layouts/Profile.vue'
 
   @Component({
     name: 'Index',
     components: {
+      Profile,
       PostList,
       PostItem
     },
@@ -41,6 +44,17 @@ query {
   metadata {
     siteName
     siteDescription
+    nickname
+    name
+    mail
+    description
+    location
+    skills
+    link {
+      github
+      instagram
+      hackerrank
+    }
   }
   allPost(filter: { date: { gte: "2020" }}) {
     totalCount
@@ -50,7 +64,10 @@ query {
         title
         timeToRead
         description
-        date (format: "MMM D YYYY")
+        tags {
+          title
+        }
+        date (format: "MMM DD dd, YYYY" locale: "ko-KR")
         path
       }
     }
@@ -61,6 +78,6 @@ query {
 
 <style lang="scss">
   .posts {
-    margin-top: 60px;
+    padding-top: 1rem;
   }
 </style>

@@ -11,7 +11,7 @@
 <script lang="ts">
   import { Component, Prop, Vue } from 'vue-property-decorator'
   // import SideBar from './SideBar.vue'
-  import ThemeToggle from './ThemeToggle.vue'
+  import ThemeToggle from '../components/ThemeToggle.vue'
 
   @Component({
     name: 'Header',
@@ -33,9 +33,10 @@
   .header {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 4rem;
     position: fixed;
+    padding: 0 5%;
     top: 0;
     left: 0;
     right: 0;

@@ -1,6 +1,7 @@
 ---
 title: "First Post"
 description: "The first post written in Markdown"
+tags: ["typescript", "test"]
 date: 2019-04-20
 ---
 
