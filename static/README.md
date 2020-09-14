@@ -1,10 +1,10 @@
 # devlog. akasai Blog
   
-<p align="center">
+<p>
     <a href="https://github.com/akasai">
       <img src="https://img.shields.io/badge/Author-akasai-informational?style=for-the-badge&logo=github">
     </a>
-    <img src="https://img.shields.io/badge/Languages-Typescript-blue.svg?longCache=true&style=for-the-badge&logo=TypeScriptt">
+    <img src="https://img.shields.io/badge/Languages-Typescript-blue.svg?longCache=true&style=for-the-badge&logo=TypeScript">
     <img src="https://img.shields.io/badge/Languages-Vue.js-%234FC08D.svg?longCache=true&style=for-the-badge&logo=Vue.js">
     <img src="https://img.shields.io/node/v/carbon.svg?style=for-the-badge&logo=Node.js">
 </p>
