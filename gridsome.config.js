@@ -1,5 +1,5 @@
 module.exports = {
-  siteName: 'devlog. akasai',
+  siteName: 'devlog.akasai',
   siteUrl: 'https://akasai.github.io',
   siteDescription: '',
   metadata: {

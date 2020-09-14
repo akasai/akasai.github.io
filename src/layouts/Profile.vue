@@ -3,7 +3,6 @@
     <section class="profile__img">
       <img src="../assets/img/profile.jpg" alt="">
     </section>
-    <!--    <section class="profile">-->
     <section class="profile__content">
       <h3 class="profile__content-nickname">{{metaData.nickname}}</h3>
       <section class="profile__content-info">

@@ -1,6 +1,6 @@
 <template>
   <main class="layout" role="main">
-    <Header :siteName="$page.metadata.siteName"/>
+    <Header :siteName="`devlog. akasai`"/>
     <slot/>
     <div class="footer">
       <div>
