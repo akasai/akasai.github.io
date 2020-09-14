@@ -4,7 +4,7 @@
         <title>A Gridsome Minimal Blog</title>
         <link>https://akasai.github.io/</link>
         <description>Best blog feed evah.</description>
-        <lastBuildDate>Mon, 14 Sep 2020 06:05:13 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 14 Sep 2020 08:33:19 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Gridsome Feed Plugin</generator>
         <item>
@@ -33,7 +33,8 @@ Nam vehicula nulla est, vitae maximus nisi sagittis vitae. Ut nec sagittis magna
 
 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut scelerisque quam at lobortis sodales. Nullam massa nisi, consectetur id faucibus malesuada, scelerisque nec elit. Vivamus a varius erat. Maecenas lacus orci, viverra non tristique ut, aliquam vitae nulla. Donec fringilla pretium lorem, et tincidunt felis consequat eget. Integer malesuada pretium turpis, a euismod orci varius eu. Suspendisse potenti. Ut aliquam, dolor ut aliquam auctor, velit neque porta magna, nec maximus tellus lacus at erat. Ut id tempor magna. Quisque gravida ipsum ac libero convallis ornare.
 
-Aliquam ultrices ante a libero ultricies molestie. Sed bibendum sollicitudin metus id suscipit. Aenean risus arcu, consectetur eu lectus sit amet, dapibus efficitur leo. Nam sagittis enim et mi ornare, sodales placerat quam porttitor. Sed venenatis diam vel dolor imperdiet maximus. Integer vitae odio diam. Vestibulum consequat libero at eros hendrerit, eu mattis purus iaculis. Morbi aliquam in ligula sed porta. Ut non enim porta, ultrices eros vel, lacinia mi. Nam luctus augue in iaculis suscipit.]]></content:encoded>
+Aliquam ultrices ante a libero ultricies molestie. Sed bibendum sollicitudin metus id suscipit. Aenean risus arcu, consectetur eu lectus sit amet, dapibus efficitur leo. Nam sagittis enim et mi ornare, sodales placerat quam porttitor. Sed venenatis diam vel dolor imperdiet maximus. Integer vitae odio diam. Vestibulum consequat libero at eros hendrerit, eu mattis purus iaculis. Morbi aliquam in ligula sed porta. Ut non enim porta, ultrices eros vel, lacinia mi. Nam luctus augue in iaculis suscipit.
+]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[First Post]]></title>
