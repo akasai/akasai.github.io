@@ -1,4 +1,5 @@
 ---
+category: "test"
 title: "Third Post"
 description: "third"
 tags: ["typescript", "test"]

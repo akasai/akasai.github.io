@@ -1,7 +1,10 @@
 <template>
   <g-link :to="post.path">
     <article class="post-preview">
-      <h1 class="post-preview__title">{{post.title}}</h1>
+      <span class="post-preview__title">
+        <h1>{{post.title}}</h1>
+        <h3>{{post.category}}</h3>
+      </span>
       <p class="post-preview__content">
         {{post.description}}
       </p>
@@ -58,7 +61,18 @@
     }
 
     &__title {
-      color: var(--title-color);
+      display: flex;
+
+      h1 {
+        font-size: 1.55rem;
+        margin-right: 15px;
+        color: var(--title-color);
+      }
+
+      h3 {
+        margin: 5px 0 0 0;
+        color: var(--post-list-text-color);
+      }
     }
 
     &__content {

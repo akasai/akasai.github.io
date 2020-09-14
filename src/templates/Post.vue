@@ -1,8 +1,9 @@
 <template>
   <Layout>
+    <RightBar :headings="$page.post.headings"/>
     <section class="post">
       <section class="post__title">
-        <h3>Category</h3>
+        <h3>{{$page.post.category}}</h3>
         <h1>{{$page.post.title}}</h1>
         <span class="post__title-info">
           <ul>
@@ -31,9 +32,13 @@
 <script lang="ts">
   import { faClock, faTags, faUserEdit, IconDefinition } from '@fortawesome/free-solid-svg-icons'
   import { Component, Vue } from 'vue-property-decorator'
+  import RightBar from '~/components/RightBar.vue'
 
   @Component({
     name: 'Post',
+    components: {
+      RightBar
+    }
   })
   export default class Post extends Vue {
     ICON_CLOCK: IconDefinition
@@ -58,6 +63,7 @@ query Post ($path: String!) {
   post: post (path: $path) {
     id
     title
+    category
     content
     tags {
       title
@@ -65,6 +71,11 @@ query Post ($path: String!) {
     }
     date (format: "MMM DD dd, YYYY" locale: "ko-KR")
     timeToRead
+    headings {
+      depth
+      value
+      anchor
+    }
   }
 }
 </page-query>
@@ -134,6 +145,7 @@ query Post ($path: String!) {
 
     &__content {
       margin-top: 30px;
+      border-bottom: 1px solid var(--main-border-color);
 
       .article-date {
         color: var(--app-font-color);

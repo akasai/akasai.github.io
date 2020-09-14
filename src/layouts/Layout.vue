@@ -3,12 +3,8 @@
     <Header :siteName="`devlog. akasai`"/>
     <slot/>
     <div class="footer">
-      <div>
-        <p>
-        </p>
-      </div>
       <div class="footer-links">
-        Built with <a target="_blank" class="link" href="//gridsome.org">Gridsome</a> /
+        Built with <a target="_blank" class="link" href="//gridsome.org">Gridsome</a> Edit By akasai /
         <a target="_blank" href="/sitemap.xml">Sitemap</a>
       </div>
     </div>
@@ -92,7 +88,6 @@
   }
 
   a {
-    /*border-bottom: 1px solid currentColor;*/
     color: rgb(32, 201, 151);
     text-decoration: none;
   }

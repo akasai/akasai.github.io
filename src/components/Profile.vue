@@ -4,7 +4,7 @@
       <img src="../assets/img/profile.jpg" alt="">
     </section>
     <section class="profile__content">
-      <h3 class="profile__content-nickname">{{metaData.nickname}}</h3>
+      <h2 class="profile__content-nickname">{{metaData.nickname}}</h2>
       <section class="profile__content-info">
         <ul>
           <li>
@@ -99,8 +99,11 @@
 
   .profile {
     margin-top: 4.5rem;
+    background-color: var(--profile-bg-color);
+    border-radius: 10px;
 
     &__img {
+      padding-top: 10px;
       display: inline-block;
       text-align: center;
 
@@ -112,14 +115,14 @@
     }
 
     &__content {
-      background-color: var(--profile-bg-color);
       height: 180px;
       padding: 0 20px;
-      border-radius: 10px;
 
       &-nickname {
-        display: inline-block;
+        font-size: 2rem;
+        margin-top: 0;
         margin-bottom: 1px;
+        display: inline-block;
       }
 
       &-info {
@@ -170,7 +173,7 @@
           display: flex;
 
           li {
-            margin-right: 10px;
+            margin-left: 10px;
           }
         }
       }
