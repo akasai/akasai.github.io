@@ -9,26 +9,24 @@
     name: 'Comment',
   })
   export default class Comment extends Vue {
-    private readonly utterances: any
-
     constructor() {
       super()
-
-      this.utterances = document.createElement('script')
-      this.utterances.type = 'text/javascript'
-      this.utterances.async = true
-      this.utterances.crossOrigin = 'anonymous'
-      this.utterances.src = 'https://utteranc.es/client.js'
     }
 
     mounted(): void {
+      const utterances = document.createElement('script')
+      utterances.type = 'text/javascript'
+      utterances.async = true
+      utterances.crossOrigin = 'anonymous'
+      utterances.src = 'https://utteranc.es/client.js'
+
       const mode = localStorage.getItem('theme')
 
-      this.utterances.setAttribute('theme', mode === 'dark' ? 'dark-blue' : 'github-light')
-      this.utterances.setAttribute('issue-term', 'url')
-      this.utterances.setAttribute('label', '🗣:speech_balloon:')
-      this.utterances.setAttribute('repo', 'akasai/akasai.github.io')
-      document.getElementById('comment')?.appendChild(this.utterances);
+      utterances.setAttribute('theme', mode === 'dark' ? 'dark-blue' : 'github-light')
+      utterances.setAttribute('issue-term', 'url')
+      utterances.setAttribute('label', '🗣:speech_balloon:')
+      utterances.setAttribute('repo', 'akasai/akasai.github.io')
+      document.getElementById('comment')?.appendChild(utterances);
     }
   }
 </script>
