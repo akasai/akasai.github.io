@@ -48,8 +48,12 @@
     margin: 50px 0 0 0;
     padding: 0 0 25px 0;
     max-width: 800px;
-    overflow-x: scroll;
+    overflow-x: hidden;
     border-bottom: 1px solid var(--main-border-color);
+
+    &:hover {
+      overflow-x: scroll;
+    }
 
     h3 {
       margin: 0 0 10px 0;

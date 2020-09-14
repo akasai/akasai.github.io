@@ -160,7 +160,6 @@ query Post ($path: String!, $category: String!) {
 
         ul {
           width: 90%;
-          overflow-x: scroll;
           margin-left: 8px;
         }
 
