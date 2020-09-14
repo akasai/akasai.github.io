@@ -18,7 +18,11 @@
         <section class="post__title-tag" v-if="$page.post.tags.length">
           <font-awesome-icon :icon="ICON_TAGS" class="icon"/>
           <ul>
-            <li v-for="tag in $page.post.tags">{{tag.title}}</li>
+            <li v-for="tag in $page.post.tags">
+              <g-link :to="tag.path">
+                {{tag.title}}
+              </g-link>
+            </li>
           </ul>
         </section>
       </section>
@@ -167,6 +171,10 @@ query Post ($path: String!, $category: String!) {
           padding: 3px 8px;
           border-radius: 3px;
           background: var(--tag-bg-color);
+
+          * {
+            color: var(--app-font-color);
+          }
         }
       }
     }

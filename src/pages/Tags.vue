@@ -5,7 +5,9 @@
       <section class="tags__content">
         <ul>
           <li v-for="{node} in $static.tags.edges">
-            {{node.title}}
+            <g-link :to="node.path">
+              {{node.title}}
+            </g-link>
           </li>
         </ul>
       </section>
@@ -27,16 +29,13 @@
 </script>
 
 <static-query>
-  query {
+query {
   tags: allTag {
-  edges {
-  node {
-  title
-  path
+    edges {
+      node { title path }
+    }
   }
-  }
-  }
-  }
+}
 </static-query>
 
 <style lang="scss" scoped>

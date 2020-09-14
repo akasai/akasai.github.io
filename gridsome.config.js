@@ -11,8 +11,8 @@ module.exports = {
     skills: ['Javascript','Typescript', 'GraphQL'],
     link: {
       github: 'https://github.com/akasai',
-      hackerrank: 'https://github.com/akasai',
-      instagram: 'https://github.com/akasai',
+      hackerrank: 'https://www.hackerrank.com/ksj21c',
+      instagram: 'https://www.instagram.com/ksj21c',
     }
   },
   templates: {
