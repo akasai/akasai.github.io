@@ -159,6 +159,7 @@
           padding: 4px 6px;
           border-radius: 3px;
           border: 1px solid var(--tag-bg-color);
+          cursor: pointer;
 
           &:hover {
             background: var(--tag-bg-color);

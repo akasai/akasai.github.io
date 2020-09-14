@@ -1,4 +1,5 @@
 ---
+category: "algorithm"
 title: "Second Post"
 description: "second post"
 date: 2019-12-25

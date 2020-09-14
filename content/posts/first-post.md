@@ -1,4 +1,5 @@
 ---
+category: "algorithm"
 title: "First Post"
 description: "The first post written in Markdown"
 tags: ["typescript", "test", "test1", "test2","javascript"]

@@ -52,6 +52,11 @@
       this.mode = mode
       const htmlElement = document.documentElement
       htmlElement.setAttribute('theme', mode)
+
+      const message = { type: 'set-theme', theme: this.mode === 'dark' ? 'dark-blue' : 'github-light' }
+      const utterances = document.querySelector('iframe')?.contentWindow
+      utterances?.postMessage(message, 'https://utteranc.es')
+
       localStorage.setItem('theme', mode)
     }
   }

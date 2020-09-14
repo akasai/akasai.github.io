@@ -4,7 +4,8 @@
     <slot/>
     <div class="footer">
       <div class="footer-links">
-        Built with <a target="_blank" class="link" href="//gridsome.org">Gridsome</a> Edit By akasai /
+        Built with <a target="_blank" class="link" href="//gridsome.org">Gridsome</a> Edited By
+        <a target="_blank" class="link" href="https://github.com/akasai">akasai</a> /
         <a target="_blank" href="/sitemap.xml">Sitemap</a>
       </div>
     </div>
@@ -36,6 +37,7 @@
     --post-list-text-color: rgb(175, 176, 177);
     --main-border-color: rgba(145, 146, 146, 0.35);
     --tag-bg-color: rgba(211, 212, 213, 0.62);
+    --related-content-color: rgba(211, 212, 213, 0.61);
   }
 
   [theme="dark"] {
@@ -48,6 +50,7 @@
     --post-list-text-color: rgb(175, 176, 177);
     --main-border-color: rgb(44, 45, 45);
     --tag-bg-color: rgba(32, 62, 106, 0.53);
+    --related-content-color: #092638;
   }
 
   h1 {

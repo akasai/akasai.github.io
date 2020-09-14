@@ -1,5 +1,5 @@
 ---
-category: "test"
+category: "algorithm"
 title: "Third Post"
 description: "third"
 tags: ["typescript", "test"]

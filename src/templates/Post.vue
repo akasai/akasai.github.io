@@ -16,7 +16,7 @@
           </ul>
         </span>
         <section class="post__title-tag" v-if="$page.post.tags.length">
-          <font-awesome-icon :icon="ICON_TAGS"/>
+          <font-awesome-icon :icon="ICON_TAGS" class="icon"/>
           <ul>
             <li v-for="tag in $page.post.tags">{{tag.title}}</li>
           </ul>
@@ -26,6 +26,8 @@
         <article v-html="$page.post.content"></article>
       </section>
     </section>
+    <Related :related="$page.related" :category="$page.post.category"/>
+    <Comment/>
   </Layout>
 </template>
 
@@ -33,11 +35,15 @@
   import { faClock, faTags, faUserEdit, IconDefinition } from '@fortawesome/free-solid-svg-icons'
   import { Component, Vue } from 'vue-property-decorator'
   import RightBar from '~/components/RightBar.vue'
+  import Related from '~/components/Related.vue'
+  import Comment from '~/components/Comment.vue'
 
   @Component({
     name: 'Post',
     components: {
-      RightBar
+      Related,
+      RightBar,
+      Comment
     }
   })
   export default class Post extends Vue {
@@ -55,7 +61,7 @@
 </script>
 
 <page-query>
-query Post ($path: String!) {
+query Post ($path: String!, $category: String!) {
   metadata {
     siteName
     siteDescription
@@ -75,6 +81,17 @@ query Post ($path: String!) {
       depth
       value
       anchor
+    }
+  }
+  related: allPost(limit: 5 filter: {category: {regex: $category}}) {
+    edges {
+      node {
+        title
+        category
+        description
+        path
+        date (format: "YYYY.MM.DD" locale: "ko-KR")
+      }
     }
   }
 }
@@ -129,7 +146,9 @@ query Post ($path: String!) {
         margin-top: 10px;
 
         ul {
-          margin-left: 5px;
+          width: 90%;
+          overflow-x: scroll;
+          margin-left: 8px;
         }
 
         ul > li {
