@@ -38,15 +38,24 @@
   import Related from '~/components/Related.vue'
   import Comment from '~/components/Comment.vue'
 
-  @Component({
+  class V extends Vue {
+    $page: any
+  }
+
+  @Component<V>({
     name: 'Post',
     components: {
       Related,
       RightBar,
       Comment
+    },
+    metaInfo() {
+      return {
+        title: this.$page.post.title,
+      }
     }
   })
-  export default class Post extends Vue {
+  export default class Post extends V {
     ICON_CLOCK: IconDefinition
     ICON_USER: IconDefinition
     ICON_TAGS: IconDefinition

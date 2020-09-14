@@ -22,8 +22,10 @@
     }
 
     mounted(): void {
-      this.utterances.setAttribute('theme', 'github-light')
-      this.utterances.setAttribute('issue-term', 'title')
+      const mode = localStorage.getItem('theme')
+
+      this.utterances.setAttribute('theme', mode === 'dark' ? 'dark-blue' : 'github-light')
+      this.utterances.setAttribute('issue-term', 'url')
       this.utterances.setAttribute('label', '🗣:speech_balloon:')
       this.utterances.setAttribute('repo', 'akasai/akasai.github.io')
       document.getElementById('comment')?.appendChild(this.utterances);

@@ -1,5 +1,10 @@
 <template>
   <div class="theme-toggle">
+    <p class="icon">
+      <g-link to="/tags">
+        <font-awesome-icon :icon="ICON_TAGS"/>
+      </g-link>
+    </p>
     <p v-if="mode === 'dark'" @click="toggle('light')">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -27,16 +32,19 @@
 
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator'
+  import { faTags, IconDefinition } from '@fortawesome/free-solid-svg-icons'
 
   @Component({
     name: 'ThemeToggle',
   })
   export default class ThemeToggle extends Vue {
     mode: string
+    ICON_TAGS: IconDefinition
 
     constructor() {
       super()
       this.mode = 'light'
+      this.ICON_TAGS = faTags
     }
 
     created(): void {
@@ -65,6 +73,11 @@
 <style lang="scss">
   .theme-toggle {
     margin-top: 7px;
+    display: inline-flex;
+
+    .icon {
+      margin-right: 20px;
+    }
 
     svg {
       &:hover {

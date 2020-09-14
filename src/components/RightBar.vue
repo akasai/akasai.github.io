@@ -23,8 +23,8 @@
     <section class="bar__tags" v-if="$static.tags.edges.length > 0">
       <h4>Trending Tags</h4>
       <ul>
-        <li v-for="tag in getTrendTags($static.tags.edges)" :key="tag.title" :class="`cnt-${tag.count}`">
-          <g-link :to="tag.path">{{tag.title}}</g-link>
+        <li v-for="{node} in $static.tags.edges" :key="node.title">
+          <g-link :to="node.path">{{node.title}}</g-link>
         </li>
       </ul>
     </section>
@@ -49,16 +49,6 @@
       // source: https://github.com/gridsome/gridsome.org/blob/master/src/templates/DocPage.vue
       // Remove h1, h4, h5, h6 titles
       return this.headings.filter(({ depth }) => [2, 3].includes(depth))
-    }
-
-    getTrendTags(tags: { node: { title: string, path: string } }[]) {
-      return tags.reduce<{ title: string, path: string, count: number }[]>((arr, val) => {
-        const idx = arr.findIndex((v) => v.title === val.node.title)
-        if (idx > -1) arr[idx].count++
-        else arr.push({ ...val.node, count: 1 })
-        return arr
-      }, []).sort((a, b) => b.count - a.count)
-        .slice(0, 10)
     }
   }
 </script>
