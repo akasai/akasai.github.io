@@ -1,3 +1,34 @@
-Add static files here. Files in this directory will be copied directly to `dist` folder during build. For example, /static/robots.txt will be located at https://yoursite.com/robots.txt.
+# devlog. akasai Blog
+  
+<p align="center">
+    <a href="https://github.com/akasai">
+      <img src="https://img.shields.io/badge/Author-akasai-informational?style=for-the-badge&logo=github">
+    </a>
+    <img src="https://img.shields.io/badge/Languages-Typescript-blue.svg?longCache=true&style=for-the-badge&logo=TypeScriptt">
+    <img src="https://img.shields.io/badge/Languages-Vue.js-%234FC08D.svg?longCache=true&style=for-the-badge&logo=Vue.js">
+    <img src="https://img.shields.io/node/v/carbon.svg?style=for-the-badge&logo=Node.js">
+</p>
 
-This file should be deleted.
+![Deploy Blog](https://github.com/akasai/akasai.github.io/workflows/Deploy%20Blog/badge.svg)
+
+**[https://akasai.github.io](https://akasai.github.io)**
+
+<br/>
+
+[akasai](https://github.com/akasai) 의 개인 기술블로그 입니다.  
+Vue.js기반 [Gridsome](https://gridsome.org/)으로 제작한 블로그 테마입니다.
+
+**Github Action**과 **Github-pages**를 이용하여 자동배포됩니다.
+
+<br/>
+
+**Built with:**
+
+- Gridsome
+- Vue
+- GraphQL
+- TypeScript
+- SASS (SCSS)
+- Google Analytics
+- utterances
+- ...
