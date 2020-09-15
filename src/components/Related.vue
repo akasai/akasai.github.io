@@ -52,7 +52,7 @@
     border-bottom: 1px solid var(--main-border-color);
 
     &:hover {
-      overflow-x: scroll;
+      overflow-x: auto;
     }
 
     h3 {
