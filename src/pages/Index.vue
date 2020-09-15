@@ -18,6 +18,14 @@
       Profile,
       PostItem
     },
+    metaInfo() {
+      return {
+        title: 'Home',
+        meta: [
+          { property: 'og:title', content: 'devlog.akasai' },
+        ]
+      }
+    }
   })
   export default class Index extends Vue {
     constructor () {

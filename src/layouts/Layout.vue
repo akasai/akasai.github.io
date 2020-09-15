@@ -1,6 +1,6 @@
 <template>
   <main class="layout" role="main">
-    <Header :siteName="`devlog. akasai`"/>
+    <Header :siteName="`devlog.akasai`"/>
     <slot/>
     <div class="footer">
       <div class="footer-links">
@@ -20,6 +20,24 @@
     name: 'Layout',
     components: {
       Header,
+    },
+    metaInfo() {
+      return {
+        meta: [
+          { charset: 'utf-8' },
+          { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+          { name: 'description', content: `akasai's 기술블로그`, vmid: 'description' },
+          { name: 'author', content: 'akasai' },
+
+          { property: 'og:type', content: 'website' },
+          { property: 'og:url', content: `https://akasai.github.io${this.$route.path}` },
+          // { property: 'og:image', content: `https://i.imgur.com/9dqVPHD.png` },
+
+          { property: 'og:description', content:  `akasai's 기술블로그` },
+          { property: 'og:site_name', content: 'devlog.akasai' },
+          { property: 'og:locale', content: 'ko_KR' },
+        ],
+      }
     },
   })
   export default class Layout extends Vue {

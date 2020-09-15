@@ -49,7 +49,7 @@
 
     created(): void {
       const htmlElement = document.documentElement
-      const mode = localStorage.getItem('theme')
+      const mode = localStorage.getItem('theme') || 'dark'
       if (mode) {
         this.mode = mode
         htmlElement.setAttribute('theme', mode)

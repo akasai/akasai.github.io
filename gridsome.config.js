@@ -2,6 +2,7 @@ module.exports = {
   siteName: 'devlog.akasai',
   siteUrl: 'https://akasai.github.io',
   siteDescription: '',
+  titleTemplate: '%s | devlog.akasai',
   metadata: {
     nickname: 'akasai',
     name: 'Sungjun.Kim',

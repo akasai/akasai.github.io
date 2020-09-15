@@ -18,10 +18,26 @@
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator'
 
-  @Component({
+  class V extends Vue {
+    $static: any
+  }
+
+  @Component<V>({
     name: 'Tags',
+    metaInfo() {
+      const tags = this.$static.tags.edges.map((node: any) => node.title).join(',')
+      return {
+        title: 'Tags',
+        meta: [
+          { name: 'description', content: String(tags).slice(0, 320), vmid: 'description' },
+          { name: 'keywords', content: tags || '' },
+          { property: 'og:title', content: 'Tags | devlog.akasai' },
+          { property: 'og:description', content: String(tags).slice(0, 320) },
+        ]
+      }
+    }
   })
-  export default class Tags extends Vue {
+  export default class Tags extends V {
     constructor() {
       super()
     }

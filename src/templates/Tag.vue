@@ -14,13 +14,26 @@
   import {Component, Vue} from 'vue-property-decorator'
   import PostItem from '~/components/PostItem.vue'
 
-  @Component({
+  class V extends Vue {
+    $page: any
+  }
+
+  @Component<V>({
     name: 'Tag',
     components: {
       PostItem
-    }
+    },
+    metaInfo() {
+      return {
+        title: `# ${this.$page.tag.title}`,
+        meta: [
+          { property: 'og:title', content: `#${this.$page.tag.title} | devlog.akasai` },
+          { name: 'keywords', content: this.$page.tag.title },
+        ]
+      }
+    },
   })
-  export default class Tag extends Vue {
+  export default class Tag extends V {
     constructor () {
       super()
     }

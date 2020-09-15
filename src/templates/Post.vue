@@ -8,10 +8,10 @@
         <span class="post__title-info">
           <ul>
             <li>
-              <font-awesome-icon :icon="ICON_USER" class="icon" />akasai
+              <font-awesome-icon :icon="ICON_USER" class="icon"/>akasai
             </li>
             <li>
-              <font-awesome-icon :icon="ICON_CLOCK" class="icon" />{{$page.post.date}} · <i>{{$page.post.timeToRead}} min read</i>
+              <font-awesome-icon :icon="ICON_CLOCK" class="icon"/>{{$page.post.date}}  {{edited($page.post)}} · <i>{{$page.post.timeToRead}} min read</i>
             </li>
           </ul>
         </span>
@@ -51,13 +51,24 @@
     components: {
       Related,
       RightBar,
-      Comment
+      Comment,
     },
     metaInfo() {
+      const tags = this.$page.post.tags.map((tag: any) => tag.title).join(',')
+      let text = this.$page.post.content || ''
+      text = text.replace(new RegExp('<(/)?([a-zA-Z]*)(\\s[a-zA-Z]*=[^>]*)?(\\s)*(/)?>', 'ig'), '')
+      text = text.replace(new RegExp('\s+|\n', 'ig'), ' ')
+
       return {
         title: this.$page.post.title,
+        meta: [
+          { name: 'description', content: String(text).slice(0, 320), vmid: 'description' },
+          { name: 'keywords', content: tags || '' },
+          { property: 'og:title', content: `${this.$page.post.title} | devlog.akasai` },
+          { property: 'og:description', content: String(text).slice(0, 320) },
+        ],
       }
-    }
+    },
   })
   export default class Post extends V {
     ICON_CLOCK: IconDefinition
@@ -70,15 +81,17 @@
       this.ICON_USER = faUserEdit
       this.ICON_TAGS = faTags
     }
+
+    edited(post: { date: string, update_date: string }): string {
+      const { date, update_date } = post
+      if (!update_date) return ''
+      return date !== update_date ? '(edited)' : ''
+    }
   }
 </script>
 
 <page-query>
 query Post ($path: String!, $category: String!) {
-  metadata {
-    siteName
-    siteDescription
-  }
   post: post (path: $path) {
     id
     title
@@ -89,6 +102,7 @@ query Post ($path: String!, $category: String!) {
       path
     }
     date (format: "MMM DD dd, YYYY" locale: "ko-KR")
+    update_date (format: "YYYY.MM.DD" locale: "ko-KR")
     timeToRead
     headings {
       depth

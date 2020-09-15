@@ -4,6 +4,7 @@ import { MetaInfo } from 'vue-meta'
 import VueRouter from 'vue-router'
 import Layout from '~/layouts/Layout.vue'
 import 'prismjs/themes/prism.css'
+import Meta from 'vue-meta'
 
 export interface ClientContext {
   appOptions: object;
@@ -14,6 +15,7 @@ export interface ClientContext {
 export type ClientApiConstructor = (Vue: VueConstructor, context: ClientContext) => void;
 
 const client: ClientApiConstructor = (Vue, { router, head }) => {
+  Vue.use(Meta)
   Vue.component('font-awesome-icon', FontAwesomeIcon)
   Vue.component('Layout', Layout)
 }
