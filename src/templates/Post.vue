@@ -209,9 +209,9 @@
       }
 
       blockquote {
-        padding: 10px 20px;
+        padding: 0 20px;
         margin: 0 0 20px;
-        font-size: 17.5px;
+        font-size: 1rem;
         border-left: 5px solid #eee;
       }
 
@@ -243,10 +243,20 @@
         margin: 10px auto;
       }
 
+      code[class*="language-text"] {
+        padding: 3px 8px;
+      }
+
       code[class*="language-"], pre[class*="language-"] {
         color: var(--code-text-color);
         background: var(--code-color);
         text-shadow: 0 1px var(--code-shadow-color);
+        white-space: pre-line;
+        word-break: break-all;
+
+        .operator {
+          background: none;
+        }
       }
     }
   }

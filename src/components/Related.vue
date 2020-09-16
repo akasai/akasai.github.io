@@ -35,7 +35,7 @@
     }
 
     getDescription(str: string): string {
-      const limit = 50
+      const limit = 40
       return str.length >= limit ? `${str.slice(0, limit)} ...` : str
     }
   }
@@ -63,7 +63,7 @@
       overflow-x: auto;
 
       li {
-        min-width: 230px;
+        width: 230px;
         margin-right: 10px;
       }
     }
@@ -82,10 +82,14 @@
 
       h3 {
         color: var(--title-color);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
 
       p {
         max-height: 50px;
+        font-size: 0.85rem;
         color: var(--app-font-color);
       }
 

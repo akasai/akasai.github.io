@@ -1,7 +1,7 @@
 ---
 category: "개발/기타"
 title: "Local 저장소와 Github 연결하기"
-slug: "Connect-to-github"
+url: "Connect-to-github"
 description: "Git 명령어를 정리해봅니다."
 tags: ["Github", "Git"]
 date: 2020-09-16

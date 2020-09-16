@@ -17,7 +17,7 @@ module.exports = {
     }
   },
   templates: {
-    Post: '/:slug',
+    Post: '/:url',
     Tag: '/tag/:id'
   },
   plugins: [
