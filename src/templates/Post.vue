@@ -238,6 +238,7 @@ query Post ($path: String!, $category: String!) {
       }
 
       code[class*="language-"], pre[class*="language-"] {
+        color: var(--code-text-color);
         background: var(--code-color);
         text-shadow: 0 1px var(--code-shadow-color);
       }

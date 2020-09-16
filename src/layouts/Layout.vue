@@ -31,7 +31,7 @@
 
           { property: 'og:type', content: 'website' },
           { property: 'og:url', content: `https://akasai.github.io${this.$route.path}` },
-          // { property: 'og:image', content: `https://i.imgur.com/9dqVPHD.png` },
+          { property: 'og:image', content: `https://res.cloudinary.com/akasai/image/upload/v1600231756/cover_ic8ahw.png` },
 
           { property: 'og:description', content:  `akasai's 기술블로그` },
           { property: 'og:site_name', content: 'devlog.akasai' },
@@ -58,6 +58,7 @@
     --tag-bg-color: rgba(211, 212, 213, 0.62);
     --related-content-color: rgba(211, 212, 213, 0.61);
     --code-color: #f5f2f0;
+    --code-text-color: black;
     --code-shadow-color: #b4b1af;
   }
 
@@ -74,6 +75,7 @@
     --tag-bg-color: rgba(32, 62, 106, 0.53);
     --related-content-color: #092638;
     --code-color: #2f2c2b;
+    --code-text-color: #b0b0b0;
     --code-shadow-color: #4b4847;
   }
 
