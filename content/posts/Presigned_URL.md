@@ -110,6 +110,7 @@ https://{Bucket}.s3.{region}.amazonaws.com/{FileName}?AWSAccessKeyId={KEY}&Expir
 
 ## Reference
 
+<span class="reference">
 
 [AWS API 호출하기 (2) - Amazon S3 객체에 대한 미리 선언된(pre-signed) URL 생성하기](https://aws.amazon.com/ko/blogs/korea/aws-api-call-2-s3-pre-signed-url/)
 
@@ -117,4 +118,6 @@ https://{Bucket}.s3.{region}.amazonaws.com/{FileName}?AWSAccessKeyId={KEY}&Expir
 
 [Nodejs AWS SDK S3 Generate Presigned URL](https://stackoverflow.com/questions/38831829/nodejs-aws-sdk-s3-generate-presigned-url)
 
-[S3 pre-signed url (미리 서명된 url) 만들기 - redwood - Medium](https://medium.com/@labcloud/s3-pre-signed-url-%EB%AF%B8%EB%A6%AC-%EC%84%9C%EB%AA%85%EB%90%9C-url-%EB%A7%8C%EB%93%A4%EA%B8%B0-596aff8bdc45)
+[S3 pre-signed url (미리 서명된 url) 만들기 - Medium](https://medium.com/@labcloud/s3-pre-signed-url-%EB%AF%B8%EB%A6%AC-%EC%84%9C%EB%AA%85%EB%90%9C-url-%EB%A7%8C%EB%93%A4%EA%B8%B0-596aff8bdc45)
+
+</span>

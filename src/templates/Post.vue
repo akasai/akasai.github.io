@@ -259,6 +259,21 @@
           background: none;
         }
       }
+
+      .reference {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+
+        * {
+          color: var(--reference-link-color);
+        }
+
+        a:before {
+          content: '🔗';
+          margin-right: 10px;
+        }
+      }
     }
   }
 

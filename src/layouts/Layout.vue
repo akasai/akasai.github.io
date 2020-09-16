@@ -85,6 +85,7 @@
     --main-border-color: rgba(145, 146, 146, 0.35);
     --tag-bg-color: rgba(211, 212, 213, 0.62);
     --related-content-color: rgba(211, 212, 213, 0.61);
+    --reference-link-color: #87adb4;
     --code-color: #f5f2f0;
     --code-text-color: black;
     --code-shadow-color: #b4b1af;
@@ -102,6 +103,7 @@
     --main-border-color: rgb(44, 45, 45);
     --tag-bg-color: rgba(32, 62, 106, 0.53);
     --related-content-color: #092638;
+    --reference-link-color: #87adb4;
     --code-color: #2f2c2b;
     --code-text-color: #b0b0b0;
     --code-shadow-color: #4b4847;
