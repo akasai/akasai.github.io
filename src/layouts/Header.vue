@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <g-link to="/"><h1>👨‍💻 {{siteName}}</h1></g-link>
+    <g-link to="/"><h1>🐋 {{siteName}}</h1></g-link>
     <ClientOnly>
       <ThemeToggle/>
     </ClientOnly>

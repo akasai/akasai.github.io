@@ -7,7 +7,7 @@ module.exports = {
     nickname: 'akasai',
     name: 'Sungjun.Kim',
     mail: 'tjdwns2020@gmail.com',
-    description: 'Jr. Backend Developer',
+    description: '👨‍💻 Jr. Backend Developer',
     location: 'Seoul/Korea',
     skills: ['Node.js','Typescript', 'GraphQL', 'Serverless', 'PostgreSQL', 'Kubernetes'],
     link: {
