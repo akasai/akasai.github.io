@@ -102,7 +102,7 @@ query Post ($path: String!, $category: String!) {
       path
     }
     date (format: "MMM DD dd, YYYY" locale: "ko-KR")
-    update_date (format: "YYYY.MM.DD" locale: "ko-KR")
+    update_date (format: "MMM DD dd, YYYY" locale: "ko-KR")
     timeToRead
     headings {
       depth
@@ -144,7 +144,7 @@ query Post ($path: String!, $category: String!) {
       h3 {
         margin: 0 0 5px 0;
         font-size: 1.5rem;
-        color: var(--title-color);
+        color: var(--category-color);
       }
 
       h1 {
@@ -235,6 +235,11 @@ query Post ($path: String!, $category: String!) {
         width: 80%;
         display: block;
         margin: 10px auto;
+      }
+
+      code[class*="language-"], pre[class*="language-"] {
+        background: var(--code-color);
+        text-shadow: 0 1px var(--code-shadow-color);
       }
     }
   }

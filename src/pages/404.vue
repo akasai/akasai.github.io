@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <section class="warning">
-      <h1>:no_entry_sign: Not Found</h1>
+      <h1>🚫 Not Found 🚫</h1>
     </section>
   </Layout>
 </template>
@@ -27,5 +27,6 @@
 <style lang="scss" scoped>
   .warning {
     padding-top: 8rem;
+    min-height: 500px;
   }
 </style>

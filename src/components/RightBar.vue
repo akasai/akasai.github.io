@@ -105,6 +105,7 @@
         max-width: 200px;
         padding-left: 10px;
         border-left: 5px groove white;
+        font-size: 0.8rem;
 
         li {
           max-width: 200px;
@@ -119,7 +120,7 @@
       ul {
         li {
           &.depth-3 {
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             margin-left: 20px;
           }
 

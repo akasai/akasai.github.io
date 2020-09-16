@@ -52,10 +52,13 @@
     --profile-bg-color: rgb(241, 242, 243);
     --profile-img-border-color: rgb(211, 212, 213);
     --title-color: rgb(126, 187, 235);
+    --category-color: rgba(46, 102, 163, 0.78);
     --post-list-text-color: rgb(175, 176, 177);
     --main-border-color: rgba(145, 146, 146, 0.35);
     --tag-bg-color: rgba(211, 212, 213, 0.62);
     --related-content-color: rgba(211, 212, 213, 0.61);
+    --code-color: #f5f2f0;
+    --code-shadow-color: #b4b1af;
   }
 
   [theme="dark"] {
@@ -65,10 +68,13 @@
     --profile-bg-color: rgba(19, 48, 75, 0.88);
     --profile-img-border-color: rgb(32, 62, 106);
     --title-color: rgb(32, 201, 151);
+    --category-color: rgba(46, 102, 163, 0.78);
     --post-list-text-color: rgb(175, 176, 177);
     --main-border-color: rgb(44, 45, 45);
     --tag-bg-color: rgba(32, 62, 106, 0.53);
     --related-content-color: #092638;
+    --code-color: #2f2c2b;
+    --code-shadow-color: #6f6c6b;
   }
 
   h1 {

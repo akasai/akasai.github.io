@@ -23,7 +23,7 @@
       const mode = localStorage.getItem('theme')
 
       utterances.setAttribute('theme', mode === 'dark' ? 'dark-blue' : 'github-light')
-      utterances.setAttribute('issue-term', 'url')
+      utterances.setAttribute('issue-term', 'title')
       utterances.setAttribute('label', '🗣:speech_balloon:')
       utterances.setAttribute('repo', 'akasai/akasai.github.io')
       document.getElementById('comment')?.appendChild(utterances);

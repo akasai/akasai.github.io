@@ -71,7 +71,7 @@
 
       h3 {
         margin: 5px 0 0 0;
-        color: var(--post-list-text-color);
+        color: var(--category-color);
       }
     }
 
