@@ -31,7 +31,7 @@
 
           { property: 'og:type', content: 'website' },
           { property: 'og:url', content: `https://akasai.github.io${this.$route.path}` },
-          { property: 'og:image', content: `https://res.cloudinary.com/akasai/image/upload/v1600231756/cover_ic8ahw.png` },
+          { property: 'og:image', content: `https://res.cloudinary.com/akasai/image/upload/v1600232989/cover_1_pmz69m.png` },
 
           { property: 'og:description', content:  `akasai's 기술블로그` },
           { property: 'og:site_name', content: 'devlog.akasai' },
