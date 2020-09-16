@@ -1,8 +1,8 @@
 <template>
   <article class="related">
-    <h3>Related Contents "{{category}}"</h3>
+    <h3>Related Contents {{category ? `"${category}"` : `` }}</h3>
     <ul>
-      <li v-for="{node} in related.edges">
+      <li v-for="{node} in randomList">
         <g-link :to="node.path">
           <section class="related__content">
             <h6>{{node.date}}</h6>
@@ -29,6 +29,11 @@
       super()
     }
 
+    get randomList() {
+      return (this.related.edges || []).sort(() => Math.random() - Math.random())
+        .slice(0, 3)
+    }
+
     getDescription(str: string): string {
       const limit = 50
       return str.length >= limit ? `${str.slice(0, limit)} ...` : str
@@ -47,21 +52,18 @@
   .related {
     margin: 50px 0 0 0;
     padding: 0 0 25px 0;
-    max-width: 800px;
-    overflow-x: hidden;
     border-bottom: 1px solid var(--main-border-color);
-
-    &:hover {
-      overflow-x: auto;
-    }
 
     h3 {
       margin: 0 0 10px 0;
     }
 
     ul {
+      max-width: 800px;
+      overflow-x: auto;
+
       li {
-        width: 230px;
+        min-width: 230px;
         margin-right: 10px;
       }
     }

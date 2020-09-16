@@ -9,7 +9,7 @@ module.exports = {
     mail: 'tjdwns2020@gmail.com',
     description: 'Jr. Backend Developer',
     location: 'Seoul/Korea',
-    skills: ['Javascript','Typescript', 'GraphQL'],
+    skills: ['Node.js','Typescript', 'GraphQL', 'Serverless', 'PostgreSQL', 'Kubernetes'],
     link: {
       github: 'https://github.com/akasai',
       hackerrank: 'https://www.hackerrank.com/ksj21c',

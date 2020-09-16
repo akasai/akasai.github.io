@@ -110,7 +110,7 @@ query Post ($path: String!, $category: String!) {
       anchor
     }
   }
-  related: allPost(limit: 5 filter: {category: {regex: $category}}) {
+  related: allPost(limit: 10 filter: {category: {regex: $category}}) {
     edges {
       node {
         title
