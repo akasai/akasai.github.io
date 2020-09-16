@@ -87,7 +87,7 @@
   }
 
   .bar {
-    margin-top: 4rem;
+    margin-top: 1rem;
     right: 10%;
     position: fixed;
 

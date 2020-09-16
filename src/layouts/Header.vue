@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header" :class="{ 'hidden': !show }">
     <g-link to="/"><h1>🐋 {{siteName}}</h1></g-link>
     <ClientOnly>
       <ThemeToggle/>
@@ -20,6 +20,7 @@
   })
   export default class Header extends Vue {
     @Prop() siteName!: string
+    @Prop() show!: boolean
 
     constructor() {
       super()
@@ -48,5 +49,9 @@
       color: inherit;
       border-bottom: none;
     }
+  }
+
+  .hidden {
+    display: none;
   }
 </style>

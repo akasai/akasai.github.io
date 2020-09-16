@@ -1,6 +1,6 @@
 <template>
   <main class="layout" role="main">
-    <Header :siteName="`devlog.akasai`"/>
+    <Header :siteName="`devlog.akasai`" :show="showNavbar"/>
     <slot/>
     <div class="footer">
       <div class="footer-links">
@@ -31,9 +31,12 @@
 
           { property: 'og:type', content: 'website' },
           { property: 'og:url', content: `https://akasai.github.io${this.$route.path}` },
-          { property: 'og:image', content: `https://res.cloudinary.com/akasai/image/upload/v1600232989/cover_1_pmz69m.png` },
+          {
+            property: 'og:image',
+            content: `https://res.cloudinary.com/akasai/image/upload/v1600232989/cover_1_pmz69m.png`,
+          },
 
-          { property: 'og:description', content:  `akasai's 기술블로그` },
+          { property: 'og:description', content: `akasai's 기술블로그` },
           { property: 'og:site_name', content: 'devlog.akasai' },
           { property: 'og:locale', content: 'ko_KR' },
         ],
@@ -41,6 +44,31 @@
     },
   })
   export default class Layout extends Vue {
+    showNavbar: boolean
+    lastScrollPosition: number
+
+    constructor() {
+      super()
+      this.showNavbar = true
+      this.lastScrollPosition = 0
+    }
+
+    mounted() {
+      window.addEventListener('scroll', this.onScroll)
+    }
+
+    beforeDestroy() {
+      window.removeEventListener('scroll', this.onScroll)
+    }
+
+    onScroll() {
+      const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop
+      if (currentScrollPosition < 0) return
+      if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) return
+
+      this.showNavbar = currentScrollPosition < this.lastScrollPosition
+      this.lastScrollPosition = currentScrollPosition
+    }
   }
 </script>
 
