@@ -117,4 +117,10 @@
       }
     }
   }
+
+  @media all and (max-width: 400px) {
+    .post-preview__title {
+      display: inline-block;
+    }
+  }
 </style>

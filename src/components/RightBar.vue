@@ -166,7 +166,7 @@
 
   }
 
-  @media all and (max-width: 1200px) {
+  @media all and (max-width: 1400px) {
     .bar {
       display: none;
     }

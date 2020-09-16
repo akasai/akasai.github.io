@@ -115,8 +115,9 @@
     }
 
     &__content {
-      height: 180px;
+      width: 95%;
       padding: 0 20px;
+      display: inline-block;
 
       &-nickname {
         font-size: 2rem;
@@ -150,9 +151,11 @@
 
           .tags-section {
             width: 100%;
+            flex-wrap: wrap;
 
             .tag {
               margin-right: 4px;
+              margin-bottom: 4px;
               padding: 3px 7px;
               border-radius: 3px;
               background: var(--profile-img-border-color);
@@ -162,7 +165,7 @@
       }
 
       &-contact {
-        margin-top: 10px;
+        margin: 10px 0;
         float: right;
 
         a {
@@ -189,7 +192,7 @@
     }
 
     .profile__content {
-      height: 210px;
+      width: 90%;
     }
 
     .profile__content-info {

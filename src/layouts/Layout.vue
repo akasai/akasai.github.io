@@ -74,7 +74,7 @@
     --tag-bg-color: rgba(32, 62, 106, 0.53);
     --related-content-color: #092638;
     --code-color: #2f2c2b;
-    --code-shadow-color: #6f6c6b;
+    --code-shadow-color: #4b4847;
   }
 
   h1 {
@@ -103,6 +103,7 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 60px;
+    margin-bottom: 30px;
     font-size: .8em;
   }
 
