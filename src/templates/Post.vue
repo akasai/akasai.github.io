@@ -8,15 +8,15 @@
         <span class="post__title-info">
           <ul>
             <li>
-              <font-awesome-icon :icon="ICON_USER" class="icon"/>akasai
+              <User class="icon"/> akasai
             </li>
             <li>
-              <font-awesome-icon :icon="ICON_CLOCK" class="icon"/>{{$page.post.date}}  {{edited($page.post)}} · <i>{{$page.post.timeToRead}} min read</i>
+              <Clock class="icon"/>{{$page.post.date}}  {{edited($page.post)}} · <i>{{$page.post.timeToRead}} min read</i>
             </li>
           </ul>
         </span>
         <section class="post__title-tag" v-if="$page.post.tags.length">
-          <font-awesome-icon :icon="ICON_TAGS" class="icon"/>
+          <Tags class="icon"/>
           <ul>
             <li v-for="tag in $page.post.tags">
               <g-link :to="tag.path">
@@ -36,7 +36,9 @@
 </template>
 
 <script lang="ts">
-  import { faClock, faTags, faUserEdit, IconDefinition } from '@fortawesome/free-solid-svg-icons'
+  import User from '../assets/svg/user.svg'
+  import Clock from '../assets/svg/clock.svg'
+  import Tags from '../assets/svg/tags.svg'
   import { Component, Vue } from 'vue-property-decorator'
   import RightBar from '~/components/RightBar.vue'
   import Related from '~/components/Related.vue'
@@ -52,6 +54,9 @@
       Related,
       RightBar,
       Comment,
+      User,
+      Clock,
+      Tags,
     },
     metaInfo() {
       const tags = this.$page.post.tags.map((tag: any) => tag.title).join(',')
@@ -71,15 +76,9 @@
     },
   })
   export default class Post extends V {
-    ICON_CLOCK: IconDefinition
-    ICON_USER: IconDefinition
-    ICON_TAGS: IconDefinition
 
     constructor() {
       super()
-      this.ICON_CLOCK = faClock
-      this.ICON_USER = faUserEdit
-      this.ICON_TAGS = faTags
     }
 
     edited(post: { date: string, update_date: string }): string {
@@ -91,37 +90,37 @@
 </script>
 
 <page-query>
-query Post ($path: String!, $category: String!) {
+  query Post ($path: String!, $category: String!) {
   post: post (path: $path) {
-    id
-    title
-    category
-    content
-    tags {
-      title
-      path
-    }
-    date (format: "MMM DD dd, YYYY" locale: "ko-KR")
-    update_date (format: "MMM DD dd, YYYY" locale: "ko-KR")
-    timeToRead
-    headings {
-      depth
-      value
-      anchor
-    }
+  id
+  title
+  category
+  content
+  tags {
+  title
+  path
+  }
+  date (format: "MMM DD dd, YYYY" locale: "ko-KR")
+  update_date (format: "MMM DD dd, YYYY" locale: "ko-KR")
+  timeToRead
+  headings {
+  depth
+  value
+  anchor
+  }
   }
   related: allPost(limit: 10 filter: {category: {regex: $category}}) {
-    edges {
-      node {
-        title
-        category
-        description
-        path
-        date (format: "YYYY.MM.DD" locale: "ko-KR")
-      }
-    }
+  edges {
+  node {
+  title
+  category
+  description
+  path
+  date (format: "YYYY.MM.DD" locale: "ko-KR")
   }
-}
+  }
+  }
+  }
 </page-query>
 
 <style lang="scss">
@@ -162,6 +161,8 @@ query Post ($path: String!, $category: String!) {
             margin-right: 20px;
 
             .icon {
+              width: 15px;
+              vertical-align: text-bottom;
               margin-right: 5px;
             }
           }
@@ -171,6 +172,11 @@ query Post ($path: String!, $category: String!) {
       &-tag {
         font-size: 0.7rem;
         margin-top: 10px;
+
+        svg {
+          width: 15px;
+          vertical-align: text-bottom;
+        }
 
         ul {
           width: 90%;

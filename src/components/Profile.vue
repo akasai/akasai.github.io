@@ -8,15 +8,15 @@
       <section class="profile__content-info">
         <ul>
           <li>
-            <font-awesome-icon :icon="ICON_USER"/>
+            <User/>
             {{metaData.name}}
           </li>
           <li>
-            <font-awesome-icon :icon="ICON_MAIL"/>
+            <Mail/>
             <a :href="`mailto:${metaData.mail}`">{{metaData.mail}}</a>
           </li>
           <li>
-            <font-awesome-icon :icon="ICON_LOCATION"/>
+            <Map/>
             {{metaData.location}}
           </li>
         </ul>
@@ -32,7 +32,9 @@
           <ul>
             <li v-for="(link, key) of metaData.link">
               <a :href="link" target="_blank">
-                <font-awesome-icon :icon="getIcon(key)"/>
+                <Github v-if="key == 'github'"/>
+                <Hackerrank v-else-if="key == 'hackerrank'"/>
+                <Instagram v-else-if="key == 'instagram'"/>
               </a>
             </li>
           </ul>
@@ -43,47 +45,30 @@
 </template>
 
 <script lang="ts">
-  import { faGithub, faHackerrank, faInstagram } from '@fortawesome/free-brands-svg-icons'
-  import { faAt, faMapMarkerAlt, faUser, IconDefinition } from '@fortawesome/free-solid-svg-icons'
+  import User from '../assets/svg/user.svg'
+  import Mail from '../assets/svg/mail.svg'
+  import Map from '../assets/svg/map.svg'
+  import Hackerrank from '../assets/svg/hackerrank.svg'
+  import Instagram from '../assets/svg/instagram.svg'
+  import Github from '../assets/svg/github.svg'
   import { Component, Prop, Vue } from 'vue-property-decorator'
 
   @Component({
     name: 'Profile',
+    components: {
+      User,
+      Mail,
+      Map,
+      Github,
+      Hackerrank,
+      Instagram,
+    },
   })
   export default class Profile extends Vue {
-    ICON_USER: IconDefinition
-    ICON_LOCATION: IconDefinition
-    ICON_MAIL: IconDefinition
-
-    ICON_GITHUB: IconDefinition
-    ICON_INSTAGRAM: IconDefinition
-    ICON_HACKERRANK: IconDefinition
-
     @Prop() metaData!: any
 
     constructor() {
       super()
-
-      this.ICON_USER = faUser
-      this.ICON_LOCATION = faMapMarkerAlt
-      this.ICON_MAIL = faAt
-
-      this.ICON_GITHUB = faGithub
-      this.ICON_INSTAGRAM = faInstagram
-      this.ICON_HACKERRANK = faHackerrank
-    }
-
-    getIcon(key: string): IconDefinition | null {
-      switch (key) {
-        case 'github':
-          return this.ICON_GITHUB
-        case 'instagram':
-          return this.ICON_INSTAGRAM
-        case 'hackerrank':
-          return this.ICON_HACKERRANK
-        default:
-          return null
-      }
     }
   }
 
@@ -133,6 +118,12 @@
         ul > li {
           margin-right: 15px;
 
+          svg {
+            width: 0.7rem;
+            margin-right: 3px;
+            vertical-align: text-bottom;
+          }
+
           a {
             color: inherit;
             padding-left: 2px;
@@ -176,6 +167,7 @@
           display: flex;
 
           li {
+            width: 20px;
             margin-left: 10px;
           }
         }

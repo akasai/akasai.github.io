@@ -9,16 +9,16 @@ module.exports = {
     mail: 'tjdwns2020@gmail.com',
     description: '👨‍💻 Jr. Backend Developer',
     location: 'Seoul/Korea',
-    skills: ['Node.js','Typescript', 'GraphQL', 'Serverless', 'PostgreSQL', 'Kubernetes'],
+    skills: ['Node.js', 'Typescript', 'GraphQL', 'Serverless', 'PostgreSQL', 'Kubernetes'],
     link: {
       github: 'https://github.com/akasai',
       hackerrank: 'https://www.hackerrank.com/ksj21c',
-      instagram: 'https://www.instagram.com/ksj21c',
+      instagram: 'https://www.instagram.com/ksj21c'
     }
   },
   templates: {
     Post: '/:slug',
-    Tag: '/tag/:id',
+    Tag: '/tag/:id'
   },
   plugins: [
     {
@@ -41,7 +41,7 @@ module.exports = {
           externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
           anchorClassName: 'icon icon-link',
           plugins: [
-            ['@gridsome/remark-prismjs', {transformInlineCode: true}]
+            ['@gridsome/remark-prismjs', { transformInlineCode: true }]
           ]
         }
       }
@@ -90,4 +90,11 @@ module.exports = {
       }
     }
   ],
+  chainWebpack: (config) => {
+    const svgRule = config.module.rule('svg')
+    svgRule.uses.clear()
+    svgRule
+      .use('vue-svg-loader')
+      .loader('vue-svg-loader')
+  }
 }

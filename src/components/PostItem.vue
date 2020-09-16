@@ -10,7 +10,7 @@
       </p>
       <section class="post-preview__info">
         <span class="date">
-          <font-awesome-icon :icon="ICON_CLOCK" class="clock_icon"/>{{post.date}}
+          <Clock class="clock_icon"/> {{post.date}}
         </span>
         <span class="time-to-read"><i>{{post.timeToRead}} min read</i></span>
       </section>
@@ -24,20 +24,20 @@
 </template>
 
 <script lang="ts">
-  import { faClock, IconDefinition } from '@fortawesome/free-solid-svg-icons'
+  import Clock from '../assets/svg/clock.svg'
   import { Component, Prop, Vue } from 'vue-property-decorator'
 
   @Component({
     name: 'PostItem',
+    components: {
+      Clock
+    }
   })
   export default class PostItem extends Vue {
-    ICON_CLOCK: IconDefinition
-
     @Prop() post!: any
 
     constructor() {
       super()
-      this.ICON_CLOCK = faClock
     }
   }
 </script>
@@ -92,6 +92,7 @@
         display: inline-block;
 
         .clock_icon {
+          vertical-align: text-bottom;
           width: 0.9rem;
           margin-right: 4px;
         }
