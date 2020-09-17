@@ -4,7 +4,7 @@
         <title>A Gridsome Minimal Blog</title>
         <link>https://akasai.github.io/</link>
         <description>Best blog feed evah.</description>
-        <lastBuildDate>Thu, 17 Sep 2020 00:41:27 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 17 Sep 2020 00:43:23 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Gridsome Feed Plugin</generator>
         <item>
@@ -188,7 +188,7 @@ function gridSearch (G, P) {
 
 <span class="reference">
 
-[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/HackerRank/Implementation/33.The_Bomberman_Game.js)
+[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/HackerRank/Implementation/32.The_Grid_Search.js)
 
 </span>
 ]]></content:encoded>
