@@ -88,7 +88,7 @@ const url = s3.getSignedUrl('getObject', {
 
 <br>
 
-```http request
+```
 # v4
 https://{Bucket}.s3.{region}.amazonaws.com/{FileName}?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential={KEY}%2F{region}%2Fs3%2Faws4_request&X-Amz-Date=20190718T234545Z&X-Amz-Expires=30&X-Amz-Signature=d7f47df5514f17f725e2e5213ff58487dbc61122e9851feea43898587a38c5d1&X-Amz-SignedHeaders=host
 

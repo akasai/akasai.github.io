@@ -3,7 +3,7 @@
     <h3>Related Contents {{category ? `"${category}"` : `` }}</h3>
     <ul>
       <li v-for="{node} in randomList">
-        <g-link :to="node.path">
+        <g-link :to="node.path" :title="node.title">
           <section class="related__content">
             <h6>{{node.date}}</h6>
             <h3>{{node.title}}</h3>

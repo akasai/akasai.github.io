@@ -245,14 +245,14 @@
 
       code[class*="language-text"] {
         padding: 3px 8px;
+        white-space: pre-line;
+        word-break: break-all;
       }
 
       code[class*="language-"], pre[class*="language-"] {
         color: var(--code-text-color);
         background: var(--code-color);
         text-shadow: 0 1px var(--code-shadow-color);
-        white-space: pre-line;
-        word-break: break-all;
         font-size: 0.8rem;
 
         .operator {
