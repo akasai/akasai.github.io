@@ -93,6 +93,6 @@ function gridSearch (G, P) {
 
 <span class="reference">
 
-[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/HackerRank/Implementation/33.The_Bomberman_Game.js)
+[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/HackerRank/Implementation/32.The_Grid_Search.js)
 
 </span>
