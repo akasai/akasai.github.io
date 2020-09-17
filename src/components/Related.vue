@@ -98,4 +98,10 @@
       }
     }
   }
+
+  @media all and (max-width: 400px) {
+    .related {
+      overflow-x: scroll;
+    }
+  }
 </style>
