@@ -215,6 +215,10 @@
         border-left: 5px solid #eee;
       }
 
+      h2 {
+        color: #3871bf;
+      }
+
       table {
         width: 100%;
         max-width: 100%;
