@@ -58,6 +58,7 @@ query {
         id
         title
         category
+        series
         timeToRead
         description
         tags {

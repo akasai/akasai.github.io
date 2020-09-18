@@ -4,7 +4,7 @@
     <section class="post">
       <section class="post__title">
         <h3>{{$page.post.category}}</h3>
-        <h1>{{$page.post.title}}</h1>
+        <h1>{{getSeries($page.post.series)}}{{$page.post.title}}</h1>
         <span class="post__title-info">
           <ul>
             <li>
@@ -81,6 +81,10 @@
       super()
     }
 
+    getSeries(s: string): string {
+      return s ? `[${s}] ` : ``
+    }
+
     edited(post: { date: string, update_date: string }): string {
       const { date, update_date } = post
       if (!update_date) return ''
@@ -95,6 +99,7 @@
   id
   title
   category
+  series
   content
   tags {
   title
@@ -261,6 +266,30 @@
 
         .operator {
           background: none;
+        }
+      }
+
+      .em {
+        font-weight: bold;
+
+        &.red {
+          color: red;
+        }
+
+        &.blue {
+          color: blue;
+        }
+      }
+
+      .callout {
+        background: var(--code-color);
+        display: block;
+        padding: 10px;
+        border-radius: 5px;
+
+        &:before {
+          content: '💡';
+          margin-right: 10px;
         }
       }
 

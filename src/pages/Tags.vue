@@ -81,6 +81,7 @@ query {
           display: inline-block;
           font-size: 1rem;
           margin-right: 6px;
+          margin-bottom: 5px;
           padding: 5px 9px;
           border-radius: 3px;
           border: 1px solid var(--tag-bg-color);

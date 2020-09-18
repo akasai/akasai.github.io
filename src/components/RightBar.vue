@@ -63,7 +63,7 @@
         }
       }
     }
-    tags: allTag {
+    tags: allTag (order: ASC limit: 10) {
       edges {
         node {
           title
