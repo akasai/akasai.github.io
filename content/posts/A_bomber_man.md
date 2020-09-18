@@ -1,7 +1,6 @@
 ---
 category: "알고리즘"
-series: "HackerRank"
-title: "The BomberMan Game"
+title: "[HackerRank] The BomberMan Game"
 url: "hr-bomberman-game"
 description: "HackerRank / Problem Solving / Implementation"
 tags: ["Algorithm", "HackerRank"]

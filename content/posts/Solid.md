@@ -1,7 +1,7 @@
 ---
 category: "개발/기본"
-series: "Typescript"
-title: "solid하게 SOLID"
+series: "1"
+title: "[Typescript] solid하게 SOLID"
 url: "ts-solid"
 description: "OOP의 SOLID이론을 Typescript로 구현해봅니다."
 tags: ["Typescript", "OOP", "SOLID", "객체지향"]

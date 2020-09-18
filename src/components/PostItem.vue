@@ -2,7 +2,7 @@
   <g-link :to="post.path">
     <article class="post-preview">
       <span class="post-preview__title">
-        <h1>{{getSeries(post.series)}}{{post.title}}</h1>
+        <h1>{{post.title}}{{getSeries(post.series)}}</h1>
         <h3>{{post.category}}</h3>
       </span>
       <p class="post-preview__content">
@@ -41,7 +41,7 @@
     }
 
     getSeries(s: string): string {
-      return s ? `[${s}] ` : ``
+      return s ? ` #${s}` : ``
     }
   }
 </script>

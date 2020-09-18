@@ -1,7 +1,6 @@
 ---
 category: "알고리즘"
-series: "HackerRank"
-title: "Larry's Array"
+title: "[HackerRank] Larry's Array"
 url: "hr-larry-array"
 description: "HackerRank / Problem Solving / Implementation"
 tags: ["Algorithm", "HackerRank"]

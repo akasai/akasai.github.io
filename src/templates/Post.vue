@@ -4,7 +4,7 @@
     <section class="post">
       <section class="post__title">
         <h3>{{$page.post.category}}</h3>
-        <h1>{{getSeries($page.post.series)}}{{$page.post.title}}</h1>
+        <h1>{{$page.post.title}}{{getSeries($page.post.series)}}</h1>
         <span class="post__title-info">
           <ul>
             <li>
@@ -82,7 +82,7 @@
     }
 
     getSeries(s: string): string {
-      return s ? `[${s}] ` : ``
+      return s ? ` #${s}` : ``
     }
 
     edited(post: { date: string, update_date: string }): string {
