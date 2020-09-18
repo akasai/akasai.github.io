@@ -1,14 +1,14 @@
 <template>
-  <section class="related">
-    <h3 class="related__title">Related Contents {{category ? `"${category}"` : `` }}</h3>
-    <article class="related__wrapper">
+  <section class="series">
+    <h3 class="series__title">Series</h3>
+    <article class="series__wrapper">
       <ul>
-        <li v-for="{node} in randomList">
+        <li v-for="{node} in List">
           <g-link :to="node.path" :title="node.title">
-            <section class="related__wrapper__content">
+            <section class="series__wrapper__content">
+              <h4>#{{node.series}}</h4>
               <h6>{{node.date}}</h6>
               <h3>{{node.title}}</h3>
-              <p>{{getDescription(node.description)}}</p>
             </section>
           </g-link>
         </li>
@@ -21,19 +21,19 @@
   import { Component, Prop, Vue } from 'vue-property-decorator'
 
   @Component({
-    name: 'Related',
+    name: 'Series',
   })
-  export default class Related extends Vue {
-    @Prop() related!: any
-    @Prop() category!: any
+  export default class Series extends Vue {
+    @Prop() series!: any
+    @Prop() cur_series!: any
+    @Prop() title!: string
 
     constructor() {
       super()
     }
 
-    get randomList() {
-      return (this.related.edges || []).sort(() => Math.random() - Math.random())
-        .slice(0, 3)
+    get List() {
+      return (this.series.edges || []).slice(0, 3)
     }
 
     getDescription(str: string): string {
@@ -51,7 +51,7 @@
     margin: 0;
   }
 
-  .related {
+  .series {
     &__title {
       margin: 15px 0;
     }
@@ -76,11 +76,16 @@
       }
 
       &__content {
-        height: 130px;
+        height: 100px;
         padding: 8px 15px;
         border-radius: 3px;
         border: 1px solid var(--main-border-color);
         box-shadow: 0 0 4px var(--profile-bg-color);
+
+        h4 {
+          color: var(--app-font-color);
+          margin: 10px 0;
+        }
 
         h6 {
           color: var(--post-list-text-color);
@@ -108,7 +113,7 @@
   }
 
   @media all and (max-width: 400px) {
-    .related__wrapper {
+    .series__wrapper {
       overflow-x: scroll;
     }
   }

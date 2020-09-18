@@ -30,6 +30,7 @@
         <article v-html="$page.post.content"></article>
       </section>
     </section>
+    <Series v-if="$page.series.edges.length" :series="$page.series" :cur_series="$page.post.series"/>
     <Related :related="$page.related" :category="$page.post.category"/>
     <Comment/>
   </Layout>
@@ -42,6 +43,7 @@
   import { Component, Vue } from 'vue-property-decorator'
   import RightBar from '~/components/RightBar.vue'
   import Related from '~/components/Related.vue'
+  import Series from '~/components/Series.vue'
   import Comment from '~/components/Comment.vue'
 
   class V extends Vue {
@@ -52,6 +54,7 @@
     name: 'Post',
     components: {
       Related,
+      Series,
       RightBar,
       Comment,
       User,
@@ -76,7 +79,6 @@
     },
   })
   export default class Post extends V {
-
     constructor() {
       super()
     }
@@ -94,37 +96,49 @@
 </script>
 
 <page-query>
-  query Post ($path: String!, $category: String!) {
-  post: post (path: $path) {
-  id
-  title
-  category
-  series
-  content
-  tags {
-  title
-  path
-  }
-  date (format: "MMM DD dd, YYYY" locale: "ko-KR")
-  update_date (format: "MMM DD dd, YYYY" locale: "ko-KR")
-  timeToRead
-  headings {
-  depth
-  value
-  anchor
-  }
-  }
-  related: allPost(limit: 10 filter: {category: {regex: $category}}) {
-  edges {
-  node {
-  title
-  category
-  description
-  path
-  date (format: "YYYY.MM.DD" locale: "ko-KR")
-  }
-  }
-  }
+  query Post ($path: String!, $category: String!, $title: String!, $series: Int!) {
+    post: post (path: $path) {
+      id
+      title
+      category
+      series
+      content
+      tags {
+        title
+        path
+      }
+      date (format: "MMM DD dd, YYYY" locale: "ko-KR")
+      update_date (format: "MMM DD dd, YYYY" locale: "ko-KR")
+      timeToRead
+      headings {
+        depth
+        value
+        anchor
+      }
+    }
+    related: allPost(limit: 10 filter: {category: {regex: $category}}) {
+      edges {
+        node {
+          title
+          category
+          description
+          path
+          date (format: "YYYY.MM.DD" locale: "ko-KR")
+        }
+      }
+    }
+    series: allPost(filter: {title: {eq: $title} series: {nin: [$series]}}) {
+      edges {
+        node {
+          title
+          category
+          series
+          description
+          path
+          date (format: "YYYY.MM.DD" locale: "ko-KR")
+        }
+      }
+    }
   }
 </page-query>
 

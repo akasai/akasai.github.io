@@ -1,6 +1,6 @@
 ---
 category: "개발/기본"
-series: "1"
+series: 1
 title: "[Typescript] solid하게 SOLID"
 url: "ts-solid"
 description: "OOP의 SOLID이론을 Typescript로 구현해봅니다."
