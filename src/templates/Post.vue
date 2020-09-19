@@ -96,7 +96,7 @@
 </script>
 
 <page-query>
-  query Post ($path: String!, $category: String!, $title: String!, $series: Int!) {
+  query Post ($path: String!, $category: String!, $title: String!, $series: Int) {
     post: post (path: $path) {
       id
       title
