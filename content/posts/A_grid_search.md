@@ -1,5 +1,6 @@
 ---
 category: "알고리즘"
+series: 0
 title: "[HackerRank] Grid Search"
 url: "hr-grid-search"
 description: "HackerRank / Problem Solving / Implementation"

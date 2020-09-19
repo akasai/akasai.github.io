@@ -1,5 +1,6 @@
 ---
 category: "개발/인프라"
+series: 0
 title: "파일에 접근제한 부여하기 - Presigned URL"
 url: "about-presigned-url"
 description: "Presigned-URL을 사용하여 한된 시간동안 접근권한을 부여하는 한다."
