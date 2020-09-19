@@ -6,9 +6,9 @@
         <li v-for="{node} in List">
           <g-link :to="node.path" :title="node.title">
             <section class="series__wrapper__content">
-              <h4>#{{node.series}}</h4>
-              <h6>{{node.date}}</h6>
-              <h3>{{node.title}}</h3>
+              <span class="num">#{{node.series}}</span>
+              <span class="title">{{node.title}}</span>
+              <span class="date">{{node.date}}</span>
             </section>
           </g-link>
         </li>
@@ -46,7 +46,7 @@
 <style lang="scss">
   ul {
     list-style: none;
-    display: inline-flex;
+    display: inline-block;
     padding: 0;
     margin: 0;
   }
@@ -61,52 +61,38 @@
       padding: 0 0 25px 0;
       border-bottom: 1px solid var(--main-border-color);
 
-      h3 {
-        margin: 0 0 10px 0;
-      }
-
       ul {
-        max-width: 800px;
-        overflow-x: auto;
-
         li {
-          width: 230px;
-          margin-right: 10px;
+          display: inline-flex;
+
+          &:before {
+            content: '🗂';
+            margin-right: 10px;
+          }
+
+          &:hover {
+            background: var(--related-content-color);
+          }
         }
       }
 
       &__content {
-        height: 100px;
-        padding: 8px 15px;
-        border-radius: 3px;
-        border: 1px solid var(--main-border-color);
-        box-shadow: 0 0 4px var(--profile-bg-color);
+        display: flex;
 
-        h4 {
+        .num {
           color: var(--app-font-color);
-          margin: 10px 0;
+          margin-right: 10px;
         }
 
-        h6 {
-          color: var(--post-list-text-color);
-          margin: 0;
-        }
-
-        h3 {
+        .title {
           color: var(--title-color);
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
+          margin: 0 10px 0 0;
         }
 
-        p {
-          max-height: 50px;
-          font-size: 0.85rem;
-          color: var(--app-font-color);
-        }
-
-        &:hover {
-          background: var(--related-content-color);
+        .date {
+          color: var(--post-list-text-color);
+          font-size: 0.8rem;
+          margin-top: 5px;
         }
       }
     }
@@ -115,6 +101,15 @@
   @media all and (max-width: 400px) {
     .series__wrapper {
       overflow-x: scroll;
+    }
+    .title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 230px;
+    }
+    .date {
+      display: none;
     }
   }
 </style>
