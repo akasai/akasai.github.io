@@ -1,5 +1,5 @@
 ---
-category: "개발/기본"
+category: "개발/기초"
 series: 2
 title: "[Typescript] solid하게 SOLID"
 url: "ts-solid-2"
@@ -13,7 +13,7 @@ update_date: 2020-09-19
 
 ### Typescript가 뭐지?
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ebf85401-3444-4a06-8dc0-6f36aa63686c/9959A43359E3026B10.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200919%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200919T090101Z&X-Amz-Expires=86400&X-Amz-Signature=530ecac837f86a273131967e522d1b3bef3b3dd08dd3d3e87e8ec5d0b94ea05a&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%229959A43359E3026B10.png%22)
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Febf85401-3444-4a06-8dc0-6f36aa63686c%2F9959A43359E3026B10.png?table=block&id=e0634924-48c0-4ea1-9b88-bf09bf33055e&width=3260&userId=&cache=v2)
 
 Typescript는 MS에서 만든 <span class="em red">Javascript의 상위 언어</span>로써, 서로 다른 언어가 아니다. **컴파일 언어**이자, **정적 타입 언어**이다. 
 Javascript는 인터프리터 언어지만, Typescript는 컴파일 언어로 코드 수준에서 미리 타입을 체크하여 오류를 체크해낸다. 

@@ -1,5 +1,5 @@
 ---
-category: "개발/기본"
+category: "개발/기초"
 series: 1
 title: "[Typescript] solid하게 SOLID"
 url: "ts-solid-1"
