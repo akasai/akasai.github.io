@@ -4,9 +4,150 @@
         <title>A Gridsome Minimal Blog</title>
         <link>https://akasai.github.io/</link>
         <description>Best blog feed evah.</description>
-        <lastBuildDate>Sat, 19 Sep 2020 12:16:30 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 20 Sep 2020 14:02:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Gridsome Feed Plugin</generator>
+        <item>
+            <title><![CDATA[[HackerRank] Equalize the Array]]></title>
+            <link>https://akasai.github.io/hr-equalize-the-array/</link>
+            <guid>https://akasai.github.io/hr-equalize-the-array/</guid>
+            <pubDate>Sun, 20 Sep 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9d41c1ed-b707-4925-a36b-726cc66c7341/hacker-rank-logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200920%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200920T122158Z&X-Amz-Expires=86400&X-Amz-Signature=8cc73aec6498288b3ab1b321118ec6618199eaa1f36ea897bd03a2b70077047b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22hacker-rank-logo.png%22)
+
+<br>
+
+> [Equalize the Array](https://www.hackerrank.com/challenges/equality-in-a-array/problem)
+
+***
+
+## Solution
+
+```javascript
+function equalizeArray (arr) {
+  const map = {}
+  for (let i = 0; i < arr.length; i++) {
+    map[arr[i]] = map[arr[i]] ? ++map[arr[i]] : 1
+  }
+
+  const maxCount = Math.max(...Object.values(map))
+  return arr.length - maxCount
+}
+```
+***
+
+<br>
+
+## Reference
+
+<span class="reference">
+
+[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/HackerRank/Implementation/3.Equalize_the_Array.js)
+
+</span>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[[HackerRank] Extra Long Factorials]]></title>
+            <link>https://akasai.github.io/hr-extra-long-factorials/</link>
+            <guid>https://akasai.github.io/hr-extra-long-factorials/</guid>
+            <pubDate>Sun, 20 Sep 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9d41c1ed-b707-4925-a36b-726cc66c7341/hacker-rank-logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200920%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200920T122158Z&X-Amz-Expires=86400&X-Amz-Signature=8cc73aec6498288b3ab1b321118ec6618199eaa1f36ea897bd03a2b70077047b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22hacker-rank-logo.png%22)
+
+<br>
+
+> [Extra Long Factorials](https://www.hackerrank.com/challenges/extra-long-factorials/problem)
+
+***
+
+## How To Solve
+
+BigInt에 대한 연산을 묻는 문제라고 생각했다.
+
+단 출력할 때는 `String`으로 출력한다.
+
+<br>
+
+## Solution
+
+```javascript
+function kaprekarNumbers (p, q) {
+  const ret = []
+  for (let i = p; i <= q; i++) {
+    const square = (i * i).toString()
+    const d = i.toString().length
+
+    const r = square.slice(-d)
+    const l = square.slice(0, square.length - d)
+    if (i === (+r + +l)) ret.push(i)
+  }
+  return !ret.length ? 'INVALID RANGE' : ret.join(' ')
+}
+```
+***
+
+<br>
+
+## Reference
+
+<span class="reference">
+
+[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/HackerRank/Implementation/35.Extra_Long_Factorials.js)
+
+</span>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[[HackerRank] Modified Kaprekar Numbers]]></title>
+            <link>https://akasai.github.io/hr-modified-kaprekar-numbers/</link>
+            <guid>https://akasai.github.io/hr-modified-kaprekar-numbers/</guid>
+            <pubDate>Sun, 20 Sep 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9d41c1ed-b707-4925-a36b-726cc66c7341/hacker-rank-logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200920%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200920T122158Z&X-Amz-Expires=86400&X-Amz-Signature=8cc73aec6498288b3ab1b321118ec6618199eaa1f36ea897bd03a2b70077047b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22hacker-rank-logo.png%22)
+
+<br>
+
+> [Modified Kaprekar Numbers](https://www.hackerrank.com/challenges/kaprekar-numbers/problem)
+
+***
+
+## How To Solve
+
+문제를 자세히 읽어보니
+
+상세한 조건들이 모두 적혀있었다.
+
+그대로 구현했다.
+
+<br>
+
+## Solution
+
+```javascript
+function kaprekarNumbers (p, q) {
+  const ret = []
+  for (let i = p; i <= q; i++) {
+    const square = (i * i).toString()
+    const d = i.toString().length
+
+    const r = square.slice(-d)
+    const l = square.slice(0, square.length - d)
+    if (i === (+r + +l)) ret.push(i)
+  }
+  return !ret.length ? 'INVALID RANGE' : ret.join(' ')
+}
+```
+***
+
+<br>
+
+## Reference
+
+<span class="reference">
+
+[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/HackerRank/Implementation/34.Modified_Kaprekar_Numbers.js)
+
+</span>
+]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[[Typescript] solid하게 SOLID]]></title>
             <link>https://akasai.github.io/ts-solid-2/</link>
@@ -631,11 +772,107 @@ Javascript는 인터프리터 언어지만, Typescript는 컴파일 언어로 �
 ]]></content:encoded>
         </item>
         <item>
+            <title><![CDATA[[HackerRank] Grid Search]]></title>
+            <link>https://akasai.github.io/hr-grid-search/</link>
+            <guid>https://akasai.github.io/hr-grid-search/</guid>
+            <pubDate>Thu, 17 Sep 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9d41c1ed-b707-4925-a36b-726cc66c7341/hacker-rank-logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200920%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200920T122158Z&X-Amz-Expires=86400&X-Amz-Signature=8cc73aec6498288b3ab1b321118ec6618199eaa1f36ea897bd03a2b70077047b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22hacker-rank-logo.png%22)
+
+<br>
+
+> [The Grid Search](https://www.hackerrank.com/challenges/the-grid-search/problem)
+
+***
+
+## Intro
+
+다중 반복밖에 떠오르지가 않았다.
+
+예전에 풀었던 문제중에 `BFS`와 비슷한 느낌이 들어서
+
+비슷하게 접근해봤지만 잘 풀리지 않아서 결국 반복문으로 접근했다.
+
+테스트 케이스를 다 통과하긴 했지만...
+
+<br>
+
+## How To Solve
+
+2중 배열이라서 2중 반복을 통해 전체 숫자를 방문했다.
+
+여기서 대상이 되는 패턴을 찾을 때 또 2중 반복을 하게되면
+
+4중반복문이 된다는 생각에 다르게 접근해봤다.
+
+크기를 이미 알고 있으므로 **index**를 이용하여 `while`문으로 한개씩 검증했다.
+
+<br>
+
+## Solution
+
+```javascript
+function gridSearch (G, P) {
+  const r = G.length
+  const c = G[0].length
+  const gr = P.length
+  const gc = P[0].length
+
+  const grid = (i, j) => {
+    let head = 0
+    let pi = 0
+    let pj = 0
+    let di = i
+    let dj = j
+
+    while (head < gr * gc) {
+      if (G[di][dj] === P[pi][pj]) {
+        if (!P[pi][pj + 1]) {
+          pi++
+          pj = 0
+          di++
+          dj = j
+        } else {
+          pj++
+          dj++
+        }
+      } else {
+        return false
+      }
+
+      head++
+    }
+    return true
+  }
+
+  for (let i = 0; i <= r - gr; i++) {
+    for (let j = 0; j <= c - gc; j++) {
+      if (G[i][j] === P[0][0]) {
+        if (grid(i, j)) return 'YES'
+      }
+    }
+  }
+  return 'NO'
+}
+```
+***
+
+<br>
+
+## Reference
+
+<span class="reference">
+
+[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/HackerRank/Implementation/32.The_Grid_Search.js)
+
+</span>
+]]></content:encoded>
+        </item>
+        <item>
             <title><![CDATA[[HackerRank] The BomberMan Game]]></title>
             <link>https://akasai.github.io/hr-bomberman-game/</link>
             <guid>https://akasai.github.io/hr-bomberman-game/</guid>
             <pubDate>Thu, 17 Sep 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9d41c1ed-b707-4925-a36b-726cc66c7341/hacker-rank-logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200918%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200918T153912Z&X-Amz-Expires=86400&X-Amz-Signature=8c371c2e9e9a34df064bc6f21518878f92ab843261abef5895fdf498d3cbb972&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22hacker-rank-logo.png%22)
+            <content:encoded><![CDATA[![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9d41c1ed-b707-4925-a36b-726cc66c7341/hacker-rank-logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200920%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200920T122158Z&X-Amz-Expires=86400&X-Amz-Signature=8cc73aec6498288b3ab1b321118ec6618199eaa1f36ea897bd03a2b70077047b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22hacker-rank-logo.png%22)
 
 <br>
 
@@ -725,7 +962,7 @@ function bomberMan (n, grid) {
             <link>https://akasai.github.io/hr-larry-array/</link>
             <guid>https://akasai.github.io/hr-larry-array/</guid>
             <pubDate>Thu, 17 Sep 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9d41c1ed-b707-4925-a36b-726cc66c7341/hacker-rank-logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200918%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200918T153912Z&X-Amz-Expires=86400&X-Amz-Signature=8c371c2e9e9a34df064bc6f21518878f92ab843261abef5895fdf498d3cbb972&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22hacker-rank-logo.png%22)
+            <content:encoded><![CDATA[![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9d41c1ed-b707-4925-a36b-726cc66c7341/hacker-rank-logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200920%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200920T122158Z&X-Amz-Expires=86400&X-Amz-Signature=8cc73aec6498288b3ab1b321118ec6618199eaa1f36ea897bd03a2b70077047b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22hacker-rank-logo.png%22)
 
 <br>
 
@@ -777,102 +1014,6 @@ function larrysArray (A) {
 <span class="reference">
 
 [Github](https://github.com/akasai/Algorithm-Solutions/blob/master/HackerRank/Implementation/31.Larry's_Array.js)
-
-</span>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[[HackerRank] Grid Search]]></title>
-            <link>https://akasai.github.io/hr-grid-search/</link>
-            <guid>https://akasai.github.io/hr-grid-search/</guid>
-            <pubDate>Thu, 17 Sep 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9d41c1ed-b707-4925-a36b-726cc66c7341/hacker-rank-logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200918%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200918T153912Z&X-Amz-Expires=86400&X-Amz-Signature=8c371c2e9e9a34df064bc6f21518878f92ab843261abef5895fdf498d3cbb972&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22hacker-rank-logo.png%22)
-
-<br>
-
-> [The Grid Search](https://www.hackerrank.com/challenges/the-grid-search/problem)
-
-***
-
-## Intro
-
-다중 반복밖에 떠오르지가 않았다.
-
-예전에 풀었던 문제중에 `BFS`와 비슷한 느낌이 들어서
-
-비슷하게 접근해봤지만 잘 풀리지 않아서 결국 반복문으로 접근했다.
-
-테스트 케이스를 다 통과하긴 했지만...
-
-<br>
-
-## How To Solve
-
-2중 배열이라서 2중 반복을 통해 전체 숫자를 방문했다.
-
-여기서 대상이 되는 패턴을 찾을 때 또 2중 반복을 하게되면
-
-4중반복문이 된다는 생각에 다르게 접근해봤다.
-
-크기를 이미 알고 있으므로 **index**를 이용하여 `while`문으로 한개씩 검증했다.
-
-<br>
-
-## Solution
-
-```javascript
-function gridSearch (G, P) {
-  const r = G.length
-  const c = G[0].length
-  const gr = P.length
-  const gc = P[0].length
-
-  const grid = (i, j) => {
-    let head = 0
-    let pi = 0
-    let pj = 0
-    let di = i
-    let dj = j
-
-    while (head < gr * gc) {
-      if (G[di][dj] === P[pi][pj]) {
-        if (!P[pi][pj + 1]) {
-          pi++
-          pj = 0
-          di++
-          dj = j
-        } else {
-          pj++
-          dj++
-        }
-      } else {
-        return false
-      }
-
-      head++
-    }
-    return true
-  }
-
-  for (let i = 0; i <= r - gr; i++) {
-    for (let j = 0; j <= c - gc; j++) {
-      if (G[i][j] === P[0][0]) {
-        if (grid(i, j)) return 'YES'
-      }
-    }
-  }
-  return 'NO'
-}
-```
-***
-
-<br>
-
-## Reference
-
-<span class="reference">
-
-[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/HackerRank/Implementation/32.The_Grid_Search.js)
 
 </span>
 ]]></content:encoded>
