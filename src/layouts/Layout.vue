@@ -36,7 +36,6 @@
             content: `https://res.cloudinary.com/akasai/image/upload/v1600232989/cover_1_pmz69m.png`,
           },
 
-          { property: 'og:description', content: `akasai's 기술블로그` },
           { property: 'og:site_name', content: 'devlog.akasai' },
           { property: 'og:locale', content: 'ko_KR' },
         ],
