@@ -70,10 +70,10 @@
       return {
         title: this.$page.post.title,
         meta: [
-          { name: 'description', content: String(text).slice(0, 320), vmid: 'description' },
+          { name: 'description', content: `${String(text).slice(0, 150)}...`, vmid: 'description' },
           { name: 'keywords', content: tags || '' },
           { property: 'og:title', content: `${this.$page.post.title} | devlog.akasai` },
-          { property: 'og:description', content: String(text).slice(0, 320) },
+          { property: 'og:description', content: `${String(text).slice(0, 150)}...` },
         ],
       }
     },
