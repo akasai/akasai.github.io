@@ -29,7 +29,7 @@
           { name: 'description', content: `akasai's 기술블로그`, vmid: 'description' },
           { name: 'author', content: 'akasai' },
 
-          { property: 'og:type', content: 'website' },
+          { property: 'og:type', content: 'article' },
           { property: 'og:url', content: `https://akasai.github.io${this.$route.path}` },
           {
             property: 'og:image',
