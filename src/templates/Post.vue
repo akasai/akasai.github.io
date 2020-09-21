@@ -191,21 +191,28 @@
       &-tag {
         font-size: 0.7rem;
         margin-top: 10px;
+        position: relative;
 
         svg {
           width: 15px;
           vertical-align: text-bottom;
+          position: absolute;
+          top: 8px;
         }
 
         ul {
           width: 90%;
           margin-left: 8px;
+          display: flex;
+          flex-wrap: wrap;
+          padding-left: 20px;
         }
 
         ul > li {
           color: var(--app-font-color);
           font-size: 0.9rem;
           margin-right: 4px;
+          margin-bottom: 4px;
           padding: 3px 8px;
           border-radius: 3px;
           background: var(--tag-bg-color);
