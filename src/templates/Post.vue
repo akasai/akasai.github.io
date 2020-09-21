@@ -64,8 +64,8 @@
     metaInfo() {
       const tags = this.$page.post.tags.map((tag: any) => tag.title).join(',')
       let text = this.$page.post.content || ''
-      text = text.replace(new RegExp('<(/)?([a-zA-Z]*)(\\s[a-zA-Z]*=[^>]*)?(\\s)*(/)?>', 'ig'), '')
-      text = text.replace(new RegExp('\s+|\n', 'ig'), ' ')
+      text = text.replace(new RegExp('<(/)?([a-zA-Z0-9]*)(\\s[a-zA-Z]*=[^>]*)?(\\s)*(/)?>', 'ig'), '')
+      text = text.replace(new RegExp('\\s+|\n', 'ig'), ' ')
 
       return {
         title: this.$page.post.title,
