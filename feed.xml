@@ -4,7 +4,7 @@
         <title>A Gridsome Minimal Blog</title>
         <link>https://akasai.github.io/</link>
         <description>Best blog feed evah.</description>
-        <lastBuildDate>Mon, 21 Sep 2020 02:39:48 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 21 Sep 2020 02:51:18 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Gridsome Feed Plugin</generator>
         <item>
@@ -13,7 +13,11 @@
             <guid>https://akasai.github.io/hr-await-bottle-neck/</guid>
             <pubDate>Mon, 21 Sep 2020 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[
-블로그 글을 보다
+블로그 글을 보다 나는 지금 어떻게 개발하고 있는지 궁금해서 직접 테스트해보았다.
+
+async/await를 습관적으로 쓰고 있지만, 잘 쓰고 있는지 되돌아보는 계기가 되었다.
+
+***
 
 ## Async/Await의 병목현상
 
