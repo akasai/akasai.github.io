@@ -112,10 +112,16 @@
       margin-top: 5px;
       color: inherit;
 
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
       ul > li {
         color: var(--app-font-color);
         font-size: 0.9rem;
         margin-right: 4px;
+        margin-bottom: 4px;
         padding: 3px 5px;
         border-radius: 3px;
         background: var(--tag-bg-color);
