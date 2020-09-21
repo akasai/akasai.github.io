@@ -31,7 +31,7 @@
       </section>
     </section>
     <Series v-if="$page.series.edges.length" :series="$page.series" :cur_series="$page.post.series"/>
-    <Related :related="$page.related" :category="$page.post.category"/>
+    <Related v-if="$page.related.edges.length" :related="$page.related" :category="$page.post.category"/>
     <Comment/>
   </Layout>
 </template>
