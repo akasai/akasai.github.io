@@ -4,7 +4,7 @@ series: 0
 title: "[HackerRank] Equalize the Array"
 url: "hr-equalize-the-array"
 description: "HackerRank / Problem Solving / Implementation"
-tags: ["Algorithm", "HackerRank"]
+tags: ["Algorithm", "HackerRank", "Javascript"]
 date: 2020-09-20
 update_date: 2020-09-20
 ---

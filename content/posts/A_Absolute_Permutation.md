@@ -4,7 +4,7 @@ series: 0
 title: "[HackerRank] Absolute Permutation"
 url: "hr-absolute-permutation"
 description: "HackerRank / Problem Solving / Implementation"
-tags: ["Algorithm", "HackerRank"]
+tags: ["Algorithm", "HackerRank", "Javascript"]
 date: 2020-09-28
 update_date: 2020-09-28
 ---

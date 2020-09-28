@@ -4,7 +4,7 @@ series: 0
 title: "[Programmers] 다리를 지나는 트럭"
 url: "hr-truck"
 description: "Programmers / Problem Solving / Queue"
-tags: ["Algorithm", "Programmers", "Queue"]
+tags: ["Algorithm", "Programmers", "Javascript", "Queue"]
 date: 2020-09-28
 update_date: 2020-09-28
 ---

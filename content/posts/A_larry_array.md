@@ -4,7 +4,7 @@ series: 0
 title: "[HackerRank] Larry's Array"
 url: "hr-larry-array"
 description: "HackerRank / Problem Solving / Implementation"
-tags: ["Algorithm", "HackerRank"]
+tags: ["Algorithm", "HackerRank", "Javascript"]
 date: 2020-09-17
 update_date: 2020-09-17
 ---
