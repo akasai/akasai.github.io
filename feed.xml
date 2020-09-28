@@ -4,7 +4,7 @@
         <title>A Gridsome Minimal Blog</title>
         <link>https://akasai.github.io/</link>
         <description>Best blog feed evah.</description>
-        <lastBuildDate>Mon, 28 Sep 2020 02:05:54 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 28 Sep 2020 02:47:10 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Gridsome Feed Plugin</generator>
         <item>
@@ -86,6 +86,130 @@ function absolutePermutation (n, k) {
 <span class="reference">
 
 [Github](https://github.com/akasai/Algorithm-Solutions/blob/master/HackerRank/Implementation/36.Absolute_Permutation.js)
+
+</span>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[[Leetcode] Move Zeros]]></title>
+            <link>https://akasai.github.io/hr-move-zeroes/</link>
+            <guid>https://akasai.github.io/hr-move-zeroes/</guid>
+            <pubDate>Mon, 28 Sep 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[![](https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Leetcode/leetcode-logo.png)
+
+<br>
+
+> [Move Zeros](https://leetcode.com/problems/move-zeroes)
+
+***
+
+## Solution
+
+```typescript
+function moveZeroes(nums: number[]): void {
+  for (let i = 0, len = nums.length; i < len; i++) {
+    if (nums[i] === 0) {
+      nums.splice(i--, 1)
+      nums.push(0)
+      len--
+    }
+  }
+}
+```
+
+***
+
+<br>
+
+## Reference
+
+<span class="reference">
+
+[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Leetcode/Solution/2.Move_Zeroes.ts)
+
+</span>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[[Leetcode] Remove Duplicates from Sorted Array]]></title>
+            <link>https://akasai.github.io/hr-remove-duplicates/</link>
+            <guid>https://akasai.github.io/hr-remove-duplicates/</guid>
+            <pubDate>Mon, 28 Sep 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[![](https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Leetcode/leetcode-logo.png)
+
+<br>
+
+> [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array)
+
+***
+
+## Solution
+
+```typescript
+function removeDuplicates(nums: number[]): number {
+  if (nums.length < 2) return 1
+
+  let j = 0
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[j] !== nums[i]) nums[++j] = nums[i]
+  }
+  return j + 1
+}
+```
+
+***
+
+<br>
+
+## Reference
+
+<span class="reference">
+
+[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Leetcode/Solution/4.Remove_Duplicates_from_Sorted_Array.ts)
+
+</span>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[[Leetcode] Remove Element]]></title>
+            <link>https://akasai.github.io/hr-remove-element/</link>
+            <guid>https://akasai.github.io/hr-remove-element/</guid>
+            <pubDate>Mon, 28 Sep 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[![](https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Leetcode/leetcode-logo.png)
+
+<br>
+
+> [Remove Element](https://leetcode.com/problems/remove-element)
+
+***
+
+## Solution
+
+```typescript
+function removeElement(nums: number[], val: number): number {
+  const idx = nums.indexOf(val)
+
+  if (idx === -1) return nums.length
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === val) {
+      nums.splice(i--, 1)
+    }
+  }
+
+  return nums.length
+}
+```
+
+***
+
+<br>
+
+## Reference
+
+<span class="reference">
+
+[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Leetcode/Solution/3.Remove_Element.ts)
 
 </span>
 ]]></content:encoded>
@@ -1365,6 +1489,56 @@ function larrysArray (A) {
 ]]></content:encoded>
         </item>
         <item>
+            <title><![CDATA[Local 저장소와 Github 연결하기]]></title>
+            <link>https://akasai.github.io/connect-to-github/</link>
+            <guid>https://akasai.github.io/connect-to-github/</guid>
+            <pubDate>Wed, 16 Sep 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[
+local에서 첫 개발을 시작하고 Github repository에 push를 할 단계가 온다.
+
+## Git 초기화
+
+```bash
+$ git init
+```
+
+위 명령어를 이용하여 git을 초기화한다.
+
+방금 초기화 했다면 당연히 안되어 있겠지만, 
+ 
+local 저장소가 원격저장소와 연결되어 있는지 확인한다. 
+
+## Git Remote 연결
+
+```bash
+$ git remote
+origin // 일반적으로 설정하는 원격저장소 이름
+```
+
+연결되어 있지 않다면 아무것도 뜨지 않는다.
+
+만들어 둔 github repository를 local 저장소와 연결한다.
+
+```bash
+$ git remote add [remote name] [github reposit url]
+```
+
+계정과 비밀번호를 치면 github과 연결되며 이후 일반적인 git명령어를 통해 조작할 수 있다.
+
+## Git Remote 제거
+
+```bash
+$ git remote remove [remote name]
+```
+
+## Git Remote 이름 변경
+
+```bash
+$ git remote rename [remote name] [new remote name]
+```
+]]></content:encoded>
+        </item>
+        <item>
             <title><![CDATA[파일에 접근제한 부여하기 - Presigned URL]]></title>
             <link>https://akasai.github.io/about-presigned-url/</link>
             <guid>https://akasai.github.io/about-presigned-url/</guid>
@@ -1483,56 +1657,6 @@ https://{Bucket}.s3.{region}.amazonaws.com/{FileName}?AWSAccessKeyId={KEY}&Expir
 [S3 pre-signed url (미리 서명된 url) 만들기 - Medium](https://medium.com/@labcloud/s3-pre-signed-url-%EB%AF%B8%EB%A6%AC-%EC%84%9C%EB%AA%85%EB%90%9C-url-%EB%A7%8C%EB%93%A4%EA%B8%B0-596aff8bdc45)
 
 </span>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Local 저장소와 Github 연결하기]]></title>
-            <link>https://akasai.github.io/connect-to-github/</link>
-            <guid>https://akasai.github.io/connect-to-github/</guid>
-            <pubDate>Wed, 16 Sep 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[
-local에서 첫 개발을 시작하고 Github repository에 push를 할 단계가 온다.
-
-## Git 초기화
-
-```bash
-$ git init
-```
-
-위 명령어를 이용하여 git을 초기화한다.
-
-방금 초기화 했다면 당연히 안되어 있겠지만, 
- 
-local 저장소가 원격저장소와 연결되어 있는지 확인한다. 
-
-## Git Remote 연결
-
-```bash
-$ git remote
-origin // 일반적으로 설정하는 원격저장소 이름
-```
-
-연결되어 있지 않다면 아무것도 뜨지 않는다.
-
-만들어 둔 github repository를 local 저장소와 연결한다.
-
-```bash
-$ git remote add [remote name] [github reposit url]
-```
-
-계정과 비밀번호를 치면 github과 연결되며 이후 일반적인 git명령어를 통해 조작할 수 있다.
-
-## Git Remote 제거
-
-```bash
-$ git remote remove [remote name]
-```
-
-## Git Remote 이름 변경
-
-```bash
-$ git remote rename [remote name] [new remote name]
-```
 ]]></content:encoded>
         </item>
     </channel>
