@@ -13,6 +13,7 @@ module.exports = {
     link: {
       github: 'https://github.com/akasai',
       hackerrank: 'https://www.hackerrank.com/ksj21c',
+      leetcode: 'https://leetcode.com/akasai',
       instagram: 'https://www.instagram.com/ksj21c'
     }
   },

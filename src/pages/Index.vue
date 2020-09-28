@@ -47,8 +47,9 @@ query {
     skills
     link {
       github
-      instagram
       hackerrank
+      leetcode
+      instagram
     }
   }
   allPost(filter: { date: { gte: "2020" }}) {

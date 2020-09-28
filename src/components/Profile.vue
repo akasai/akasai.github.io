@@ -34,6 +34,7 @@
               <a :href="link" target="_blank">
                 <Github v-if="key == 'github'"/>
                 <Hackerrank v-else-if="key == 'hackerrank'"/>
+                <Leetcode class="fw" v-else-if="key == 'leetcode'"/>
                 <Instagram v-else-if="key == 'instagram'"/>
               </a>
             </li>
@@ -50,6 +51,7 @@
   import Map from '../assets/svg/map.svg'
   import Hackerrank from '../assets/svg/hackerrank.svg'
   import Instagram from '../assets/svg/instagram.svg'
+  import Leetcode from '../assets/svg/leetcode.svg'
   import Github from '../assets/svg/github.svg'
   import { Component, Prop, Vue } from 'vue-property-decorator'
 
@@ -61,6 +63,7 @@
       Map,
       Github,
       Hackerrank,
+      Leetcode,
       Instagram,
     },
   })
@@ -169,6 +172,12 @@
           li {
             width: 20px;
             margin-left: 10px;
+
+            .fw {
+              path {
+                fill: var(--app-font-color);
+              }
+            }
           }
         }
       }
