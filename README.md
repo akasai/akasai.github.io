@@ -1,14 +1,9 @@
-# Gridsome Minimal Blog Starter
+# Contribute
 
-A starter template for creating a minimal blog with Markdown
+1. `doc`: Add posting
 
-### Usage
-1. `gridsome create my-gridsome-site alexbrown/gridsome-starter-minimal-blog` to create a gridsome project with the starter template
-2. `cd my-gridsome-site` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
+2. `refactor`: Modify all code
 
-### Build
-```
-npm run build
-```
+3. `feat`: Add new Feature
+
+4. `fix`: fix bug/issue
