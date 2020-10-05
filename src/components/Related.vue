@@ -1,6 +1,6 @@
 <template>
   <section class="related">
-    <h3 class="related__title">Related Contents {{category ? `"${category}"` : `` }}</h3>
+    <h3 class="related__title">{{category ? `"${category}"` : `` }} Related Contents</h3>
     <article class="related__wrapper">
       <ul>
         <li v-for="{node} in randomList">

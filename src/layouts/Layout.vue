@@ -9,6 +9,7 @@
         <a target="_blank" href="/sitemap.xml">Sitemap</a>
       </div>
     </div>
+    <div class="top" :class="{'hidden': topHidden()}" @click="toTop()">Top</div>
   </main>
 </template>
 
@@ -68,6 +69,14 @@
       this.showNavbar = currentScrollPosition < this.lastScrollPosition
       this.lastScrollPosition = currentScrollPosition
     }
+
+    toTop() {
+      window.scrollTo(0,0)
+    }
+
+    topHidden() {
+      return this.lastScrollPosition < 1000
+    }
   }
 </script>
 
@@ -120,6 +129,31 @@
     padding: 0;
     line-height: 1.5;
     font-size: 0.9em;
+  }
+
+  .top {
+    display: block;
+    position: sticky;
+    bottom: 10%;
+    z-index: 1000;
+    width: 30px;
+    cursor: pointer;
+    height: 30px;
+    left: 100%;
+    background: lightgray;
+    color: var(--app-font-color);
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px 5px 5px 5px;
+    opacity: 30%;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &.hidden {
+      display: none;
+    }
   }
 
   .layout {

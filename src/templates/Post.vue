@@ -26,11 +26,11 @@
           </ul>
         </section>
       </section>
+      <Series v-if="$page.series.edges.length" :series="$page.series" :cur_series="$page.post.series"/>
       <section class="post__content">
         <article v-html="$page.post.content"></article>
       </section>
     </section>
-    <Series v-if="$page.series.edges.length" :series="$page.series" :cur_series="$page.post.series"/>
     <Related v-if="$page.related.edges.length" :related="$page.related" :category="$page.post.category"/>
     <Comment/>
   </Layout>
@@ -96,7 +96,7 @@
 </script>
 
 <page-query>
-  query Post ($path: String!, $category: String!, $title: String!, $series: Int) {
+  query Post ($path: String!, $category: String!, $title: String!) {
     post: post (path: $path) {
       id
       title
@@ -127,7 +127,7 @@
         }
       }
     }
-    series: allPost(filter: {title: {eq: $title} series: {nin: [$series]}}) {
+    series: allPost(filter: {title: {eq: $title}} sortBy: "series" order: ASC) {
       edges {
         node {
           title

@@ -6,7 +6,7 @@
         <li v-for="{node} in List">
           <g-link :to="node.path" :title="node.title">
             <section class="series__wrapper__content">
-              <span class="num">#{{node.series}}</span>
+              <span class="num">🗂 #{{node.series}}</span>
               <span class="title">{{node.title}}</span>
               <span class="date">{{node.date}}</span>
             </section>
@@ -44,13 +44,6 @@
 </script>
 
 <style lang="scss">
-  ul {
-    list-style: none;
-    display: inline-block;
-    padding: 0;
-    margin: 0;
-  }
-
   .series {
     &__title {
       margin: 15px 0;
@@ -62,17 +55,19 @@
       border-bottom: 1px solid var(--main-border-color);
 
       ul {
+        list-style: none;
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+
         li {
-          display: inline-flex;
-
-          &:before {
-            content: '🗂';
-            margin-right: 10px;
-          }
-
+          margin-bottom: 3px;
           &:hover {
             background: var(--related-content-color);
           }
+        }
+        li:last-child {
+          margin-bottom: 0;
         }
       }
 
@@ -82,6 +77,7 @@
         .num {
           color: var(--app-font-color);
           margin-right: 10px;
+          flex: 1;
         }
 
         .title {
@@ -92,7 +88,8 @@
         .date {
           color: var(--post-list-text-color);
           font-size: 0.8rem;
-          margin-top: 5px;
+          margin-top: 2px;
+          flex: 1;
         }
       }
     }
