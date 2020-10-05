@@ -145,7 +145,7 @@
     border-radius: 5px;
     text-align: center;
     padding: 10px 5px 5px 5px;
-    opacity: 30%;
+    opacity: 0.3;
 
     &:hover {
       opacity: 1;
