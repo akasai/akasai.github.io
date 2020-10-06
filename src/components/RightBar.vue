@@ -100,7 +100,7 @@
     &__anchor, &__recent, &__tags {
       border-bottom: 1px solid var(--main-border-color);
       padding-bottom: 10px;
-      margin-bottom: 55px;
+      margin-bottom: 40px;
 
       h4 {
         margin: 8px 0;
@@ -109,7 +109,7 @@
       ul {
         max-width: 200px;
         padding-left: 10px;
-        border-left: 5px groove white;
+        border-left: 2px groove white;
         font-size: 0.8rem;
 
         li {
@@ -150,7 +150,6 @@
           width: auto;
           max-width: none;
           display: inline-block;
-          font-size: 1rem;
           margin-right: 4px;
           padding: 4px 6px;
           border-radius: 3px;

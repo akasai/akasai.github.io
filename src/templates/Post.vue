@@ -116,7 +116,7 @@
         anchor
       }
     }
-    related: allPost(limit: 10 filter: {path: {ne: $path} category: {regex: $category}}) {
+    related: allPost(limit: 8 filter: {path: {ne: $path} category: {regex: $category}}) {
       edges {
         node {
           title
