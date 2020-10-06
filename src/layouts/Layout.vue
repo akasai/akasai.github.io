@@ -6,7 +6,8 @@
       <div class="footer-links">
         Built with <a target="_blank" class="link" href="//gridsome.org">Gridsome</a> Edited By
         <a target="_blank" class="link" href="https://github.com/akasai">akasai</a> /
-        <a target="_blank" href="/sitemap.xml">Sitemap</a>
+        <a target="_blank" href="/sitemap.xml">Sitemap</a> /
+        <a target="_blank" href="/feed.xml">RSS</a>
       </div>
     </div>
     <div class="top" :class="{'hidden': topHidden()}" @click="toTop()">Top</div>
