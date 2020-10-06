@@ -26,7 +26,7 @@
           </ul>
         </section>
       </section>
-      <Series v-if="$page.series.edges.length" :series="$page.series" :cur_series="$page.post.series"/>
+      <Series v-if="$page.series.edges.length > 1" :series="$page.series" :cur_series="$page.post.series"/>
       <section class="post__content">
         <article v-html="$page.post.content"></article>
       </section>
