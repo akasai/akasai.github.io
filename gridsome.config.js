@@ -64,8 +64,8 @@ module.exports = {
       options: {
         contentTypes: ['Post'],
         feedOptions: {
-          title: 'A Gridsome Minimal Blog',
-          description: 'Best blog feed evah.'
+          title: 'devlog.akasai',
+          description: 'akasai\'s 기술블로그'
         },
         rss: {
           enabled: true,
