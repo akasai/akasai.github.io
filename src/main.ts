@@ -1,9 +1,9 @@
+import 'prismjs/themes/prism.css'
 import { VueConstructor } from 'vue'
-import { MetaInfo } from 'vue-meta'
+import InfiniteLoading from 'vue-infinite-loading'
+import Meta, { MetaInfo } from 'vue-meta'
 import VueRouter from 'vue-router'
 import Layout from '~/layouts/Layout.vue'
-import 'prismjs/themes/prism.css'
-import Meta from 'vue-meta'
 
 export interface ClientContext {
   appOptions: object;
@@ -15,6 +15,7 @@ export type ClientApiConstructor = (Vue: VueConstructor, context: ClientContext)
 
 const client: ClientApiConstructor = (Vue, { router, head }) => {
   Vue.use(Meta)
+  Vue.use(InfiniteLoading)
   Vue.component('Layout', Layout)
 }
 

@@ -2,8 +2,13 @@
   <Layout>
     <Profile :metaData="$page.metadata"/>
     <section class="posts">
-      <PostItem :key="post.node.id" v-for="post in $page.allPost.edges" :post="post.node"/>
+      <PostItem :key="post.node.id" v-for="post in loadedPosts" :post="post.node"/>
     </section>
+    <ClientOnly>
+      <infinite-loading @infinite="infiniteHandler" spinner="spiral">
+        <span slot="no-more">👨‍💻</span>
+      </infinite-loading>
+    </ClientOnly>
   </Layout>
 </template>
 
@@ -12,7 +17,12 @@
   import PostItem from '~/components/PostItem.vue'
   import Profile from '~/components/Profile.vue'
 
-  @Component({
+  class V extends Vue {
+    $page: any
+    $fetch: any
+  }
+
+  @Component<V>({
     name: 'Index',
     components: {
       Profile,
@@ -27,15 +37,39 @@
       }
     }
   })
-  export default class Index extends Vue {
+  export default class Index extends V {
+    private loadedPosts: any[]
+    private currentPage: number
+
     constructor () {
       super()
+      this.loadedPosts = []
+      this.currentPage = 1
+    }
+
+    created(): void {
+      this.loadedPosts.push(...this.$page.allPost.edges)
+    }
+
+    async infiniteHandler($state: any): Promise<void> {
+      if (this.currentPage + 1 > this.$page.allPost.pageInfo.totalPages) {
+        $state.complete()
+      } else {
+        const { data } = await this.$fetch(`/${this.currentPage + 1}`)
+        if (data.allPost.edges.length) {
+          this.currentPage = data.allPost.pageInfo.currentPage
+          this.loadedPosts.push(...data.allPost.edges)
+          $state.loaded()
+        } else {
+          $state.complete()
+        }
+      }
     }
   }
 </script>
 
 <page-query>
-query {
+query ($page: Int) {
   metadata {
     siteName
     siteDescription
@@ -52,8 +86,12 @@ query {
       instagram
     }
   }
-  allPost(filter: { date: { gte: "2020" }}) {
+  allPost(filter: { date: { gte: "2020" }} perPage: 10, page: $page) @paginate {
     totalCount
+    pageInfo {
+      totalPages
+      currentPage
+    }
     edges {
       node {
         id
@@ -77,5 +115,12 @@ query {
 <style lang="scss">
   .posts {
     padding-top: 1rem;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: ease opacity 0.3s;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
   }
 </style>

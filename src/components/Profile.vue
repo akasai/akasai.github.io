@@ -1,7 +1,7 @@
 <template>
   <article class="profile">
     <section class="profile__img">
-      <img src="../assets/img/profile.jpg" alt="">
+      <img src="../assets/img/profile.jpeg" alt="">
     </section>
     <section class="profile__content">
       <h2 class="profile__content-nickname">{{metaData.nickname}}</h2>
@@ -94,6 +94,7 @@
       padding-top: 10px;
       display: inline-block;
       text-align: center;
+      width: 100%;
 
       img {
         border-radius: 50%;

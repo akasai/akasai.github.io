@@ -17,6 +17,7 @@
     "@gridsome/transformer-remark": "^0.5.0",
     "gridsome": "^0.7.20",
     "gridsome-plugin-feed": "^1.0.2",
+    "vue-infinite-loading": "^2.4.5",
     "vue-meta": "^2.4.0"
   },
   "devDependencies": {
