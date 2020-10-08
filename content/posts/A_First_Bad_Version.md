@@ -3,7 +3,7 @@ category: "알고리즘"
 series: 0
 title: "[Leetcode] First Bad Version"
 url: "lc-first-bad-version"
-description: "Programmers / Problem Solving"
+description: "Leetcode / Problem Solving / Algorithm"
 tags: ["Algorithm", "Leetcode", "Javascript"]
 date: 2020-10-05
 update_date: 2020-10-05
