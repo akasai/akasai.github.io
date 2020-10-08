@@ -4,9 +4,70 @@
         <title>devlog.akasai</title>
         <link>https://akasai.github.io/</link>
         <description>akasai's 기술블로그</description>
-        <lastBuildDate>Wed, 07 Oct 2020 12:54:07 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 08 Oct 2020 00:06:09 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Gridsome Feed Plugin</generator>
+        <item>
+            <title><![CDATA[[Leetcode] String Compression]]></title>
+            <link>https://akasai.github.io/lc-string-compression/</link>
+            <guid>https://akasai.github.io/lc-string-compression/</guid>
+            <pubDate>Thu, 08 Oct 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[![](https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Leetcode/leetcode-logo.png)
+
+<br>
+
+> [String Compression](https://leetcode.com/problems/string-compression)
+
+***
+
+## How To Solve
+
+최소한의 반복으로 풀어보려고 했다.
+
+깔끔한 것 같진 않지만...
+
+input Array를 변조해야한다는 점이 좀 애매했다.
+
+<br>
+
+## Solution
+
+```typescript
+function compress(chars: string[]): number {
+  let str = chars[0]
+  let cnt = 1
+
+  for (let i = 1; i < chars.length; i++) {
+    if (chars[i] === str[str.length - 1]) {
+      cnt++
+    } else {
+      if (cnt > 1) str += cnt.toString()
+      str += chars[i]
+      cnt = 1
+    }
+  }
+
+  if (cnt > 1) str += cnt.toString()
+  chars.length = 0
+  chars.push(...str.split(''))
+  return chars.length
+}
+
+```
+
+***
+
+<br>
+
+## Reference
+
+<span class="reference">
+
+[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Leetcode/Solution/18.String_Compression.ts)
+
+</span>
+]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[Node.js 동작 원리]]></title>
             <link>https://akasai.github.io/nodejs-1/</link>
@@ -370,141 +431,6 @@ function removeDuplicates(nums: number[]): number {
 ]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[[Leetcode] Remove Element]]></title>
-            <link>https://akasai.github.io/hr-remove-element/</link>
-            <guid>https://akasai.github.io/hr-remove-element/</guid>
-            <pubDate>Mon, 28 Sep 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[![](https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Leetcode/leetcode-logo.png)
-
-<br>
-
-> [Remove Element](https://leetcode.com/problems/remove-element)
-
-***
-
-## Solution
-
-```typescript
-function removeElement(nums: number[], val: number): number {
-  const idx = nums.indexOf(val)
-
-  if (idx === -1) return nums.length
-
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] === val) {
-      nums.splice(i--, 1)
-    }
-  }
-
-  return nums.length
-}
-```
-
-***
-
-<br>
-
-## Reference
-
-<span class="reference">
-
-[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Leetcode/Solution/3.Remove_Element.ts)
-
-</span>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[[Programmers] 다리를 지나는 트럭]]></title>
-            <link>https://akasai.github.io/hr-truck/</link>
-            <guid>https://akasai.github.io/hr-truck/</guid>
-            <pubDate>Mon, 28 Sep 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[![](https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Programmers/programmers-logo.png)
-
-<br>
-
-> [다리를 지나는 트럭](https://programmers.co.kr/learn/courses/30/lessons/42583)
-
-***
-
-## How To Solve
-
-**Queue**를 이용하여 풀었다.
-
-조건에 맞게 구현하는 문제인 것 같다.
-
-고려해야 할 점은 진행시간대로 반복문을 돌리면 `Timeout`이 발생한다.
-
-이를 해결하기 위해 time을 누적하는 방식으로 접근했다.
-
-<br>
-
-## Solution
-
-```javascript
-class Queue {
-  constructor () {
-    this.q = []
-  }
-
-  en (data) {
-    this.q.push(data)
-  }
-
-  de () {
-    this.q.shift()
-  }
-
-  get front () {
-    return this.q[0]
-  }
-
-  get isEmpty () {
-    return this.q.length === 0
-  }
-}
-
-function solution (bridge_length, weight, truck_weights) {
-  const bridge = new Queue()
-  let time = 1
-  let total_weight = 0
-  let cur_truck = 0
-
-  do {
-    if (!bridge.isEmpty) {
-      if (bridge.front.time === time) {
-        total_weight -= bridge.front.data
-        bridge.de()
-      }
-    }
-
-    if ((total_weight < weight) && ((weight - total_weight) >= truck_weights[cur_truck]) && cur_truck < truck_weights.length) {
-      bridge.en({ time: time + bridge_length, data: truck_weights[cur_truck] })
-      total_weight += truck_weights[cur_truck]
-      cur_truck++
-      time++
-    } else if (!bridge.isEmpty) {
-      time = bridge.front.time
-    }
-  } while (cur_truck < truck_weights.length || !bridge.isEmpty)
-
-  return time
-}
-```
-
-***
-
-<br>
-
-## Reference
-
-<span class="reference">
-
-[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Programmers/%EC%8A%A4%ED%83%9D_%ED%81%90/2.%EB%8B%A4%EB%A6%AC%EB%A5%BC_%EC%A7%80%EB%82%98%EB%8A%94_%ED%8A%B8%EB%9F%AD.js)
-
-</span>
-]]></content:encoded>
-        </item>
-        <item>
             <title><![CDATA[DB의 Lock/DeadLock]]></title>
             <link>https://akasai.github.io/db-lock/</link>
             <guid>https://akasai.github.io/db-lock/</guid>
@@ -656,6 +582,141 @@ Lock들의 경합이 발생하여 특정 프로세스의 작업이 진행되지�
 [[MSSQL] 교착상태 (DeadLock)](https://tora-it-kingdom.tistory.com/12)
 
 [잠금(LOCK) 종류와 잠금수준](https://battleracoon.tistory.com/2)
+</span>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[[Programmers] 다리를 지나는 트럭]]></title>
+            <link>https://akasai.github.io/hr-truck/</link>
+            <guid>https://akasai.github.io/hr-truck/</guid>
+            <pubDate>Mon, 28 Sep 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[![](https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Programmers/programmers-logo.png)
+
+<br>
+
+> [다리를 지나는 트럭](https://programmers.co.kr/learn/courses/30/lessons/42583)
+
+***
+
+## How To Solve
+
+**Queue**를 이용하여 풀었다.
+
+조건에 맞게 구현하는 문제인 것 같다.
+
+고려해야 할 점은 진행시간대로 반복문을 돌리면 `Timeout`이 발생한다.
+
+이를 해결하기 위해 time을 누적하는 방식으로 접근했다.
+
+<br>
+
+## Solution
+
+```javascript
+class Queue {
+  constructor () {
+    this.q = []
+  }
+
+  en (data) {
+    this.q.push(data)
+  }
+
+  de () {
+    this.q.shift()
+  }
+
+  get front () {
+    return this.q[0]
+  }
+
+  get isEmpty () {
+    return this.q.length === 0
+  }
+}
+
+function solution (bridge_length, weight, truck_weights) {
+  const bridge = new Queue()
+  let time = 1
+  let total_weight = 0
+  let cur_truck = 0
+
+  do {
+    if (!bridge.isEmpty) {
+      if (bridge.front.time === time) {
+        total_weight -= bridge.front.data
+        bridge.de()
+      }
+    }
+
+    if ((total_weight < weight) && ((weight - total_weight) >= truck_weights[cur_truck]) && cur_truck < truck_weights.length) {
+      bridge.en({ time: time + bridge_length, data: truck_weights[cur_truck] })
+      total_weight += truck_weights[cur_truck]
+      cur_truck++
+      time++
+    } else if (!bridge.isEmpty) {
+      time = bridge.front.time
+    }
+  } while (cur_truck < truck_weights.length || !bridge.isEmpty)
+
+  return time
+}
+```
+
+***
+
+<br>
+
+## Reference
+
+<span class="reference">
+
+[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Programmers/%EC%8A%A4%ED%83%9D_%ED%81%90/2.%EB%8B%A4%EB%A6%AC%EB%A5%BC_%EC%A7%80%EB%82%98%EB%8A%94_%ED%8A%B8%EB%9F%AD.js)
+
+</span>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[[Leetcode] Remove Element]]></title>
+            <link>https://akasai.github.io/hr-remove-element/</link>
+            <guid>https://akasai.github.io/hr-remove-element/</guid>
+            <pubDate>Mon, 28 Sep 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[![](https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Leetcode/leetcode-logo.png)
+
+<br>
+
+> [Remove Element](https://leetcode.com/problems/remove-element)
+
+***
+
+## Solution
+
+```typescript
+function removeElement(nums: number[], val: number): number {
+  const idx = nums.indexOf(val)
+
+  if (idx === -1) return nums.length
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === val) {
+      nums.splice(i--, 1)
+    }
+  }
+
+  return nums.length
+}
+```
+
+***
+
+<br>
+
+## Reference
+
+<span class="reference">
+
+[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Leetcode/Solution/3.Remove_Element.ts)
+
 </span>
 ]]></content:encoded>
         </item>
@@ -1843,56 +1904,6 @@ function larrysArray (A) {
 ]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[Local 저장소와 Github 연결하기]]></title>
-            <link>https://akasai.github.io/connect-to-github/</link>
-            <guid>https://akasai.github.io/connect-to-github/</guid>
-            <pubDate>Wed, 16 Sep 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[
-local에서 첫 개발을 시작하고 Github repository에 push를 할 단계가 온다.
-
-## Git 초기화
-
-```bash
-$ git init
-```
-
-위 명령어를 이용하여 git을 초기화한다.
-
-방금 초기화 했다면 당연히 안되어 있겠지만, 
- 
-local 저장소가 원격저장소와 연결되어 있는지 확인한다. 
-
-## Git Remote 연결
-
-```bash
-$ git remote
-origin // 일반적으로 설정하는 원격저장소 이름
-```
-
-연결되어 있지 않다면 아무것도 뜨지 않는다.
-
-만들어 둔 github repository를 local 저장소와 연결한다.
-
-```bash
-$ git remote add [remote name] [github reposit url]
-```
-
-계정과 비밀번호를 치면 github과 연결되며 이후 일반적인 git명령어를 통해 조작할 수 있다.
-
-## Git Remote 제거
-
-```bash
-$ git remote remove [remote name]
-```
-
-## Git Remote 이름 변경
-
-```bash
-$ git remote rename [remote name] [new remote name]
-```
-]]></content:encoded>
-        </item>
-        <item>
             <title><![CDATA[파일에 접근제한 부여하기 - Presigned URL]]></title>
             <link>https://akasai.github.io/about-presigned-url/</link>
             <guid>https://akasai.github.io/about-presigned-url/</guid>
@@ -2011,6 +2022,56 @@ https://{Bucket}.s3.{region}.amazonaws.com/{FileName}?AWSAccessKeyId={KEY}&Expir
 [S3 pre-signed url (미리 서명된 url) 만들기 - Medium](https://medium.com/@labcloud/s3-pre-signed-url-%EB%AF%B8%EB%A6%AC-%EC%84%9C%EB%AA%85%EB%90%9C-url-%EB%A7%8C%EB%93%A4%EA%B8%B0-596aff8bdc45)
 
 </span>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Local 저장소와 Github 연결하기]]></title>
+            <link>https://akasai.github.io/connect-to-github/</link>
+            <guid>https://akasai.github.io/connect-to-github/</guid>
+            <pubDate>Wed, 16 Sep 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[
+local에서 첫 개발을 시작하고 Github repository에 push를 할 단계가 온다.
+
+## Git 초기화
+
+```bash
+$ git init
+```
+
+위 명령어를 이용하여 git을 초기화한다.
+
+방금 초기화 했다면 당연히 안되어 있겠지만, 
+ 
+local 저장소가 원격저장소와 연결되어 있는지 확인한다. 
+
+## Git Remote 연결
+
+```bash
+$ git remote
+origin // 일반적으로 설정하는 원격저장소 이름
+```
+
+연결되어 있지 않다면 아무것도 뜨지 않는다.
+
+만들어 둔 github repository를 local 저장소와 연결한다.
+
+```bash
+$ git remote add [remote name] [github reposit url]
+```
+
+계정과 비밀번호를 치면 github과 연결되며 이후 일반적인 git명령어를 통해 조작할 수 있다.
+
+## Git Remote 제거
+
+```bash
+$ git remote remove [remote name]
+```
+
+## Git Remote 이름 변경
+
+```bash
+$ git remote rename [remote name] [new remote name]
+```
 ]]></content:encoded>
         </item>
     </channel>
