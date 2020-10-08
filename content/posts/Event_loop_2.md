@@ -242,8 +242,6 @@ first()
 >
 > 위 사이트에서 대략적인 플로우를 확인해볼 수 있다.
 
-***
-
 <br>
 
 ### Summary
@@ -264,6 +262,10 @@ setTimeout함수의 경우 `delay` 파라미터를 통해 딜레이를 조절할
 위 플로우를 충분히 이해하고 본다면 가장 눈에 잘들어오는 아키텍처는 아래와 같다.
 
 ![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fce9951af-bea8-44a4-ab88-ed5a8be133cb%2Fnodejs.jpg?table=block&id=9012861c-5909-479b-b25f-933ad303110d&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+
+***
+
+<br>
 
 ## Reference
 
