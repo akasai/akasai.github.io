@@ -38,12 +38,13 @@ while(queue.waitForMessage()) {
 
 콜 스택에 올라간 작업은 되므로 `Run-to-completion` 으로 동작한다.
 
+<br>
+
 ### 구조
 
-<span class="callout">
-The event loop is what allows Node.js to perform non-blocking I/O operations — despite the fact that JavaScript is single-threaded — by offloading operations to the system kernel whenever possible.
-Since most modern kernels are multi-threaded, they can handle multiple operations executing in the background. When one of these operations completes, the kernel tells Node.js so that the appropriate callback may be added to the poll queue to eventually be executed. We'll explain this in further detail later in this topic.
-</span>
+
+>The event loop is what allows Node.js to perform non-blocking I/O operations — despite the fact that JavaScript is single-threaded — by offloading operations to the system kernel whenever possible.
+>Since most modern kernels are multi-threaded, they can handle multiple operations executing in the background. When one of these operations completes, the kernel tells Node.js so that the appropriate callback may be added to the poll queue to eventually be executed. We'll explain this in further detail later in this topic.
 
 ![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa18ceb6a-f755-409d-b85d-796cdf6da17f%2F_2020-10-08__9.24.43.png?table=block&id=faeb4660-706a-4a26-bd8d-fd4d589eb32f&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
 
@@ -138,6 +139,8 @@ first() // ????
 > **[loupe](http://latentflip.com/loupe)**
 >
 > 위 사이트에서 대략적인 플로우를 확인해볼 수 있다. (callback 한정)
+
+<br>
 
 ### 동작 원리 - promise
 
