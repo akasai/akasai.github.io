@@ -3,7 +3,7 @@ category: "개발/Node.js"
 series: 0
 title: "2020 TOP 10 Node.js Package & Framework"
 url: "nodejs-top10"
-description: "주로사용도는 Node.js의 Package & Framework를 알아봅니다."
+description: "주로 사용되는 Node.js의 Package & Framework를 알아봅니다."
 tags: ["Node.js", "Javascript", "Typescript", "NPM", "Framework", "Express"]
 date: 2020-10-12
 update_date: 2020-10-12
