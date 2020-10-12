@@ -1,5 +1,5 @@
 ---
-category: "개발/기초"
+category: "개발/Node.js"
 series: 1
 title: "Node.js 동작 원리"
 url: "nodejs-1"
