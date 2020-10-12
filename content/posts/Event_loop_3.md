@@ -218,9 +218,9 @@ fs.readFile('/file.txt', (err, data) => {
 
    작업이 완료되면 OS는 **libuv**에 완료를 알리고 이를 **EventLoop**의 콜백에 등록한다.
 
-   처음 생성된 `워커 쓰레드`는 커널에서 지원하지 않는 작업들(소켓 작업 등)을 수행한다.
+   처음 생성된 `워커 쓰레드`는 커널에서 지원하지 않는 작업들(소켓 작업, crypto모듈(`pbkdf2()`) 등)을 수행한다.
 
-   <span class="em red">단, File I/O, crypto모듈(`pbkdf2()`) 지원하지 않는데 이때는 libuv의 쓰레드가 사용된다.</span>
+   <span class="em red">단, File I/O는 커널을 이용한다.</span>
 
    > [libuv](https://libuv.org/)
 
