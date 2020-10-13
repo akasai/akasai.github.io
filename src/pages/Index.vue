@@ -86,7 +86,7 @@ query ($page: Int) {
       instagram
     }
   }
-  allPost(filter: { date: { gte: "2020" }} perPage: 10, page: $page) @paginate {
+  allPost(perPage: 10, page: $page) @paginate {
     totalCount
     pageInfo {
       totalPages
