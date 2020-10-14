@@ -4,9 +4,104 @@
         <title>devlog.akasai</title>
         <link>https://akasai.github.io/</link>
         <description>akasai's 기술블로그</description>
-        <lastBuildDate>Tue, 13 Oct 2020 09:56:16 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 14 Oct 2020 00:13:42 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Gridsome Feed Plugin</generator>
+        <item>
+            <title><![CDATA[[Leetcode] Count And Say]]></title>
+            <link>https://akasai.github.io/lc-count-and-say/</link>
+            <guid>https://akasai.github.io/lc-count-and-say/</guid>
+            <pubDate>Wed, 14 Oct 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[![](https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Leetcode/leetcode-logo.png)
+
+<br>
+
+> [Count and Say](https://leetcode.com/problems/count-and-say)
+
+***
+
+## How To Solve
+
+처음에 문제가 잘 이해안가서
+
+검색을 해봤더니 존재하는(?) 수열이였다.
+
+[읽고 말하기 수열](https://ko.wikipedia.org/wiki/%EC%9D%BD%EA%B3%A0_%EB%A7%90%ED%95%98%EA%B8%B0_%EC%88%98%EC%97%B4) 라고 해서 소설 '개미'에 나왔다고 한다.
+
+수열이라길래 "*아! 점화식이 있겠네!!!*" 라고 생각하고 봤는데....
+
+71차 다항식이였다....
+
+무작정 구해보자 생각하고 `반복문`과 `메모이제이션(?)`을 활용해보았다.
+
+다행히 한번에 풀었는데 문제속에 재귀가 언급되어서 재귀함수로도 구현했다.
+
+> You can do so recursively
+
+정수범위를 정해놔서 가능한 것 같다. 
+
+> 1 ≤ n ≤ 30
+
+<br>
+
+## Solution
+
+### 반복문
+```typescript
+function countAndSay(n: number): string {
+  const arr = new Array(n).fill('1')
+  for (let i = 1; i < n; i++) {
+    const num = arr[i - 1].toString()
+
+    let str = ''
+    for (let i = 0, count = 1; i <= num.length - 1; i++) {
+      if (num[i] !== num[i + 1]) {
+        str += `${count}${num[i]}`
+        count = 1
+      } else {
+        count++
+      }
+    }
+    arr[i] = str
+  }
+  return arr[n - 1]
+}
+```
+
+<br>
+
+### 재귀
+```typescript
+function countAndSay(n: number): string {
+  if (n === 1) return '1'
+
+  const num = countAndSay(n - 1)
+  let str = ''
+  for (let i = 0, count = 1; i < num.length; i++) {
+    if (num[i] !== num[i + 1]) {
+      str += `${count}${num[i]}`
+      count = 1
+    } else {
+      count++
+    }
+  }
+
+  return str
+}
+```
+***
+
+<br>
+
+## Reference
+
+<span class="reference">
+
+[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Leetcode/Solution/27.Count_and_Say.ts)
+
+</span>
+]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[[Leetcode] Add Two Numbers]]></title>
             <link>https://akasai.github.io/lc-add-two-numbers/</link>
@@ -2851,67 +2946,6 @@ function gridSearch (G, P) {
 <span class="reference">
 
 [Github](https://github.com/akasai/Algorithm-Solutions/blob/master/HackerRank/Implementation/32.The_Grid_Search.js)
-
-</span>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[[HackerRank] Larry's Array]]></title>
-            <link>https://akasai.github.io/hr-larry-array/</link>
-            <guid>https://akasai.github.io/hr-larry-array/</guid>
-            <pubDate>Thu, 17 Sep 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9d41c1ed-b707-4925-a36b-726cc66c7341%2Fhacker-rank-logo.png?table=block&id=62d1f9a2-d7ad-4c7e-bb71-ee02ff10d667&width=3260&userId=&cache=v2)
-
-<br>
-
-> [Larry's Array](https://www.hackerrank.com/challenges/larrys-array/problem)
-
-***
-
-## Intro
-
-문제 자체에서도 정렬을 언급하고 있어서
-
-정렬의 변형문제라고 생각하고 접근했다.
-
-<br>
-
-## How To Solve
-
-처음엔 단순히 주어진 조건으로 정렬이 가능한 부분 배열을 찾으려 했다.
-
-문제에 주어지는 숫자는 순차적이라는 조건에서 힌트를 얻어
-
-수학적 방법으로 접근했다.
-
-문제의 조건상 숫자조합이 홀수로 나오게 되면 규칙을 통한 정렬이 불가능하다.
-
-<br>
-
-## Solution
-
-```javascript
-function larrysArray (A) {
-  let count = 0
-  for (let i = 0; i < A.length - 1; i++) {
-    for (let j = i + 1; j < A.length; j++) {
-      if (A[i] > A[j]) {
-        count++
-      }
-    }
-  }
-  return count % 2 === 0 ? 'YES' : 'NO'
-}
-```
-***
-
-<br>
-
-## Reference
-
-<span class="reference">
-
-[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/HackerRank/Implementation/31.Larry's_Array.js)
 
 </span>
 ]]></content:encoded>
