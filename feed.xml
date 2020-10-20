@@ -4,9 +4,70 @@
         <title>devlog.akasai</title>
         <link>https://akasai.github.io/</link>
         <description>akasai's 기술블로그</description>
-        <lastBuildDate>Mon, 19 Oct 2020 02:19:06 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 20 Oct 2020 01:10:36 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Gridsome Feed Plugin</generator>
+        <item>
+            <title><![CDATA[[Leetcode] Majority Element]]></title>
+            <link>https://akasai.github.io/lc-string-compression/</link>
+            <guid>https://akasai.github.io/lc-string-compression/</guid>
+            <pubDate>Tue, 20 Oct 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[![](https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Leetcode/leetcode-logo.png)
+
+<br>
+
+> [String Compression](https://leetcode.com/problems/majority-element)
+
+***
+
+## How To Solve
+
+처음에는 2중 반복문을 생각했다.
+
+다시 생각해보니 카운팅류의 문제는 `Hash`를 사용하는게 좋을 것 같아서
+
+다시 구성했다. 
+
+Solution을 찾아보니 **분할정복**으로도 해결할 수 있다고 하는데...
+
+<br>
+
+## Solution
+
+```typescript
+function majorityElement(nums: number[]): number {
+  const pivot = Math.floor(nums.length / 2)
+
+  const countMap = nums.reduce((obj: any, v: number) => {
+    if (obj[v]) obj[v]++
+    else obj[v] = 1
+    return obj
+  }, {})
+
+  let answer = 0
+  for (const key in countMap) {
+    if (countMap[key] > pivot) {
+      answer = +key
+      break
+    }
+  }
+  return answer
+}
+```
+
+***
+
+<br>
+
+## Reference
+
+<span class="reference">
+
+[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Leetcode/Solution/32.Majority_Element.ts)
+
+</span>
+]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[[Leetcode] Sliding Window Maximum]]></title>
             <link>https://akasai.github.io/lc-sliding-window-maximum/</link>
@@ -895,67 +956,6 @@ Framework의 경우엔 한가지를 정하면 왠만해서는 변경하는 일�
 [Top 10 Node.js Frameworks For Web App Development in 2020-21](https://medium.com/javascript-in-plain-english/top-10-node-js-frameworks-for-web-app-development-in-2020-21-38e3ea2a57e5)
 
 [Express, Koa, Hapi 장단점 비교](https://edykim.com/ko/post/express-koa-hapi-pros-and-cons-comparison/)
-
-</span>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[[Leetcode] String Compression]]></title>
-            <link>https://akasai.github.io/lc-string-compression/</link>
-            <guid>https://akasai.github.io/lc-string-compression/</guid>
-            <pubDate>Thu, 08 Oct 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[![](https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Leetcode/leetcode-logo.png)
-
-<br>
-
-> [String Compression](https://leetcode.com/problems/string-compression)
-
-***
-
-## How To Solve
-
-최소한의 반복으로 풀어보려고 했다.
-
-깔끔한 것 같진 않지만...
-
-input Array를 변조해야한다는 점이 좀 애매했다.
-
-<br>
-
-## Solution
-
-```typescript
-function compress(chars: string[]): number {
-  let str = chars[0]
-  let cnt = 1
-
-  for (let i = 1; i < chars.length; i++) {
-    if (chars[i] === str[str.length - 1]) {
-      cnt++
-    } else {
-      if (cnt > 1) str += cnt.toString()
-      str += chars[i]
-      cnt = 1
-    }
-  }
-
-  if (cnt > 1) str += cnt.toString()
-  chars.length = 0
-  chars.push(...str.split(''))
-  return chars.length
-}
-
-```
-
-***
-
-<br>
-
-## Reference
-
-<span class="reference">
-
-[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Leetcode/Solution/18.String_Compression.ts)
 
 </span>
 ]]></content:encoded>
@@ -2069,45 +2069,6 @@ async/await는 동기적 프로그래밍에 있어 상당히 도움이 되고, �
 ]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[[HackerRank] Equalize the Array]]></title>
-            <link>https://akasai.github.io/hr-equalize-the-array/</link>
-            <guid>https://akasai.github.io/hr-equalize-the-array/</guid>
-            <pubDate>Sun, 20 Sep 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9d41c1ed-b707-4925-a36b-726cc66c7341%2Fhacker-rank-logo.png?table=block&id=62d1f9a2-d7ad-4c7e-bb71-ee02ff10d667&width=3260&userId=&cache=v2)
-
-<br>
-
-> [Equalize the Array](https://www.hackerrank.com/challenges/equality-in-a-array/problem)
-
-***
-
-## Solution
-
-```javascript
-function equalizeArray (arr) {
-  const map = {}
-  for (let i = 0; i < arr.length; i++) {
-    map[arr[i]] = map[arr[i]] ? ++map[arr[i]] : 1
-  }
-
-  const maxCount = Math.max(...Object.values(map))
-  return arr.length - maxCount
-}
-```
-***
-
-<br>
-
-## Reference
-
-<span class="reference">
-
-[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/HackerRank/Implementation/3.Equalize_the_Array.js)
-
-</span>
-]]></content:encoded>
-        </item>
-        <item>
             <title><![CDATA[[HackerRank] Extra Long Factorials]]></title>
             <link>https://akasai.github.io/hr-extra-long-factorials/</link>
             <guid>https://akasai.github.io/hr-extra-long-factorials/</guid>
@@ -2153,6 +2114,45 @@ function kaprekarNumbers (p, q) {
 <span class="reference">
 
 [Github](https://github.com/akasai/Algorithm-Solutions/blob/master/HackerRank/Implementation/35.Extra_Long_Factorials.js)
+
+</span>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[[HackerRank] Equalize the Array]]></title>
+            <link>https://akasai.github.io/hr-equalize-the-array/</link>
+            <guid>https://akasai.github.io/hr-equalize-the-array/</guid>
+            <pubDate>Sun, 20 Sep 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9d41c1ed-b707-4925-a36b-726cc66c7341%2Fhacker-rank-logo.png?table=block&id=62d1f9a2-d7ad-4c7e-bb71-ee02ff10d667&width=3260&userId=&cache=v2)
+
+<br>
+
+> [Equalize the Array](https://www.hackerrank.com/challenges/equality-in-a-array/problem)
+
+***
+
+## Solution
+
+```javascript
+function equalizeArray (arr) {
+  const map = {}
+  for (let i = 0; i < arr.length; i++) {
+    map[arr[i]] = map[arr[i]] ? ++map[arr[i]] : 1
+  }
+
+  const maxCount = Math.max(...Object.values(map))
+  return arr.length - maxCount
+}
+```
+***
+
+<br>
+
+## Reference
+
+<span class="reference">
+
+[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/HackerRank/Implementation/3.Equalize_the_Array.js)
 
 </span>
 ]]></content:encoded>
