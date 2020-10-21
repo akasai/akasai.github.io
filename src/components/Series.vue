@@ -33,7 +33,7 @@
     }
 
     get List() {
-      return (this.series.edges || []).slice(0, 3)
+      return (this.series.edges || []).filter((edge: any) => edge.node.series !== this.cur_series)
     }
 
     getDescription(str: string): string {
@@ -62,10 +62,12 @@
 
         li {
           margin-bottom: 3px;
+
           &:hover {
             background: var(--related-content-color);
           }
         }
+
         li:last-child {
           margin-bottom: 0;
         }
