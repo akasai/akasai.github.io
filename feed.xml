@@ -4,7 +4,7 @@
         <title>devlog.akasai</title>
         <link>https://akasai.github.io/</link>
         <description>akasai's 기술블로그</description>
-        <lastBuildDate>Tue, 03 Nov 2020 00:48:03 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 03 Nov 2020 01:07:23 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Gridsome Feed Plugin</generator>
         <item>
@@ -1176,6 +1176,53 @@ function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | nul
 ]]></content:encoded>
         </item>
         <item>
+            <title><![CDATA[개발자 로드맵]]></title>
+            <link>https://akasai.github.io/developer-roadmap/</link>
+            <guid>https://akasai.github.io/developer-roadmap/</guid>
+            <pubDate>Tue, 13 Oct 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[
+꾸준히 업데이트되고 있는 로드맵이다.
+
+해외 개발자들이 오픈소스로 정리하고 배포하는 프로젝트인데
+
+한글로 번역된 내용이 있어서 올려본다.
+
+무조건 정답이라고 할 순 없지만 충분히 도움이 되는 것 같다.
+
+(다른 파트 로드맵은... 사이트에서)
+
+***
+
+## 백엔드 개발자
+
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F3cbda823-4f9f-4d3a-8304-a8d7bfd79a63%2F120199163_197891628366431_5660893118453603052_o.jpg?table=block&id=31b89e99-f48d-4e15-a2ae-3b2ca06b8043&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+
+***
+
+<br>
+
+## 데브옵스 개발자
+
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2cdebbc5-36b1-4c1e-8acf-5d1ae87fef69%2F120289515_197891651699762_5766344256591660931_o.jpg?table=block&id=faf2e525-1382-4990-a8c3-93457e71551e&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+
+*** 
+
+<br>
+
+## Reference
+
+<span class="reference">
+
+[Developer Roadmaps](https://roadmap.sh/)
+
+[Github](https://github.com/kamranahmedse/developer-roadmap)
+
+[Github: Korean](https://github.com/devJang/developer-roadmap)
+
+</span>
+]]></content:encoded>
+        </item>
+        <item>
             <title><![CDATA[Node.js 동작 원리]]></title>
             <link>https://akasai.github.io/nodejs-4/</link>
             <guid>https://akasai.github.io/nodejs-4/</guid>
@@ -1309,53 +1356,6 @@ Node.js의 모든 작업처리는 **단일 콜스택**에서 이루어지고 비
 [빠르게 훝어보는 node.js](https://bcho.tistory.com/881)
 
 [Node.js 란](https://ggoals.tistory.com/63)
-
-</span>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[개발자 로드맵]]></title>
-            <link>https://akasai.github.io/developer-roadmap/</link>
-            <guid>https://akasai.github.io/developer-roadmap/</guid>
-            <pubDate>Tue, 13 Oct 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[
-꾸준히 업데이트되고 있는 로드맵이다.
-
-해외 개발자들이 오픈소스로 정리하고 배포하는 프로젝트인데
-
-한글로 번역된 내용이 있어서 올려본다.
-
-무조건 정답이라고 할 순 없지만 충분히 도움이 되는 것 같다.
-
-(다른 파트 로드맵은... 사이트에서)
-
-***
-
-## 백엔드 개발자
-
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F3cbda823-4f9f-4d3a-8304-a8d7bfd79a63%2F120199163_197891628366431_5660893118453603052_o.jpg?table=block&id=31b89e99-f48d-4e15-a2ae-3b2ca06b8043&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
-
-***
-
-<br>
-
-## 데브옵스 개발자
-
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2cdebbc5-36b1-4c1e-8acf-5d1ae87fef69%2F120289515_197891651699762_5766344256591660931_o.jpg?table=block&id=faf2e525-1382-4990-a8c3-93457e71551e&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
-
-*** 
-
-<br>
-
-## Reference
-
-<span class="reference">
-
-[Developer Roadmaps](https://roadmap.sh/)
-
-[Github](https://github.com/kamranahmedse/developer-roadmap)
-
-[Github: Korean](https://github.com/devJang/developer-roadmap)
 
 </span>
 ]]></content:encoded>
@@ -2988,6 +2988,56 @@ function equalizeArray (arr) {
 ]]></content:encoded>
         </item>
         <item>
+            <title><![CDATA[[HackerRank] Extra Long Factorials]]></title>
+            <link>https://akasai.github.io/hr-extra-long-factorials/</link>
+            <guid>https://akasai.github.io/hr-extra-long-factorials/</guid>
+            <pubDate>Sun, 20 Sep 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9d41c1ed-b707-4925-a36b-726cc66c7341%2Fhacker-rank-logo.png?table=block&id=62d1f9a2-d7ad-4c7e-bb71-ee02ff10d667&width=3260&userId=&cache=v2)
+
+<br>
+
+> [Extra Long Factorials](https://www.hackerrank.com/challenges/extra-long-factorials/problem)
+
+***
+
+## How To Solve
+
+BigInt에 대한 연산을 묻는 문제라고 생각했다.
+
+단 출력할 때는 `String`으로 출력한다.
+
+<br>
+
+## Solution
+
+```javascript
+function kaprekarNumbers (p, q) {
+  const ret = []
+  for (let i = p; i <= q; i++) {
+    const square = (i * i).toString()
+    const d = i.toString().length
+
+    const r = square.slice(-d)
+    const l = square.slice(0, square.length - d)
+    if (i === (+r + +l)) ret.push(i)
+  }
+  return !ret.length ? 'INVALID RANGE' : ret.join(' ')
+}
+```
+***
+
+<br>
+
+## Reference
+
+<span class="reference">
+
+[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/HackerRank/Implementation/35.Extra_Long_Factorials.js)
+
+</span>
+]]></content:encoded>
+        </item>
+        <item>
             <title><![CDATA[[HackerRank] Modified Kaprekar Numbers]]></title>
             <link>https://akasai.github.io/hr-modified-kaprekar-numbers/</link>
             <guid>https://akasai.github.io/hr-modified-kaprekar-numbers/</guid>
@@ -3035,56 +3085,6 @@ function kaprekarNumbers (p, q) {
 <span class="reference">
 
 [Github](https://github.com/akasai/Algorithm-Solutions/blob/master/HackerRank/Implementation/34.Modified_Kaprekar_Numbers.js)
-
-</span>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[[HackerRank] Extra Long Factorials]]></title>
-            <link>https://akasai.github.io/hr-extra-long-factorials/</link>
-            <guid>https://akasai.github.io/hr-extra-long-factorials/</guid>
-            <pubDate>Sun, 20 Sep 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9d41c1ed-b707-4925-a36b-726cc66c7341%2Fhacker-rank-logo.png?table=block&id=62d1f9a2-d7ad-4c7e-bb71-ee02ff10d667&width=3260&userId=&cache=v2)
-
-<br>
-
-> [Extra Long Factorials](https://www.hackerrank.com/challenges/extra-long-factorials/problem)
-
-***
-
-## How To Solve
-
-BigInt에 대한 연산을 묻는 문제라고 생각했다.
-
-단 출력할 때는 `String`으로 출력한다.
-
-<br>
-
-## Solution
-
-```javascript
-function kaprekarNumbers (p, q) {
-  const ret = []
-  for (let i = p; i <= q; i++) {
-    const square = (i * i).toString()
-    const d = i.toString().length
-
-    const r = square.slice(-d)
-    const l = square.slice(0, square.length - d)
-    if (i === (+r + +l)) ret.push(i)
-  }
-  return !ret.length ? 'INVALID RANGE' : ret.join(' ')
-}
-```
-***
-
-<br>
-
-## Reference
-
-<span class="reference">
-
-[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/HackerRank/Implementation/35.Extra_Long_Factorials.js)
 
 </span>
 ]]></content:encoded>
