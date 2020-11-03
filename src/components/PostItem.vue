@@ -1,26 +1,37 @@
 <template>
-  <g-link :to="post.path">
-    <article class="post-preview">
+  <section v-if="post.path">
+    <g-link :to="post.path">
+      <article class="post-preview">
       <span class="post-preview__title">
         <h1>{{post.title}}{{getSeries(post.series)}}</h1>
         <h3>{{post.category}}</h3>
       </span>
-      <p class="post-preview__content">
-        {{post.description}}
-      </p>
-      <section class="post-preview__info">
+        <p class="post-preview__content">
+          {{post.description}}
+        </p>
+        <section class="post-preview__info">
         <span class="date">
           <Clock class="clock_icon"/> {{post.date}}
         </span>
-        <span class="time-to-read"><i>{{post.timeToRead}} min read</i></span>
-      </section>
-      <section class="post-preview__tag" v-if="post.tags.length">
-        <ul>
-          <li v-for="tag in post.tags">{{tag.title}}</li>
-        </ul>
-      </section>
-    </article>
-  </g-link>
+          <span class="time-to-read"><i>{{post.timeToRead}} min read</i></span>
+        </section>
+        <section class="post-preview__tag" v-if="post.tags.length">
+          <ul>
+            <li v-for="tag in post.tags">{{tag.title}}</li>
+          </ul>
+        </section>
+      </article>
+    </g-link>
+  </section>
+  <section v-else>
+    <Adsense
+      data-ad-client="ca-pub-7791595479585064"
+      data-ad-slot="6295631254"
+      data-ad-format="fluid"
+      data-ad-layout-key="-gw-3+1f-3d+2z"
+      data-full-width-responsive="yes">
+    </Adsense>
+  </section>
 </template>
 
 <script lang="ts">
@@ -30,8 +41,8 @@
   @Component({
     name: 'PostItem',
     components: {
-      Clock
-    }
+      Clock,
+    },
   })
   export default class PostItem extends Vue {
     @Prop() post!: any

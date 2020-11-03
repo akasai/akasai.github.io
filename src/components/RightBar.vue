@@ -28,6 +28,12 @@
         </li>
       </ul>
     </section>
+
+    <Adsense
+      data-ad-client="ca-pub-7791595479585064"
+      data-ad-slot="5254846473"
+      data-full-width-responsive="yes">
+    </Adsense>
   </section>
 </template>
 
