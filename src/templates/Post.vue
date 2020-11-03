@@ -11,7 +11,8 @@
               <User class="icon"/> akasai
             </li>
             <li>
-              <Clock class="icon"/>{{$page.post.date}}  {{edited($page.post)}} · <i>{{$page.post.timeToRead}} min read</i>
+              <Clock
+                class="icon"/>{{$page.post.date}}  {{edited($page.post)}} · <i>{{$page.post.timeToRead}} min read</i>
             </li>
           </ul>
         </span>
@@ -26,16 +27,18 @@
           </ul>
         </section>
       </section>
+      <Series v-if="$page.series.edges.length > 1" :series="$page.series" :cur_series="$page.post.series"/>
       <Adsense
+        ins-class="top-ads"
         data-ad-client="ca-pub-7791595479585064"
         data-ad-slot="1631172523"
         data-full-width-responsive="yes">
       </Adsense>
-      <Series v-if="$page.series.edges.length > 1" :series="$page.series" :cur_series="$page.post.series"/>
       <section class="post__content">
         <article v-html="$page.post.content"></article>
       </section>
       <Adsense
+        ins-class="bottom-ads"
         data-ad-client="ca-pub-7791595479585064"
         data-ad-slot="6759499833"
         data-full-width-responsive="yes">
@@ -107,48 +110,48 @@
 
 <page-query>
   query Post ($path: String!, $category: String!, $title: String!) {
-    post: post (path: $path) {
-      id
-      title
-      category
-      series
-      content
-      tags {
-        title
-        path
-      }
-      date (format: "MMM DD dd, YYYY" locale: "ko-KR")
-      update_date (format: "MMM DD dd, YYYY" locale: "ko-KR")
-      timeToRead
-      headings {
-        depth
-        value
-        anchor
-      }
-    }
-    related: allPost(limit: 8 filter: {path: {ne: $path} category: {regex: $category}}) {
-      edges {
-        node {
-          title
-          category
-          description
-          path
-          date (format: "YYYY.MM.DD" locale: "ko-KR")
-        }
-      }
-    }
-    series: allPost(filter: {title: {eq: $title}} sortBy: "series" order: ASC) {
-      edges {
-        node {
-          title
-          category
-          series
-          description
-          path
-          date (format: "YYYY.MM.DD" locale: "ko-KR")
-        }
-      }
-    }
+  post: post (path: $path) {
+  id
+  title
+  category
+  series
+  content
+  tags {
+  title
+  path
+  }
+  date (format: "MMM DD dd, YYYY" locale: "ko-KR")
+  update_date (format: "MMM DD dd, YYYY" locale: "ko-KR")
+  timeToRead
+  headings {
+  depth
+  value
+  anchor
+  }
+  }
+  related: allPost(limit: 8 filter: {path: {ne: $path} category: {regex: $category}}) {
+  edges {
+  node {
+  title
+  category
+  description
+  path
+  date (format: "YYYY.MM.DD" locale: "ko-KR")
+  }
+  }
+  }
+  series: allPost(filter: {title: {eq: $title}} sortBy: "series" order: ASC) {
+  edges {
+  node {
+  title
+  category
+  series
+  description
+  path
+  date (format: "YYYY.MM.DD" locale: "ko-KR")
+  }
+  }
+  }
   }
 </page-query>
 
@@ -163,6 +166,14 @@
   .post {
     margin-top: 4rem;
     padding-top: 1rem;
+
+    .top-ads {
+      height: 100px;
+    }
+
+    .bottom-ads {
+      height: 100px;
+    }
 
     &__title {
       margin-top: 20px;

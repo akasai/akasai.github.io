@@ -26,9 +26,7 @@
   <section v-else>
     <Adsense
       data-ad-client="ca-pub-7791595479585064"
-      data-ad-slot="6295631254"
-      data-ad-format="fluid"
-      data-ad-layout-key="-gw-3+1f-3d+2z"
+      data-ad-slot="2026047906"
       data-full-width-responsive="yes">
     </Adsense>
   </section>
