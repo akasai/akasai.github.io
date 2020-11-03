@@ -4,7 +4,7 @@
         <title>devlog.akasai</title>
         <link>https://akasai.github.io/</link>
         <description>akasai's 기술블로그</description>
-        <lastBuildDate>Tue, 03 Nov 2020 02:02:42 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 03 Nov 2020 02:21:41 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Gridsome Feed Plugin</generator>
         <item>
@@ -2407,6 +2407,46 @@ function absolutePermutation (n, k) {
 ]]></content:encoded>
         </item>
         <item>
+            <title><![CDATA[[Leetcode] Remove Duplicates from Sorted Array]]></title>
+            <link>https://akasai.github.io/hr-remove-duplicates/</link>
+            <guid>https://akasai.github.io/hr-remove-duplicates/</guid>
+            <pubDate>Mon, 28 Sep 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[![](https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Leetcode/leetcode-logo.png)
+
+<br>
+
+> [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array)
+
+***
+
+## Solution
+
+```typescript
+function removeDuplicates(nums: number[]): number {
+  if (nums.length < 2) return 1
+
+  let j = 0
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[j] !== nums[i]) nums[++j] = nums[i]
+  }
+  return j + 1
+}
+```
+
+***
+
+<br>
+
+## Reference
+
+<span class="reference">
+
+[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Leetcode/Solution/4.Remove_Duplicates_from_Sorted_Array.ts)
+
+</span>
+]]></content:encoded>
+        </item>
+        <item>
             <title><![CDATA[[Leetcode] Move Zeros]]></title>
             <link>https://akasai.github.io/hr-move-zeroes/</link>
             <guid>https://akasai.github.io/hr-move-zeroes/</guid>
@@ -2447,29 +2487,33 @@ function moveZeroes(nums: number[]): void {
 ]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[[Leetcode] Remove Duplicates from Sorted Array]]></title>
-            <link>https://akasai.github.io/hr-remove-duplicates/</link>
-            <guid>https://akasai.github.io/hr-remove-duplicates/</guid>
+            <title><![CDATA[[Leetcode] Remove Element]]></title>
+            <link>https://akasai.github.io/hr-remove-element/</link>
+            <guid>https://akasai.github.io/hr-remove-element/</guid>
             <pubDate>Mon, 28 Sep 2020 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[![](https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Leetcode/leetcode-logo.png)
 
 <br>
 
-> [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array)
+> [Remove Element](https://leetcode.com/problems/remove-element)
 
 ***
 
 ## Solution
 
 ```typescript
-function removeDuplicates(nums: number[]): number {
-  if (nums.length < 2) return 1
+function removeElement(nums: number[], val: number): number {
+  const idx = nums.indexOf(val)
 
-  let j = 0
-  for (let i = 1; i < nums.length; i++) {
-    if (nums[j] !== nums[i]) nums[++j] = nums[i]
+  if (idx === -1) return nums.length
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === val) {
+      nums.splice(i--, 1)
+    }
   }
-  return j + 1
+
+  return nums.length
 }
 ```
 
@@ -2481,7 +2525,7 @@ function removeDuplicates(nums: number[]): number {
 
 <span class="reference">
 
-[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Leetcode/Solution/4.Remove_Duplicates_from_Sorted_Array.ts)
+[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Leetcode/Solution/3.Remove_Element.ts)
 
 </span>
 ]]></content:encoded>
@@ -2573,50 +2617,6 @@ function solution (bridge_length, weight, truck_weights) {
 <span class="reference">
 
 [Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Programmers/%EC%8A%A4%ED%83%9D_%ED%81%90/2.%EB%8B%A4%EB%A6%AC%EB%A5%BC_%EC%A7%80%EB%82%98%EB%8A%94_%ED%8A%B8%EB%9F%AD.js)
-
-</span>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[[Leetcode] Remove Element]]></title>
-            <link>https://akasai.github.io/hr-remove-element/</link>
-            <guid>https://akasai.github.io/hr-remove-element/</guid>
-            <pubDate>Mon, 28 Sep 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[![](https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Leetcode/leetcode-logo.png)
-
-<br>
-
-> [Remove Element](https://leetcode.com/problems/remove-element)
-
-***
-
-## Solution
-
-```typescript
-function removeElement(nums: number[], val: number): number {
-  const idx = nums.indexOf(val)
-
-  if (idx === -1) return nums.length
-
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] === val) {
-      nums.splice(i--, 1)
-    }
-  }
-
-  return nums.length
-}
-```
-
-***
-
-<br>
-
-## Reference
-
-<span class="reference">
-
-[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Leetcode/Solution/3.Remove_Element.ts)
 
 </span>
 ]]></content:encoded>
