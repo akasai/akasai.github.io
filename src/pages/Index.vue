@@ -40,21 +40,15 @@
   export default class Index extends V {
     private loadedPosts: any[]
     private currentPage: number
-    private readonly adsSlot: any
 
     constructor () {
       super()
       this.loadedPosts = []
       this.currentPage = 1
-      this.adsSlot = {
-        node: {
-          id: `ads-${Date.now()}`
-        }
-      }
     }
 
     created(): void {
-      this.loadedPosts.push(this.adsSlot, ...this.$page.allPost.edges)
+      this.loadedPosts.push(...this.$page.allPost.edges)
     }
 
     async infiniteHandler($state: any): Promise<void> {
@@ -64,7 +58,7 @@
         const { data } = await this.$fetch(`/${this.currentPage + 1}`)
         if (data.allPost.edges.length) {
           this.currentPage = data.allPost.pageInfo.currentPage
-          this.loadedPosts.push(this.adsSlot, ...data.allPost.edges)
+          this.loadedPosts.push(...data.allPost.edges)
           $state.loaded()
         } else {
           $state.complete()
