@@ -24,7 +24,6 @@ const client: ClientApiConstructor = (Vue, { router, head, isClient }) => {
   if (isClient) {
     Vue.use(require('vue-script2'))
     Vue.use(Ads.Adsense)
-    Vue.use(Ads.AutoAdsense, { adClient: 'ca-pub-7791595479585064' })
     // Vue.use(Ads.InArticleAdsense)
     // Vue.use(Ads.InFeedAdsense)
   }

@@ -102,7 +102,6 @@
     right: 10%;
     position: fixed;
 
-
     &__anchor, &__recent, &__tags {
       border-bottom: 1px solid var(--main-border-color);
       padding-bottom: 10px;
@@ -113,13 +112,13 @@
       }
 
       ul {
-        max-width: 200px;
+        max-width: 250px;
         padding-left: 10px;
         border-left: 2px groove white;
         font-size: 0.8rem;
 
         li {
-          max-width: 200px;
+          max-width: 250px;
           overflow-x: hidden;
           white-space: nowrap;
           text-overflow: ellipsis;
