@@ -82,6 +82,13 @@
 </script>
 
 <style lang="scss">
+  @font-face {
+    font-family: 'dobby';
+    src: url('../assets/font/hiffy.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
+
   :root {
     --app-background-color: #FFFFFF;
     --app-font-color: black;
@@ -125,11 +132,11 @@
   body {
     background-color: var(--app-background-color);
     color: var(--app-font-color);
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: dobby, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.5;
-    font-size: 0.9em;
+    font-size: 1.2em;
   }
 
   .top {

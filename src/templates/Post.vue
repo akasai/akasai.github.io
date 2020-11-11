@@ -28,23 +28,17 @@
         </section>
       </section>
       <Series v-if="$page.series.edges.length > 1" :series="$page.series" :cur_series="$page.post.series"/>
-      <Adsense
-        ins-class="top-ads"
-        data-ad-client="ca-pub-7791595479585064"
-        data-ad-slot="1631172523"
-        data-full-width-responsive="yes">
+      <Adsense ins-class="top-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="1631172523"
+               data-full-width-responsive="yes">
       </Adsense>
       <section class="post__content">
         <article v-html="$page.post.content"></article>
       </section>
-      <Adsense
-        ins-class="bottom-ads"
-        data-ad-client="ca-pub-7791595479585064"
-        data-ad-slot="6759499833"
-        data-full-width-responsive="yes">
-      </Adsense>
     </section>
     <Related v-if="$page.related.edges.length" :related="$page.related" :category="$page.post.category"/>
+    <Adsense ins-class="bottom-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="6759499833"
+             data-full-width-responsive="yes">
+    </Adsense>
     <Comment/>
   </Layout>
 </template>
