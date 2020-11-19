@@ -14,7 +14,7 @@
       <ul>
         <li v-for="(node, index) in $static.recent.edges" :key="index">
           <g-link :to="node.node.path">
-            {{node.node.title}}{{getSeries(node.node.series)}}
+            {{node.node.title}}
           </g-link>
         </li>
       </ul>
@@ -54,10 +54,6 @@
       // Remove h1, h4, h5, h6 titles
       return this.headings.filter(({ depth }) => [2, 3].includes(depth))
     }
-
-    getSeries(s: string): string {
-      return s ? ` #${s}` : ``
-    }
   }
 </script>
 
@@ -67,7 +63,6 @@
   edges {
   node {
   title
-  series
   path
   }
   }

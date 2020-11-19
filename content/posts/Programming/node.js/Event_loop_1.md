@@ -3,7 +3,7 @@ category: "프로그래밍"
 sub_category: "Node.js"
 series_name: "Node.js 파헤치기"
 series_num: 1
-title: "Node.js 동작 원리"
+title: "Node.js의 구조"
 url: "nodejs-1"
 description: "Node.js V8엔진의 기본적인 내용을 정리합니다."
 tags: ["Node.js", "Javascript", "V8", "EventLoop"]

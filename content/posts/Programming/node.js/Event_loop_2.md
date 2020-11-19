@@ -3,7 +3,7 @@ category: "프로그래밍"
 sub_category: "Node.js"
 series_name: "Node.js 파헤치기"
 series_num: 2
-title: "Node.js 동작 원리"
+title: "Node.js의 이벤트 루프와 비동기"
 url: "nodejs-2"
 description: "Node.js 비동기 동작을 정리합니다."
 tags: ["Node.js", "Javascript", "V8", "EventLoop"]

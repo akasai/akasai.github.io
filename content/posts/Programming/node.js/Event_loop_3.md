@@ -3,7 +3,7 @@ category: "프로그래밍"
 sub_category: "Node.js"
 series_name: "Node.js 파헤치기"
 series_num: 3
-title: "Node.js 동작 원리"
+title: "비동기와 논블로킹"
 url: "nodejs-3"
 description: "Node.js Non-Blocking, AIO에 대해 알아봅니다."
 tags: ["Node.js", "Javascript", "V8", "Non-Blocking", "Async I/O", "libuv"]

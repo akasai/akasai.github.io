@@ -3,7 +3,7 @@ category: "프로그래밍"
 sub_category: "Node.js"
 series_name: "Node.js 파헤치기"
 series_num: 4
-title: "Node.js 동작 원리"
+title: "Node.js의 스레드"
 url: "nodejs-4"
 description: "Node.js 싱글스레드에 대하여 알아봅니다."
 tags: ["Node.js", "Javascript", "V8", "Single Thread", "싱글스레드"]

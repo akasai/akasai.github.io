@@ -4,7 +4,7 @@ sub_category: "Solution"
 series_name: ""
 series_num: 0
 title: "[Leetcode] Majority Element" 
-url: "lc-string-compression"
+url: "lc-majority-element"
 description: "Leetcode / Problem Solving / Algorithm"
 tags: ["Algorithm", "Leetcode", "Typescript"]
 date: 2020-10-20
