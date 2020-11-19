@@ -1,7 +1,8 @@
 ---
 category: "인프라/Docker"
 title: "도커 용어 정리"
-series: 0
+series_name: ""
+series_num: 0
 url: "intro-docker"
 description: "도커(Docker) 용어를 정리해 봅니다."
 tags: ["도커", "Docker", "면접", "면접질문"]
