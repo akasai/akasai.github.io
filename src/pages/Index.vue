@@ -2,7 +2,9 @@
   <Layout>
     <Profile :metaData="$page.metadata"/>
     <Adsense ins-class="main-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="3964851503"
-             data-full-width-responsive="yes" />
+             data-full-width-responsive="yes" style="width: 100%; min-width: 250px;"
+             ins-style="display:inline-block;width:728px;height:90px">
+    </Adsense>
     <section class="posts">
       <PostItem :key="post.node.id" v-for="post in loadedPosts" :post="post.node"/>
     </section>
@@ -15,7 +17,7 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from 'vue-property-decorator'
+  import { Component, Vue } from 'vue-property-decorator'
   import PostItem from '~/components/PostItem.vue'
   import Profile from '~/layouts/Profile.vue'
 
@@ -28,22 +30,22 @@
     name: 'Index',
     components: {
       Profile,
-      PostItem
+      PostItem,
     },
     metaInfo() {
       return {
         title: 'Home',
         meta: [
           { property: 'og:title', content: 'devlog.akasai' },
-        ]
+        ],
       }
-    }
+    },
   })
   export default class Index extends V {
     private loadedPosts: any[]
     private currentPage: number
 
-    constructor () {
+    constructor() {
       super()
       this.loadedPosts = []
       this.currentPage = 1
@@ -71,48 +73,48 @@
 </script>
 
 <page-query>
-query ($page: Int) {
+  query ($page: Int) {
   metadata {
-    siteName
-    siteDescription
-    nickname
-    name
-    mail
-    description
-    location
-    skills
-    link {
-      github
-      hackerrank
-      leetcode
-      instagram
-    }
+  siteName
+  siteDescription
+  nickname
+  name
+  mail
+  description
+  location
+  skills
+  link {
+  github
+  hackerrank
+  leetcode
+  instagram
+  }
   }
   allPost(perPage: 10, page: $page) @paginate {
-    totalCount
-    pageInfo {
-      totalPages
-      currentPage
-    }
-    edges {
-      node {
-        id
-        path
-        category
-        sub_category
-        title
-        series_name
-        series_num
-        description
-        date (format: "MMM DD dd, YYYY" locale: "ko-KR")
-        timeToRead
-        tags {
-          title
-        }
-      }
-    }
+  totalCount
+  pageInfo {
+  totalPages
+  currentPage
   }
-}
+  edges {
+  node {
+  id
+  path
+  category
+  sub_category
+  title
+  series_name
+  series_num
+  description
+  date (format: "MMM DD dd, YYYY" locale: "ko-KR")
+  timeToRead
+  tags {
+  title
+  }
+  }
+  }
+  }
+  }
 </page-query>
 
 <style lang="scss">

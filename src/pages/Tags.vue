@@ -3,8 +3,8 @@
     <section class="tags">
       <h1 id="title">Tags</h1>
       <!-- ads 상단 -->
-      <Adsense ins-class="top-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="1631172523"
-               data-full-width-responsive="yes"/>
+<!--      <Adsense ins-class="top-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="1631172523"-->
+<!--               data-full-width-responsive="yes"/>-->
       <section class="tags__content">
         <ul>
           <li v-for="{node} in $static.tags.edges">
