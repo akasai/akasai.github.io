@@ -220,7 +220,7 @@
       }
 
       .top-ads, .bottom-ads {
-        height: 200px;
+        /*height: 200px;*/
         width: 100%;
       }
 
@@ -238,7 +238,7 @@
     }
 
     .left-ads {
-      width: 200px;
+      /*width: 200px;*/
       margin: auto;
     }
   }

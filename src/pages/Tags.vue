@@ -59,7 +59,7 @@ query {
 
 <style lang="scss">
   .top-ads {
-    height: 200px;
+    /*height: 200px;*/
   }
 
   .tags {
