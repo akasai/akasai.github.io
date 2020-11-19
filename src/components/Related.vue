@@ -6,9 +6,9 @@
         <li v-for="{node} in randomList">
           <g-link :to="node.path" :title="node.title">
             <section class="related__wrapper__content">
-              <h6>{{node.date}}</h6>
-              <h3>{{node.title}}</h3>
-              <p>{{getDescription(node.description)}}</p>
+              <h6 id="date">{{node.date}}</h6>
+              <h3 id="title">{{node.title}}</h3>
+              <p id="des">{{getDescription(node.description)}}</p>
             </section>
           </g-link>
         </li>
@@ -44,15 +44,9 @@
 </script>
 
 <style lang="scss">
-  ul {
-    list-style: none;
-    display: inline-flex;
-    padding: 0;
-    margin: 0;
-  }
-
   .related {
     &__title {
+      font-size: 1.5rem;
       margin: 15px 0;
     }
 
@@ -61,12 +55,8 @@
       padding: 0 0 25px 0;
       border-bottom: 1px solid var(--main-border-color);
 
-      h3 {
-        margin: 0 0 10px 0;
-      }
-
       ul {
-        max-width: 800px;
+        max-width: var(--width-size);
         overflow-x: auto;
 
         li {
@@ -76,38 +66,41 @@
       }
 
       &__content {
-        height: 130px;
-        padding: 8px 15px;
+        height: 120px;
+        padding: 10px 15px;
         border-radius: 3px;
         border: 1px solid var(--main-border-color);
-        box-shadow: 0 0 4px var(--profile-bg-color);
 
-        h6 {
-          color: var(--post-list-text-color);
+        h6#date {
+          color: var(--posting-info-font-color);
+          font-size: 1.2rem;
           margin: 0;
         }
 
-        h3 {
-          color: var(--title-color);
+        h3#title {
+          color: var(--title-font-color);
+          font-size: 1.7rem;
+          margin: 0 0 10px 0;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
         }
 
-        p {
+        p#des {
           max-height: 50px;
-          font-size: 0.85rem;
+          font-family: bae;
+          font-size: 1.75rem;
           color: var(--app-font-color);
         }
 
         &:hover {
-          background: var(--related-content-color);
+          background: var(--related-content-hover-bg-color);
         }
       }
     }
   }
 
-  @media all and (max-width: 400px) {
+  @media all and (max-width: 500px) {
     .related__wrapper {
       overflow-x: scroll;
     }

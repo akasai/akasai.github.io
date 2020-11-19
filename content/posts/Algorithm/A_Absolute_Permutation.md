@@ -1,6 +1,8 @@
 ---
 category: "알고리즘"
-series: 0
+sub_category: "Solution"
+series_name: ""
+series_num: 0
 title: "[HackerRank] Absolute Permutation"
 url: "hr-absolute-permutation"
 description: "HackerRank / Problem Solving / Implementation"

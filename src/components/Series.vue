@@ -1,12 +1,12 @@
 <template>
   <section class="series">
-    <h3 class="series__title">Series</h3>
+    <h3 id="title">Series</h3>
     <article class="series__wrapper">
       <ul>
-        <li v-for="{node} in List">
+        <li v-for="{node} in this.series.edges">
           <g-link :to="node.path" :title="node.title">
             <section class="series__wrapper__content">
-              <span class="num">🗂 #{{node.series}}</span>
+              <span class="num">#{{node.series_num}}</span>
               <span class="title">{{node.title}}</span>
               <span class="date">{{node.date}}</span>
             </section>
@@ -25,51 +25,42 @@
   })
   export default class Series extends Vue {
     @Prop() series!: any
-    @Prop() cur_series!: any
+    @Prop() cur_series_num!: any
     @Prop() title!: string
 
     constructor() {
       super()
-    }
-
-    get List() {
-      return (this.series.edges || []).filter((edge: any) => edge.node.series !== this.cur_series)
-    }
-
-    getDescription(str: string): string {
-      const limit = 40
-      return str.length >= limit ? `${str.slice(0, limit)} ...` : str
     }
   }
 </script>
 
 <style lang="scss">
   .series {
-    &__title {
-      margin: 15px 0;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--main-border-color);
+
+    h3#title {
+      &:before {
+        content: '🗂';
+        margin-right: 10px;
+      }
+
+      font-size: 1.5rem;
+      margin-bottom: 10px;
     }
 
     &__wrapper {
-      margin: 0;
-      padding: 0 0 25px 0;
-      border-bottom: 1px solid var(--main-border-color);
+      font-size: 1.5rem;
 
       ul {
-        list-style: none;
         display: inline-block;
-        padding: 0;
-        margin: 0;
 
         li {
           margin-bottom: 3px;
 
-          &:hover {
-            background: var(--related-content-color);
+          &:last-child {
+            margin-bottom: 0;
           }
-        }
-
-        li:last-child {
-          margin-bottom: 0;
         }
       }
 
@@ -77,20 +68,22 @@
         display: flex;
 
         .num {
+          font-size: 1.2rem;
           color: var(--app-font-color);
-          margin-right: 10px;
+          margin: 3px 10px 0 0;
           flex: 1;
         }
 
         .title {
-          color: var(--title-color);
+          font-size: 1.6rem;
+          color: var(--title-font-color);
           margin: 0 10px 0 0;
         }
 
         .date {
-          color: var(--post-list-text-color);
-          font-size: 0.8rem;
-          margin-top: 2px;
+          font-size: 1.1rem;
+          color: var(--posting-info-font-color);
+          margin: 5px 0 0 0;
           flex: 1;
         }
       }

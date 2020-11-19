@@ -1,7 +1,9 @@
 ---
-category: "개발/기타"
+category: "기타"
+sub_category: "Git"
 title: "Local 저장소와 Github 연결하기"
-series: 0
+series_name: ""
+series_num: 0
 url: "Connect-to-github"
 description: "Git 명령어를 정리해봅니다."
 tags: ["Github", "Git"]

@@ -1,6 +1,8 @@
 ---
-category: "개발/기타"
-series: 0 
+category: "기타"
+sub_category: "Solution"
+series_name: ""
+series_num: 0
 title: "개발자 로드맵"
 url: "developer-roadmap"
 description: "2020 개발자 로드맵 정리"

@@ -26,6 +26,8 @@
 
 <style lang="scss" scoped>
   .warning {
+    text-align: center;
+    font-size: 3rem;
     padding-top: 8rem;
     min-height: 500px;
   }

@@ -9,7 +9,6 @@
 
 <script lang="ts">
   import { Component, Prop, Vue } from 'vue-property-decorator'
-
   import ThemeToggle from '../components/ThemeToggle.vue'
 
   @Component({
@@ -29,29 +28,39 @@
 </script>
 
 <style lang="scss">
-  .header {
+  header {
+    background-color: var(--app-header-color);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 4rem;
     position: fixed;
+    height: 6.5rem;
     padding: 0 5%;
     top: 0;
     left: 0;
     right: 0;
-    transition: top 0.2s ease-in-out;
-    z-index: 50;
     border-bottom: 1px solid rgba(0, 0, 0, 0.07);
     box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.05);
-    background-color: var(--app-header-color);
+    z-index: 50;
+    transition: top 0.2s ease-in-out;
 
-    a {
-      color: inherit;
-      border-bottom: none;
+    h1 {
+      font-size: 2.2rem;
+      font-family: Gugi;
+      color: var(--app-font-color);
+      font-weight: bold;
     }
   }
 
   .hidden {
     display: none;
+  }
+
+  @media only screen and (max-width: 500px) {
+    .header {
+      h1 {
+        font-size: 2rem;
+      }
+    }
   }
 </style>

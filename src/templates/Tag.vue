@@ -1,17 +1,20 @@
 <template>
   <Layout>
     <section class="tags">
-    <h1> # {{ $page.tag.title }} </h1>
-    <section class="posts">
-      <article v-if="!$page.tag.belongsTo.edges.length" class="no-result">⚠️ No Contents</article>
-      <PostItem v-else v-for="edge in $page.tag.belongsTo.edges" :key="edge.node.id" :post="edge.node"/>
-    </section>
+      <h1 id="title"> # {{ $page.tag.title }} </h1>
+      <!-- ads 상단 -->
+      <Adsense ins-class="top-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="1631172523"
+               data-full-width-responsive="yes"/>
+      <section class="posts">
+        <article v-if="!$page.tag.belongsTo.edges.length" class="no-result">⚠️ No Contents</article>
+        <PostItem v-else v-for="edge in $page.tag.belongsTo.edges" :key="edge.node.id" :post="edge.node"/>
+      </section>
     </section>
   </Layout>
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from 'vue-property-decorator'
+  import { Component, Vue } from 'vue-property-decorator'
   import PostItem from '~/components/PostItem.vue'
 
   class V extends Vue {
@@ -21,7 +24,7 @@
   @Component<V>({
     name: 'Tag',
     components: {
-      PostItem
+      PostItem,
     },
     metaInfo() {
       return {
@@ -29,12 +32,12 @@
         meta: [
           { property: 'og:title', content: `#${this.$page.tag.title} | devlog.akasai` },
           { name: 'keywords', content: this.$page.tag.title },
-        ]
+        ],
       }
     },
   })
   export default class Tag extends V {
-    constructor () {
+    constructor() {
       super()
     }
   }
@@ -42,35 +45,43 @@
 
 <page-query>
   query Tag ($id: ID!) {
-    tag (id: $id) {
-      title
-      belongsTo {
-        edges {
-          node {
-            ...on Post {
-              id
-              title
-              category
-              timeToRead
-              description
-              tags {
-                title
-              }
-              date (format: "MMM DD dd, YYYY" locale: "ko-KR")
-              path
-            }
-          }
-        }
-      }
-    }
+  tag (id: $id) {
+  title
+  belongsTo {
+  edges {
+  node {
+  ...on Post {
+  id
+  title
+  category
+  timeToRead
+  description
+  tags {
+  title
+  }
+  date (format: "MMM DD dd, YYYY" locale: "ko-KR")
+  path
+  }
+  }
+  }
+  }
+  }
   }
 </page-query>
 
 <style lang="scss">
-  .tags {
-    padding-top: 8rem;
+  .top-ads {
+    height: 200px;
+  }
 
-    h1 {
+  .tags {
+    width: 100%;
+    max-width: var(--width-size);
+    margin: 8.5rem auto 0 auto;
+
+    h1#title {
+      font-size: 2.5rem;
+      margin: 20px 0;
       text-align: center;
     }
 

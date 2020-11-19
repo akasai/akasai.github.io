@@ -45,7 +45,7 @@
 
     constructor() {
       super()
-      this.mode = 'light'
+      this.mode = 'dark'
     }
 
     created(): void {
@@ -53,14 +53,14 @@
       const mode = localStorage.getItem('theme') || 'dark'
       if (mode) {
         this.mode = mode
-        htmlElement.setAttribute('theme', mode)
+        htmlElement.setAttribute('theme', this.mode)
       }
     }
 
     toggle(mode: string): void {
       this.mode = mode
       const htmlElement = document.documentElement
-      htmlElement.setAttribute('theme', mode)
+      htmlElement.setAttribute('theme', this.mode)
 
       const message = { type: 'set-theme', theme: this.mode === 'dark' ? 'dark-blue' : 'github-light' }
       const utterances = document.querySelector('iframe')?.contentWindow
@@ -82,9 +82,10 @@
 
     svg {
       width: 20px;
+      height: 20px;
 
       &:hover {
-        color: rgb(32, 201, 151);
+        color: var(--title-font-color);
         cursor: pointer;
         transition: .4s ease all;
       }

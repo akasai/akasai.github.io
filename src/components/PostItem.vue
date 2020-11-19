@@ -2,60 +2,60 @@
   <g-link :to="post.path">
     <article class="post-preview">
     <span class="post-preview__title">
-      <h1>{{post.title}}{{getSeries(post.series)}}</h1>
-      <h3>{{post.category}}</h3>
+      <h3 id="category">{{Category}}</h3>
+      <h1 id="title">{{post.title}}</h1>
+      <h4 id="series" v-if="post.series_name">{{SeriesTitle}}</h4>
     </span>
       <p class="post-preview__content">
         {{post.description}}
       </p>
       <section class="post-preview__info">
       <span class="date">
-        <Clock class="clock_icon"/> {{post.date}}
+        <Clock class="clock_icon"/>{{post.date}}
       </span>
-        <span class="time-to-read"><i>{{post.timeToRead}} min read</i></span>
+        <span class="time-to-read">{{post.timeToRead}} min read</span>
       </section>
-      <section class="post-preview__tag" v-if="post.tags.length">
-        <ul>
-          <li v-for="tag in post.tags">{{tag.title}}</li>
-        </ul>
-      </section>
+      <Tag :tagList="post.tags.map((t) => t.title)" :size="tagSize"/>
     </article>
   </g-link>
 </template>
 
 <script lang="ts">
-  import Clock from '../assets/svg/clock.svg'
   import { Component, Prop, Vue } from 'vue-property-decorator'
+  import Clock from '../assets/svg/clock.svg'
+  import Tag from './Tag.vue'
 
   @Component({
     name: 'PostItem',
     components: {
+      Tag,
       Clock,
     },
   })
   export default class PostItem extends Vue {
     @Prop() post!: any
 
+    private tagSize: string
+
     constructor() {
       super()
+      this.tagSize = 'medium'
     }
 
-    getSeries(s: string): string {
-      return s ? ` #${s}` : ``
+    get Category(): string {
+      const sub = this.post.sub_category
+      return `${this.post.category}${sub ? ` / ${sub}` : ''}`
+    }
+
+    get SeriesTitle(): string {
+      return `${this.post?.series_name} #${this.post?.series_num}`
     }
   }
 </script>
 
-<style lang="scss">
-  ul {
-    list-style: none;
-    display: inline-flex;
-    padding: 0;
-    margin: 0;
-  }
-
+<style lang="scss" scoped>
   .post-preview {
-    padding: 1rem;
+    padding: 1.8rem 1rem;
     border-bottom: 1px solid var(--main-border-color);
 
     &:hover {
@@ -65,73 +65,66 @@
     }
 
     &__title {
-      display: flex;
+      margin: 5px 0;
+      font-family: gugi;
 
-      h1 {
-        font-size: 1.55rem;
-        margin-right: 15px;
-        color: var(--title-color);
+      h3#category {
+        font-size: 1.5rem;
+        margin: 0 0 7px 7px;
+        display: block;
+        color: var(--category-font-color);
       }
 
-      h3 {
-        margin: 5px 0 0 0;
-        color: var(--category-color);
+      h1#title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        display: inline-block;
+        color: var(--title-font-color);
+      }
+
+      h4#series {
+        &:before {
+          content: '-';
+          margin: 0 5px;
+        }
+
+        font-size: 1.3rem;
+        display: inline-block;
+        margin: 5px 0;
+        color: var(--series-font-color);
       }
     }
 
     &__content {
-      margin: 5px 0 10px 0;
+      font-family: bae;
+      font-size: 2.2rem;
       color: var(--app-font-color);
+      margin: 5px 0 10px 0;
     }
 
     &__info {
-      .date, .time-to-read {
-        color: var(--post-list-text-color);
-      }
+      font-family: gugi;
+      font-size: 1rem;
+      color: var(--posting-info-font-color);
+      display: inline-block;
+      margin-bottom: 3px;
 
       .date {
-        font-size: .8rem;
-        margin-right: 10px;
         min-width: 60px;
-        display: inline-block;
 
         .clock_icon {
           vertical-align: text-bottom;
-          width: 0.9rem;
-          margin-right: 4px;
+          margin-right: 3px;
+          width: 1rem;
         }
       }
 
       .time-to-read {
-        margin-left: 10px;
-        font-size: .8em;
+        &:before {
+          content: '·';
+          margin: 0 5px;
+        }
       }
-    }
-
-    &__tag {
-      margin-top: 5px;
-      color: inherit;
-
-      ul {
-        display: flex;
-        flex-wrap: wrap;
-      }
-
-      ul > li {
-        color: var(--app-font-color);
-        font-size: 0.9rem;
-        margin-right: 4px;
-        margin-bottom: 4px;
-        padding: 3px 5px;
-        border-radius: 3px;
-        background: var(--tag-bg-color);
-      }
-    }
-  }
-
-  @media all and (max-width: 400px) {
-    .post-preview__title {
-      display: inline-block;
     }
   }
 </style>

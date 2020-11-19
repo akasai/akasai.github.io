@@ -1,6 +1,8 @@
 ---
-category: "개발/DB"
-series: 0
+category: "DB"
+sub_category: "기초"
+series_name: ""
+series_num: 0
 title: "DB의 Lock/DeadLock"
 url: "db-lock"
 description: "Lock과 DeadLock에 대해 알아봅니다."

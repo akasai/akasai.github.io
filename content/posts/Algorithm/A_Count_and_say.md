@@ -1,6 +1,8 @@
 ---
 category: "알고리즘"
-series: 0
+sub_category: "Solution"
+series_name: ""
+series_num: 0
 title: "[Leetcode] Count And Say"
 url: "lc-count-and-say"
 description: "Leetcode / Problem Solving / Algorithm"

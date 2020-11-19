@@ -1,7 +1,10 @@
 <template>
   <Layout>
     <section class="tags">
-      <h1>Tags</h1>
+      <h1 id="title">Tags</h1>
+      <!-- ads 상단 -->
+      <Adsense ins-class="top-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="1631172523"
+               data-full-width-responsive="yes"/>
       <section class="tags__content">
         <ul>
           <li v-for="{node} in $static.tags.edges">
@@ -54,32 +57,33 @@ query {
 }
 </static-query>
 
-<style lang="scss" scoped>
-  ul {
-    list-style: none;
-    display: inline-block;
-    padding: 0;
-    margin: 0;
+<style lang="scss">
+  .top-ads {
+    height: 200px;
   }
 
   .tags {
-    padding-top: 8rem;
+    width: 100%;
+    max-width: var(--width-size);
+    margin: 8.5rem auto 0 auto;
 
-    h1 {
-      margin: 10px 0;
+    h1#title {
+      font-size: 2.5rem;
+      margin: 20px 0;
     }
 
     &__content {
       min-height: 500px;
 
       ul {
+        display: inline-block;
         width: 100%;
 
         li {
+          font-size: 1.5rem;
           width: auto;
           max-width: none;
           display: inline-block;
-          font-size: 1rem;
           margin-right: 6px;
           margin-bottom: 5px;
           padding: 5px 9px;
