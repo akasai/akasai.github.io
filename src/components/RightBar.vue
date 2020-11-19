@@ -80,7 +80,7 @@
 
 <style lang="scss">
   .bar {
-    margin-top: 1.2rem;
+    margin-top: 11rem;
     /*  position: fixed;*/
 
     h4.title {
