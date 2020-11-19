@@ -111,7 +111,7 @@
 </script>
 
 <page-query>
-  query Post ($path: String!, $category: String!, $series_name: String!, $series_num: Int) {
+  query Post ($path: String!, $category: String!, $series_name: String, $series_num: Int) {
   post: post (path: $path) {
   id
   category
