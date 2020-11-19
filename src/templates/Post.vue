@@ -1,63 +1,60 @@
 <template>
   <Layout>
-    <RightBar :headings="$page.post.headings"/>
-    <section class="post">
-      <section class="post__title">
-        <h3>{{$page.post.category}}</h3>
-        <h1>{{$page.post.title}}{{getSeries($page.post.series)}}</h1>
-        <span class="post__title-info">
-          <ul>
-            <li>
-              <User class="icon"/> akasai
-            </li>
-            <li>
-              <Clock
-                class="icon"/>{{$page.post.date}}  {{edited($page.post)}} · <i>{{$page.post.timeToRead}} min read</i>
-            </li>
-          </ul>
-        </span>
-        <section class="post__title-tag" v-if="$page.post.tags.length">
-          <Tags class="icon"/>
-          <ul>
-            <li v-for="tag in $page.post.tags">
-              <g-link :to="tag.path">
-                {{tag.title}}
-              </g-link>
-            </li>
-          </ul>
+    <article class="post__wrapper">
+      <aside class="left">
+        <!-- ads 좌측 -->
+        <Adsense ins-class="left-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="5250685461"
+                 data-full-width-responsive="yes"/>
+      </aside>
+      <section class="post">
+        <section class="post__title">
+          <h3 id="category">{{getCategory($page.post.category, $page.post.sub_category)}}</h3>
+          <h1 id="title">{{$page.post.title}}</h1>
+          <h4 id="series" v-if="$page.post.series_name">{{getSeriesTitle($page.post.series_name,
+            $page.post.series_num)}}</h4>
+          <span class="post__title-info">
+            <ul>
+              <li>
+                <User class="icon"/> akasai
+              </li>
+              <li>
+                 <Clock class="icon"/>{{$page.post.date}}
+                  {{edited($page.post)}} · {{$page.post.timeToRead}} min read
+              </li>
+            </ul>
+          </span>
+          <Tag :tagList="$page.post.tags" :useIcon="true"/>
         </section>
+        <Series v-if="$page.series.edges.length > 1" :series="$page.series" :cur_series_num="$page.post.series"/>
+        <!-- ads 상단 -->
+        <Adsense ins-class="top-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="1631172523"
+                 data-full-width-responsive="yes"/>
+        <section class="post__content">
+          <article v-html="$page.post.content"></article>
+        </section>
+        <!-- ads 하단 -->
+        <Adsense ins-class="bottom-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="6759499833"
+                 data-full-width-responsive="yes"/>
+        <Related v-if="$page.related.edges.length" :related="$page.related" :category="$page.post.category"/>
+        <Comment/>
       </section>
-      <Series v-if="$page.series.edges.length > 1" :series="$page.series" :cur_series="$page.post.series"/>
-      <Adsense
-        ins-class="top-ads"
-        data-ad-client="ca-pub-7791595479585064"
-        data-ad-slot="1631172523"
-        data-full-width-responsive="yes">
-      </Adsense>
-      <section class="post__content">
-        <article v-html="$page.post.content"></article>
-      </section>
-      <Adsense
-        ins-class="bottom-ads"
-        data-ad-client="ca-pub-7791595479585064"
-        data-ad-slot="6759499833"
-        data-full-width-responsive="yes">
-      </Adsense>
-    </section>
-    <Related v-if="$page.related.edges.length" :related="$page.related" :category="$page.post.category"/>
-    <Comment/>
+      <aside class="right">
+        <RightBar :headings="$page.post.headings"/>
+      </aside>
+    </article>
   </Layout>
 </template>
 
 <script lang="ts">
-  import User from '../assets/svg/user.svg'
+  import { Component, Vue } from 'vue-property-decorator'
+  import Comment from '~/components/Comment.vue'
+  import Related from '~/components/Related.vue'
+  import RightBar from '~/components/RightBar.vue'
+  import Series from '~/components/Series.vue'
+  import Tag from '~/components/Tag.vue'
   import Clock from '../assets/svg/clock.svg'
   import Tags from '../assets/svg/tags.svg'
-  import { Component, Vue } from 'vue-property-decorator'
-  import RightBar from '~/components/RightBar.vue'
-  import Related from '~/components/Related.vue'
-  import Series from '~/components/Series.vue'
-  import Comment from '~/components/Comment.vue'
+  import User from '../assets/svg/user.svg'
 
   class V extends Vue {
     $page: any
@@ -73,12 +70,13 @@
       User,
       Clock,
       Tags,
+      Tag,
     },
     metaInfo() {
       const tags = this.$page.post.tags.map((tag: any) => tag.title).join(',')
-      let text = this.$page.post.content || ''
-      text = text.replace(new RegExp('<(/)?([a-zA-Z0-9]*)(\\s[a-zA-Z]*=[^>]*)?(\\s)*(/)?>', 'ig'), '')
-      text = text.replace(new RegExp('\\s+|\n', 'ig'), ' ')
+      const text = (this.$page.post.content || '')
+        .replace(new RegExp('<(/)?([a-zA-Z0-9]*)(\\s[a-zA-Z]*=[^>]*)?(\\s)*(/)?>', 'ig'), '')
+        .replace(new RegExp('\\s+|\n', 'ig'), ' ')
 
       return {
         title: this.$page.post.title,
@@ -96,8 +94,12 @@
       super()
     }
 
-    getSeries(s: string): string {
-      return s ? ` #${s}` : ``
+    getCategory(main: string, sub: string): string {
+      return `${main}${sub ? ` / ${sub}` : ''}`
+    }
+
+    getSeriesTitle(name: string, num: number): string {
+      return name ? `${name} #${num}` : ''
     }
 
     edited(post: { date: string, update_date: string }): string {
@@ -109,12 +111,14 @@
 </script>
 
 <page-query>
-  query Post ($path: String!, $category: String!, $title: String!) {
+  query Post ($path: String!, $category: String!, $series_name: String!, $series_num: Int) {
   post: post (path: $path) {
   id
-  title
   category
-  series
+  sub_category
+  title
+  series_name
+  series_num
   content
   tags {
   title
@@ -140,13 +144,12 @@
   }
   }
   }
-  series: allPost(filter: {title: {eq: $title}} sortBy: "series" order: ASC) {
+  series: allPost(filter: {series_name: {eq: $series_name} series_num: {ne: $series_num}} sortBy: "series_num" order:
+  ASC) {
   edges {
   node {
   title
-  category
-  series
-  description
+  series_num
   path
   date (format: "YYYY.MM.DD" locale: "ko-KR")
   }
@@ -156,206 +159,92 @@
 </page-query>
 
 <style lang="scss">
-  ul {
-    list-style: none;
-    display: inline-flex;
-    padding: 0;
-    margin: 0;
-  }
+  @import '../assets/scss/markup';
 
-  .post {
-    margin-top: 4rem;
-    padding-top: 1rem;
+  .post__wrapper {
+    font-family: Gugi;
+    display: flex;
 
-    .top-ads {
-      height: 100px;
-    }
+    .post {
+      width: 100%;
+      max-width: var(--width-size);
+      margin: 8.5rem auto 0 auto;
 
-    .bottom-ads {
-      height: 100px;
-    }
+      &__title {
+        padding: 20px 0;
+        border-bottom: 1px solid var(--main-border-color);
 
-    &__title {
-      margin-top: 20px;
-      border-bottom: 1px solid var(--main-border-color);
-      padding-bottom: 20px;
+        h3#category {
+          margin: 0 0 7px 7px;
+          font-size: 2.5rem;
+          color: var(--category-font-color);
+        }
 
-      h3 {
-        margin: 0 0 5px 0;
-        font-size: 1.5rem;
-        color: var(--category-color);
-      }
+        h1#title {
+          font-size: 4rem;
+          color: var(--title-font-color);
+          display: inline-block;
+        }
 
-      h1 {
-        font-size: 2.5rem;
-      }
+        h4#series {
+          &:before {
+            content: '-';
+            margin: 0 7px;
+          }
 
-      &-info {
-        font-size: 0.8rem;
+          font-size: 2rem;
+          display: inline-block;
+          margin: 5px 0;
+          color: var(--series-font-color);
+        }
 
-        ul {
-          margin-top: 10px;
-          color: var(--post-list-text-color);
+        &-info {
+          font-size: 1.3rem;
+          color: var(--posting-info-font-color);
+          display: block;
 
-          li {
-            margin-right: 20px;
+          ul {
+            margin-top: 10px;
 
-            .icon {
-              width: 15px;
-              vertical-align: text-bottom;
-              margin-right: 5px;
+            li {
+              margin-right: 20px;
+
+              .icon {
+                width: 1.3rem;
+                vertical-align: text-bottom;
+                margin-right: 5px;
+              }
             }
           }
         }
       }
 
-      &-tag {
-        font-size: 0.7rem;
-        margin-top: 10px;
-        position: relative;
+      .top-ads, .bottom-ads {
+        height: 200px;
+      }
 
-        svg {
-          width: 15px;
-          vertical-align: text-bottom;
-          position: absolute;
-          top: 8px;
-        }
-
-        ul {
-          width: 90%;
-          margin-left: 8px;
-          display: flex;
-          flex-wrap: wrap;
-          padding-left: 20px;
-        }
-
-        ul > li {
-          color: var(--app-font-color);
-          font-size: 0.9rem;
-          margin-right: 4px;
-          margin-bottom: 4px;
-          padding: 3px 8px;
-          border-radius: 3px;
-          background: var(--tag-bg-color);
-
-          * {
-            color: var(--app-font-color);
-          }
-        }
+      &__content {
+        font-family: bae;
+        font-size: 2rem;
+        border-bottom: 1px solid var(--main-border-color);
       }
     }
 
-    &__content {
-      margin-top: 30px;
-      border-bottom: 1px solid var(--main-border-color);
+    .right, .left {
+      padding: 0 10px;
+      margin: 8.5rem 10px 0 10px;
+      flex: 1;
+    }
 
-      .article-date {
-        color: var(--app-font-color);
-        margin-top: 0;
-        font-size: .8em;
-      }
-
-      blockquote {
-        padding: 0 20px;
-        margin: 0 0 20px;
-        font-size: 1rem;
-        border-left: 5px solid #eee;
-      }
-
-      h2 {
-        color: #3871bf;
-      }
-
-      table {
-        width: 100%;
-        max-width: 100%;
-        margin-bottom: 20px;
-      }
-
-      th {
-        vertical-align: bottom;
-        border-bottom: 2px solid #ddd;
-      }
-
-      td {
-        border-top: 1px solid #ddd;
-        padding: 8px;
-        line-height: 1.42857143;
-        vertical-align: top;
-      }
-
-      tr:nth-child(odd) td {
-        background-color: #f9f9f9;
-      }
-
-      img {
-        width: 80%;
-        display: block;
-        margin: 10px auto;
-      }
-
-      code[class*="language-text"] {
-        padding: 3px 8px;
-        white-space: pre-line;
-        word-break: break-all;
-      }
-
-      code[class*="language-"], pre[class*="language-"] {
-        color: var(--code-text-color);
-        background: var(--code-color);
-        text-shadow: 0 1px var(--code-shadow-color);
-        font-size: 0.8rem;
-
-        .operator {
-          background: none;
-        }
-      }
-
-      .em {
-        font-weight: bold;
-
-        &.red {
-          color: red;
-        }
-
-        &.blue {
-          color: blue;
-        }
-      }
-
-      .callout {
-        background: var(--code-color);
-        display: block;
-        padding: 10px;
-        border-radius: 5px;
-
-        &:before {
-          content: '💡';
-          margin-right: 10px;
-        }
-      }
-
-      .reference {
-        display: inline-block;
-        margin: 0;
-        padding: 0;
-
-        * {
-          color: var(--reference-link-color);
-        }
-
-        a:before {
-          content: '🔗';
-          margin-right: 10px;
-        }
-      }
+    .left-ads {
+      width: 200px;
+      margin: auto;
     }
   }
 
-  @media all and (max-width: 400px) {
-    code[class*="language-"], pre[class*="language-"] {
-      white-space: pre !important;
-      font-size: 0.8rem;
+  @media all and (max-width: 1200px) {
+    .right, .left {
+      display: none;
     }
   }
 </style>

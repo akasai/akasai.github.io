@@ -1,6 +1,8 @@
 <template>
   <Layout>
     <Profile :metaData="$page.metadata"/>
+    <Adsense ins-class="main-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="3964851503"
+             data-full-width-responsive="yes" />
     <section class="posts">
       <PostItem :key="post.node.id" v-for="post in loadedPosts" :post="post.node"/>
     </section>
@@ -15,7 +17,7 @@
 <script lang="ts">
   import {Component, Vue} from 'vue-property-decorator'
   import PostItem from '~/components/PostItem.vue'
-  import Profile from '~/components/Profile.vue'
+  import Profile from '~/layouts/Profile.vue'
 
   class V extends Vue {
     $page: any
@@ -95,31 +97,40 @@ query ($page: Int) {
     edges {
       node {
         id
-        title
+        path
         category
-        series
-        timeToRead
+        sub_category
+        title
+        series_name
+        series_num
         description
+        date (format: "MMM DD dd, YYYY" locale: "ko-KR")
+        timeToRead
         tags {
           title
         }
-        date (format: "MMM DD dd, YYYY" locale: "ko-KR")
-        path
       }
     }
-
   }
 }
 </page-query>
 
 <style lang="scss">
+  .main-ads {
+    height: 200px;
+  }
+
   .posts {
-    padding-top: 1rem;
+    width: 100%;
+    max-width: var(--width-size);
+    margin: 0 auto 0 auto;
+    padding-top: 1.4rem;
   }
 
   .fade-enter-active, .fade-leave-active {
     transition: ease opacity 0.3s;
   }
+
   .fade-enter, .fade-leave-to {
     opacity: 0;
   }

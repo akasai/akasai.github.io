@@ -1,6 +1,8 @@
 ---
 category: "알고리즘"
-series: 0
+sub_category: "Solution"
+series_name: ""
+series_num: 0
 title: "[Programmers] 다리를 지나는 트럭"
 url: "hr-truck"
 description: "Programmers / Problem Solving / Queue"

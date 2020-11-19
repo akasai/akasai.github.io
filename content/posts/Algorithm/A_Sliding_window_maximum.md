@@ -1,6 +1,8 @@
 ---
 category: "알고리즘"
-series: 0
+sub_category: "Solution"
+series_name: ""
+series_num: 0
 title: "[Leetcode] Sliding Window Maximum"
 url: "lc-sliding-window-maximum"
 description: "Leetcode / Problem Solving / Algorithm"

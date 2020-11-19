@@ -2,6 +2,7 @@
   <main class="layout" role="main">
     <Header :siteName="`devlog.akasai`" :show="showNavbar"/>
     <slot/>
+    <div class="top" :class="{'hidden': topHidden()}" @click="toTop()">Top</div>
     <div class="footer">
       <div class="footer-links">
         Built with <a target="_blank" class="link" href="//gridsome.org">Gridsome</a> Edited By
@@ -10,7 +11,6 @@
         <a target="_blank" href="/feed.xml">RSS</a>
       </div>
     </div>
-    <div class="top" :class="{'hidden': topHidden()}" @click="toTop()">Top</div>
   </main>
 </template>
 
@@ -72,7 +72,7 @@
     }
 
     toTop() {
-      window.scrollTo(0,0)
+      window.scrollTo(0, 0)
     }
 
     topHidden() {
@@ -82,43 +82,86 @@
 </script>
 
 <style lang="scss">
+  @font-face {
+    font-family: 'bae';
+    src: url('../assets/font/bae.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  @font-face {
+    font-family: 'Gugi';
+    src: url('../assets/font/Gugi-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
+
   :root {
+    --width-size: 800px;
     --app-background-color: #FFFFFF;
     --app-font-color: black;
-    --app-header-color: rgb(223, 224, 227);
-    --profile-bg-color: rgb(241, 242, 243);
-    --profile-img-border-color: rgb(211, 212, 213);
-    --title-color: rgb(126, 187, 235);
-    --category-color: rgba(46, 102, 163, 0.78);
-    --post-list-text-color: rgb(175, 176, 177);
-    --main-border-color: rgba(145, 146, 146, 0.35);
-    --tag-bg-color: rgba(211, 212, 213, 0.62);
-    --related-content-color: rgba(211, 212, 213, 0.61);
-    --reference-link-color: #87adb4;
-    --code-color: #f5f2f0;
+    --app-header-color: #DFE0E3;
+    --profile-bg-color: #F1F2F3;
+    --profile-img-border-color: #D3D4D5;
+    --tag-bg-color: #D3D4D5;
+    --category-font-color: #AAA;
+    --title-font-color: #7EBBEB;
+    --series-font-color: #2E66A3;
+    --posting-info-font-color: #AFB0B1;
+    --main-border-color: #919292;
+    --code-box-bg-color: #F5F2F0;
     --code-text-color: black;
-    --code-shadow-color: #b4b1af;
+    --content-title-h2: #3871BF;
+    --content-title-h3: #70A4BF;
+    --content-blockquote-bar: #BBB;
+    --reference-link-color: #87ADB4;
+    --related-content-hover-bg-color: rgba(211, 212, 213, 0.61);
   }
 
   [theme="dark"] {
     --app-background-color: #091A28;
     --app-font-color: white;
-    --app-header-color: rgb(39, 40, 43);
-    --profile-bg-color: rgba(19, 48, 75, 0.88);
-    --profile-img-border-color: rgb(32, 62, 106);
-    --title-color: rgb(32, 201, 151);
-    --category-color: rgba(46, 102, 163, 0.78);
-    --post-list-text-color: rgb(175, 176, 177);
-    --main-border-color: rgb(44, 45, 45);
-    --tag-bg-color: rgba(32, 62, 106, 0.53);
-    --related-content-color: #092638;
-    --reference-link-color: #87adb4;
-    --code-color: #2f2c2b;
-    --code-text-color: #b0b0b0;
-    --code-shadow-color: #4b4847;
+    --app-header-color: #394043;
+    --profile-bg-color: #1A2C4A;
+    --profile-img-border-color: #215191;
+    --posting-info-font-color: #AFB0B1;
+    --tag-bg-color: #215191;
+    --category-font-color: #CCC;
+    --title-font-color: #32C997;
+    --series-font-color: #33C9BA;
+    --main-border-color: #2C2D2D;
+    --code-box-bg-color: #2F2C2B;
+    --code-text-color: #B0B0B0;
+    --content-title-h2: #3871BF;
+    --content-title-h3: #70A4BF;
+    --content-blockquote-bar: #EEE;
+    --reference-link-color: #87ADB4;
+    --related-content-hover-bg-color: #092638;
   }
 
-  h1 {
+  html {
+    font-size: 10px;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: none;
+
+    &:hover {
+      border-bottom-color: currentColor;
+      color: #686868;
+    }
+  }
+
+  h1, h2, h3, h4 {
+    margin: 0;
+  }
+
+  ul {
+    list-style: none;
+    display: inline-flex;
+    padding: 0;
     margin: 0;
   }
 
@@ -128,78 +171,56 @@
     font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.5;
-    font-size: 0.9em;
-  }
 
-  .top {
-    display: block;
-    position: sticky;
-    bottom: 10%;
-    z-index: 1000;
-    width: 30px;
-    cursor: pointer;
-    height: 30px;
-    left: 100%;
-    background: lightgray;
-    color: var(--app-font-color);
-    border-radius: 5px;
-    text-align: center;
-    padding: 10px 5px 5px 5px;
-    opacity: 0.3;
-
-    &:hover {
-      opacity: 1;
+    .layout {
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
-    &.hidden {
-      display: none;
+    .top {
+      display: block;
+      position: sticky;
+      bottom: 10%;
+      z-index: 1000;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      left: 90%;
+      background: lightgray;
+      color: black;
+      border-radius: 5px;
+      text-align: center;
+      padding: 10px 5px 5px 5px;
+      opacity: 0.3;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &.hidden {
+        display: none;
+      }
     }
-  }
 
-  .layout {
-    max-width: 760px;
-    margin: 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+    .footer {
+      width: var(--width-size);
+      margin: 3rem auto 3rem auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1.4rem;
 
-  .footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 60px;
-    margin-bottom: 30px;
-    font-size: .8em;
-  }
-
-  .footer a {
-    color: gray;
-  }
-
-  .footer-links a {
-    margin: 0 4px;
-  }
-
-  a {
-    color: rgb(32, 201, 151);
-    text-decoration: none;
-  }
-
-  a:hover {
-    border-bottom-color: currentColor;
-    color: #686868;
+      a {
+        margin: 0 4px;
+        color: gray;
+      }
+    }
   }
 
   @media only screen and (max-width: 500px) {
     .footer {
+      width: 100% !important;
       flex-direction: column;
-    }
-
-    .header {
-      h1 {
-        font-size: 1em;
-      }
     }
   }
 </style>
