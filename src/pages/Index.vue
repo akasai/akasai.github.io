@@ -2,8 +2,7 @@
   <Layout>
     <Profile :metaData="$page.metadata"/>
     <Adsense ins-class="main-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="3964851503"
-             data-full-width-responsive="yes" style="width: 100%; min-width: 250px;"
-             ins-style="display:inline-block;width:728px;height:90px">
+             data-full-width-responsive="yes">
     </Adsense>
     <section class="posts">
       <PostItem :key="post.node.id" v-for="post in loadedPosts" :post="post.node"/>

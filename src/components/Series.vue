@@ -94,14 +94,16 @@
     .series__wrapper {
       overflow-x: scroll;
     }
-    .title {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      max-width: 230px;
-    }
-    .date {
-      display: none;
+    .series__wrapper__content {
+      .title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 230px;
+      }
+      .date {
+        display: none;
+      }
     }
   }
 </style>
