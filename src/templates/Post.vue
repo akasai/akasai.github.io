@@ -221,6 +221,7 @@
 
       .top-ads, .bottom-ads {
         height: 200px;
+        width: 100%;
       }
 
       &__content {
