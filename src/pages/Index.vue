@@ -118,7 +118,7 @@
 
 <style lang="scss">
   .main-ads {
-    /*height: 200px;*/
+    height: 200px;
   }
 
   .posts {
