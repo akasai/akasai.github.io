@@ -53,7 +53,12 @@
   }
 
   .hidden {
-    display: none;
+    height: 0;
+    transition: height 0.2s ease-in-out;
+
+    > * {
+      display: none;
+    }
   }
 
   @media only screen and (max-width: 500px) {

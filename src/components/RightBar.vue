@@ -30,8 +30,8 @@
     </section>
 
     <!-- ads 우측 -->
-<!--    <Adsense ins-class="right-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="5254846473"-->
-<!--             data-full-width-responsive="yes"/>-->
+    <!--    <Adsense ins-class="right-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="5254846473"-->
+    <!--             data-full-width-responsive="yes"/>-->
   </section>
 </template>
 
@@ -80,8 +80,9 @@
 
 <style lang="scss">
   .bar {
-    margin-top: 11rem;
-    /*  position: fixed;*/
+    margin-top: 1.2rem;
+    margin-left: 1.2rem;
+    position: fixed;
 
     h4.title {
       font-size: 1.5rem;
@@ -168,6 +169,7 @@
       }
     }
   }
+
   .right-ads {
     /*background: gray;*/
     /*width: 220px;*/

@@ -228,6 +228,11 @@
         font-family: bae;
         font-size: 2rem;
         border-bottom: 1px solid var(--main-border-color);
+
+        a {
+          color: gold;
+          font-weight: bold;
+        }
       }
     }
 

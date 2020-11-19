@@ -90,7 +90,7 @@ code[class*="language-"], pre[class*="language-"] {
   padding: 0;
 
   * {
-    color: var(--reference-link-color);
+    color: var(--reference-link-color) !important;
   }
 
   a:before {

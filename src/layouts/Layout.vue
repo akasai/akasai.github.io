@@ -114,6 +114,7 @@
     --content-title-h2: #3871BF;
     --content-title-h3: #70A4BF;
     --content-blockquote-bar: #BBB;
+    --content-anchor-color: forestgreen;
     --reference-link-color: #87ADB4;
     --related-content-hover-bg-color: rgba(211, 212, 213, 0.61);
   }
@@ -135,6 +136,7 @@
     --content-title-h2: #3871BF;
     --content-title-h3: #70A4BF;
     --content-blockquote-bar: #EEE;
+    --content-anchor-color: gold;
     --reference-link-color: #87ADB4;
     --related-content-hover-bg-color: #092638;
   }
