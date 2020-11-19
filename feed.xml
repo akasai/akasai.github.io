@@ -4,7 +4,7 @@
         <title>devlog.akasai</title>
         <link>https://akasai.github.io/</link>
         <description>akasai's 기술블로그</description>
-        <lastBuildDate>Thu, 19 Nov 2020 08:00:18 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 19 Nov 2020 08:21:12 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Gridsome Feed Plugin</generator>
         <item>
@@ -465,7 +465,7 @@ IDE나 TsLint등을 이용하면 엄격한 TS의 룰을 충분히 활용할 수 
 ]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[Node.js 동작 원리]]></title>
+            <title><![CDATA[Node.js의 I/O 동작]]></title>
             <link>https://akasai.github.io/nodejs-5/</link>
             <guid>https://akasai.github.io/nodejs-5/</guid>
             <pubDate>Wed, 21 Oct 2020 00:00:00 GMT</pubDate>
@@ -964,8 +964,8 @@ Task 5: 1882
         </item>
         <item>
             <title><![CDATA[[Leetcode] Majority Element]]></title>
-            <link>https://akasai.github.io/lc-string-compression/</link>
-            <guid>https://akasai.github.io/lc-string-compression/</guid>
+            <link>https://akasai.github.io/lc-majority-element/</link>
+            <guid>https://akasai.github.io/lc-majority-element/</guid>
             <pubDate>Tue, 20 Oct 2020 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[![](https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Leetcode/leetcode-logo.png)
 
@@ -1298,7 +1298,7 @@ function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | nul
 ]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[Node.js 동작 원리]]></title>
+            <title><![CDATA[Node.js의 스레드]]></title>
             <link>https://akasai.github.io/nodejs-4/</link>
             <guid>https://akasai.github.io/nodejs-4/</guid>
             <pubDate>Tue, 13 Oct 2020 00:00:00 GMT</pubDate>
@@ -1502,7 +1502,7 @@ function mergeTrees(t1: TreeNode | null, t2: TreeNode | null): TreeNode | null {
 ]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[Node.js 동작 원리]]></title>
+            <title><![CDATA[비동기와 논블로킹]]></title>
             <link>https://akasai.github.io/nodejs-3/</link>
             <guid>https://akasai.github.io/nodejs-3/</guid>
             <pubDate>Mon, 12 Oct 2020 00:00:00 GMT</pubDate>
@@ -1916,7 +1916,68 @@ Framework의 경우엔 한가지를 정하면 왠만해서는 변경하는 일�
 ]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[Node.js 동작 원리]]></title>
+            <title><![CDATA[[Leetcode] String Compression]]></title>
+            <link>https://akasai.github.io/lc-string-compression/</link>
+            <guid>https://akasai.github.io/lc-string-compression/</guid>
+            <pubDate>Thu, 08 Oct 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[![](https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Leetcode/leetcode-logo.png)
+
+<br>
+
+> [String Compression](https://leetcode.com/problems/string-compression)
+
+***
+
+## How To Solve
+
+최소한의 반복으로 풀어보려고 했다.
+
+깔끔한 것 같진 않지만...
+
+input Array를 변조해야한다는 점이 좀 애매했다.
+
+<br>
+
+## Solution
+
+```typescript
+function compress(chars: string[]): number {
+  let str = chars[0]
+  let cnt = 1
+
+  for (let i = 1; i < chars.length; i++) {
+    if (chars[i] === str[str.length - 1]) {
+      cnt++
+    } else {
+      if (cnt > 1) str += cnt.toString()
+      str += chars[i]
+      cnt = 1
+    }
+  }
+
+  if (cnt > 1) str += cnt.toString()
+  chars.length = 0
+  chars.push(...str.split(''))
+  return chars.length
+}
+
+```
+
+***
+
+<br>
+
+## Reference
+
+<span class="reference">
+
+[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Leetcode/Solution/18.String_Compression.ts)
+
+</span>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Node.js의 이벤트 루프와 비동기]]></title>
             <link>https://akasai.github.io/nodejs-2/</link>
             <guid>https://akasai.github.io/nodejs-2/</guid>
             <pubDate>Thu, 08 Oct 2020 00:00:00 GMT</pubDate>
@@ -2200,7 +2261,7 @@ setTimeout함수의 경우 `delay` 파라미터를 통해 딜레이를 조절할
 ]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[Node.js 동작 원리]]></title>
+            <title><![CDATA[Node.js의 구조]]></title>
             <link>https://akasai.github.io/nodejs-1/</link>
             <guid>https://akasai.github.io/nodejs-1/</guid>
             <pubDate>Tue, 06 Oct 2020 00:00:00 GMT</pubDate>
@@ -3058,58 +3119,6 @@ function equalizeArray (arr) {
 <span class="reference">
 
 [Github](https://github.com/akasai/Algorithm-Solutions/blob/master/HackerRank/Implementation/3.Equalize_the_Array.js)
-
-</span>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[[HackerRank] Modified Kaprekar Numbers]]></title>
-            <link>https://akasai.github.io/hr-modified-kaprekar-numbers/</link>
-            <guid>https://akasai.github.io/hr-modified-kaprekar-numbers/</guid>
-            <pubDate>Sun, 20 Sep 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9d41c1ed-b707-4925-a36b-726cc66c7341%2Fhacker-rank-logo.png?table=block&id=62d1f9a2-d7ad-4c7e-bb71-ee02ff10d667&width=3260&userId=&cache=v2)
-
-<br>
-
-> [Modified Kaprekar Numbers](https://www.hackerrank.com/challenges/kaprekar-numbers/problem)
-
-***
-
-## How To Solve
-
-문제를 자세히 읽어보니
-
-상세한 조건들이 모두 적혀있었다.
-
-그대로 구현했다.
-
-<br>
-
-## Solution
-
-```javascript
-function kaprekarNumbers (p, q) {
-  const ret = []
-  for (let i = p; i <= q; i++) {
-    const square = (i * i).toString()
-    const d = i.toString().length
-
-    const r = square.slice(-d)
-    const l = square.slice(0, square.length - d)
-    if (i === (+r + +l)) ret.push(i)
-  }
-  return !ret.length ? 'INVALID RANGE' : ret.join(' ')
-}
-```
-***
-
-<br>
-
-## Reference
-
-<span class="reference">
-
-[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/HackerRank/Implementation/34.Modified_Kaprekar_Numbers.js)
 
 </span>
 ]]></content:encoded>
