@@ -4,9 +4,121 @@
         <title>devlog.akasai</title>
         <link>https://akasai.github.io/</link>
         <description>akasai's 기술블로그</description>
-        <lastBuildDate>Thu, 19 Nov 2020 15:20:52 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 30 Nov 2020 15:42:37 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Gridsome Feed Plugin</generator>
+        <item>
+            <title><![CDATA[Devday 2020]]></title>
+            <link>https://akasai.github.io/devday-2020/</link>
+            <guid>https://akasai.github.io/devday-2020/</guid>
+            <pubDate>Mon, 30 Nov 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe1726a9d-3f00-440e-a5ef-a242e70102bf%2F_2020-11-30__3.24.55.png?table=block&id=516d4659-6ca6-4f1e-98d3-16e9dd7cc150&width=2580&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+
+지인의 추천으로 팀에서 진행한 발표내용을 보게되었다.
+
+이를 보고 간략하게 느낌 부분을 적어보려 한다.
+
+***
+
+## Devday2020
+
+[Devday2020](https://linedevday.linecorp.com/2020/en)
+
+`Line`에서 언택트로 진행한 개발자 컨퍼런스이다.
+
+아쉽게도 일본 시장을 대상으로 잡고 진행한 컨퍼런스라서 국내에 홍보가 크게 되지 않았다.
+
+공식 홈페이지에서도 영어나 일본어로만 더빙이 된 발표만 봐도 조금 아쉬운 점도 있었다. (심지어는 공식 홈페이지의 **l13n**도 en | jp 뿐이다.)
+
+물론 일본 개발자뿐만아니라 국내 개발자들의 발표도 많았다.
+
+해당 발표제목을 `유튜브`에서 검색하면 <span class="en red">한국어</span>로 된 발표를 볼 수 있다.
+
+~~절대 내가 영어를 못해서가 아니다.~~
+
+<br>
+
+### Story that built Sentry as an On-Premise
+
+[Youtube Link](https://youtu.be/LOCByPfbQsk)
+
+`Line UIT`팀이 [Sentry](https://www.sentry.io)를 도입하게 된 이유와 방법에 대한 설명이었다.
+
+백엔드 개발자의 눈으로 봐도 대부분의 로깅 시스템이 백엔드 친화적인 느낌이 강하다. (물론 케바케지만...)
+
+이를 프론트엔드 친화적으로 스택트레이스를 살펴보고자 하는 니즈에서 시작된 프로젝트라고 느껴졌다.
+
+더군다나 센트리의 과금정책이 존재하지만 오픈소스라는 이점을 살려 이를 **On-Premise 환경**에 올려서 운영한다는 부분도 인상 깊었다.
+
+이해도만 충분하다면 <span class="em red">보안적, 범용적 측면</span>에서 On-Premise 환경만큼 좋은 것은 없을 것이다. (관리적 측면은 다음에 생각하자)
+
+오픈소스이므로 개발 분야와 상관없이 도입을 고려해보아도 좋겠다는 생각이 들었다.
+
+* Sentry : [Github](https://github.com/getsentry)
+
+   오류로그나 오류의 스택트레이스를 모아서 보여주는 서비스. 
+   
+   다양한 언어, 프레임워크를 지원하는 통합오류모니터링 솔루션.
+
+   > Sentry's application monitoring platform helps every developer diagnose, fix, and optimize the performance of their code.
+
+![](https://www.sentry.dev/_assets2/static/backend-issue-b42f9fc9eb1a30ea435e0171aed3afdd.png)
+
+<br>
+<br>
+
+### How to quickly develop static pages in LINE
+
+[Youtube Link](https://youtu.be/lclP6MbSdG4)
+
+`Line UIT`팀이 Static 페이지 개발속도에 대한 개선사항들을 소개한다.
+
+정적페이지라고도 불리는 이 페이지는 많은 부분에서 다양하게 사용 중이다.
+
+동료 프론트엔드 개발자들만 봐도 디자인단계부터 에셋(Assets) 등이 준비되고 작업을 시작하면 3~5일 정도의 개발 기간이 소요되는 것 같은데
+
+이것을 1일(하루) 만에 완성하는 획기적인 단축 방법을 소개한다.
+
+기본 개념은 "**중복을 줄이고 자동화할 수 있는 부분은 자동화하자**"인 것 같다.
+
+가장 인상 깊었던 것은 `Land Press`라는 도구의 이용과 `CLI개발을 이용한 자동화`였다.
+
+아쉽게도 `Land Press`는 **사내 private 패키지**라고 한다 
+
+프론트엔드 개발자가 아니여서 대략적인 내용만 이해할 수 있었지만 
+
+약간의 경험만 있다면 이해하는데 크게 문제없을 내용이었다.
+
+***
+
+<br>
+
+## 요약
+
+우선 추천받은 2가지의 세션만 들어보았다.
+
+Front-end/Back-end라는 벽을 허물고 다양한 측면에서 성능개선을 위해 다양한 기술을 채택하고 있다는 점이 인상 깊었다.
+
+기회가 된다면 Sentry는 경험할 수 있는 부분은 직접 경험해본 뒤 적용해보고 싶다.
+
+*** 
+
+<br>
+
+## Reference
+
+<span class="reference">
+
+[Line Developer Day 2020](https://linedevday.linecorp.com/2020/en)
+
+[Line Youtube - Korea sub.](https://www.youtube.com/playlist?list=PLI2S-k0Fa59vrCkUC9G8kiu7w4PRXJI_5)
+
+[Sentry.io](https://www.sentry.io)
+
+</span>
+]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[도커 용어 정리]]></title>
             <link>https://akasai.github.io/intro-docker/</link>
@@ -2667,6 +2779,97 @@ function removeElement(nums: number[], val: number): number {
 ]]></content:encoded>
         </item>
         <item>
+            <title><![CDATA[[Programmers] 다리를 지나는 트럭]]></title>
+            <link>https://akasai.github.io/hr-truck/</link>
+            <guid>https://akasai.github.io/hr-truck/</guid>
+            <pubDate>Mon, 28 Sep 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[![](https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Programmers/programmers-logo.png)
+
+<br>
+
+> [다리를 지나는 트럭](https://programmers.co.kr/learn/courses/30/lessons/42583)
+
+***
+
+## How To Solve
+
+**Queue**를 이용하여 풀었다.
+
+조건에 맞게 구현하는 문제인 것 같다.
+
+고려해야 할 점은 진행시간대로 반복문을 돌리면 `Timeout`이 발생한다.
+
+이를 해결하기 위해 time을 누적하는 방식으로 접근했다.
+
+<br>
+
+## Solution
+
+```javascript
+class Queue {
+  constructor () {
+    this.q = []
+  }
+
+  en (data) {
+    this.q.push(data)
+  }
+
+  de () {
+    this.q.shift()
+  }
+
+  get front () {
+    return this.q[0]
+  }
+
+  get isEmpty () {
+    return this.q.length === 0
+  }
+}
+
+function solution (bridge_length, weight, truck_weights) {
+  const bridge = new Queue()
+  let time = 1
+  let total_weight = 0
+  let cur_truck = 0
+
+  do {
+    if (!bridge.isEmpty) {
+      if (bridge.front.time === time) {
+        total_weight -= bridge.front.data
+        bridge.de()
+      }
+    }
+
+    if ((total_weight < weight) && ((weight - total_weight) >= truck_weights[cur_truck]) && cur_truck < truck_weights.length) {
+      bridge.en({ time: time + bridge_length, data: truck_weights[cur_truck] })
+      total_weight += truck_weights[cur_truck]
+      cur_truck++
+      time++
+    } else if (!bridge.isEmpty) {
+      time = bridge.front.time
+    }
+  } while (cur_truck < truck_weights.length || !bridge.isEmpty)
+
+  return time
+}
+```
+
+***
+
+<br>
+
+## Reference
+
+<span class="reference">
+
+[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Programmers/%EC%8A%A4%ED%83%9D_%ED%81%90/2.%EB%8B%A4%EB%A6%AC%EB%A5%BC_%EC%A7%80%EB%82%98%EB%8A%94_%ED%8A%B8%EB%9F%AD.js)
+
+</span>
+]]></content:encoded>
+        </item>
+        <item>
             <title><![CDATA[DB의 Lock/DeadLock]]></title>
             <link>https://akasai.github.io/db-lock/</link>
             <guid>https://akasai.github.io/db-lock/</guid>
@@ -2818,97 +3021,6 @@ Lock들의 경합이 발생하여 특정 프로세스의 작업이 진행되지�
 [[MSSQL] 교착상태 (DeadLock)](https://tora-it-kingdom.tistory.com/12)
 
 [잠금(LOCK) 종류와 잠금수준](https://battleracoon.tistory.com/2)
-</span>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[[Programmers] 다리를 지나는 트럭]]></title>
-            <link>https://akasai.github.io/hr-truck/</link>
-            <guid>https://akasai.github.io/hr-truck/</guid>
-            <pubDate>Mon, 28 Sep 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[![](https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Programmers/programmers-logo.png)
-
-<br>
-
-> [다리를 지나는 트럭](https://programmers.co.kr/learn/courses/30/lessons/42583)
-
-***
-
-## How To Solve
-
-**Queue**를 이용하여 풀었다.
-
-조건에 맞게 구현하는 문제인 것 같다.
-
-고려해야 할 점은 진행시간대로 반복문을 돌리면 `Timeout`이 발생한다.
-
-이를 해결하기 위해 time을 누적하는 방식으로 접근했다.
-
-<br>
-
-## Solution
-
-```javascript
-class Queue {
-  constructor () {
-    this.q = []
-  }
-
-  en (data) {
-    this.q.push(data)
-  }
-
-  de () {
-    this.q.shift()
-  }
-
-  get front () {
-    return this.q[0]
-  }
-
-  get isEmpty () {
-    return this.q.length === 0
-  }
-}
-
-function solution (bridge_length, weight, truck_weights) {
-  const bridge = new Queue()
-  let time = 1
-  let total_weight = 0
-  let cur_truck = 0
-
-  do {
-    if (!bridge.isEmpty) {
-      if (bridge.front.time === time) {
-        total_weight -= bridge.front.data
-        bridge.de()
-      }
-    }
-
-    if ((total_weight < weight) && ((weight - total_weight) >= truck_weights[cur_truck]) && cur_truck < truck_weights.length) {
-      bridge.en({ time: time + bridge_length, data: truck_weights[cur_truck] })
-      total_weight += truck_weights[cur_truck]
-      cur_truck++
-      time++
-    } else if (!bridge.isEmpty) {
-      time = bridge.front.time
-    }
-  } while (cur_truck < truck_weights.length || !bridge.isEmpty)
-
-  return time
-}
-```
-
-***
-
-<br>
-
-## Reference
-
-<span class="reference">
-
-[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Programmers/%EC%8A%A4%ED%83%9D_%ED%81%90/2.%EB%8B%A4%EB%A6%AC%EB%A5%BC_%EC%A7%80%EB%82%98%EB%8A%94_%ED%8A%B8%EB%9F%AD.js)
-
 </span>
 ]]></content:encoded>
         </item>
@@ -3080,45 +3192,6 @@ async/await는 동기적 프로그래밍에 있어 상당히 도움이 되고, �
 <span class="reference">
 
 [await의 함정, 숨은 병목을 찾자](https://jaeheon.kr/161?utm_source=gaerae.com&utm_campaign=%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%8A%A4%EB%9F%BD%EB%8B%A4&utm_medium=social&fbclid=IwAR3zIs9MMfUi_y-CaiCd9dgJaumpMBzOjdUJFXNg2pWFGioUeDv7pFVsoD8)
-
-</span>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[[HackerRank] Equalize the Array]]></title>
-            <link>https://akasai.github.io/hr-equalize-the-array/</link>
-            <guid>https://akasai.github.io/hr-equalize-the-array/</guid>
-            <pubDate>Sun, 20 Sep 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9d41c1ed-b707-4925-a36b-726cc66c7341%2Fhacker-rank-logo.png?table=block&id=62d1f9a2-d7ad-4c7e-bb71-ee02ff10d667&width=3260&userId=&cache=v2)
-
-<br>
-
-> [Equalize the Array](https://www.hackerrank.com/challenges/equality-in-a-array/problem)
-
-***
-
-## Solution
-
-```javascript
-function equalizeArray (arr) {
-  const map = {}
-  for (let i = 0; i < arr.length; i++) {
-    map[arr[i]] = map[arr[i]] ? ++map[arr[i]] : 1
-  }
-
-  const maxCount = Math.max(...Object.values(map))
-  return arr.length - maxCount
-}
-```
-***
-
-<br>
-
-## Reference
-
-<span class="reference">
-
-[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/HackerRank/Implementation/3.Equalize_the_Array.js)
 
 </span>
 ]]></content:encoded>
