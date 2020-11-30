@@ -1,6 +1,6 @@
 ---
 category: "기타"
-sub_category: "Solution"
+sub_category: ""
 series_name: ""
 series_num: 0
 title: "개발자 로드맵"
