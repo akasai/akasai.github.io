@@ -6,13 +6,7 @@
 <!--      <Adsense ins-class="top-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="1631172523"-->
 <!--               data-full-width-responsive="yes"/>-->
       <section class="tags__content">
-        <ul>
-          <li v-for="{node} in $static.tags.edges">
-            <g-link :to="node.path">
-              {{node.title}}
-            </g-link>
-          </li>
-        </ul>
+        <Tag :tagList="$static.tags.edges.map(({node}) => node)" :size="'large'"/>
       </section>
     </section>
   </Layout>
@@ -20,6 +14,7 @@
 
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator'
+  import Tag from '../components/Tag.vue'
 
   class V extends Vue {
     $static: any
@@ -27,6 +22,9 @@
 
   @Component<V>({
     name: 'Tags',
+    components: {
+      Tag
+    },
     metaInfo() {
       const tags = this.$static.tags.edges.map((node: any) => node.title).join(',')
       return {

@@ -83,10 +83,11 @@
     svg {
       width: 20px;
       height: 20px;
+      color: var(--app-font-color);
+      cursor: pointer;
 
       &:hover {
-        color: var(--title-font-color);
-        cursor: pointer;
+        color: var(--anchor-color);
         transition: .4s ease all;
       }
     }

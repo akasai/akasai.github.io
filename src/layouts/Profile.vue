@@ -27,7 +27,7 @@
           </section>
           <section class="profile__content-des">
             <p>{{metaData.description}}</p>
-            <Tag :tagList="metaData.skills" />
+            <Tag :tagList="metaData.skills"/>
           </section>
           <section class="profile__content-contact">
             <ul>
@@ -86,7 +86,7 @@
     width: 100%;
     max-width: var(--width-size);
     margin: 8.5rem auto 0 auto;
-    background-color: var(--profile-bg-color);
+    border: 1px solid var(--app-profile-border-color);
     border-radius: 10px;
 
     &-layout {
@@ -115,7 +115,7 @@
 
       img {
         border-radius: 50%;
-        border: 5px solid var(--profile-img-border-color);
+        border: 1px solid var(--app-profile-border-color);
         width: 60%;
       }
     }
@@ -124,14 +124,16 @@
       display: inline-block;
       margin-top: 10px;
       width: 100%;
-      font-family: Gugi;
 
       &-nickname {
+        color: var(--app-font-color);
+        font-family: Gugi;
         font-size: 3rem;
         margin-bottom: 1px;
       }
 
       &-info {
+        font-family: Gugi;
         font-size: 0.7rem;
         color: var(--posting-info-font-color);
 
@@ -153,8 +155,7 @@
 
       &-des {
         p {
-          font-family: bae;
-          font-size: 2rem;
+          font-size: 1.6rem;
           margin: 8px 0;
         }
       }
@@ -169,6 +170,10 @@
           li {
             width: 20px;
             margin-right: 10px;
+
+            a {
+              color: var(--app-font-color);
+            }
 
             .fw {
               path {

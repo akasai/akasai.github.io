@@ -25,7 +25,7 @@
     }
   })
   export default class Tag extends Vue {
-    @Prop() tagList!: string[]
+    @Prop() tagList!: any[]
     @Prop() size!: TagSize
     @Prop() useIcon!: boolean
 
@@ -42,7 +42,7 @@
   .tag__wrapper {
     font-family: gugi;
     color: var(--app-font-color);
-    margin-top: 3px;
+    margin-top: 5px;
     display: flex;
 
     .icon {

@@ -176,7 +176,7 @@
 
         h3#category {
           margin: 0 0 7px 7px;
-          font-size: 2.5rem;
+          font-size: 2rem;
           color: var(--category-font-color);
         }
 
@@ -188,7 +188,7 @@
 
         h4#series {
           &:before {
-            content: '-';
+            content: '|';
             margin: 0 7px;
           }
 
@@ -226,11 +226,10 @@
 
       &__content {
         font-family: bae;
-        font-size: 2rem;
+        font-size: 1.7rem;
         border-bottom: 1px solid var(--main-border-color);
 
         a {
-          color: gold;
           font-weight: bold;
         }
       }

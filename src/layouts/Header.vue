@@ -39,15 +39,15 @@
     top: 0;
     left: 0;
     right: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.05);
+    /*border-bottom: 1px solid var(--app-header-border-color);*/
+    box-shadow: 0 3px 5px 0 var(--app-header-border-color);
     z-index: 50;
     transition: top 0.2s ease-in-out;
 
     h1 {
+      color: var(--app-font-color);
       font-size: 2.2rem;
       font-family: Gugi;
-      color: var(--app-font-color);
       font-weight: bold;
     }
   }

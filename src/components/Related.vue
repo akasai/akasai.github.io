@@ -46,7 +46,7 @@
 <style lang="scss">
   .related {
     &__title {
-      font-size: 1.5rem;
+      font-size: 1.7rem;
       margin: 15px 0;
     }
 
@@ -87,14 +87,14 @@
         }
 
         p#des {
-          max-height: 50px;
           font-family: bae;
-          font-size: 1.75rem;
+          max-height: 50px;
+          font-size: 1.4rem;
           color: var(--app-font-color);
         }
 
         &:hover {
-          background: var(--related-content-hover-bg-color);
+          background: var(--hover-bg-color);
         }
       }
     }

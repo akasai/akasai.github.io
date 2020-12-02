@@ -83,13 +83,6 @@
 
 <style lang="scss">
   @font-face {
-    font-family: 'bae';
-    src: url('../assets/font/bae.ttf') format('truetype');
-    font-style: normal;
-    font-weight: normal;
-  }
-
-  @font-face {
     font-family: 'Gugi';
     src: url('../assets/font/Gugi-Regular.ttf') format('truetype');
     font-style: normal;
@@ -100,45 +93,41 @@
     --width-size: 800px;
     --app-background-color: #FFFFFF;
     --app-font-color: black;
-    --app-header-color: #DFE0E3;
-    --profile-bg-color: #F1F2F3;
-    --profile-img-border-color: #D3D4D5;
-    --tag-bg-color: #D3D4D5;
+    --app-header-color: #FFFFFF;
+    --app-header-border-color: #D3D4D5;
+    --app-profile-border-color: #D3D4D5;
+    --tag-bg-color: #ebebeb;
+    --anchor-color: #2E66A3;
+    --title-font-color: #2E66A3;
     --category-font-color: #AAA;
-    --title-font-color: #7EBBEB;
-    --series-font-color: #2E66A3;
-    --posting-info-font-color: #AFB0B1;
+    --series-font-color: #7EBBEB;
+    --hover-bg-color: #F1F2F3;
     --main-border-color: #919292;
+    --posting-info-font-color: #AFB0B1;
     --code-box-bg-color: #F5F2F0;
     --code-text-color: black;
-    --content-title-h2: #3871BF;
-    --content-title-h3: #70A4BF;
     --content-blockquote-bar: #BBB;
-    --content-anchor-color: forestgreen;
     --reference-link-color: #87ADB4;
-    --related-content-hover-bg-color: rgba(211, 212, 213, 0.61);
   }
 
   [theme="dark"] {
     --app-background-color: #091A28;
     --app-font-color: white;
-    --app-header-color: #394043;
-    --profile-bg-color: #1A2C4A;
-    --profile-img-border-color: #215191;
-    --posting-info-font-color: #AFB0B1;
-    --tag-bg-color: #215191;
-    --category-font-color: #CCC;
+    --app-header-color: black;
+    --app-header-border-color: #08121E;
+    --app-profile-border-color: #2C2D2D;
+    --tag-bg-color: #0b344b;
+    --anchor-color: #32C997;
     --title-font-color: #32C997;
+    --category-font-color: #CCC;
     --series-font-color: #33C9BA;
+    --hover-bg-color: #1A2C4A;
     --main-border-color: #2C2D2D;
+    --posting-info-font-color: #AFB0B1;
     --code-box-bg-color: #2F2C2B;
     --code-text-color: #B0B0B0;
-    --content-title-h2: #3871BF;
-    --content-title-h3: #70A4BF;
     --content-blockquote-bar: #EEE;
-    --content-anchor-color: gold;
     --reference-link-color: #87ADB4;
-    --related-content-hover-bg-color: #092638;
   }
 
   html {
@@ -146,7 +135,7 @@
   }
 
   a {
-    color: inherit;
+    color: var(--anchor-color);
     text-decoration: none;
     border-bottom: none;
 
@@ -158,6 +147,11 @@
 
   h1, h2, h3, h4 {
     margin: 0;
+  }
+
+  hr {
+    border: none;
+    border-bottom: 1px solid var(--main-border-color);
   }
 
   ul {

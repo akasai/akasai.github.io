@@ -22,11 +22,7 @@
 
     <section class="bar__tags" v-if="$static.tags.edges.length > 0">
       <h4 class="title">Trending Tags</h4>
-      <ul>
-        <li v-for="{node} in $static.tags.edges" :key="node.title">
-          <g-link :to="node.path">{{node.title}}</g-link>
-        </li>
-      </ul>
+      <Tag :tagList="$static.tags.edges.map(({node}) => node)"/>
     </section>
 
     <!-- ads 우측 -->
@@ -37,10 +33,13 @@
 
 <script lang="ts">
   import { Component, Prop, Vue } from 'vue-property-decorator'
+  import Tag from './Tag.vue'
 
   @Component({
     name: 'RightBar',
-    components: {},
+    components: {
+      Tag,
+    },
   })
   export default class RightBar extends Vue {
     @Prop() headings!: any[]
@@ -97,7 +96,7 @@
         display: inline-block;
         max-width: 250px;
         padding: 2px 10px;
-        border-left: 2px solid white;
+        border-left: 2px solid var(--main-border-color);
         font-size: 1.3rem;
 
         li {

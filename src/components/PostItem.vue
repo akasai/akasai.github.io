@@ -60,7 +60,7 @@
 
     &:hover {
       cursor: pointer;
-      background-color: var(--profile-bg-color);
+      background-color: var(--hover-bg-color);
       transition: all ease 0.25s;
     }
 
@@ -76,7 +76,7 @@
       }
 
       h1#title {
-        font-size: 2.5rem;
+        font-size: 2.7rem;
         font-weight: bold;
         display: inline-block;
         color: var(--title-font-color);
@@ -84,7 +84,7 @@
 
       h4#series {
         &:before {
-          content: '-';
+          content: '|';
           margin: 0 5px;
         }
 
@@ -96,8 +96,7 @@
     }
 
     &__content {
-      font-family: bae;
-      font-size: 2.2rem;
+      font-size: 1.55rem;
       color: var(--app-font-color);
       margin: 5px 0 10px 0;
     }

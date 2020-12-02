@@ -40,12 +40,7 @@
     border-bottom: 1px solid var(--main-border-color);
 
     h3#title {
-      &:before {
-        content: '🗂';
-        margin-right: 10px;
-      }
-
-      font-size: 1.5rem;
+      font-size: 1.7rem;
       margin-bottom: 10px;
     }
 
@@ -56,7 +51,7 @@
         display: inline-block;
 
         li {
-          margin-bottom: 3px;
+          margin-bottom: 5px;
 
           &:last-child {
             margin-bottom: 0;
@@ -71,7 +66,6 @@
           font-size: 1.2rem;
           color: var(--app-font-color);
           margin: 3px 10px 0 0;
-          flex: 1;
         }
 
         .title {
