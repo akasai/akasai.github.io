@@ -40,26 +40,15 @@
 
 <style lang="scss" scoped>
   .tag__wrapper {
-    font-family: gugi;
     color: var(--app-font-color);
     margin-top: 5px;
     display: flex;
 
     .icon {
       vertical-align: text-bottom;
-      margin-right: 10px;
-
-      &.small {
-        width: 15px;
-      }
-
-      &.medium {
-        width: 15px;
-      }
-
-      &.large {
-        width: 15px;
-      }
+      margin: 5px 7px 0 0;
+      width: 15px;
+      height: 15px;
     }
 
     ul {
@@ -67,7 +56,7 @@
       flex-wrap: wrap;
 
       li {
-        margin-bottom: 4px;
+        margin-bottom: 5px;
         border-radius: 3px;
         background: var(--tag-bg-color);
 
@@ -84,7 +73,7 @@
         &.medium {
           font-size: 1.2rem;
           margin-right: 5px;
-          padding: 5px 7px 3px 7px
+          padding: 5px 7px;
         }
 
         &.large {

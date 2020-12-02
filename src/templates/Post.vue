@@ -162,7 +162,6 @@
   @import '../assets/scss/markup';
 
   .post__wrapper {
-    font-family: Gugi;
     display: flex;
 
     .post {
@@ -175,7 +174,7 @@
         border-bottom: 1px solid var(--main-border-color);
 
         h3#category {
-          margin: 0 0 7px 7px;
+          margin: 0 0 5px 7px;
           font-size: 2rem;
           color: var(--category-font-color);
         }
@@ -225,7 +224,6 @@
       }
 
       &__content {
-        font-family: bae;
         font-size: 1.7rem;
         border-bottom: 1px solid var(--main-border-color);
 

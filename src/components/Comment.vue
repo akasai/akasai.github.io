@@ -20,7 +20,7 @@
       utterances.crossOrigin = 'anonymous'
       utterances.src = 'https://utteranc.es/client.js'
 
-      const mode = localStorage.getItem('theme')
+      const mode = localStorage.getItem('theme') || 'dark'
 
       utterances.setAttribute('theme', mode === 'dark' ? 'dark-blue' : 'github-light')
       utterances.setAttribute('issue-term', 'title')

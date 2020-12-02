@@ -4,13 +4,11 @@ markup css
 
 /* 제목 */
 h2 {
-  font-family: Gugi;
   //color: var(--content-title-h2);
 }
 
 /* 서브 제목 */
 h3 {
-  font-family: Gugi;
 }
 
 /* 인용 */
@@ -82,7 +80,6 @@ code[class*="language-"], pre[class*="language-"] {
 
 /* 출처 */
 .reference {
-  font-family: Gugi;
   font-size: 1.4rem;
   display: inline-block;
   margin: 0;

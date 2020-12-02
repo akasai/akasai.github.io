@@ -47,7 +47,6 @@
     h1 {
       color: var(--app-font-color);
       font-size: 2.2rem;
-      font-family: Gugi;
       font-weight: bold;
     }
   }

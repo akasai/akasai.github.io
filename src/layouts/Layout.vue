@@ -82,13 +82,6 @@
 </script>
 
 <style lang="scss">
-  @font-face {
-    font-family: 'Gugi';
-    src: url('../assets/font/Gugi-Regular.ttf') format('truetype');
-    font-style: normal;
-    font-weight: normal;
-  }
-
   :root {
     --width-size: 800px;
     --app-background-color: #FFFFFF;

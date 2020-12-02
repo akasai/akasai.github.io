@@ -55,7 +55,7 @@
 
 <style lang="scss" scoped>
   .post-preview {
-    padding: 1.8rem 1rem;
+    padding: 1.6rem 1rem;
     border-bottom: 1px solid var(--main-border-color);
 
     &:hover {
@@ -65,8 +65,8 @@
     }
 
     &__title {
-      margin: 5px 0;
-      font-family: gugi;
+      margin-bottom: 10px;
+      display: inline-block;
 
       h3#category {
         font-size: 1.5rem;
@@ -96,14 +96,13 @@
     }
 
     &__content {
-      font-size: 1.55rem;
+      font-size: 1.5rem;
       color: var(--app-font-color);
       margin: 5px 0 10px 0;
     }
 
     &__info {
-      font-family: gugi;
-      font-size: 1rem;
+      font-size: 1.1rem;
       color: var(--posting-info-font-color);
       display: inline-block;
       margin-bottom: 3px;
@@ -113,8 +112,8 @@
 
         .clock_icon {
           vertical-align: text-bottom;
-          margin-right: 3px;
-          width: 1rem;
+          margin-right: 5px;
+          width: 1.2rem;
         }
       }
 

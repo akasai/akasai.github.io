@@ -127,14 +127,12 @@
 
       &-nickname {
         color: var(--app-font-color);
-        font-family: Gugi;
-        font-size: 3rem;
-        margin-bottom: 1px;
+        font-size: 3.5rem;
+        margin-bottom: 3px;
       }
 
       &-info {
-        font-family: Gugi;
-        font-size: 0.7rem;
+        font-size: 1.2rem;
         color: var(--posting-info-font-color);
 
         ul > li {
@@ -156,7 +154,7 @@
       &-des {
         p {
           font-size: 1.6rem;
-          margin: 8px 0;
+          margin: 10px 0;
         }
       }
 

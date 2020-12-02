@@ -87,7 +87,6 @@
         }
 
         p#des {
-          font-family: bae;
           max-height: 50px;
           font-size: 1.4rem;
           color: var(--app-font-color);
