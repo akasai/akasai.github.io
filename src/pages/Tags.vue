@@ -6,7 +6,7 @@
 <!--      <Adsense ins-class="top-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="1631172523"-->
 <!--               data-full-width-responsive="yes"/>-->
       <section class="tags__content">
-        <Tag :tagList="$static.tags.edges.map(({node}) => node)" :size="'large'"/>
+        <Tag :tagList="list($static.tags.edges)" :size="'large'"/>
       </section>
     </section>
   </Layout>
@@ -42,6 +42,15 @@
     constructor() {
       super()
     }
+
+    list(data: any[]) {
+      data.forEach(({node}) => {
+        node.count = node.belongsTo.edges.length
+        delete node.belongsTo
+      })
+
+      return data.map(({node}) => node).sort((a, b) => b.count - a.count )
+    }
   }
 </script>
 
@@ -49,7 +58,17 @@
 query {
   tags: allTag {
     edges {
-      node { title path }
+      node {
+        title
+        path
+        belongsTo {
+          edges {
+            node {
+              id
+            }
+          }
+        }
+      }
     }
   }
 }
