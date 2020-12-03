@@ -80,10 +80,14 @@ code[class*="language-"], pre[class*="language-"] {
 
 /* 출처 */
 .reference {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   display: inline-block;
   margin: 0;
   padding: 0;
+
+  > p {
+    margin: 10px 0;
+  }
 
   * {
     color: var(--reference-link-color) !important;

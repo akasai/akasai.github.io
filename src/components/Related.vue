@@ -73,7 +73,7 @@
 
         h6#date {
           color: var(--posting-info-font-color);
-          font-size: 1.2rem;
+          font-size: 1.3rem;
           margin: 0;
         }
 

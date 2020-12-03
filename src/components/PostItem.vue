@@ -70,7 +70,7 @@
 
       h3#category {
         font-size: 1.5rem;
-        margin: 0 0 7px 7px;
+        margin: 0 0 3px 7px;
         display: block;
         color: var(--category-font-color);
       }
@@ -88,7 +88,7 @@
           margin: 0 5px;
         }
 
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         display: inline-block;
         margin: 5px 0;
         color: var(--series-font-color);
@@ -96,13 +96,13 @@
     }
 
     &__content {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       color: var(--app-font-color);
       margin: 5px 0 10px 0;
     }
 
     &__info {
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       color: var(--posting-info-font-color);
       display: inline-block;
       margin-bottom: 3px;
@@ -113,7 +113,7 @@
         .clock_icon {
           vertical-align: text-bottom;
           margin-right: 5px;
-          width: 1.2rem;
+          width: 1.4rem;
         }
       }
 

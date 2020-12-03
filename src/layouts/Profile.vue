@@ -132,7 +132,7 @@
       }
 
       &-info {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         color: var(--posting-info-font-color);
 
         ul > li {

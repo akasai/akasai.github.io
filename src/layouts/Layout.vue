@@ -95,7 +95,7 @@
     --category-font-color: #AAA;
     --series-font-color: #7EBBEB;
     --hover-bg-color: #F1F2F3;
-    --main-border-color: #919292;
+    --main-border-color: #e6e7e7;
     --posting-info-font-color: #AFB0B1;
     --code-box-bg-color: #F5F2F0;
     --code-text-color: black;

@@ -63,19 +63,19 @@
         display: flex;
 
         .num {
-          font-size: 1.2rem;
+          font-size: 1.3rem;
           color: var(--app-font-color);
           margin: 3px 10px 0 0;
         }
 
         .title {
-          font-size: 1.6rem;
+          font-size: 1.8rem;
           color: var(--title-font-color);
           margin: 0 10px 0 0;
         }
 
         .date {
-          font-size: 1.1rem;
+          font-size: 1.3rem;
           color: var(--posting-info-font-color);
           margin: 5px 0 0 0;
           flex: 1;

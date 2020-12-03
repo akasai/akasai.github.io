@@ -81,7 +81,6 @@
 
     h1#title {
       font-size: 2.5rem;
-      margin: 20px 0;
       text-align: center;
     }
 

@@ -97,7 +97,7 @@
         max-width: 250px;
         padding: 2px 10px;
         border-left: 2px solid var(--main-border-color);
-        font-size: 1.3rem;
+        font-size: 1.4rem;
 
         li {
           margin: 4px 0;
@@ -113,8 +113,8 @@
       ul {
         li {
           &.depth-3 {
-            font-size: 1.1rem;
-            margin-left: 20px;
+            font-size: 1.2rem;
+            margin-left: 15px;
           }
 
           & > * {
@@ -122,7 +122,7 @@
 
             &:hover {
               color: var(--app-font-color);
-              transition: color 0.35s ease-in-out;
+              transition: color 0.15s ease-in-out;
             }
           }
         }
