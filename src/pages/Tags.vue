@@ -83,6 +83,7 @@
 
     .top-ads {
       height: 200px;
+      margin: 30px 0;
     }
 
     h1#title {

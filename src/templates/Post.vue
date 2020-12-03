@@ -221,8 +221,14 @@
         }
       }
 
-      .top-ads, .bottom-ads {
+      .top-ads {
         height: 200px;
+        width: 100%;
+        margin: 30px 0;
+      }
+
+      .bottom-ads {
+        height: 300px;
         width: 100%;
         margin: 30px 0;
       }
