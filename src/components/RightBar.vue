@@ -172,7 +172,6 @@
   }
 
   .right-ads {
-    /*background: gray;*/
-    /*width: 220px;*/
+    width: 220px;
   }
 </style>
