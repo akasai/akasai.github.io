@@ -70,14 +70,14 @@
 </page-query>
 
 <style lang="scss">
-  .top-ads {
-    height: 200px;
-  }
-
   .tags {
     width: 100%;
     max-width: var(--width-size);
     margin: 8.5rem auto 0 auto;
+
+    .top-ads {
+      height: 200px;
+    }
 
     h1#title {
       font-size: 2.5rem;

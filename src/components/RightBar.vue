@@ -81,7 +81,7 @@
   .bar {
     margin-top: 1.2rem;
     margin-left: 1.2rem;
-    position: fixed;
+    /*position: fixed;*/
 
     h4.title {
       font-size: 1.5rem;
