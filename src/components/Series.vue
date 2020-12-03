@@ -36,8 +36,9 @@
 
 <style lang="scss">
   .series {
-    padding: 20px 0;
-    border-bottom: 1px solid var(--main-border-color);
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--app-main-border-color);
 
     h3#title {
       font-size: 1.7rem;
@@ -51,7 +52,7 @@
         display: inline-block;
 
         li {
-          margin-bottom: 5px;
+          margin-bottom: 8px;
 
           &:last-child {
             margin-bottom: 0;
@@ -70,13 +71,13 @@
 
         .title {
           font-size: 1.8rem;
-          color: var(--title-font-color);
+          color: var(--series-font-color);
           margin: 0 10px 0 0;
         }
 
         .date {
           font-size: 1.3rem;
-          color: var(--posting-info-font-color);
+          color: var(--info-font-color);
           margin: 5px 0 0 0;
           flex: 1;
         }

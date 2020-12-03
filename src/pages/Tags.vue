@@ -3,10 +3,11 @@
     <section class="tags">
       <h1 id="title">Tags</h1>
       <!-- ads 상단 -->
-<!--      <Adsense ins-class="top-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="1631172523"-->
-<!--               data-full-width-responsive="yes"/>-->
+      <!--      <Adsense ins-class="top-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="1631172523"-->
+      <!--               data-full-width-responsive="yes"/>-->
       <section class="tags__content">
-        <Tag :tagList="list($static.tags.edges)" :size="'large'"/>
+        <!--        <Tag :tagList="list($static.tags.edges)" :size="'large'"/>-->
+        <Tag :tagList="$static.tags.edges.map(({node}) => node)" :size="'large'"/>
       </section>
     </section>
   </Layout>
@@ -23,7 +24,7 @@
   @Component<V>({
     name: 'Tags',
     components: {
-      Tag
+      Tag,
     },
     metaInfo() {
       const tags = this.$static.tags.edges.map((node: any) => node.title).join(',')
@@ -34,9 +35,9 @@
           { name: 'keywords', content: tags || '' },
           { property: 'og:title', content: 'Tags | devlog.akasai' },
           { property: 'og:description', content: String(tags).slice(0, 320) },
-        ]
+        ],
       }
-    }
+    },
   })
   export default class Tags extends V {
     constructor() {
@@ -44,34 +45,34 @@
     }
 
     list(data: any[]) {
-      data.forEach(({node}) => {
+      data.forEach(({ node }) => {
         node.count = node.belongsTo.edges.length
         delete node.belongsTo
       })
 
-      return data.map(({node}) => node).sort((a, b) => b.count - a.count )
+      return data.map(({ node }) => node).sort((a, b) => b.count - a.count)
     }
   }
 </script>
 
 <static-query>
-query {
+  query {
   tags: allTag {
-    edges {
-      node {
-        title
-        path
-        belongsTo {
-          edges {
-            node {
-              id
-            }
-          }
-        }
-      }
-    }
+  edges {
+  node {
+  title
+  path
+  belongsTo {
+  edges {
+  node {
+  id
   }
-}
+  }
+  }
+  }
+  }
+  }
+  }
 </static-query>
 
 <style lang="scss">

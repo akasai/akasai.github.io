@@ -171,7 +171,8 @@
 
       &__title {
         padding: 20px 0;
-        border-bottom: 1px solid var(--main-border-color);
+        margin-bottom: 30px;
+        border-bottom: 1px solid var(--app-main-border-color);
 
         h3#category {
           margin: 0 0 5px 7px;
@@ -182,6 +183,7 @@
         h1#title {
           font-size: 4rem;
           color: var(--title-font-color);
+          margin-bottom: 8px;
           display: inline-block;
         }
 
@@ -199,7 +201,8 @@
 
         &-info {
           font-size: 1.3rem;
-          color: var(--posting-info-font-color);
+          color: var(--info-font-color);
+          margin-bottom: 8px;
           display: block;
 
           ul {
@@ -225,7 +228,7 @@
 
       &__content {
         font-size: 1.7rem;
-        border-bottom: 1px solid var(--main-border-color);
+        border-bottom: 1px solid var(--app-main-border-color);
 
         a {
           font-weight: bold;

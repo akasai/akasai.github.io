@@ -87,6 +87,7 @@
     max-width: var(--width-size);
     margin: 8.5rem auto 0 auto;
     border: 1px solid var(--app-profile-border-color);
+    box-shadow: 0 2px 2px var(--app-profile-border-color);
     border-radius: 10px;
 
     &-layout {
@@ -133,7 +134,7 @@
 
       &-info {
         font-size: 1.3rem;
-        color: var(--posting-info-font-color);
+        color: var(--info-font-color);
 
         ul > li {
           margin-right: 15px;

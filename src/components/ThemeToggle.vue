@@ -87,7 +87,7 @@
       cursor: pointer;
 
       &:hover {
-        color: var(--anchor-color);
+        color: var(--anchor-font-color);
         transition: .4s ease all;
       }
     }

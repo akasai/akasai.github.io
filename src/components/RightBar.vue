@@ -96,7 +96,7 @@
         display: inline-block;
         max-width: 250px;
         padding: 2px 10px;
-        border-left: 2px solid var(--main-border-color);
+        border-left: 2px solid var(--app-main-border-color);
         font-size: 1.4rem;
 
         li {
@@ -118,7 +118,8 @@
           }
 
           & > * {
-            color: var(--posting-info-font-color);
+            color: var(--info-font-color);
+            transition: color 0.15s ease-in-out;
 
             &:hover {
               color: var(--app-font-color);
@@ -134,6 +135,7 @@
         li {
           & > * {
             color: var(--title-font-color);
+            transition: color 0.35s ease-in-out;
 
             &:hover {
               color: var(--app-font-color);
@@ -157,7 +159,7 @@
 
           &:hover {
             background: var(--tag-bg-color);
-            color: var(--posting-info-font-color);
+            color: var(--info-font-color);
             transition: color 0.35s ease-in-out;
           }
 

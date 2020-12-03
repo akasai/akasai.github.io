@@ -29,7 +29,7 @@
 
 <style lang="scss">
   header {
-    background-color: var(--app-header-color);
+    background-color: var(--app-header-bg-color);
     display: flex;
     align-items: center;
     justify-content: space-between;

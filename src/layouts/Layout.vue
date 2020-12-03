@@ -84,43 +84,58 @@
 <style lang="scss">
   :root {
     --width-size: 800px;
-    --app-background-color: #FFFFFF;
-    --app-font-color: black;
-    --app-header-color: #FFFFFF;
+
+    /* background */
+    --app-bg-color: #FFFFFF;
+    --app-header-bg-color: #FFFFFF;
+    --app-hover-bg-color: #dce5e9;
+    --tag-bg-color: #ECEFF1;
+    --code-box-bg-color: #ECEFF1;
+
+    /* font */
+    --app-font-color: #000000;
+    --anchor-font-color: #039BE5;
+    --anchor-hover-font-color: #4FC3F7;
+    --category-font-color: #546E7A;
+    --title-font-color: #37474F;
+    --series-font-color: #546E7A;
+    --info-font-color: #607D8B;
+    --reference-font-color: #37474F;
+    --reference-hover-font-color: #78909C;
+    --code-font-color: #000000;
+
+    /* border */
     --app-header-border-color: #D3D4D5;
     --app-profile-border-color: #D3D4D5;
-    --tag-bg-color: #ebebeb;
-    --anchor-color: #2E66A3;
-    --title-font-color: #2E66A3;
-    --category-font-color: #AAA;
-    --series-font-color: #7EBBEB;
-    --hover-bg-color: #F1F2F3;
-    --main-border-color: #e6e7e7;
-    --posting-info-font-color: #AFB0B1;
-    --code-box-bg-color: #F5F2F0;
-    --code-text-color: black;
-    --content-blockquote-bar: #BBB;
-    --reference-link-color: #87ADB4;
+    --app-main-border-color: #ECEFF1;
+    --content-blockquote-bar: #263238;
   }
 
   [theme="dark"] {
-    --app-background-color: #091A28;
-    --app-font-color: white;
-    --app-header-color: black;
+    /* background */
+    --app-bg-color: #091A28;
+    --app-header-bg-color: #000000;
+    --app-hover-bg-color: #09263c;
+    --tag-bg-color: #01265b;
+    --code-box-bg-color: #263238;
+
+    /* font */
+    --app-font-color: #FFFFFF;
+    --anchor-font-color: #29B6F6;
+    --anchor-hover-font-color: #81D4FA;
+    --category-font-color: #546E7A;
+    --title-font-color: #ECEFF1;
+    --series-font-color: #CFD8DC;
+    --info-font-color: #90A4AE;
+    --reference-font-color: #78909C;
+    --reference-hover-font-color: #ECEFF1;
+    --code-font-color: #ECEFF1;
+
+    /* border */
     --app-header-border-color: #08121E;
-    --app-profile-border-color: #2C2D2D;
-    --tag-bg-color: #0b344b;
-    --anchor-color: #32C997;
-    --title-font-color: #32C997;
-    --category-font-color: #CCC;
-    --series-font-color: #33C9BA;
-    --hover-bg-color: #1A2C4A;
-    --main-border-color: #2C2D2D;
-    --posting-info-font-color: #AFB0B1;
-    --code-box-bg-color: #2F2C2B;
-    --code-text-color: #B0B0B0;
-    --content-blockquote-bar: #EEE;
-    --reference-link-color: #87ADB4;
+    --app-profile-border-color: #263238;
+    --app-main-border-color: #263238;
+    --content-blockquote-bar: #ECEFF1;
   }
 
   html {
@@ -128,13 +143,13 @@
   }
 
   a {
-    color: var(--anchor-color);
+    color: var(--anchor-font-color);
     text-decoration: none;
     border-bottom: none;
 
     &:hover {
       border-bottom-color: currentColor;
-      color: #686868;
+      color: var(--anchor-hover-font-color);
     }
   }
 
@@ -144,7 +159,7 @@
 
   hr {
     border: none;
-    border-bottom: 1px solid var(--main-border-color);
+    border-bottom: 1px solid var(--app-main-border-color);
   }
 
   ul {
@@ -155,7 +170,7 @@
   }
 
   body {
-    background-color: var(--app-background-color);
+    background-color: var(--app-bg-color);
     color: var(--app-font-color);
     font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     margin: 0;

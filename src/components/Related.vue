@@ -45,15 +45,17 @@
 
 <style lang="scss">
   .related {
+    margin: 30px 0;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--app-main-border-color);
+
     &__title {
       font-size: 1.7rem;
-      margin: 15px 0;
+      margin-bottom: 10px;
     }
 
     &__wrapper {
       margin: 0;
-      padding: 0 0 25px 0;
-      border-bottom: 1px solid var(--main-border-color);
 
       ul {
         max-width: var(--width-size);
@@ -69,10 +71,10 @@
         height: 120px;
         padding: 10px 15px;
         border-radius: 3px;
-        border: 1px solid var(--main-border-color);
+        border: 1px solid var(--app-main-border-color);
 
         h6#date {
-          color: var(--posting-info-font-color);
+          color: var(--info-font-color);
           font-size: 1.3rem;
           margin: 0;
         }
@@ -93,7 +95,7 @@
         }
 
         &:hover {
-          background: var(--hover-bg-color);
+          background: var(--app-hover-bg-color);
         }
       }
     }

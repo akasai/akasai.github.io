@@ -56,11 +56,11 @@
 <style lang="scss" scoped>
   .post-preview {
     padding: 1.6rem 1rem;
-    border-bottom: 1px solid var(--main-border-color);
+    border-bottom: 1px solid var(--app-main-border-color);
 
     &:hover {
       cursor: pointer;
-      background-color: var(--hover-bg-color);
+      background-color: var(--app-hover-bg-color);
       transition: all ease 0.25s;
     }
 
@@ -98,12 +98,12 @@
     &__content {
       font-size: 1.8rem;
       color: var(--app-font-color);
-      margin: 5px 0 10px 0;
+      margin: 5px 0 20px 0;
     }
 
     &__info {
       font-size: 1.3rem;
-      color: var(--posting-info-font-color);
+      color: var(--info-font-color);
       display: inline-block;
       margin-bottom: 3px;
 
