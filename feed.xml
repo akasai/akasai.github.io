@@ -4,7 +4,7 @@
         <title>devlog.akasai</title>
         <link>https://akasai.github.io/</link>
         <description>akasai's 기술블로그</description>
-        <lastBuildDate>Thu, 03 Dec 2020 14:49:27 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 03 Dec 2020 14:55:33 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Gridsome Feed Plugin</generator>
         <item>
@@ -2655,46 +2655,6 @@ function absolutePermutation (n, k) {
 ]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[[Leetcode] Move Zeros]]></title>
-            <link>https://akasai.github.io/hr-move-zeroes/</link>
-            <guid>https://akasai.github.io/hr-move-zeroes/</guid>
-            <pubDate>Mon, 28 Sep 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[![](https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Leetcode/leetcode-logo.png)
-
-<br>
-
-> [Move Zeros](https://leetcode.com/problems/move-zeroes)
-
-***
-
-## Solution
-
-```typescript
-function moveZeroes(nums: number[]): void {
-  for (let i = 0, len = nums.length; i < len; i++) {
-    if (nums[i] === 0) {
-      nums.splice(i--, 1)
-      nums.push(0)
-      len--
-    }
-  }
-}
-```
-
-***
-
-<br>
-
-## Reference
-
-<span class="reference">
-
-[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Leetcode/Solution/2.Move_Zeroes.ts)
-
-</span>
-]]></content:encoded>
-        </item>
-        <item>
             <title><![CDATA[[Leetcode] Remove Duplicates from Sorted Array]]></title>
             <link>https://akasai.github.io/hr-remove-duplicates/</link>
             <guid>https://akasai.github.io/hr-remove-duplicates/</guid>
@@ -2730,6 +2690,46 @@ function removeDuplicates(nums: number[]): number {
 <span class="reference">
 
 [Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Leetcode/Solution/4.Remove_Duplicates_from_Sorted_Array.ts)
+
+</span>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[[Leetcode] Move Zeros]]></title>
+            <link>https://akasai.github.io/hr-move-zeroes/</link>
+            <guid>https://akasai.github.io/hr-move-zeroes/</guid>
+            <pubDate>Mon, 28 Sep 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[![](https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Leetcode/leetcode-logo.png)
+
+<br>
+
+> [Move Zeros](https://leetcode.com/problems/move-zeroes)
+
+***
+
+## Solution
+
+```typescript
+function moveZeroes(nums: number[]): void {
+  for (let i = 0, len = nums.length; i < len; i++) {
+    if (nums[i] === 0) {
+      nums.splice(i--, 1)
+      nums.push(0)
+      len--
+    }
+  }
+}
+```
+
+***
+
+<br>
+
+## Reference
+
+<span class="reference">
+
+[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Leetcode/Solution/2.Move_Zeroes.ts)
 
 </span>
 ]]></content:encoded>
