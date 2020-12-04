@@ -39,6 +39,8 @@ update_date: 2020-12-04
 
 > [Session Link](https://tv.kakao.com/embed/player/cliplink/414132080?service=kakao_tv&section=channel&profile=HIGH&wmode=transparent&popup=1&autoplay=1) 
 
+> [Kakao Tech: Commentary](https://tech.kakao.com/2020/11/10/if-kakao-2020-commentary-01-kakao)
+
 **Redis와 K8s**, 섬네일만으로도 끌렸던 세션이다. 
 
 캐시 클러스터 전환에 대한 경험을 공유하는 세션이였다.
