@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html theme="dark" data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
 <head>
-  <title>[Typescript] solid하게 SOLID | devlog.akasai</title><meta name="gridsome:hash" content="cad1d48cf246f3e3c3d7003d75b7494bc4da7106"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.20"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" name="description" content="Typescript 란? Typescript는 MS에서 만든 Javascript의 상위 언어로써, 서로 다른 언어가 아니다. 컴파일 언어이자, 정적 타입 언어이다. Javascript는 인터프리터 언어지만, Typescript는 컴파일 언어로 코드 수준에서 미리 타입을..." vmid="description"><meta data-vue-tag="ssr" name="keywords" content="Typescript,OOP,SOLID,객체지향"><meta data-vue-tag="ssr" property="og:title" content="[Typescript] solid하게 SOLID | devlog.akasai"><meta data-vue-tag="ssr" property="og:description" content="Typescript 란? Typescript는 MS에서 만든 Javascript의 상위 언어로써, 서로 다른 언어가 아니다. 컴파일 언어이자, 정적 타입 언어이다. Javascript는 인터프리터 언어지만, Typescript는 컴파일 언어로 코드 수준에서 미리 타입을..."><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="viewport" content="width=device-width, initial-scale=1"><meta data-vue-tag="ssr" name="description" content="akasai&#x27;s 기술블로그" vmid="description"><meta data-vue-tag="ssr" name="author" content="akasai"><meta data-vue-tag="ssr" property="og:type" content="article"><meta data-vue-tag="ssr" property="og:url" content="https://akasai.github.io/ts-solid-2/"><meta data-vue-tag="ssr" property="og:image" content="https://res.cloudinary.com/akasai/image/upload/v1600232989/cover_1_pmz69m.png"><meta data-vue-tag="ssr" property="og:site_name" content="devlog.akasai"><meta data-vue-tag="ssr" property="og:locale" content="ko_KR"><link rel="preload" href="/assets/css/0.styles.73c5620d.css" as="style"><link rel="preload" href="/assets/js/app.4f3c88fa.js" as="script"><link rel="preload" href="/assets/js/page--src--templates--post-vue.0e9d22eb.js" as="script"><link rel="prefetch" href="/assets/js/page--src--pages--404-vue.1a1df4a5.js"><link rel="prefetch" href="/assets/js/page--src--pages--index-vue.21aac107.js"><link rel="prefetch" href="/assets/js/page--src--pages--tags-vue.3af4e2f4.js"><link rel="prefetch" href="/assets/js/page--src--templates--tag-vue.1a594dc7.js"><link rel="stylesheet" href="/assets/css/0.styles.73c5620d.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  <title>[Typescript] solid하게 SOLID | devlog.akasai</title><meta name="gridsome:hash" content="81d9fa5c6028aa38cda4bd8f8cabff23d9438a37"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.20"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" name="description" content="Typescript 란? Typescript는 MS에서 만든 Javascript의 상위 언어로써, 서로 다른 언어가 아니다. 컴파일 언어이자, 정적 타입 언어이다. Javascript는 인터프리터 언어지만, Typescript는 컴파일 언어로 코드 수준에서 미리 타입을..." vmid="description"><meta data-vue-tag="ssr" name="keywords" content="Typescript,OOP,SOLID,객체지향"><meta data-vue-tag="ssr" property="og:title" content="[Typescript] solid하게 SOLID | devlog.akasai"><meta data-vue-tag="ssr" property="og:description" content="Typescript 란? Typescript는 MS에서 만든 Javascript의 상위 언어로써, 서로 다른 언어가 아니다. 컴파일 언어이자, 정적 타입 언어이다. Javascript는 인터프리터 언어지만, Typescript는 컴파일 언어로 코드 수준에서 미리 타입을..."><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="viewport" content="width=device-width, initial-scale=1"><meta data-vue-tag="ssr" name="description" content="akasai&#x27;s 기술블로그" vmid="description"><meta data-vue-tag="ssr" name="author" content="akasai"><meta data-vue-tag="ssr" property="og:type" content="article"><meta data-vue-tag="ssr" property="og:url" content="https://akasai.github.io/ts-solid-2/"><meta data-vue-tag="ssr" property="og:image" content="https://res.cloudinary.com/akasai/image/upload/v1600232989/cover_1_pmz69m.png"><meta data-vue-tag="ssr" property="og:site_name" content="devlog.akasai"><meta data-vue-tag="ssr" property="og:locale" content="ko_KR"><link rel="preload" href="/assets/css/0.styles.22843296.css" as="style"><link rel="preload" href="/assets/js/app.8f4c3692.js" as="script"><link rel="preload" href="/assets/js/page--src--templates--post-vue.c541a434.js" as="script"><link rel="prefetch" href="/assets/js/page--src--pages--404-vue.1a1df4a5.js"><link rel="prefetch" href="/assets/js/page--src--pages--index-vue.21aac107.js"><link rel="prefetch" href="/assets/js/page--src--pages--tags-vue.13dec935.js"><link rel="prefetch" href="/assets/js/page--src--templates--tag-vue.1a594dc7.js"><link rel="stylesheet" href="/assets/css/0.styles.22843296.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
   <meta name="naver-site-verification" content="2a8d2d084769745cbe9723b381819a4528d2e1de" />
   <meta name="google-site-verification" content="8Yt77fz2UWRfBVa9EHtF0hp8fE2F7nqMZAOE3ZoyfDc" />
   <link rel="icon" type="image/png" sizes="16x16" href="https://akasai.github.io/favicon/favicon-16x16.png">
@@ -36,7 +36,6 @@ Javascript는 인터프리터 언어지만, Typescript는 컴파일 언어로 �
 <ol start="3">
 <li>암묵적 형변환, 호이스팅, 복잡성 <strong>문제를 해결</strong>할 수 있다.</li>
 </ol>
-<br>
 <h3 id="왜-좋은데"><a href="#%EC%99%9C-%EC%A2%8B%EC%9D%80%EB%8D%B0" aria-hidden="true"><span class="icon icon-link"></span></a>왜 좋은데?</h3>
 <ol>
 <li>type이 추가되어 <strong>안정성 확보</strong></li>
@@ -51,7 +50,6 @@ Javascript는 인터프리터 언어지만, Typescript는 컴파일 언어로 �
 <p>JS엔진은 <strong>hot function(자주 호출되는 함수)에 대해 최적화</strong>를 수행한다. 이런 최적화와 해체 작업이 반복되면 성능이 저하되므로 TS에서는 type을 지정하고 컴파일 과정에서 검사하기 때문에 최적화 해체가 발생할 상황이 적어진다.</p>
 </li>
 </ol>
-<br>
 <h3 id="왜-써야되지"><a href="#%EC%99%9C-%EC%8D%A8%EC%95%BC%EB%90%98%EC%A7%80" aria-hidden="true"><span class="icon icon-link"></span></a>왜 써야되지?</h3>
 <ol>
 <li>
@@ -68,7 +66,6 @@ Javascript는 인터프리터 언어지만, Typescript는 컴파일 언어로 �
 </li>
 </ol>
 <hr>
-<br>
 <h2 id="solid"><a href="#solid" aria-hidden="true"><span class="icon icon-link"></span></a>SOLID</h2>
 <h3 id="single-responsiblity-principle-단일-책임-원칙"><a href="#single-responsiblity-principle-%EB%8B%A8%EC%9D%BC-%EC%B1%85%EC%9E%84-%EC%9B%90%EC%B9%99" aria-hidden="true"><span class="icon icon-link"></span></a>Single Responsiblity Principle (단일 책임 원칙)</h3>
 <p>클래스, 함수 등은 단 하나의 책임만을 가져야 한다. 여기서 <span class="em red">책임이란, '기능'</span> 정도의 의미이다. </p>
@@ -77,33 +74,29 @@ Javascript는 인터프리터 언어지만, Typescript는 컴파일 언어로 �
 <p>만약 한 클래스가 수행할 수 있는 기능, 즉 <strong>책임이 많아지면</strong> 클래스 내부의 함수끼리 강한 결합을 발생할 가능성이 높아진다. </p>
 <p>이는 <strong>유지보수에 비용이 증가</strong>하게 되므로 따라서 책임을 분리시킬 필요가 있다.</p>
 <p><span class="callout">클래스를 수정할 <strong>이유가 오직 하나</strong>여야한다는 뜻</span></p>
-<br>
 <h3 id="open-closed-principle-개방-패쇄-원칙"><a href="#open-closed-principle-%EA%B0%9C%EB%B0%A9-%ED%8C%A8%EC%87%84-%EC%9B%90%EC%B9%99" aria-hidden="true"><span class="icon icon-link"></span></a>Open-Closed Principle (개방-패쇄 원칙)</h3>
 <p>기존의 코드를 변경하지 않고<strong>(Closed)</strong> 기능을 수정하거나 추가할 수 있도록<strong>(Open)</strong> 설계해야 한다.</p>
 <p>OCP에 만족하는 설계를 할 때 <span class="em red">변경되는 것이 무엇인지에 초점</span>을 맞춘다.</p>
 <p>자주 변경되는 내용은 수정하기 쉽게 설계 하고, 변경되지 않아야 하는 것은 수정되는 내용에 영향을 받지 않게 하는 것이 포인트다.</p>
 <p>이를 위해 자주 사용되는 문법이 <span class="em red">인터페이스(Interface)</span>이다. (ex) 전략패턴</p>
-<br>
 <h3 id="liskov-substitution-principle-리스코프-치환-원칙"><a href="#liskov-substitution-principle-%EB%A6%AC%EC%8A%A4%EC%BD%94%ED%94%84-%EC%B9%98%ED%99%98-%EC%9B%90%EC%B9%99" aria-hidden="true"><span class="icon icon-link"></span></a>Liskov Substitution Principle (리스코프 치환 원칙)</h3>
 <p>리스코프 치환 원칙은 MIT 컴퓨터 사이언스 교수인 리스코프가 제안한 설계 원칙이다.</p>
 <p><code class="language-text">부모 클래스</code>와 <code class="language-text">자식 클래스</code> 사이의 행위에는 <strong>일관성</strong>이 있어야 한다는 원칙이며, </p>
 <p>이는 객체 지향 프로그래밍에서 부모 클래스의 인스턴스 대신 자식 클래스의 인스터스를 사용해도 문제가 없어야 한다는 것을 의미한다.</p>
 <p>상속 관계에서는 일반화 관계(IS-A)가 성립해야 한다. 일반화 관계에 있다는 것은 일관성이 있다는 것이다. </p>
 <p>따라서 리스코프 치환 원칙은 <strong>일반화 관계에 대해 묻는 것</strong>이라 할 수 있다.</p>
-<br>
 <h3 id="interface-segregation-principle-인터페이스-분리-원칙"><a href="#interface-segregation-principle-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EB%B6%84%EB%A6%AC-%EC%9B%90%EC%B9%99" aria-hidden="true"><span class="icon icon-link"></span></a>Interface Segregation Principle (인터페이스 분리 원칙)</h3>
 <p>한 클래스는 자신이 <span class="em red">사용하지 않는 인터페이스</span>는 구현하지 말아야 한다. </p>
 <p>하나의 일반적인 인터페이스보다는, 여러 개의 구체적인 인터페이스가 낫다.</p>
 <p>이는 다시 말해서, <strong>자신이 사용하지 않는 기능(인터페이스)에는 영향을 받지 말아야 한다는 의미이다.</strong></p>
-<br>
 <h3 id="dependency-inversion-principle-의존-역전-원칙"><a href="#dependency-inversion-principle-%EC%9D%98%EC%A1%B4-%EC%97%AD%EC%A0%84-%EC%9B%90%EC%B9%99" aria-hidden="true"><span class="icon icon-link"></span></a>Dependency Inversion Principle (의존 역전 원칙)**</h3>
 <p>의존 관계를 맺을 때, 변화하기 쉬운것 보단 <span class="em red">변화하기 어려운 것에 의존</span>해야 한다는 원칙이다.</p>
 <p>여기서 말하는 <strong>변화하기 쉬운 것</strong>이란 <strong>구체적인 것</strong>을 말하고, <strong>변화하기 어려운 것</strong>이란 <strong>추상적인 것</strong>을 말한다. </p>
 <p>객체지향적인 관점에서 보자면 변화하기 쉬운것이란 <strong>구체화 된 클래스</strong>를 의미하고, </p>
 <p>변화하기 어려운 것은 <code class="language-text">추상클래스</code>나 <code class="language-text">인터페이스</code>를 의미한다. </p>
 <p>따라서 <strong>DIP를 만족한다는 것은 의존관계를 맺을 때, 구체적인 클래스보다 인터페이스나 추상 클래스와 관계를 맺는다는 것을 의미</strong>한다.</p>
+<hr>
 <h2 id="typescript에서는"><a href="#typescript%EC%97%90%EC%84%9C%EB%8A%94" aria-hidden="true"><span class="icon icon-link"></span></a>Typescript에서는?</h2>
-<br>
 <h3 id="srp"><a href="#srp" aria-hidden="true"><span class="icon icon-link"></span></a>SRP</h3>
 <pre class="language-typescript"><code class="language-typescript"><span class="token comment">/*
 * SRP의 잘못된 적용 예
@@ -154,7 +147,6 @@ Javascript는 인터프리터 언어지만, Typescript는 컴파일 언어로 �
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <p>데이터모델의 <code class="language-text">property</code> 와 데이터모델에 엑세스하는 <code class="language-text">save</code> 메소드를 확실히 분리하여 수정의 목적을 <strong>한 개로 제한한다.</strong></p>
-<br>
 <h3 id="ocp"><a href="#ocp" aria-hidden="true"><span class="icon icon-link"></span></a>OCP</h3>
 <pre class="language-typescript"><code class="language-typescript"><span class="token comment">/*
 * OCP의 적용 예(1)
@@ -243,7 +235,6 @@ Javascript는 인터프리터 언어지만, Typescript는 컴파일 언어로 �
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <p>수정할 때 기존코드를 건드리지 않고 <code class="language-text">close</code> , 기능 추가가 가능하다 <code class="language-text">open</code></p>
-<br>
 <h3 id="lsp"><a href="#lsp" aria-hidden="true"><span class="icon icon-link"></span></a>LSP</h3>
 <pre class="language-typescript"><code class="language-typescript"><span class="token doc-comment comment">/**
 * LSP 적용 예(1)
@@ -300,7 +291,6 @@ Javascript는 인터프리터 언어지만, Typescript는 컴파일 언어로 �
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <p>즉, <strong>업캐스팅</strong>을 해도 아무런 문제가 안되어야 한다는 것이다.</p>
-<br>
 <h3 id="isp"><a href="#isp" aria-hidden="true"><span class="icon icon-link"></span></a>ISP</h3>
 <pre class="language-typescript"><code class="language-typescript"><span class="token doc-comment comment">/**
 * ISP의 잘못된 예
@@ -364,7 +354,6 @@ Javascript는 인터프리터 언어지만, Typescript는 컴파일 언어로 �
 하지만, 큰 관점에서 본다면 세분화된 <code class="language-text">interface</code> 를 통해 다양한 상황에서 여러가지 클래스를 생성할 수 있고,
 수정포인트가 줄어든다는 점은 확실한 장점이라고 할 수 있다.</p>
 <p><span class="callout">인터페이스 분리 원칙을 통해 시스템의 내부 의존성을 약화시켜 <strong>리팩토링, 수정, 재배포</strong>를 쉽게 할 수 있다.</span></p>
-<br>
 <h3 id="dip"><a href="#dip" aria-hidden="true"><span class="icon icon-link"></span></a>DIP</h3>
 <pre class="language-typescript"><code class="language-typescript"><span class="token doc-comment comment">/**
 * DIP 잘못된 예
@@ -468,8 +457,7 @@ Javascript는 인터프리터 언어지만, Typescript는 컴파일 언어로 �
 <span class="token punctuation">}</span></code></pre>
 <p><span class="callout">DIP를 만족한다는 것은 의존관계를 맺을 때, 구체적인 클래스보다 <strong>인터페이스나 추상 클래스와 관계</strong>를 맺는다는 것을 의미한다.</span></p>
 <hr>
-<br>
-</article></section><Adsense ins-class="bottom-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="6759499833" data-full-width-responsive="yes"></Adsense><section class="related"><h3 class="related__title">&quot;프로그래밍&quot; Related Contents</h3><article class="related__wrapper"><ul><li><a href="/typescript-enum/" title="[Typescript] Enum"><section class="related__wrapper__content"><h6 id="date">2020.10.28</h6><h3 id="title">[Typescript] Enum</h3><p id="des">Typescript의 enum에 대하여 간단히 알아봅니다..</p></section></a></li><li><a href="/closure-and-private/" title="Closure와 Private"><section class="related__wrapper__content"><h6 id="date">2020.10.24</h6><h3 id="title">Closure와 Private</h3><p id="des">Javascript의 Clousure와 Typescript의 Privat ...</p></section></a></li><li><a href="/nodejs-5/" title="Node.js의 I/O 동작"><section class="related__wrapper__content"><h6 id="date">2020.10.21</h6><h3 id="title">Node.js의 I/O 동작</h3><p id="des">Node.js 싱글스레드에 대하여 알아봅니다.</p></section></a></li></ul></article></section><div id="comment"></div></section><aside class="right"><section class="bar"><section class="bar__anchor"><h4 class="title">Contents</h4><ul><li class="depth-2"><a href="#typescript-란"> Typescript 란? </a></li><li class="depth-3"><a href="#왜-좋은데"> 왜 좋은데? </a></li><li class="depth-3"><a href="#왜-써야되지"> 왜 써야되지? </a></li><li class="depth-2"><a href="#solid"> SOLID </a></li><li class="depth-3"><a href="#single-responsiblity-principle-단일-책임-원칙"> Single Responsiblity Principle (단일 책임 원칙) </a></li><li class="depth-3"><a href="#open-closed-principle-개방-패쇄-원칙"> Open-Closed Principle (개방-패쇄 원칙) </a></li><li class="depth-3"><a href="#liskov-substitution-principle-리스코프-치환-원칙"> Liskov Substitution Principle (리스코프 치환 원칙) </a></li><li class="depth-3"><a href="#interface-segregation-principle-인터페이스-분리-원칙"> Interface Segregation Principle (인터페이스 분리 원칙) </a></li><li class="depth-3"><a href="#dependency-inversion-principle-의존-역전-원칙"> Dependency Inversion Principle (의존 역전 원칙)** </a></li><li class="depth-2"><a href="#typescript에서는"> Typescript에서는? </a></li><li class="depth-3"><a href="#srp"> SRP </a></li><li class="depth-3"><a href="#ocp"> OCP </a></li><li class="depth-3"><a href="#lsp"> LSP </a></li><li class="depth-3"><a href="#isp"> ISP </a></li><li class="depth-3"><a href="#dip"> DIP </a></li></ul></section><section class="bar__recent"><h4 class="title">Recent Updated</h4><ul><li><a href="/devday-2020/">
+</article></section><Adsense ins-class="bottom-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="6759499833" data-full-width-responsive="yes"></Adsense><section class="related"><h3 class="related__title">&quot;프로그래밍&quot; Related Contents</h3><article class="related__wrapper"><ul><li><a href="/typescript-enum/" title="[Typescript] Enum"><section class="related__wrapper__content"><h6 id="date">2020.10.28</h6><h3 id="title">[Typescript] Enum</h3><p id="des">Typescript의 enum에 대하여 간단히 알아봅니다..</p></section></a></li><li><a href="/nodejs-1/" title="Node.js의 구조"><section class="related__wrapper__content"><h6 id="date">2020.10.06</h6><h3 id="title">Node.js의 구조</h3><p id="des">Node.js V8엔진의 기본적인 내용을 정리합니다.</p></section></a></li><li><a href="/nodejs-4/" title="Node.js의 스레드"><section class="related__wrapper__content"><h6 id="date">2020.10.13</h6><h3 id="title">Node.js의 스레드</h3><p id="des">Node.js 싱글스레드에 대하여 알아봅니다.</p></section></a></li></ul></article></section><div id="comment"></div></section><aside class="right"><section class="bar"><section class="bar__anchor"><h4 class="title">Contents</h4><ul><li class="depth-2"><a href="#typescript-란"> Typescript 란? </a></li><li class="depth-3"><a href="#왜-좋은데"> 왜 좋은데? </a></li><li class="depth-3"><a href="#왜-써야되지"> 왜 써야되지? </a></li><li class="depth-2"><a href="#solid"> SOLID </a></li><li class="depth-3"><a href="#single-responsiblity-principle-단일-책임-원칙"> Single Responsiblity Principle (단일 책임 원칙) </a></li><li class="depth-3"><a href="#open-closed-principle-개방-패쇄-원칙"> Open-Closed Principle (개방-패쇄 원칙) </a></li><li class="depth-3"><a href="#liskov-substitution-principle-리스코프-치환-원칙"> Liskov Substitution Principle (리스코프 치환 원칙) </a></li><li class="depth-3"><a href="#interface-segregation-principle-인터페이스-분리-원칙"> Interface Segregation Principle (인터페이스 분리 원칙) </a></li><li class="depth-3"><a href="#dependency-inversion-principle-의존-역전-원칙"> Dependency Inversion Principle (의존 역전 원칙)** </a></li><li class="depth-2"><a href="#typescript에서는"> Typescript에서는? </a></li><li class="depth-3"><a href="#srp"> SRP </a></li><li class="depth-3"><a href="#ocp"> OCP </a></li><li class="depth-3"><a href="#lsp"> LSP </a></li><li class="depth-3"><a href="#isp"> ISP </a></li><li class="depth-3"><a href="#dip"> DIP </a></li></ul></section><section class="bar__recent"><h4 class="title">Recent Updated</h4><ul><li><a href="/devday-2020/">
             Devday 2020
           </a></li><li><a href="/intro-docker/">
             도커 용어 정리
@@ -489,21 +477,21 @@ Javascript는 인터프리터 언어지만, Typescript는 컴파일 언어로 �
         Leetcode
       </a></li><li class="medium" data-v-fc5a9040><a href="/tag/Typescript/" data-v-fc5a9040>
         Typescript
-      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/Programmers/" data-v-fc5a9040>
-        Programmers
-      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/Queue/" data-v-fc5a9040>
-        Queue
-      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/Database/" data-v-fc5a9040>
-        Database
-      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/Lock/" data-v-fc5a9040>
-        Lock
-      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/DeadLock/" data-v-fc5a9040>
-        DeadLock
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/Github/" data-v-fc5a9040>
+        Github
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/Git/" data-v-fc5a9040>
+        Git
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/%EA%B0%9C%EB%B0%9C%EC%9E%90/" data-v-fc5a9040>
+        개발자
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/%EB%A1%9C%EB%93%9C%EB%A7%B5/" data-v-fc5a9040>
+        로드맵
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/%EB%B0%B1%EC%97%94%EB%93%9C/" data-v-fc5a9040>
+        백엔드
       </a></li></ul></section></section></section></aside></article><div class="top hidden">Top</div><div class="footer"><div class="footer-links">
       Built with <a target="_blank" href="//gridsome.org" class="link">Gridsome</a> Edited By
       <a target="_blank" href="https://github.com/akasai" class="link">akasai</a> /
       <a target="_blank" href="/sitemap.xml">Sitemap</a> /
       <a target="_blank" href="/feed.xml">RSS</a></div></div></main>
-<script src="/assets/js/app.4f3c88fa.js" defer></script><script src="/assets/js/page--src--templates--post-vue.0e9d22eb.js" defer></script>
+<script src="/assets/js/app.8f4c3692.js" defer></script><script src="/assets/js/page--src--templates--post-vue.c541a434.js" defer></script>
 </body>
 </html>
