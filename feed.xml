@@ -4,7 +4,7 @@
         <title>devlog.akasai</title>
         <link>https://akasai.github.io/</link>
         <description>akasai's 기술블로그</description>
-        <lastBuildDate>Fri, 04 Dec 2020 08:08:31 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 04 Dec 2020 08:38:52 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Gridsome Feed Plugin</generator>
         <item>
@@ -40,6 +40,8 @@
 ### 카카오톡 4M/s 캐시 클러스터 전환기
 
 > [Session Link](https://tv.kakao.com/embed/player/cliplink/414132080?service=kakao_tv&section=channel&profile=HIGH&wmode=transparent&popup=1&autoplay=1) 
+
+> [Kakao Tech: Commentary](https://tech.kakao.com/2020/11/10/if-kakao-2020-commentary-01-kakao)
 
 **Redis와 K8s**, 섬네일만으로도 끌렸던 세션이다. 
 
