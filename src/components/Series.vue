@@ -7,7 +7,7 @@
           <g-link :to="node.path" :title="node.title">
             <section class="series__wrapper__content">
               <span class="num">#{{node.series_num}}</span>
-              <span class="title">{{node.title}}</span>
+              <span class="title"><b>{{node.title}}</b></span>
               <span class="date">{{node.date}}</span>
             </section>
           </g-link>
@@ -71,8 +71,14 @@
 
         .title {
           font-size: 1.8rem;
-          color: var(--series-font-color);
+          color: var(--title-font-color);
           margin: 0 10px 0 0;
+          transition: color 0.15s ease-in-out;
+
+          &:hover {
+            color: var(--series-hover-font-color);
+            transition: color 0.15s ease-in-out;
+          }
         }
 
         .date {

@@ -88,8 +88,8 @@
     /* background */
     --app-bg-color: #FFFFFF;
     --app-header-bg-color: #FFFFFF;
-    --app-hover-bg-color: #dce5e9;
-    --tag-bg-color: #ECEFF1;
+    --app-hover-bg-color: #ecf5f9;
+    --tag-bg-color: #CFD8DC;
     --code-box-bg-color: #ECEFF1;
 
     /* font */
@@ -98,10 +98,11 @@
     --anchor-hover-font-color: #4FC3F7;
     --category-font-color: #546E7A;
     --title-font-color: #37474F;
-    --series-font-color: #546E7A;
+    --series-font-color: #0277BD;
+    --series-hover-font-color: #B3CCD8;
     --info-font-color: #607D8B;
-    --reference-font-color: #37474F;
-    --reference-hover-font-color: #78909C;
+    --reference-font-color: #01579B;
+    --reference-hover-font-color: #B3CCD8;
     --code-font-color: #000000;
 
     /* border */
@@ -125,9 +126,10 @@
     --anchor-hover-font-color: #81D4FA;
     --category-font-color: #546E7A;
     --title-font-color: #ECEFF1;
-    --series-font-color: #CFD8DC;
+    --series-font-color: #81D4FA;
+    --series-hover-font-color: #29B6F6;
     --info-font-color: #90A4AE;
-    --reference-font-color: #78909C;
+    --reference-font-color: #0277BD;
     --reference-hover-font-color: #ECEFF1;
     --code-font-color: #ECEFF1;
 
