@@ -17,8 +17,6 @@ update_date: 2020-10-28
 
 ***
 
-<br>
-
 ## Enum
 
 **Enum** 타입을 사용하는 이유는 다양하다.
@@ -34,8 +32,6 @@ update_date: 2020-10-28
 3. 자칫 발생할 수 있는 값 변경을 방지할 수 있다.
 
    2번에서 이어지는 형관리를 통해 자칫 발생할 수 있는 값 변경을 방지할 수 있다. (*Enum에 정의되지 않는 데이터*)
-
-<br>
 
 ### Enum의 사용
 
@@ -86,8 +82,6 @@ enum ALPHABET {
 }
 ```
 
-<br>
-
 ### Enum == Object??
 
 Typescript에서 Enum의 가장 큰 특이점은 바로 Object라는 점이다.
@@ -131,6 +125,3 @@ enum STATUS {
 console.log(Object.keys(STATUS)) // [ 'SUCCESS', 'FAIL', 'PENDING', 'PROGRESS' ]
 console.log(Object.values(STATUS)) // [ 's', 'f', 'p', 'g' ]
 ```
-
-<br>
-

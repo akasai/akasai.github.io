@@ -19,8 +19,6 @@ update_date: 2020-10-13
 
 ***
 
-<br>
-
 ## 싱글 스레드 (Single Thread)
 
 **싱글 스레드(Single Thread)**란 말 그대로 하나의 스레드만을 사용하여 여러 작업요청을 처리하는 방법이다.
@@ -37,8 +35,6 @@ update_date: 2020-10-13
 
 *** 
 
-<br>
-
 ## 스레드 풀 (Thread pool)
 
 **멀티 스레드(Multi Thread)**모델의 경우 `스레드 풀`을 두고 요청을 처리할 때 스레드를 기반으로 처리한다.
@@ -53,13 +49,10 @@ update_date: 2020-10-13
 
 이러한 이유로 **단일 콜스택**측면에서는 `싱글 스레드`이지만 넓은 측면에서 본다면 무조건 싱글스레드는 아니라고 볼 수 있다.
 
-<br>
 
 ![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fce9951af-bea8-44a4-ab88-ed5a8be133cb%2Fnodejs.jpg?table=block&id=9012861c-5909-479b-b25f-933ad303110d&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
 
 ***
-
-<br>
 
 ## 스택 오버플로우 (Stack Overflow)
 
@@ -69,11 +62,7 @@ Javascript는 작업 수행도중 에러가 발생하면 `Stack trace`라는 내
 
 **스택**이라는 용어에서 추측할 수 있듯이 에러나가 발생하기전 처리되었던 내용들이 `Stack trace`를 통해 확인할 수 있다.
 
-<br>
-
 ![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F30d30f34-a4ee-4c92-8be6-f786cc2383b7%2Fstack-trace-example.png?table=block&id=1add1722-1625-4ee1-9dbe-16169fa8adcf&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
-
-<br>
 
 <span class="em red">여기서 주의할 점은 콜스택도 경국 유한한 구조라는 점이다.</span>
 
@@ -81,13 +70,9 @@ Javascript는 작업 수행도중 에러가 발생하면 `Stack trace`라는 내
 
 `Maximum call stack size exceeded` 에러를 뿌린다.
 
-<br>
-
 ![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ff2903775-e5e4-4e62-8e61-70bd9442a21c%2F1_5n-8aGqENgdDy3T_qPqCgA.png?table=block&id=a3e2e01c-9707-414c-be84-f768635a76a6&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
 
 ***
-
-<br>
 
 ## 이벤트 루프 멀티플랙싱(Multiplexing)
 
@@ -97,21 +82,15 @@ Node.js는 `싱글 스레드`라는 내용은 자주 언급된다.
 
 바로 이벤트 루프의 `멀티 플렉싱(Multiplexing)`에서 그 답을 찾을 수 있다.
 
-<br>
-
 ### 멀티플렉싱(Multiplexing)
 
 ![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc5ade81c-3bbf-4fb0-b917-eba48bb78bc5%2Fasynchronous-programming.jpg?table=block&id=56865363-0e69-49b6-a7bf-17389948d264&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
-
-<br>
 
 `멀티플렉싱(Multiplexing)`이란 하나의 통신채널을 통해 다량의 데이터를 전송하는데 사용되는 기술이다.
 
 즉, 매 요청마다 새로운 프로세스나 스레드를 생성하는 것이 아니라 <span class="em red">요청의 갯수와 상관없이 한개의 프로세스나 스레드를 이용</span>하여 작업을 처리하는 방법이다.
 
 주파수 분할, 시분할 등을 예로 들 수 있다.
-
-<br>
 
 ### Node.js의 경우
 
@@ -127,8 +106,6 @@ Node.js의 모든 작업처리는 **단일 콜스택**에서 이루어지고 비
 <span class="callout">위 방식이 만능은 아니다. CPU의 영향을 많이 받는 요청의 경우 한정된 쓰레드에서 I/O 작업이 처리되며 이를 이벤트루프는 대기하기 때문에 이후 발생하는 다른 Request들에 병목현상이 발생한다.</span>
 
 ***
-
-<br>
 
 ## Reference
 

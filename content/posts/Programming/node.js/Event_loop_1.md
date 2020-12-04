@@ -19,8 +19,6 @@ Node.js를 이용하고 개발을 하면서 너무나 자연스럽게 **callback
 
 ***
 
-<br>
-
 ## Javascript 엔진 구조
 
 <span class="callout">
@@ -33,8 +31,6 @@ Node.js는 이벤트 기반 자바스크립트 런타임으로 구글에서 개�
 
 Javascript 엔진은 크게 두 가지 영역으로 나뉜다.
 
-<br>
-
 ### Call Stack
 
 코드의 실행에 따라 호출 스택이 쌓여 처리되는 곳이다. 
@@ -45,8 +41,6 @@ Javascript 엔진은 크게 두 가지 영역으로 나뉜다.
 
 이런 특징을 지닌 Javascript엔진은 `Event Loop`와 `Queue`를 이용하여 비동기처리가 가능하게 된다.
 
-<br>
-
 ### Heap
 
 대부분 구조화되지 않는 `더미(dummy)`같은 메모리 영역을 **힙(heap)**이라고 한다.
@@ -56,8 +50,6 @@ Javascript 엔진은 크게 두 가지 영역으로 나뉜다.
 ![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2927c772-b3ff-4fa0-bd0f-5905ee861e44%2Fjs-engine-structure.png?table=block&id=79a25445-ffc4-4519-a42b-cde943c1761e&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
 
 ***
-
-<br>
 
 ## 런타임
 
@@ -74,8 +66,6 @@ Javascript 엔진은 크게 두 가지 영역으로 나뉜다.
 
 런타임 환경에서는 크게 세가지를 제공한다.
 
-<br>
-
 ### Web API
 
 런타임 환경에서 제공하는 API들이다.
@@ -88,8 +78,6 @@ Javascript코드를 사용하여 접근할 수 있으며 window나 element에 �
 
 3. Timeout (setTimeout)
 
-<br>
-
 ### Event Loop
 
 반복하여 **콜 스택** 과 **큐(Queue)** 사이의 작업들을 확인하며, 콕 스택이 빈 상태가 되면 큐의 작업을 콜 스택에 넣는다.
@@ -99,8 +87,6 @@ Javascript코드를 사용하여 접근할 수 있으며 window나 element에 �
 일련의 작업들은 **Event loop**를 통해 **콜 스택**에서 처리된다.
 
 Node.js에서는 이벤트 루프를 이용하여 동시성을 지원한다.
-
-<br>
 
 ### Queue
 
@@ -123,8 +109,6 @@ ES6 도입 이후로 `Microtask Queue`가 도입되어 대표적으로 3가지 �
 ![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F80564363-c1a2-49a1-88b0-8b2ab5582d50%2Fqueu.png?table=block&id=475af1fa-6e5f-4499-9468-9ac53f5e718b&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
 
 ***
-
-<br>
 
 ## Reference
 

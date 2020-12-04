@@ -27,8 +27,6 @@ update_date: 2020-09-16
 
 ***
 
-<br>
-
 ## Presigned-URL
 
  **AWS**의 기본적인 세팅(`IAM`, `S3`)은 완료되어 있어야 한다. 그리고 `aws-sdk`패키지를 이용해서 URL을 만든다.
@@ -41,8 +39,6 @@ $ npm i aws-sdk
 
 설치가 끝나면 `aws-sdk`초기화를 한다.
 
-<br>
-
 ```javascript
 const AWS = require('aws-sdk')
 
@@ -54,8 +50,6 @@ AWS.config.update({accessKeyId, secretAccessKey})
 
 기본적인 `aws-sdk`세팅이 끝나면 S3객체를 만든다.
 
-<br>
-
 ```javascript
 const s3 = new AWS.S3({signatureVersion: 'v4', region: 'Region'})
 ```
@@ -64,13 +58,7 @@ const s3 = new AWS.S3({signatureVersion: 'v4', region: 'Region'})
 
 `region`: 엑세스 요청을 보낼 리젼. 이 리젼에 따라서 **endPoint**의 URL도 변경된다.
 
-<br>
-
 > **Note**: The default signer allows altering the request by adding corresponding headers to set some parameters (e.g. Range) and these added parameters won't be signed. You must use **signatureVersion v4** to to include these parameters in the signed portion of the URL and enforce exact matching between headers and signed params in the URL.
-
-***
-
-<br>
 
 ### 2. URL 생성하기
 
@@ -89,8 +77,6 @@ const url = s3.getSignedUrl('getObject', {
 
 `Expires` (default: 900s): 이 옵션을 추가해 주어야 `presigned-URL`이 생성된다.
 
-<br>
-
 ```
 # v4
 https://{Bucket}.s3.{region}.amazonaws.com/{FileName}?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential={KEY}%2F{region}%2Fs3%2Faws4_request&X-Amz-Date=20190718T234545Z&X-Amz-Expires=30&X-Amz-Signature=d7f47df5514f17f725e2e5213ff58487dbc61122e9851feea43898587a38c5d1&X-Amz-SignedHeaders=host
@@ -105,11 +91,11 @@ https://{Bucket}.s3.{region}.amazonaws.com/{FileName}?AWSAccessKeyId={KEY}&Expir
 
 ![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa04cab4f-1489-4759-adf6-4aae0b9843dc%2F_2019-07-19__9.25.11.png?table=block&id=2ecb7a23-46a3-4189-ad0b-947fd0cb43d6&width=3120&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
 
-💡 S3에 저장된 파일에 접근권한이 무엇이든 (Public, Private) 상관없지만, 사용의도에 맞게 **Private**으로 변경하는 것이 좋다.
+<span class="callout">
+S3에 저장된 파일에 접근권한이 무엇이든 (Public, Private) 상관없지만, 사용의도에 맞게 **Private**으로 변경하는 것이 좋다.
+</span>
 
 ***
-
-<br>
 
 ## Reference
 

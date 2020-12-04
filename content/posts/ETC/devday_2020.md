@@ -35,8 +35,6 @@ update_date: 2020-11-30
 
 ~~절대 내가 영어를 못해서가 아니다.~~
 
-<br>
-
 ### Story that built Sentry as an On-Premise
 
 [Youtube Link](https://youtu.be/LOCByPfbQsk)
@@ -63,9 +61,6 @@ update_date: 2020-11-30
 
 ![](https://www.sentry.dev/_assets2/static/backend-issue-b42f9fc9eb1a30ea435e0171aed3afdd.png)
 
-<br>
-<br>
-
 ### How to quickly develop static pages in LINE
 
 [Youtube Link](https://youtu.be/lclP6MbSdG4)
@@ -90,8 +85,6 @@ update_date: 2020-11-30
 
 ***
 
-<br>
-
 ## 요약
 
 우선 추천받은 2가지의 세션만 들어보았다.
@@ -101,8 +94,6 @@ Front-end/Back-end라는 벽을 허물고 다양한 측면에서 성능개선을
 기회가 된다면 Sentry는 경험할 수 있는 부분은 직접 경험해본 뒤 적용해보고 싶다.
 
 *** 
-
-<br>
 
 ## Reference
 

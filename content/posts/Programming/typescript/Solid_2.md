@@ -27,8 +27,6 @@ Javascript는 인터프리터 언어지만, Typescript는 컴파일 언어로 �
 
 3. 암묵적 형변환, 호이스팅, 복잡성 **문제를 해결**할 수 있다.
 
-<br>
-
 ### 왜 좋은데?
 
 1. type이 추가되어 **안정성 확보**
@@ -41,8 +39,6 @@ Javascript는 인터프리터 언어지만, Typescript는 컴파일 언어로 �
 3. JS엔진에 **최적화 작업 성능 증가**
 
     JS엔진은 **hot function(자주 호출되는 함수)에 대해 최적화**를 수행한다. 이런 최적화와 해체 작업이 반복되면 성능이 저하되므로 TS에서는 type을 지정하고 컴파일 과정에서 검사하기 때문에 최적화 해체가 발생할 상황이 적어진다.
-
-<br>
 
 ### 왜 써야되지?
 
@@ -58,8 +54,6 @@ Javascript는 인터프리터 언어지만, Typescript는 컴파일 언어로 �
     선언 파일(.d.ts)을 통해 써드파티 개발 시 높은 통찰력을 줄 수 있다.
 
 ***
-
-<br>
 
 ## SOLID
 
@@ -77,8 +71,6 @@ Javascript는 인터프리터 언어지만, Typescript는 컴파일 언어로 �
   
 <span class="callout">클래스를 수정할 **이유가 오직 하나**여야한다는 뜻</span>
   
-<br>
-
 ### Open-Closed Principle (개방-패쇄 원칙)
 
 기존의 코드를 변경하지 않고**(Closed)** 기능을 수정하거나 추가할 수 있도록**(Open)** 설계해야 한다.
@@ -88,8 +80,6 @@ OCP에 만족하는 설계를 할 때 <span class="em red">변경되는 것이 
 자주 변경되는 내용은 수정하기 쉽게 설계 하고, 변경되지 않아야 하는 것은 수정되는 내용에 영향을 받지 않게 하는 것이 포인트다.
 
 이를 위해 자주 사용되는 문법이 <span class="em red">인터페이스(Interface)</span>이다. (ex) 전략패턴
-
-<br>
 
 ### Liskov Substitution Principle (리스코프 치환 원칙)
 
@@ -103,8 +93,6 @@ OCP에 만족하는 설계를 할 때 <span class="em red">변경되는 것이 
 
 따라서 리스코프 치환 원칙은 **일반화 관계에 대해 묻는 것**이라 할 수 있다.
 
-<br>
-
 ### Interface Segregation Principle (인터페이스 분리 원칙)
 
 한 클래스는 자신이 <span class="em red">사용하지 않는 인터페이스</span>는 구현하지 말아야 한다. 
@@ -113,8 +101,6 @@ OCP에 만족하는 설계를 할 때 <span class="em red">변경되는 것이 
 
 이는 다시 말해서, **자신이 사용하지 않는 기능(인터페이스)에는 영향을 받지 말아야 한다는 의미이다.**
   
-<br>
-
 ### Dependency Inversion Principle (의존 역전 원칙)**
 
 의존 관계를 맺을 때, 변화하기 쉬운것 보단 <span class="em red">변화하기 어려운 것에 의존</span>해야 한다는 원칙이다.
@@ -127,9 +113,9 @@ OCP에 만족하는 설계를 할 때 <span class="em red">변경되는 것이 
 
 따라서 **DIP를 만족한다는 것은 의존관계를 맺을 때, 구체적인 클래스보다 인터페이스나 추상 클래스와 관계를 맺는다는 것을 의미**한다.
 
-## Typescript에서는?
+***
 
-<br>
+## Typescript에서는?
 
 ### SRP
 
@@ -189,8 +175,6 @@ class Repository {
 ```
 
 데이터모델의 `property` 와 데이터모델에 엑세스하는 `save` 메소드를 확실히 분리하여 수정의 목적을 **한 개로 제한한다.**
-
-<br>
 
 ### OCP
 
@@ -288,8 +272,6 @@ class SoundPlayer {
 
 수정할 때 기존코드를 건드리지 않고 `close` , 기능 추가가 가능하다 `open`
 
-<br>
-
 ### LSP
     
 ```typescript
@@ -353,8 +335,6 @@ class AddressWriter {
 ```
 
 즉, **업캐스팅**을 해도 아무런 문제가 안되어야 한다는 것이다.
-
-<br>
 
 ###  ISP
 
@@ -428,8 +408,6 @@ class SuperPrinter implements Printer, Stapler, Copier {
 수정포인트가 줄어든다는 점은 확실한 장점이라고 할 수 있다.
 
 <span class="callout">인터페이스 분리 원칙을 통해 시스템의 내부 의존성을 약화시켜 **리팩토링, 수정, 재배포**를 쉽게 할 수 있다.</span>
-
-<br>
 
 ### DIP
     
@@ -543,6 +521,5 @@ class SoundPlayer {
 ```
 
 <span class="callout">DIP를 만족한다는 것은 의존관계를 맺을 때, 구체적인 클래스보다 **인터페이스나 추상 클래스와 관계**를 맺는다는 것을 의미한다.</span>
-***
 
-<br>
+***

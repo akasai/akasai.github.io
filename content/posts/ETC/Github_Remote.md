@@ -25,6 +25,8 @@ $ git init
  
 local 저장소가 원격저장소와 연결되어 있는지 확인한다. 
 
+***
+
 ## Git Remote 연결
 
 ```bash
@@ -42,11 +44,15 @@ $ git remote add [remote name] [github reposit url]
 
 계정과 비밀번호를 치면 github과 연결되며 이후 일반적인 git명령어를 통해 조작할 수 있다.
 
+***
+
 ## Git Remote 제거
 
 ```bash
 $ git remote remove [remote name]
 ```
+
+***
 
 ## Git Remote 이름 변경
 

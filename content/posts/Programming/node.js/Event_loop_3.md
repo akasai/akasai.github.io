@@ -17,8 +17,6 @@ update_date: 2020-10-12
 
 ***
 
-<br>
-
 ## 정의
 
 ### 동기(Sync) / 비동기(Async)
@@ -45,8 +43,6 @@ update_date: 2020-10-12
 
    위 두가지 경우를 극단적인 예를 들어 설명하자면 `작업 A`가 0.5초, `작업 B`가 2초 걸리는 작업이라면 **Sync**일 경우 2.5초, **Async**일 경우 0.5+a초 만큼의 응답속도를 보인다.
 
-<br>
-
 ### 블로킹(Blocking) / 논블로킹(Non-Blocking)
 
    **Non-Blocking(이하 논블로킹)**이란 이전 작업이 완료될 때 까지 기다리지 않고, 다음작업이 바로 진행될 수 있도록 동작하는 패러다임이다.
@@ -69,21 +65,15 @@ update_date: 2020-10-12
 
 ***
 
-<br>
-
 ## 동작 방식
 
 위 정의에 따라 4가지의 경우의 수를 확인할 수 있다.
-
-<br>
 
 ### 동기 - 블로킹
 
 **동기**이므로 `요청 A`의 실행시간과 종료시간이 보장되며 내부의 `I/O`작업 또한 종료까지 대기했다가 작업이 반환(**블로킹**)된다.
 
 ![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbf5d7aef-0eae-4fca-a91d-7898293a46c2%2F_2020-10-12__3.46.17.png?table=block&id=20f6c2f2-1e16-4394-9a55-5a7e610eb4ef&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
-
-<br>
 
 ### 동기 - 논블로킹
 
@@ -92,8 +82,6 @@ update_date: 2020-10-12
 
 ![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0b40af62-9083-4b28-8ae9-f93000bb4240%2F_2020-10-12__3.53.15.png?table=block&id=b0ac7ffe-c273-4f66-99cc-8e0e9e2d4a33&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
 
-<br>
-
 ### 비동기 - 논블로킹
 
 **비동기**이므로 각각의 작업이 순차적인 실행순서를 보장하지 않는다. `요청 A`가 요청되고 `I/O`작업까지 호출되면 **논블로킹**되어 Kernel은 다른 작업을 받을 대기를 한다.
@@ -101,8 +89,6 @@ update_date: 2020-10-12
 `I/O`작업이 완료되면 `요청 A`역시 결과를 반환하여 모든 프로세스가 완료된다.
 
 ![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa004af0f-32d6-47ce-b8b9-f5f70c61534e%2F_2020-10-12__4.00.32.png?table=block&id=b2d7cc2c-f8b6-4a8e-9664-d01d7e1e8671&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
-
-<br>
 
 ### 비동기 - 블로킹
 
@@ -114,8 +100,6 @@ update_date: 2020-10-12
 ![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5f628d9c-16f9-4105-89d5-40c18920ccb2%2F1231.jpg?table=block&id=9f5bdf0b-d3b5-4bb9-8239-ffcf91f92517&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
 
 ***
-
-<br>
 
 ## Node.js의 논블로킹
 
@@ -146,8 +130,6 @@ blahblah
 end
 ```
 
-<br>
-
 ### 논블로킹
 
 ```javascript
@@ -170,8 +152,6 @@ start
 end
 blahblah
 ```
-
-<br>
 
 ### 블로킹과 논블로킹 코드를 섞을 때의 위험성
 
@@ -206,6 +186,8 @@ fs.readFile('/file.txt', (err, data) => {
 })
 ```
 
+***
+
 ## 심화
 
 설명을 위해 몇가지 내용을 대충 정리했다. 대략적으로 훑고 넘어가면
@@ -227,8 +209,6 @@ fs.readFile('/file.txt', (err, data) => {
    > [libuv](https://libuv.org/)
 
 ***
-
-<br>
 
 ## Reference
 

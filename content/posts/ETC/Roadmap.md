@@ -29,15 +29,11 @@ update_date: 2020-10-13
 
 ***
 
-<br>
-
 ## 데브옵스 개발자
 
 ![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2cdebbc5-36b1-4c1e-8acf-5d1ae87fef69%2F120289515_197891651699762_5766344256591660931_o.jpg?table=block&id=faf2e525-1382-4990-a8c3-93457e71551e&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
 
 *** 
-
-<br>
 
 ## Reference
 

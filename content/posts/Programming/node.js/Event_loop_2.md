@@ -17,8 +17,6 @@ update_date: 2020-10-08
 
 ***
 
-<br>
-
 ## 이벤트 루프
 
 이벤트 루프는 콜 스택과 큐를 감시하며 비어있는 콜 스택에 작업을 넣는 작업(Tick)을 수행한다.
@@ -39,8 +37,6 @@ while(queue.waitForMessage()) {
 </span>
 
 콜 스택에 올라간 작업은 되므로 `Run-to-completion` 으로 동작한다.
-
-<br>
 
 ### 구조
 
@@ -78,8 +74,6 @@ while(queue.waitForMessage()) {
 6. Close callbacks
 
    e.g: `socket.on(‘close’, ….)`
-
-<br>
 
 ### 동작 원리 - callback
 
@@ -141,8 +135,6 @@ first() // ????
 > **[loupe](http://latentflip.com/loupe)**
 >
 > 위 사이트에서 대략적인 플로우를 확인해볼 수 있다. (callback 한정)
-
-<br>
 
 ### 동작 원리 - promise
 
@@ -247,17 +239,15 @@ first()
 >
 > 위 사이트에서 대략적인 플로우를 확인해볼 수 있다.
 
-<br>
+***
 
-### Summary
+## Summary
 
 Queue의 호출순서 우선순위는 **Microtask Queue > Animation Frames > Task Queue** 순이다.
 
 <span class="callout">
 이러한 동작들은 브라우저마다 호출 순서가 다를 가능성이 있다. Promise의 처리방식이 브라우저 별로 다르기 때문이다.
 </span>
-
-<br>
 
 <span class="callout">
 setTimeout함수의 경우 `delay` 파라미터를 통해 딜레이를 조절할 수 있다. <br>
@@ -269,8 +259,6 @@ setTimeout함수의 경우 `delay` 파라미터를 통해 딜레이를 조절할
 ![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fce9951af-bea8-44a4-ab88-ed5a8be133cb%2Fnodejs.jpg?table=block&id=9012861c-5909-479b-b25f-933ad303110d&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
 
 ***
-
-<br>
 
 ## Reference
 
