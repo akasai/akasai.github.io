@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html theme="dark" data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+<head>
+  <title>Typescript 4.1 | devlog.akasai</title><meta name="gridsome:hash" content="b74a4e8338852ff5cb20ead62f71b3e714bc6c7d"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.20"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" name="description" content=" 11월 19일 Typescript 4.1이 릴리즈되었다. 한달이 지난 시점이지만, 대략적인 내용을 정리해 보았다. Template Literal Types String literal types Typescript에서는 문자열 나열형태의 타입을 지원한다. functio..." vmid="description"><meta data-vue-tag="ssr" name="keywords" content="Typescript"><meta data-vue-tag="ssr" property="og:title" content="Typescript 4.1 | devlog.akasai"><meta data-vue-tag="ssr" property="og:description" content=" 11월 19일 Typescript 4.1이 릴리즈되었다. 한달이 지난 시점이지만, 대략적인 내용을 정리해 보았다. Template Literal Types String literal types Typescript에서는 문자열 나열형태의 타입을 지원한다. functio..."><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="viewport" content="width=device-width, initial-scale=1"><meta data-vue-tag="ssr" name="description" content="akasai&#x27;s 기술블로그" vmid="description"><meta data-vue-tag="ssr" name="author" content="akasai"><meta data-vue-tag="ssr" property="og:type" content="article"><meta data-vue-tag="ssr" property="og:url" content="https://akasai.github.io/typescript-4-1/"><meta data-vue-tag="ssr" property="og:image" content="https://res.cloudinary.com/akasai/image/upload/v1600232989/cover_1_pmz69m.png"><meta data-vue-tag="ssr" property="og:site_name" content="devlog.akasai"><meta data-vue-tag="ssr" property="og:locale" content="ko_KR"><link rel="preload" href="/assets/css/0.styles.188a3c8b.css" as="style"><link rel="preload" href="/assets/js/app.32f1ff7f.js" as="script"><link rel="preload" href="/assets/js/page--src--templates--post-vue.ece96127.js" as="script"><link rel="prefetch" href="/assets/js/page--src--pages--404-vue.1a1df4a5.js"><link rel="prefetch" href="/assets/js/page--src--pages--index-vue.21aac107.js"><link rel="prefetch" href="/assets/js/page--src--pages--tags-vue.79e3a453.js"><link rel="prefetch" href="/assets/js/page--src--templates--tag-vue.1a594dc7.js"><link rel="stylesheet" href="/assets/css/0.styles.188a3c8b.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  <meta name="naver-site-verification" content="2a8d2d084769745cbe9723b381819a4528d2e1de" />
+  <meta name="google-site-verification" content="8Yt77fz2UWRfBVa9EHtF0hp8fE2F7nqMZAOE3ZoyfDc" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://akasai.github.io/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://akasai.github.io/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="https://akasai.github.io/favicon/favicon-96x96.png">
+  <link rel="shortcut icon" type="image/x-icon" href="https://akasai.github.io/favicon/favicon.ico">
+  <script data-ad-client="ca-pub-7791595479585064" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body >
+<main role="main" data-server-rendered="true" id="app" class="layout"><header class="header"><a href="/" class="active"><h1>🐋 devlog.akasai</h1></a><!----></header><article class="post__wrapper"><aside class="left"><Adsense ins-class="left-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="5250685461" data-full-width-responsive="yes"></Adsense></aside><section class="post"><section class="post__title"><h3 id="category">프로그래밍 / Typescript</h3><h1 id="title">Typescript 4.1</h1><!----><span class="post__title-info"><ul><li><svg aria-hidden="true" data-prefix="fas" data-icon="user" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-user fa-w-14 icon"><path fill="currentColor" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path></svg> akasai
+            </li><li><svg aria-hidden="true" data-prefix="far" data-icon="clock" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-clock fa-w-16 icon"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"></path></svg>12월 12 토, 2020
+                 · 4 min read
+            </li></ul></span><section class="tag__wrapper" data-v-fc5a9040><svg aria-hidden="true" data-prefix="fas" data-icon="tags" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="svg-inline--fa fa-tags fa-w-20 medium icon" data-v-fc5a9040 data-v-fc5a9040><path fill="currentColor" d="M497.941 225.941L286.059 14.059A48 48 0 00252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0014.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0133.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z" data-v-fc5a9040 data-v-fc5a9040></path></svg><ul data-v-fc5a9040><li class="medium" data-v-fc5a9040><a href="/tag/Typescript/" data-v-fc5a9040>
+        Typescript
+      </a></li></ul></section></section><!----><Adsense ins-class="top-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="1631172523" data-full-width-responsive="yes"></Adsense><section class="post__content"><article><p><img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9343aee2-7402-4856-b3bf-0bfd9702b926%2Fpx52c3vht.jpg?table=block&#x26;id=f7bf0703-d3e3-4d22-9759-06ca5ef5b8b6&#x26;width=2580&#x26;userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&#x26;cache=v2"></p>
+<p>11월 19일 Typescript 4.1이 릴리즈되었다.</p>
+<p>한달이 지난 시점이지만, 대략적인 내용을 정리해 보았다.</p>
+<hr>
+<h2 id="template-literal-types"><a href="#template-literal-types" aria-hidden="true"><span class="icon icon-link"></span></a>Template Literal Types</h2>
+<h3 id="string-literal-types"><a href="#string-literal-types" aria-hidden="true"><span class="icon icon-link"></span></a>String literal types</h3>
+<p><code class="language-text">Typescript</code>에서는 문자열 나열형태의 타입을 지원한다.</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token function">setVerticalAlignment</span><span class="token punctuation">(</span>pos<span class="token operator">:</span> <span class="token string">"top"</span> <span class="token operator">|</span> <span class="token string">"middle"</span> <span class="token operator">|</span> <span class="token string">"bottom"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">setVerticalAlignment</span><span class="token punctuation">(</span><span class="token string">"middel"</span><span class="token punctuation">)</span>
+<span class="token comment">// error: Argument of type '"middel"' is not assignable to parameter of type '"top" | "middle" | "bottom"'.</span></code></pre>
+<p>위 처럼 활용하면 파라미터의 <strong>스펠체크</strong>가 가능한 형태의 타입이였다.</p>
+<p>이를 활용해서 좀 더 다양한 타입정의를 할 수 있다.</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="token keyword">type</span> Options <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">[</span><span class="token constant">K</span> <span class="token keyword">in</span> <span class="token string">"noImplicitAny"</span> <span class="token operator">|</span> <span class="token string">"strictNullChecks"</span> <span class="token operator">|</span> <span class="token string">"strictFunctionTypes"</span><span class="token punctuation">]</span><span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">boolean</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// same as</span>
+<span class="token comment">//   type Options = {</span>
+<span class="token comment">//       noImplicitAny?: boolean,</span>
+<span class="token comment">//       strictNullChecks?: boolean,</span>
+<span class="token comment">//       strictFunctionTypes?: boolean</span>
+<span class="token comment">//   }</span></code></pre>
+<h3 id="template-literal-string-type"><a href="#template-literal-string-type" aria-hidden="true"><span class="icon icon-link"></span></a>Template literal string type</h3>
+<p><code class="language-text">Javascript</code>의 <strong>템플릿 스트링</strong>을 활용하여 <code class="language-text">TS4.1</code>에서는 좀 더 다양한 타입을 선언할 수 있게 되었다.</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="token keyword">type</span> World <span class="token operator">=</span> <span class="token string">"world"</span>
+
+<span class="token keyword">type</span> Greeting <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">hello </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>World<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+<span class="token comment">// same as</span>
+<span class="token comment">//   type Greeting = "hello world"</span></code></pre>
+<p>이를 응용하면 길게만 느껴진 나열형태의 타입선언이 아주 간단하게 가능하다.</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="token keyword">type</span> VerticalAlignment <span class="token operator">=</span> <span class="token string">"top"</span> <span class="token operator">|</span> <span class="token string">"middle"</span> <span class="token operator">|</span> <span class="token string">"bottom"</span>
+<span class="token keyword">type</span> HorizontalAlignment <span class="token operator">=</span> <span class="token string">"left"</span> <span class="token operator">|</span> <span class="token string">"center"</span> <span class="token operator">|</span> <span class="token string">"right"</span>
+
+<span class="token keyword">declare</span> <span class="token keyword">function</span> <span class="token function">setAlignment</span><span class="token punctuation">(</span>value<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>VerticalAlignment<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>HorizontalAlignment<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span>
+<span class="token comment">//   | "top-left"    | "top-center"    | "top-right"</span>
+<span class="token comment">//   | "middle-left" | "middle-center" | "middle-right"</span>
+<span class="token comment">//   | "bottom-left" | "bottom-center" | "bottom-right"</span>
+
+<span class="token function">setAlignment</span><span class="token punctuation">(</span><span class="token string">"top-left"</span><span class="token punctuation">)</span>   <span class="token comment">// works!</span>
+<span class="token function">setAlignment</span><span class="token punctuation">(</span><span class="token string">"top-middel"</span><span class="token punctuation">)</span> <span class="token comment">// error!</span></code></pre>
+<p>총 9가지의 타입이 단 두개의 타입과 <strong>템플릿 스트링</strong>을 활용하여 간단하게 선언가능하다. </p>
+<h3 id="dynamically-template-literal-type"><a href="#dynamically-template-literal-type" aria-hidden="true"><span class="icon icon-link"></span></a>Dynamically template literal type</h3>
+<p>지금까지 알아본 내용들을 이용하면 다양한 형태의 선언이 가능하다.</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="token keyword">type</span> PropEventSource<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    on<span class="token operator">&lt;</span><span class="token constant">K</span> <span class="token keyword">extends</span> <span class="token class-name">string</span> <span class="token operator">&amp;</span> <span class="token keyword">keyof</span> <span class="token constant">T</span><span class="token operator">></span>
+        <span class="token punctuation">(</span>eventName<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token constant">K</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">Changed</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token function-variable function">callback</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">newValue<span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">[</span><span class="token constant">K</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span> <span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">declare</span> <span class="token keyword">function</span> makeWatchedObject<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">></span><span class="token punctuation">(</span>obj<span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token constant">T</span> <span class="token operator">&amp;</span> PropEventSource<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">></span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> person <span class="token operator">=</span> <span class="token function">makeWatchedObject</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  firstName<span class="token operator">:</span> <span class="token string">'John'</span><span class="token punctuation">,</span>
+  age<span class="token operator">:</span> <span class="token number">42</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p><code class="language-text">makeWatchedObject()</code>함수는 <code class="language-text">obj</code> 파라미터의 타입 <strong>T</strong>를 동적으로 할당한다.</p>
+<p><strong>person</strong> 이라는 익명함수를 정의할 때 위와같이 <code class="language-text">obj</code>를 정의하면 프로퍼티들의 타입을 바탕으로 한 제너릭 타입 <strong>T</strong>가</p>
+<p>정의된다.</p>
+<img class="w-50" src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F241eb885-1d14-4c8c-b381-0a2aeadb27b0%2F_2020-12-13__6.53.32.png?table=block&id=6467ff81-8e46-40e8-9ce8-c58944f8057c&width=2580&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2">
+<p>이제 <code class="language-text">PropEventSource</code> type을 바탕으로 <code class="language-text">on</code>함수를 호출해 볼 수 있다.</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="token comment">// Error! </span>
+person<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"lastNameChanged"</span><span class="token punctuation">,</span> <span class="token parameter">_</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// works! 'newName' is typed as 'string'</span>
+person<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"firstNameChanged"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">newName</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token comment">// 'newName' has the type of 'firstName'</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">new name is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>newName<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// works! 'newAge' is typed as 'number'</span>
+person<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"ageChanged"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">newAge</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>newAge <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"warning! negative age"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>위 예제에선 <strong>lastNameChanged, firstNameChanged, ageChanged</strong> 등 3개의 eventName을 받는다.</p>
+<p><code class="language-text">on()</code>함수의 파라미터는 <code class="language-text">${K}Changed</code>라는 템플릿 스트링 타입이며 <strong>K</strong>는 제너릭 타입 <code class="language-text">K extends string &amp; keyof T</code>과 같다.</p>
+<p>즉, eventName의 타입은 <code class="language-text">makeWatchedObject()</code>의 파라미터의 프로퍼티를 바탕으로 정의되므로 <strong>'firstNameChanged' | 'ageChanged'</strong>이다.</p>
+<p>따라서 첫번째 예제는 <strong>Error</strong>이다.</p>
+<br>
+<p>두번째 예제에서는 <strong>K</strong>가 <strong>firstName</strong>이 된다. </p>
+<p><code class="language-text">PropEventSource</code>에서 선언된 내용에 따라 <code class="language-text">on()</code>함수의 콜백 파라미터는 <code class="language-text">T[K]</code>가 된다.</p>
+<p>여기서 <code class="language-text">T[K]</code>는 <strong>'John'</strong>이므로 자연스럽게(?) newName은 <strong>string</strong>타입으로 정의된다.</p>
+<br>
+<p>세번째 예제에서 <strong>K</strong>는 <strong>age</strong>d이며 <code class="language-text">on()</code>함수의 콜백 파라미터는 <code class="language-text">T[K]</code>는 <strong>25</strong>이므로</p>
+<p>newAge는 <strong>number</strong>타입으로 정의된다.</p>
+<hr>
+<h2 id="key-remapping-in-mapped-types"><a href="#key-remapping-in-mapped-types" aria-hidden="true"><span class="icon icon-link"></span></a>Key Remapping in Mapped Types</h2>
+<p><code class="language-text">as</code> 키워드를 이용해 좀 더 명확한 <strong>매핑타입(Mapping Type)</strong>을 선언할 수 있게 되었다.</p>
+<p>기존에 주로사용되던 <strong>매핑타입</strong>은 대표적으로 optional 프로퍼티를 만드는 <code class="language-text">Partial</code>이 있다.</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="token keyword">type</span> Partial<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">[</span><span class="token constant">K</span> <span class="token keyword">in</span> <span class="token keyword">keyof</span> <span class="token constant">T</span><span class="token punctuation">]</span><span class="token operator">?</span><span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">[</span><span class="token constant">K</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code></pre>
+<p><code class="language-text">TS4.1</code>에서는 위 구문에 <code class="language-text">as</code> 키워드를 사용하여 좀 더 정교한 타입정의가 가능하다.</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="token keyword">type</span> Getters<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">[</span><span class="token constant">K</span> <span class="token keyword">in</span> <span class="token keyword">keyof</span> <span class="token constant">T</span> <span class="token keyword">as</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">get</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>Capitalize<span class="token operator">&lt;</span><span class="token builtin">string</span> <span class="token operator">&amp;</span> <span class="token constant">K</span><span class="token operator">></span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token constant">T</span><span class="token punctuation">[</span><span class="token constant">K</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token builtin">string</span>
+    age<span class="token operator">:</span> <span class="token builtin">number</span>
+    location<span class="token operator">:</span> <span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> LazyPerson <span class="token operator">=</span> Getters<span class="token operator">&lt;</span>Person<span class="token operator">></span>
+
+<span class="token keyword">const</span> person<span class="token operator">:</span> LazyPerson <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">getName</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token string">'John'</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">getAge</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token number">25</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">getLocation</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token string">'seoul'</span>
+<span class="token punctuation">}</span></code></pre>
+<p>위 예제에서 <code class="language-text">Getters</code>타입은 제너릭 <strong>T</strong>의 key값들을 이용하여 <code class="language-text">get${K}</code>형태의 익명함수로 구성된 타입이다.</p>
+<p>interface <code class="language-text">Person</code>을 제너릭타입으로 하는 <code class="language-text">LazyPerson</code>타입을 통해</p>
+<p>각 키값을 바탕으로 <strong>getName | getAge | getLocation</strong>이라는 익명함수를 갖는 <strong>person</strong>변수를 선언할 수 있다.</p>
+<hr>
+<h2 id="etc"><a href="#etc" aria-hidden="true"><span class="icon icon-link"></span></a>ETC</h2>
+<p>이 외에도 다양한 변경점이 존재한다.</p>
+<ol>
+<li>
+<p><code class="language-text">abstract</code> Members Can’t Be Marked <strong>async</strong></p>
+<p>추상 멤버는 더 이상 <strong>async</strong> 키워드를 기입하지 않아도 된다.</p>
+</li>
+<li>
+<p><code class="language-text">any/unknown</code> Are Propagated in <strong>Falsy</strong> Positions</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="token keyword">declare</span> <span class="token keyword">let</span> foo<span class="token operator">:</span> <span class="token builtin">unknown</span>
+<span class="token keyword">declare</span> <span class="token keyword">let</span> somethingElse<span class="token operator">:</span> <span class="token punctuation">{</span> someProp<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> x <span class="token operator">=</span> foo <span class="token operator">&amp;&amp;</span> somethingElse</code></pre>
+<p>기존에는 <code class="language-text">any/unknown</code> 타입은 <strong>false</strong>로 판단되어 위 예제에서 <strong>x</strong>는 <code class="language-text">somethingElse</code>으로 정의된다.</p>
+<p>하지만 <code class="language-text">TS4.1</code>에서는 더 이상 <strong>false</strong>로 판단되지 않으므로 <code class="language-text">unknown</code>타입으로 정의된다.</p>
+<p>그러므로 <code class="language-text">any/unknown</code>타입을 <strong>boolean</strong>값으로 활용하려면 <code class="language-text">!!foo &amp;&amp; someExpression</code>와 같이 정해야한다.</p>
+</li>
+<li>
+<p>resolve‘s Parameters Are No Longer <strong>Optional</strong> in Promises</p>
+<p><code class="language-text">Promise</code>함수에서 <code class="language-text">resolve()</code>함수의 인자값이 <strong>Required</strong>로 변경된다.</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token operator">&lt;</span><span class="token builtin">number</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token comment">//     ^^^^^^^^</span>
+    <span class="token function">doSomethingAsync</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+       <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+       <span class="token function">resolve</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+       <span class="token comment">//      ^^^^^</span>
+   <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>만약 아무 인자값이 없다면 <strong>void</strong>타입으로 정의해야한다.</p>
+</li>
+<li>
+<p>The new type aliases <code class="language-text">Uppercase</code>, <code class="language-text">Lowercase</code>, <code class="language-text">Capitalize</code> and <code class="language-text">Uncapitalize</code></p>
+<p>새로운 내장 앨리어스타입이 추가되었다.</p>
+<p>명칭 그대로 대문자, 소문자와 관련된 타입들이다.</p>
+</li>
+</ol>
+<hr>
+<h2 id="summary"><a href="#summary" aria-hidden="true"><span class="icon icon-link"></span></a>Summary</h2>
+<p><code class="language-text">Typescript</code>는 버전마다 다양한 기능들이 추가된다.</p>
+<p>사실 딥하게 사용하지 않는다면 크게 와닿는 기능들은 몇개되지 않는다.</p>
+<p>하지만 내용을 알고 있다면 분명 응용할 수 있는 부분들이 생길 것이라고 생각한다.</p>
+<p>특히 <code class="language-text">Template literal type</code>은 상당히 인상깊었고 꼭 한번 활용해보려고 한다.</p>
+<p>더 많은 내용들이 컬럼에 정리되어 있으니 관심있다면 정독해보는 것도 좋을 것 같다.</p>
+<hr>
+<h2 id="reference"><a href="#reference" aria-hidden="true"><span class="icon icon-link"></span></a>Reference</h2>
+<span class="reference">
+<p><a href="https://devblogs.microsoft.com/typescript/announcing-typescript-4-1/" target="_blank" rel="nofollow noopener noreferrer">Announcing TypeScript 4.1</a></p>
+</span>
+</article></section><Adsense ins-class="bottom-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="6759499833" data-full-width-responsive="yes"></Adsense><section class="related"><h3 class="related__title">&quot;프로그래밍&quot; Related Contents</h3><article class="related__wrapper"><ul><li><a href="/typescript-enum/" title="[Typescript] Enum"><section class="related__wrapper__content"><h6 id="date">2020.10.28</h6><h3 id="title">[Typescript] Enum</h3><p id="des">Typescript의 enum에 대하여 간단히 알아봅니다..</p></section></a></li><li><a href="/closure-and-private/" title="Closure와 Private"><section class="related__wrapper__content"><h6 id="date">2020.10.24</h6><h3 id="title">Closure와 Private</h3><p id="des">Javascript의 Clousure와 Typescript의 Privat ...</p></section></a></li><li><a href="/nodejs-5/" title="Node.js의 I/O 동작"><section class="related__wrapper__content"><h6 id="date">2020.10.21</h6><h3 id="title">Node.js의 I/O 동작</h3><p id="des">Node.js 싱글스레드에 대하여 알아봅니다.</p></section></a></li></ul></article></section><div id="comment"></div></section><aside class="right"><section class="bar"><section class="bar__anchor"><h4 class="title">Contents</h4><ul><li class="depth-2"><a href="#template-literal-types"> Template Literal Types </a></li><li class="depth-3"><a href="#string-literal-types"> String literal types </a></li><li class="depth-3"><a href="#template-literal-string-type"> Template literal string type </a></li><li class="depth-3"><a href="#dynamically-template-literal-type"> Dynamically template literal type </a></li><li class="depth-2"><a href="#key-remapping-in-mapped-types"> Key Remapping in Mapped Types </a></li><li class="depth-2"><a href="#etc"> ETC </a></li><li class="depth-2"><a href="#summary"> Summary </a></li><li class="depth-2"><a href="#reference"> Reference </a></li></ul></section><section class="bar__recent"><h4 class="title">Recent Updated</h4><ul><li><a href="/typescript-4-1/" aria-current="page" class="active--exact active">
+            Typescript 4.1
+          </a></li><li><a href="/if-kakao-2020/">
+            if(kakao) 2020
+          </a></li><li><a href="/devday-2020/">
+            Devday 2020
+          </a></li><li><a href="/intro-docker/">
+            도커 용어 정리
+          </a></li><li><a href="/typescript-enum/">
+            [Typescript] Enum
+          </a></li></ul></section><section class="bar__tags"><h4 class="title">Trending Tags</h4><section class="tag__wrapper" data-v-fc5a9040><!----><ul data-v-fc5a9040><li class="medium" data-v-fc5a9040><a href="/tag/Algorithm/" data-v-fc5a9040>
+        Algorithm
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/Leetcode/" data-v-fc5a9040>
+        Leetcode
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/Typescript/" data-v-fc5a9040>
+        Typescript
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/HackerRank/" data-v-fc5a9040>
+        HackerRank
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/Javascript/" data-v-fc5a9040>
+        Javascript
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/Programmers/" data-v-fc5a9040>
+        Programmers
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/Queue/" data-v-fc5a9040>
+        Queue
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/Database/" data-v-fc5a9040>
+        Database
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/Lock/" data-v-fc5a9040>
+        Lock
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/DeadLock/" data-v-fc5a9040>
+        DeadLock
+      </a></li></ul></section></section></section></aside></article><div class="top hidden">Top</div><div class="footer"><div class="footer-links">
+      Built with <a target="_blank" href="//gridsome.org" class="link">Gridsome</a> Edited By
+      <a target="_blank" href="https://github.com/akasai" class="link">akasai</a> /
+      <a target="_blank" href="/sitemap.xml">Sitemap</a> /
+      <a target="_blank" href="/feed.xml">RSS</a></div></div></main>
+<script src="/assets/js/app.32f1ff7f.js" defer></script><script src="/assets/js/page--src--templates--post-vue.ece96127.js" defer></script>
+</body>
+</html>
