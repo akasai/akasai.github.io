@@ -4,7 +4,7 @@
         <title>devlog.akasai</title>
         <link>https://akasai.github.io/</link>
         <description>akasai's 기술블로그</description>
-        <lastBuildDate>Mon, 18 Jan 2021 01:39:40 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 18 Jan 2021 15:39:11 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Gridsome Feed Plugin</generator>
         <item>
@@ -3036,33 +3036,80 @@ function removeDuplicates(nums: number[]): number {
 ]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[[Leetcode] Remove Element]]></title>
-            <link>https://akasai.github.io/hr-remove-element/</link>
-            <guid>https://akasai.github.io/hr-remove-element/</guid>
+            <title><![CDATA[[Programmers] 다리를 지나는 트럭]]></title>
+            <link>https://akasai.github.io/hr-truck/</link>
+            <guid>https://akasai.github.io/hr-truck/</guid>
             <pubDate>Mon, 28 Sep 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[![](https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Leetcode/leetcode-logo.png)
+            <content:encoded><![CDATA[![](https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Programmers/programmers-logo.png)
 
 <br>
 
-> [Remove Element](https://leetcode.com/problems/remove-element)
+> [다리를 지나는 트럭](https://programmers.co.kr/learn/courses/30/lessons/42583)
 
 ***
 
+## How To Solve
+
+**Queue**를 이용하여 풀었다.
+
+조건에 맞게 구현하는 문제인 것 같다.
+
+고려해야 할 점은 진행시간대로 반복문을 돌리면 `Timeout`이 발생한다.
+
+이를 해결하기 위해 time을 누적하는 방식으로 접근했다.
+
+<br>
+
 ## Solution
 
-```typescript
-function removeElement(nums: number[], val: number): number {
-  const idx = nums.indexOf(val)
-
-  if (idx === -1) return nums.length
-
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] === val) {
-      nums.splice(i--, 1)
-    }
+```javascript
+class Queue {
+  constructor () {
+    this.q = []
   }
 
-  return nums.length
+  en (data) {
+    this.q.push(data)
+  }
+
+  de () {
+    this.q.shift()
+  }
+
+  get front () {
+    return this.q[0]
+  }
+
+  get isEmpty () {
+    return this.q.length === 0
+  }
+}
+
+function solution (bridge_length, weight, truck_weights) {
+  const bridge = new Queue()
+  let time = 1
+  let total_weight = 0
+  let cur_truck = 0
+
+  do {
+    if (!bridge.isEmpty) {
+      if (bridge.front.time === time) {
+        total_weight -= bridge.front.data
+        bridge.de()
+      }
+    }
+
+    if ((total_weight < weight) && ((weight - total_weight) >= truck_weights[cur_truck]) && cur_truck < truck_weights.length) {
+      bridge.en({ time: time + bridge_length, data: truck_weights[cur_truck] })
+      total_weight += truck_weights[cur_truck]
+      cur_truck++
+      time++
+    } else if (!bridge.isEmpty) {
+      time = bridge.front.time
+    }
+  } while (cur_truck < truck_weights.length || !bridge.isEmpty)
+
+  return time
 }
 ```
 
@@ -3074,7 +3121,7 @@ function removeElement(nums: number[], val: number): number {
 
 <span class="reference">
 
-[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Leetcode/Solution/3.Remove_Element.ts)
+[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Programmers/%EC%8A%A4%ED%83%9D_%ED%81%90/2.%EB%8B%A4%EB%A6%AC%EB%A5%BC_%EC%A7%80%EB%82%98%EB%8A%94_%ED%8A%B8%EB%9F%AD.js)
 
 </span>
 ]]></content:encoded>
