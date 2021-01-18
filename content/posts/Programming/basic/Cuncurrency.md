@@ -28,6 +28,8 @@ update_date: 2021-01-18
 
 5. **한 번에 많은 것을 처리하는 것.**
 
+6. 논리적인 개념 (Logical)
+
 ***
 
 ## 병렬성 (Parallelism)
@@ -37,6 +39,9 @@ update_date: 2021-01-18
 2. `멀티코어 환경`에서 `여러 스레드`를 처리하는 것이다.
 
 3. **한 번에 많은 일을 처리하는 것.**
+
+4. 물리적인 개념 (Physical)
+
 ***
 
 ## Summary
@@ -48,6 +53,19 @@ update_date: 2021-01-18
 반면에 병렬성을 지원한다는 것은 다중 컴퓨팅 유닛을 이용하여 
 **동시에** 여러가지를 처리한다는 것이다.
 
+가장 중요한 부분은 동시성과 병렬성은 **상반적인 개념**이 아니다.
+병렬성은 동시성이 필요하지만, 동시성은 병렬성을 보장하지 않는다.
+
 ![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbaf768df-ef13-45c5-816c-241f7bc1c2b9%2F_2021-01-18__9.20.00.png?table=block&id=7e890a5a-322d-4743-bf1c-8d3ef1b4d43d&width=2580&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
 
 ![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F489a75b5-2ed8-4285-87be-c2955e187fb8%2F_2021-01-18__9.20.12.png?table=block&id=27663723-67e3-4759-b420-5a87c7be675e&width=2580&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+
+***
+
+## Reference
+
+<span class="reference">
+
+[동시성(Concurrency) vs 병렬성(Parallelism)](https://seamless.tistory.com/42)
+
+</span>
