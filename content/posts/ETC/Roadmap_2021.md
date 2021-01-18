@@ -4,7 +4,7 @@ sub_category: ""
 series_name: ""
 series_num: 0
 title: "개발자 로드맵 2021"
-url: "developer-roadmap"
+url: "developer-roadmap-2021"
 description: "2021 개발자 로드맵 정리"
 tags: ["개발자", "로드맵", "백엔드", "Developer", "Roadmap"]
 date: 2021-01-19
