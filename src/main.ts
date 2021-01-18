@@ -4,7 +4,6 @@ import InfiniteLoading from 'vue-infinite-loading'
 import Meta, { MetaInfo } from 'vue-meta'
 import VueRouter from 'vue-router'
 import Layout from '~/layouts/Layout.vue'
-import Ads from 'vue-google-adsense'
 
 export interface ClientContext {
   appOptions: object;
@@ -23,9 +22,7 @@ const client: ClientApiConstructor = (Vue, { router, head, isClient }) => {
   // https://github.com/mazipan/vue-google-adsense
   if (isClient) {
     Vue.use(require('vue-script2'))
-    Vue.use(Ads.Adsense)
-    // Vue.use(Ads.InArticleAdsense)
-    // Vue.use(Ads.InFeedAdsense)
+    Vue.use(require('vue-google-adsense/dist/Adsense.min.js'))
   }
 }
 
