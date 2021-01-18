@@ -21,6 +21,12 @@ p {
   margin: 15px 0;
 }
 
+ol {
+  > li {
+    margin: 10px 10px 0 0;
+  }
+}
+
 /* 인용 */
 blockquote {
   padding: 0 15px;

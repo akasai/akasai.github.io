@@ -105,7 +105,7 @@ let person = makeWatchedObject({
 
 정의된다.
 
-<img class="w-50" src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F241eb885-1d14-4c8c-b381-0a2aeadb27b0%2F_2020-12-13__6.53.32.png?table=block&id=6467ff81-8e46-40e8-9ce8-c58944f8057c&width=2580&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2">
+<img alt="" class="w-50" src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F241eb885-1d14-4c8c-b381-0a2aeadb27b0%2F_2020-12-13__6.53.32.png?table=block&id=6467ff81-8e46-40e8-9ce8-c58944f8057c&width=2580&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2">
 
 이제 `PropEventSource` type을 바탕으로 `on`함수를 호출해 볼 수 있다.
 
