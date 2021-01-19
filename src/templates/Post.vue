@@ -24,20 +24,12 @@
         </section>
         <Series v-if="$page.series.edges.length > 1" :series="$page.series" :cur_series_num="$page.post.series"/>
         <!-- ads 상단 -->
-        <Adsense ins-class="top-ads"
-                 data-ad-client="ca-pub-7791595479585064"
-                 data-ad-slot="1631172523"
-                 data-full-width-responsive="yes">
-        </Adsense>
+        <Adsense :ad-class="'top-ads'" :ad-slot="1631172523"/>
         <section class="post__content">
           <article v-html="$page.post.content"></article>
         </section>
         <!-- ads 하단 -->
-        <Adsense ins-class="bottom-ads"
-                 data-ad-client="ca-pub-7791595479585064"
-                 data-ad-slot="6759499833"
-                 data-full-width-responsive="yes">
-        </Adsense>
+        <Adsense :ad-class="'bottom-ads'" :ad-slot="6759499833"/>
         <Related v-if="$page.related.edges.length" :related="$page.related" :category="$page.post.category"/>
         <Comment/>
       </section>
@@ -58,6 +50,7 @@
   import Clock from '../assets/svg/clock.svg'
   import Tags from '../assets/svg/tags.svg'
   import User from '../assets/svg/user.svg'
+  import Adsense from '~/components/Adsense.vue'
 
   class V extends Vue {
     $page: any
@@ -66,6 +59,7 @@
   @Component<V>({
     name: 'Post',
     components: {
+      Adsense,
       Related,
       Series,
       RightBar,

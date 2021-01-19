@@ -3,11 +3,7 @@
     <section class="tags">
       <h1 id="title">Tags</h1>
       <!-- ads 상단 -->
-      <Adsense ins-class="top-ads"
-               data-ad-client="ca-pub-7791595479585064"
-               data-ad-slot="3964851503"
-               data-full-width-responsive="yes">
-      </Adsense>
+      <Adsense :ad-class="'top-ads'" :ad-slot="3964851503"/>
       <section class="tags__content">
         <!--        <Tag :tagList="list($static.tags.edges)" :size="'large'"/>-->
         <Tag :tagList="$static.tags.edges.map(({node}) => node)" :size="'large'"/>

@@ -17,10 +17,8 @@
     "@gridsome/transformer-remark": "^0.5.0",
     "gridsome": "^0.7.20",
     "gridsome-plugin-feed": "^1.0.2",
-    "vue-google-adsense": "^1.9.1",
     "vue-infinite-loading": "^2.4.5",
-    "vue-meta": "^2.4.0",
-    "vue-script2": "^2.1.0"
+    "vue-meta": "^2.4.0"
   },
   "devDependencies": {
     "gh-pages": "^3.1.0",
