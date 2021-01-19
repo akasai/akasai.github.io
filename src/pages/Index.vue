@@ -2,16 +2,11 @@
   <Layout>
     <Profile :metaData="$page.metadata"/>
     <section class="posts">
-      <script2 type="text/javascript" async="true" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" />
-      <ins class="adsbygoogle main-ads"
-           style="display:block"
-           data-ad-client="ca-pub-7791595479585064"
-           data-ad-slot="3964851503"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script2 type="text/javascript">
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script2>
+      <Adsense ins-class="main-ads"
+          data-ad-client="ca-pub-7791595479585064"
+          data-ad-slot="3964851503"
+          data-full-width-responsive="yes">
+      </Adsense>
       <PostItem :key="post.node.id" v-for="post in loadedPosts" :post="post.node"/>
     </section>
     <ClientOnly>
