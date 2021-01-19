@@ -5,3 +5,7 @@ declare module '*.vue' {
   }
   export default Vue
 }
+
+interface Window {
+  adsbygoogle: {[key: string]: unknown}[]
+}
