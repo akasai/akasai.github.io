@@ -1,6 +1,8 @@
 <template>
   <Layout>
     <article class="post__wrapper">
+      <aside class="left">
+      </aside>
       <section class="post">
         <section class="post__title">
           <h3 id="category">{{getCategory($page.post.category, $page.post.sub_category)}}</h3>
