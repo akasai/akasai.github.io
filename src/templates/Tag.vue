@@ -3,8 +3,8 @@
     <section class="tags">
       <h1 id="title"> # {{ $page.tag.title }} </h1>
       <!-- ads 상단 -->
-      <Adsense ins-class="top-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="3964851503"
-               data-full-width-responsive="yes"/>
+<!--      <Adsense ins-class="top-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="3964851503"-->
+<!--               data-full-width-responsive="yes"/>-->
       <section class="posts">
         <article v-if="!$page.tag.belongsTo.edges.length" class="no-result">⚠️ No Contents</article>
         <PostItem v-else v-for="edge in $page.tag.belongsTo.edges" :key="edge.node.id" :post="edge.node"/>
