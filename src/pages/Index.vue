@@ -2,11 +2,7 @@
   <Layout>
     <Profile :metaData="$page.metadata"/>
     <section class="posts">
-<!--      <Adsense ins-class="main-ads"-->
-<!--          data-ad-client="ca-pub-7791595479585064"-->
-<!--          data-ad-slot="3964851503"-->
-<!--          data-full-width-responsive="yes">-->
-<!--      </Adsense>-->
+      <script2 type="text/javascript" async="true" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" />
       <ins class="adsbygoogle main-ads"
            style="display:block"
            data-ad-client="ca-pub-7791595479585064"
