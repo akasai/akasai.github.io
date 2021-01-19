@@ -21,8 +21,8 @@ const client: ClientApiConstructor = (Vue, { router, head, isClient }) => {
 
   // https://github.com/mazipan/vue-google-adsense
   if (isClient) {
-    // Vue.use(require('vue-script2'))
-    // Vue.use(require('vue-google-adsense/dist/Adsense.min.js'))
+    Vue.use(require('vue-script2'))
+    Vue.use(require('vue-google-adsense/dist/Adsense.min.js'))
   }
 }
 
