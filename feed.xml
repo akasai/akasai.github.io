@@ -4,7 +4,7 @@
         <title>devlog.akasai</title>
         <link>https://akasai.github.io/</link>
         <description>akasai's 기술블로그</description>
-        <lastBuildDate>Tue, 19 Jan 2021 13:42:21 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 19 Jan 2021 14:03:05 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Gridsome Feed Plugin</generator>
         <item>
@@ -3035,29 +3035,33 @@ function moveZeroes(nums: number[]): void {
 ]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[[Leetcode] Remove Duplicates from Sorted Array]]></title>
-            <link>https://akasai.github.io/hr-remove-duplicates/</link>
-            <guid>https://akasai.github.io/hr-remove-duplicates/</guid>
+            <title><![CDATA[[Leetcode] Remove Element]]></title>
+            <link>https://akasai.github.io/hr-remove-element/</link>
+            <guid>https://akasai.github.io/hr-remove-element/</guid>
             <pubDate>Mon, 28 Sep 2020 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[![](https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Leetcode/leetcode-logo.png)
 
 <br>
 
-> [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array)
+> [Remove Element](https://leetcode.com/problems/remove-element)
 
 ***
 
 ## Solution
 
 ```typescript
-function removeDuplicates(nums: number[]): number {
-  if (nums.length < 2) return 1
+function removeElement(nums: number[], val: number): number {
+  const idx = nums.indexOf(val)
 
-  let j = 0
-  for (let i = 1; i < nums.length; i++) {
-    if (nums[j] !== nums[i]) nums[++j] = nums[i]
+  if (idx === -1) return nums.length
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === val) {
+      nums.splice(i--, 1)
+    }
   }
-  return j + 1
+
+  return nums.length
 }
 ```
 
@@ -3069,7 +3073,7 @@ function removeDuplicates(nums: number[]): number {
 
 <span class="reference">
 
-[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Leetcode/Solution/4.Remove_Duplicates_from_Sorted_Array.ts)
+[Github](https://github.com/akasai/Algorithm-Solutions/blob/master/Leetcode/Solution/3.Remove_Element.ts)
 
 </span>
 ]]></content:encoded>
