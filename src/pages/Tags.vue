@@ -14,6 +14,7 @@
 
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator'
+  import Adsense from '../components/Adsense.vue'
   import Tag from '../components/Tag.vue'
 
   class V extends Vue {
@@ -23,6 +24,7 @@
   @Component<V>({
     name: 'Tags',
     components: {
+      Adsense,
       Tag,
     },
     metaInfo() {

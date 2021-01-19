@@ -18,12 +18,6 @@ const client: ClientApiConstructor = (Vue, { router, head, isClient }) => {
   Vue.use(Meta)
   Vue.use(InfiniteLoading)
   Vue.component('Layout', Layout)
-
-  // https://github.com/mazipan/vue-google-adsense
-  if (isClient) {
-    Vue.use(require('vue-script2'))
-    Vue.use(require('vue-google-adsense/dist/Adsense.min.js'))
-  }
 }
 
 export default client

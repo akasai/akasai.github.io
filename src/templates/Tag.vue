@@ -15,6 +15,7 @@
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator'
   import PostItem from '~/components/PostItem.vue'
+  import Adsense from '../components/Adsense.vue'
 
   class V extends Vue {
     $page: any
@@ -23,6 +24,7 @@
   @Component<V>({
     name: 'Tag',
     components: {
+      Adsense,
       PostItem,
     },
     metaInfo() {
