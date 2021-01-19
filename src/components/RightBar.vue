@@ -25,9 +25,6 @@
       <Tag :tagList="$static.tags.edges.map(({node}) => node)"/>
     </section>
 
-    <!-- ads 우측 -->
-<!--    <Adsense ins-class="right-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="5254846473"-->
-<!--             data-full-width-responsive="yes"/>-->
   </section>
 </template>
 

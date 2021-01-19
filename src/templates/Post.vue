@@ -1,11 +1,6 @@
 <template>
   <Layout>
     <article class="post__wrapper">
-      <aside class="left">
-        <!-- ads 좌측 -->
-<!--        <Adsense ins-class="left-ads" data-ad-client="ca-pub-7791595479585064" data-ad-slot="5250685461"-->
-<!--                 data-full-width-responsive="yes"/>-->
-      </aside>
       <section class="post">
         <section class="post__title">
           <h3 id="category">{{getCategory($page.post.category, $page.post.sub_category)}}</h3>
