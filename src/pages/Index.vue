@@ -2,11 +2,20 @@
   <Layout>
     <Profile :metaData="$page.metadata"/>
     <section class="posts">
-      <Adsense ins-class="main-ads"
-          data-ad-client="ca-pub-7791595479585064"
-          data-ad-slot="3964851503"
-          data-full-width-responsive="yes">
-      </Adsense>
+<!--      <Adsense ins-class="main-ads"-->
+<!--          data-ad-client="ca-pub-7791595479585064"-->
+<!--          data-ad-slot="3964851503"-->
+<!--          data-full-width-responsive="yes">-->
+<!--      </Adsense>-->
+      <ins class="adsbygoogle main-ads"
+           style="display:block"
+           data-ad-client="ca-pub-7791595479585064"
+           data-ad-slot="3964851503"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script2 type="text/javascript">
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script2>
       <PostItem :key="post.node.id" v-for="post in loadedPosts" :post="post.node"/>
     </section>
     <ClientOnly>

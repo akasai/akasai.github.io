@@ -3,11 +3,20 @@
     <section class="tags">
       <h1 id="title">Tags</h1>
       <!-- ads 상단 -->
-      <Adsense ins-class="top-ads"
-               data-ad-client="ca-pub-7791595479585064"
-               data-ad-slot="3964851503"
-               data-full-width-responsive="yes">
-      </Adsense>
+<!--      <Adsense ins-class="top-ads"-->
+<!--               data-ad-client="ca-pub-7791595479585064"-->
+<!--               data-ad-slot="3964851503"-->
+<!--               data-full-width-responsive="yes">-->
+<!--      </Adsense>-->
+      <ins class="adsbygoogle top-ads"
+           style="display:block"
+           data-ad-client="ca-pub-7791595479585064"
+           data-ad-slot="3964851503"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script2 type="text/javascript">
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script2>
       <section class="tags__content">
         <!--        <Tag :tagList="list($static.tags.edges)" :size="'large'"/>-->
         <Tag :tagList="$static.tags.edges.map(({node}) => node)" :size="'large'"/>

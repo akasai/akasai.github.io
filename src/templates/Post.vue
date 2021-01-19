@@ -24,20 +24,35 @@
         </section>
         <Series v-if="$page.series.edges.length > 1" :series="$page.series" :cur_series_num="$page.post.series"/>
         <!-- ads 상단 -->
-        <Adsense ins-class="top-ads"
-                 data-ad-client="ca-pub-7791595479585064"
-                 data-ad-slot="1631172523"
-                 data-full-width-responsive="yes">
-        </Adsense>
+<!--        <Adsense ins-class="top-ads"-->
+<!--                 data-ad-client="ca-pub-7791595479585064"-->
+<!--                 data-ad-slot="1631172523"-->
+<!--                 data-full-width-responsive="yes">-->
+<!--        </Adsense>-->
+        <ins class="adsbygoogle top-ads"
+             style="display:block"
+             data-ad-client="ca-pub-7791595479585064"
+             data-ad-slot="1631172523"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script2 type="text/javascript">
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script2>
         <section class="post__content">
           <article v-html="$page.post.content"></article>
         </section>
         <!-- ads 하단 -->
-        <Adsense ins-class="bottom-ads"
-                 data-ad-client="ca-pub-7791595479585064"
-                 data-ad-slot="6759499833"
-                 data-full-width-responsive="yes">
-        </Adsense>
+<!--        <Adsense ins-class="bottom-ads"-->
+<!--                 data-ad-client="ca-pub-7791595479585064"-->
+<!--                 data-ad-slot="6759499833"-->
+<!--                 data-full-width-responsive="yes">-->
+<!--        </Adsense>-->
+        <ins class="adsbygoogle bottom-ads"
+             style="display:block"
+             data-ad-client="ca-pub-7791595479585064"
+             data-ad-slot="6759499833"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
         <Related v-if="$page.related.edges.length" :related="$page.related" :category="$page.post.category"/>
         <Comment/>
       </section>
