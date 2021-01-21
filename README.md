@@ -11,7 +11,7 @@
 
 ![Deploy Blog](https://github.com/akasai/akasai.github.io/workflows/Deploy%20Blog/badge.svg)
 
-**[https://akasai.github.io](https://akasai.github.io)**
+**[https://akasai.space](https://akasai.space)**
 
 <br/>
 
