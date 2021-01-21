@@ -1,7 +1,11 @@
 <template>
   <main class="layout" role="main">
     <Header :siteName="`devlog.akasai`" :show="showNavbar"/>
-    <slot/>
+    <transition name="fade" appear>
+      <main>
+        <slot/>
+      </main>
+    </transition>
     <div class="top" :class="{'hidden': topHidden()}" @click="toTop()">Top</div>
     <div class="footer">
       <div class="footer-links">
@@ -181,6 +185,14 @@
     .layout {
       margin: 0 auto;
       padding: 0 20px;
+    }
+
+    .fade-enter-active {
+      transition: opacity .5s;
+    }
+
+    .fade-enter {
+      opacity: 0;
     }
 
     .top {

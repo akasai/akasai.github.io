@@ -3,7 +3,7 @@
     <ul class="profile-layout">
       <li class="profile__img_wrapper">
         <section class="profile__img">
-          <img src="../assets/img/profile.jpeg" alt="">
+          <g-image src="../assets/img/profile.jpeg" alt="" />
         </section>
       </li>
       <li class="profile__content_wrapper">
