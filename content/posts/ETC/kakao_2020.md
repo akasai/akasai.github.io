@@ -6,7 +6,7 @@ series_name: ""
 series_num: 0
 url: "if-kakao-2020"
 description: "if(kakao) 2020 후기"
-tags: ["컨퍼런스", "카카오", "Kakao", "if(kakao)2020"]
+tags: ["컨퍼런스", "카카오", "Kakao", "if_kakao_2020"]
 date: 2020-12-04
 update_date: 2020-12-04
 ---

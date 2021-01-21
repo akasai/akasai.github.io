@@ -22,7 +22,7 @@
           </span>
           <Tag :tagList="$page.post.tags" :useIcon="true"/>
         </section>
-        <Series v-if="$page.series.edges.length > 1" :series="$page.series" :cur_series_num="$page.post.series"/>
+        <Series v-if="$page.series.edges.length >= 1" :series="$page.series" :cur_series_num="$page.post.series"/>
         <!-- ads 상단 -->
         <Adsense :ad-class="'top-ads'" :ad-slot="1631172523"/>
         <section class="post__content">
