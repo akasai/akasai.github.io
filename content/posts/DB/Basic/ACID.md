@@ -17,6 +17,32 @@ update_date: 2021-01-25
 
 한 개 이상의 작업으로 구성되며 한 트랜잭션은 모두 실행되거나, 실행되지 않습니다.
 
+### 트랜잭션의 상태
+
+한 트랜잭션 플로우의 흐름입니다.
+
+![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4cd20d52-1a83-4cdc-922d-0ba716f86aa0%2Funnamed.png?table=block&id=cc81bc67-1921-48c2-9c87-0d81c78796be&width=2580&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+
+1. Active(활성)
+
+   트랜잭션의 연산들이 정상적으로 실행 중인 상태.
+
+2. Partially Committed(부분 완료)
+ 
+   트랜잭션의 모든 연산들이 정상적으로 완료되었지만, **Commit연산** 직전의 상태.
+
+3. Committed(완료)
+
+   트랜잭션이 성공적으로 완료되어 **Commit연산**이 실행된 상태.
+
+4. Failed(실패)
+
+   트랜잭션이 오류/취소등의 이유로 중단된 상태.
+
+5. Aborted(철회)
+   
+   트랜잭션이 비정상적으로 종료되어 **Rollback연산**을 수행한 상태.
+
 ***
 
 ## ACID
