@@ -3,7 +3,7 @@ category: "DB"
 sub_category: "기초"
 series_name: ""
 series_num: 0
-title: "트랜션과 ACID"
+title: "트랜잭션과 ACID"
 url: "what-is-transction-and-acid"
 description: "트랜잭션 ACID에 대해 알아봅니다."
 tags: ["Database", "Transaction", "ACID", "데이터베이스", "트랜잭션"]
