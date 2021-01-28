@@ -4,7 +4,7 @@
         <title>devlog.akasai</title>
         <link>https://akasai.github.io/</link>
         <description>akasai's 기술블로그</description>
-        <lastBuildDate>Thu, 28 Jan 2021 07:39:50 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 28 Jan 2021 08:01:14 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Gridsome Feed Plugin</generator>
         <item>
@@ -154,7 +154,7 @@
 
 한 트랜잭션 플로우의 흐름입니다.
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4cd20d52-1a83-4cdc-922d-0ba716f86aa0%2Funnamed.png?table=block&id=cc81bc67-1921-48c2-9c87-0d81c78796be&width=2580&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../img/transaction-flow.png)
 
 1. Active(활성)
 
@@ -265,7 +265,7 @@
             <guid>https://akasai.github.io/why-redis-is-single-thread/</guid>
             <pubDate>Thu, 21 Jan 2021 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F92ea1c01-48c8-41e5-80e6-082ea9eed282%2F1200px-Redis_Logo.svg.png?table=block&id=0ac5fa14-b0a1-436d-979e-644cfcaeaaa2&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../../../../static/img/logo/redis.png)
 
 레디스의 대표적인 특징은 **싱글스레드**입니다.
 
@@ -435,7 +435,7 @@ v6.0에 대한 더 자세한 내용은 아래 링크에서 확인가능합니다
             <guid>https://akasai.github.io/what-is-redis/</guid>
             <pubDate>Wed, 20 Jan 2021 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F92ea1c01-48c8-41e5-80e6-082ea9eed282%2F1200px-Redis_Logo.svg.png?table=block&id=0ac5fa14-b0a1-436d-979e-644cfcaeaaa2&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../../../../static/img/logo/redis.png)
 
 개인적으로 가장 좋아하는 **NoSQL DBMS가 Redis**입니다.
 
@@ -509,7 +509,7 @@ In-memory(인메모리) 데이터 저장소이며, Key-Value기반의 NoSQL DBMS
 
 이와 같은 특징 때문에 레디스는 메모리공간을 2배로 사용하게 되며, 메모리 파편화가 발생하기 쉽습니다.
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F10ec7784-d8c4-4dda-a7b3-0b8646207135%2Fcopy-on-write-2-modify-page.png?table=block&id=e0063b18-f36b-47ec-ba93-fa0bf1884829&width=2580&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../img/cow.png)
 
 **COW**가 발생하는 상황은 다음과 같습니다.
 
