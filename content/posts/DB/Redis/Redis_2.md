@@ -11,7 +11,7 @@ date: 2021-01-21
 update_date: 2021-01-21
 ---
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F92ea1c01-48c8-41e5-80e6-082ea9eed282%2F1200px-Redis_Logo.svg.png?table=block&id=0ac5fa14-b0a1-436d-979e-644cfcaeaaa2&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../../../../static/img/logo/redis.png)
 
 레디스의 대표적인 특징은 **싱글스레드**입니다.
 

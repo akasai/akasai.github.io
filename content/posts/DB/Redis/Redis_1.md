@@ -11,7 +11,7 @@ date: 2021-01-20
 update_date: 2021-01-20
 ---
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F92ea1c01-48c8-41e5-80e6-082ea9eed282%2F1200px-Redis_Logo.svg.png?table=block&id=0ac5fa14-b0a1-436d-979e-644cfcaeaaa2&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../../../../static/img/logo/redis.png)
 
 개인적으로 가장 좋아하는 **NoSQL DBMS가 Redis**입니다.
 
@@ -85,7 +85,7 @@ In-memory(인메모리) 데이터 저장소이며, Key-Value기반의 NoSQL DBMS
 
 이와 같은 특징 때문에 레디스는 메모리공간을 2배로 사용하게 되며, 메모리 파편화가 발생하기 쉽습니다.
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F10ec7784-d8c4-4dda-a7b3-0b8646207135%2Fcopy-on-write-2-modify-page.png?table=block&id=e0063b18-f36b-47ec-ba93-fa0bf1884829&width=2580&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../img/cow.png)
 
 **COW**가 발생하는 상황은 다음과 같습니다.
 

@@ -13,7 +13,7 @@ update_date: 2020-09-28
 
 ## 교착상태(Dead Lock)란?
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F00e4c129-aba6-4bc6-b6cf-8343a7e2dd3c%2Fdeadlock.png?table=block&id=6474d42a-2a88-401e-8751-b7a49e39bd3a&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../img/deadlock.png)
 
 모든 프로세스가 대기 상태이며 각 프로세스가 다른 프로세스가 가지고 있는 자원을 기다리고 있으면 `교착상태` 라고 한다.
 

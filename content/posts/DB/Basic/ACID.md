@@ -21,7 +21,7 @@ update_date: 2021-01-25
 
 한 트랜잭션 플로우의 흐름입니다.
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4cd20d52-1a83-4cdc-922d-0ba716f86aa0%2Funnamed.png?table=block&id=cc81bc67-1921-48c2-9c87-0d81c78796be&width=2580&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../img/transaction-flow.png)
 
 1. Active(활성)
 
