@@ -56,9 +56,9 @@ update_date: 2021-01-18
 가장 중요한 부분은 동시성과 병렬성은 **상반적인 개념**이 아니다.
 병렬성은 동시성이 필요하지만, 동시성은 병렬성을 보장하지 않는다.
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbaf768df-ef13-45c5-816c-241f7bc1c2b9%2F_2021-01-18__9.20.00.png?table=block&id=7e890a5a-322d-4743-bf1c-8d3ef1b4d43d&width=2580&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../img/c-p-1.png)
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F489a75b5-2ed8-4285-87be-c2955e187fb8%2F_2021-01-18__9.20.12.png?table=block&id=27663723-67e3-4759-b420-5a87c7be675e&width=2580&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../img/c-p-2.png)
 
 ***
 

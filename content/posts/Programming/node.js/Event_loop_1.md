@@ -47,7 +47,7 @@ Javascript 엔진은 크게 두 가지 영역으로 나뉜다.
 
 동적으로 생성된 변수, 객체(인스턴스)는 **힙(heap)**에 할당된다. 
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2927c772-b3ff-4fa0-bd0f-5905ee861e44%2Fjs-engine-structure.png?table=block&id=79a25445-ffc4-4519-a42b-cde943c1761e&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../img/js1.png)
 
 ***
 
@@ -106,7 +106,7 @@ ES6 도입 이후로 `Microtask Queue`가 도입되어 대표적으로 3가지 �
    
 3. Animation Frames
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F80564363-c1a2-49a1-88b0-8b2ab5582d50%2Fqueu.png?table=block&id=475af1fa-6e5f-4499-9468-9ac53f5e718b&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../img/js2.png)
 
 ***
 

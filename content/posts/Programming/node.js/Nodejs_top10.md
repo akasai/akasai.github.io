@@ -17,7 +17,7 @@ update_date: 2020-10-12
 
 정리해본다.
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ff8cfecd0-47de-4f0e-a5b9-165db0a86a4a%2F1_Jw9V__6jYhm2amP74D_0lw.png?table=block&id=6699eaed-7739-4978-a50c-d2f170709647&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../../../../static/img/logo/nodejs.png)
 
 ***
 
@@ -91,7 +91,7 @@ update_date: 2020-10-12
 
    [Recommend](https://github.com/request/request/issues/3143)
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F248a1043-0b3b-4978-92f6-6db728e162ab%2F786d30e016fad2cb7dc2c76af86d55f6afd277dd5a8a80dd17b13332bfe0131f.png?table=block&id=e57970b8-fc54-40cd-bfc2-04bee5e7986d&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../../../../static/img/logo/express.png)
 
 ***
 

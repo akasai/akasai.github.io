@@ -31,7 +31,7 @@ update_date: 2020-10-12
 
       작업 `A`의 종료시간과 작업 `B`의 시작시간이 같으면 <span class="em red">동기적</span>이라고 한다.
 
-      ![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa2437055-8faf-4826-9f4e-16555c21da33%2F_2020-10-12__2.56.45.png?table=block&id=3af5da26-38ab-4c2d-b9d8-53fc7ea36707&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+      ![](../img/sync.png)
 
    2. **Asynchronous**
    
@@ -39,7 +39,7 @@ update_date: 2020-10-12
 
       동기와 반대로 대상이 작업시간이 같지 않을 때 <span class="em red">비동기적</span>이라고 본다.
 
-      ![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F730bdffc-4d77-403d-a082-f8a535d362e2%2F_2020-10-12__3.01.57.png?table=block&id=6d35cd62-fb46-433b-8b01-2f635b390192&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+      ![](../img/async.png)
 
    위 두가지 경우를 극단적인 예를 들어 설명하자면 `작업 A`가 0.5초, `작업 B`가 2초 걸리는 작업이라면 **Sync**일 경우 2.5초, **Async**일 경우 0.5+a초 만큼의 응답속도를 보인다.
 
@@ -73,14 +73,14 @@ update_date: 2020-10-12
 
 **동기**이므로 `요청 A`의 실행시간과 종료시간이 보장되며 내부의 `I/O`작업 또한 종료까지 대기했다가 작업이 반환(**블로킹**)된다.
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbf5d7aef-0eae-4fca-a91d-7898293a46c2%2F_2020-10-12__3.46.17.png?table=block&id=20f6c2f2-1e16-4394-9a55-5a7e610eb4ef&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../img/sync-blocking.png)
 
 ### 동기 - 논블로킹
 
 **동기**이므로 `요청 A`의 실행시간과 종료시간은 보장된다. 하지만 내부 `I/O`작업은 **논블로킹**으로 이루어지므로 `I/O`작업의 반환여부와 상관없이 Kernel의 작업 결과는 Application으로 반환되며 Application에서는 부가적인 작업이 이루어진다.
 이와 동시에 `I/O`작업이 반환되며 Application의 모든 작업이 완료되면 `요청 A`는 종료되어 결과를 반환한다.
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0b40af62-9083-4b28-8ae9-f93000bb4240%2F_2020-10-12__3.53.15.png?table=block&id=b0ac7ffe-c273-4f66-99cc-8e0e9e2d4a33&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../img/sync-nonblocking.png)
 
 ### 비동기 - 논블로킹
 
@@ -88,7 +88,7 @@ update_date: 2020-10-12
 그 사이 `요청 B`가 요청되고 Kernel을 작업을 완료하고 결과를 반환한다.
 `I/O`작업이 완료되면 `요청 A`역시 결과를 반환하여 모든 프로세스가 완료된다.
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa004af0f-32d6-47ce-b8b9-f5f70c61534e%2F_2020-10-12__4.00.32.png?table=block&id=b2d7cc2c-f8b6-4a8e-9664-d01d7e1e8671&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../img/async-nonblocking.png)
 
 ### 비동기 - 블로킹
 
@@ -97,7 +97,7 @@ update_date: 2020-10-12
 하지만 <span class="em red">Node.js + MySQL</span>을 사용할 경우 **비동기-논블로킹**일지라도 블로킹되는 경우가 발생한다.
 `MySQL`드라이버가 **Blocking**방식으로 동작하기 때문이다.
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5f628d9c-16f9-4105-89d5-40c18920ccb2%2F1231.jpg?table=block&id=9f5bdf0b-d3b5-4bb9-8239-ffcf91f92517&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../img/table.jpg)
 
 ***
 

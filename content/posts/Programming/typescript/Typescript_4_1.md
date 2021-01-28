@@ -11,7 +11,7 @@ date: 2020-12-12
 update_date: 2020-12-12
 ---
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9343aee2-7402-4856-b3bf-0bfd9702b926%2Fpx52c3vht.jpg?table=block&id=f7bf0703-d3e3-4d22-9759-06ca5ef5b8b6&width=2580&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../../../../static/img/logo/typescript.jpg)
 
 
 11월 19일 Typescript 4.1이 릴리즈되었다.
@@ -105,7 +105,7 @@ let person = makeWatchedObject({
 
 정의된다.
 
-<img alt="" class="w-50" src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F241eb885-1d14-4c8c-b381-0a2aeadb27b0%2F_2020-12-13__6.53.32.png?table=block&id=6467ff81-8e46-40e8-9ce8-c58944f8057c&width=2580&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2">
+![](../img/enum1.png)
 
 이제 `PropEventSource` type을 바탕으로 `on`함수를 호출해 볼 수 있다.
 

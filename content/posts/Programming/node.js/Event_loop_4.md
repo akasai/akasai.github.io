@@ -50,7 +50,7 @@ update_date: 2020-10-13
 이러한 이유로 **단일 콜스택**측면에서는 `싱글 스레드`이지만 넓은 측면에서 본다면 무조건 싱글스레드는 아니라고 볼 수 있다.
 
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fce9951af-bea8-44a4-ab88-ed5a8be133cb%2Fnodejs.jpg?table=block&id=9012861c-5909-479b-b25f-933ad303110d&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../img/libuv.jpg)
 
 ***
 
@@ -62,7 +62,7 @@ Javascript는 작업 수행도중 에러가 발생하면 `Stack trace`라는 내
 
 **스택**이라는 용어에서 추측할 수 있듯이 에러나가 발생하기전 처리되었던 내용들이 `Stack trace`를 통해 확인할 수 있다.
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F30d30f34-a4ee-4c92-8be6-f786cc2383b7%2Fstack-trace-example.png?table=block&id=1add1722-1625-4ee1-9dbe-16169fa8adcf&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../img/error.png)
 
 <span class="em red">여기서 주의할 점은 콜스택도 경국 유한한 구조라는 점이다.</span>
 
@@ -70,7 +70,7 @@ Javascript는 작업 수행도중 에러가 발생하면 `Stack trace`라는 내
 
 `Maximum call stack size exceeded` 에러를 뿌린다.
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ff2903775-e5e4-4e62-8e61-70bd9442a21c%2F1_5n-8aGqENgdDy3T_qPqCgA.png?table=block&id=a3e2e01c-9707-414c-be84-f768635a76a6&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../img/trace.png)
 
 ***
 
@@ -84,7 +84,7 @@ Node.js는 `싱글 스레드`라는 내용은 자주 언급된다.
 
 ### 멀티플렉싱(Multiplexing)
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc5ade81c-3bbf-4fb0-b917-eba48bb78bc5%2Fasynchronous-programming.jpg?table=block&id=56865363-0e69-49b6-a7bf-17389948d264&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../img/multiplex.jpg)
 
 `멀티플렉싱(Multiplexing)`이란 하나의 통신채널을 통해 다량의 데이터를 전송하는데 사용되는 기술이다.
 

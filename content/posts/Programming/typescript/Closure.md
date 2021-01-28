@@ -165,7 +165,7 @@ counter.count = 99
 
 ### TSC
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9343aee2-7402-4856-b3bf-0bfd9702b926%2Fpx52c3vht.jpg?table=block&id=f7bf0703-d3e3-4d22-9759-06ca5ef5b8b6&width=2580&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../../../../static/img/logo/typescript.jpg)
 
 Typescript는 Javascript의 상위확장(Superset)이다. 결국 이 코드가 동작하는 실제 파일은 `.js`파일이다.
 

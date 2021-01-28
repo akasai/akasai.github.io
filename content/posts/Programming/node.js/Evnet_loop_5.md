@@ -41,7 +41,7 @@ Task 1: 910
 
 단순하게 생각하면 위 작업을 N번 반복하게되면 N초만큼의 시간이 소요된다고 유추할 수 있다.
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa2437055-8faf-4826-9f4e-16555c21da33%2F_2020-10-12__2.56.45.png?table=block&id=3af5da26-38ab-4c2d-b9d8-53fc7ea36707&width=2950&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../img/sync.png)
 
 <br>
 
