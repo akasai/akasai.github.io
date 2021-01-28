@@ -12,7 +12,7 @@ update_date: 2020-11-11
 
 <span class="callout">지속적으로 업데이트할 예정입니다.</span>
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F00da51ba-8b0a-4140-a944-928a60e8ee76%2F1220px-Docker_(container_engine)_logo.svg.png?table=block&id=72833342-b313-4047-8638-2c363c4f8a28&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](../../../static/img/logo/docker.png)
 
 도커와 관련된 용어들을 정리해본다.
 
@@ -36,7 +36,7 @@ Host OS 위 `도커엔진` 위에서 동작하며 Host의 커널을 공유한다
  
 이미지를 실행시키는 시점이 언제든 같은 모양이다. 그렇기 문에 서버를 항상 똑같은 상태로 만들 수 있다.
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F849d7897-af7c-4e3a-be4d-834ec9e98c52%2F_2020-11-11__6.29.02.png?table=block&id=53f65468-685d-4ff4-b5f0-7397874e5fb7&width=3940&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](./img/docker-flow.png)
 
 ### 이미지
 

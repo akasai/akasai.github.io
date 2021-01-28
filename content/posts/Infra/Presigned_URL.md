@@ -89,7 +89,7 @@ https://{Bucket}.s3.{region}.amazonaws.com/{FileName}?AWSAccessKeyId={KEY}&Expir
  
 만약 해당 허용시간이 초과된다면 아래와 같은 화면이 출력되며 이는 **Cloudfront**에서 변경가능하다
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa04cab4f-1489-4759-adf6-4aae0b9843dc%2F_2019-07-19__9.25.11.png?table=block&id=2ecb7a23-46a3-4189-ad0b-947fd0cb43d6&width=3120&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](./img/presigned-url.png)
 
 <span class="callout">
 S3에 저장된 파일에 접근권한이 무엇이든 (Public, Private) 상관없지만, 사용의도에 맞게 **Private**으로 변경하는 것이 좋다.
