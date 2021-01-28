@@ -11,7 +11,7 @@ date: 2020-11-30
 update_date: 2020-11-30
 ---
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe1726a9d-3f00-440e-a5ef-a242e70102bf%2F_2020-11-30__3.24.55.png?table=block&id=516d4659-6ca6-4f1e-98d3-16e9dd7cc150&width=2580&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](./img/devday2020.png)
 
 지인의 추천으로 팀에서 진행한 발표내용을 보게되었다.
 

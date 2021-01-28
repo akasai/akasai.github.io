@@ -11,7 +11,7 @@ date: 2020-12-04
 update_date: 2020-12-04
 ---
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F3cfa6ee9-8067-4167-a089-76bad7d2b1fa%2Fimg_sns.jpg?table=block&id=10339ff6-a624-428d-b04d-20ef9e27455a&width=2580&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](./img/ifkakao.jpg)
 
 ***
 
@@ -49,7 +49,7 @@ update_date: 2020-12-04
 
 무엇보다 모든 워스트케이스의 결말이 같았다는 점이...
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F47282dcc-4a5f-4c44-a2ce-88d1cc08df2e%2F_2020-12-01__9.34.34.png?table=block&id=562a6f2d-2ad5-4c23-bca1-77bb2cce45f4&width=2580&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](./img/sad.png)
 
 ### Programming Kubernetes Controller
 
@@ -89,7 +89,7 @@ TDD를 도입하려 노력도 많이 했고 완벽하진 않지만 도입해본 
 
 기회가 된다면 좀 더 공부하고 시도해보면 좋을 것 같다.
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc1ee0115-ecf4-4831-b63a-8767ace94a2f%2F_2020-12-04__4.50.32.png?table=block&id=2de0a46f-73ce-4276-a6f1-43476991385f&width=2580&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](./img/bdd.png)
 
 ***
 

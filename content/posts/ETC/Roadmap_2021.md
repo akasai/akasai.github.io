@@ -21,13 +21,13 @@ Backend는 변경점이 거의 없고, Devops에는 컨테이너쪽에 내용이
 
 ## 백엔드 개발자
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe108c347-11cb-403b-b811-844743e16283%2Fbackend.png?table=block&id=b9286018-5a02-4deb-9556-b0e96b806e23&width=2580&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](./img/back2021_en.png)
 
 ***
 
 ## 데브옵스 개발자
 
-![](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8e20a241-5b2d-4742-87a0-e25c32c074fc%2Fdevops.png?table=block&id=7ea1d021-fac9-4a0a-804d-3118ad788878&width=2580&userId=038a9d8a-4e75-4deb-a374-ed6ff93980c6&cache=v2)
+![](./img/devops2021_en.png)
 
 *** 
 
