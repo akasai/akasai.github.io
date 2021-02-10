@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html theme="dark" data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+<head>
+  <title>EDA(Event Driven Architecture)이란? | devlog.akasai</title><meta name="gridsome:hash" content="2703c10c3105afe4fba22dc27b669a70d7acc48d"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.23"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" name="description" content=" 최근 기존 구조를 고도화하는 작업을 진행했습니다. 동기 처리되던 로직을 비동기로 변경하면서 EDA(Event Driven Architecture)를 도입하였습니다. 관련된 내용을 정리해보려고 합니다. EDA(Eventt Driven Architecture)란? 분산된..." vmid="description"><meta data-vue-tag="ssr" name="keywords" content="이벤트 드리븐,아키텍처,Event Driven,Architecture"><meta data-vue-tag="ssr" property="og:title" content="EDA(Event Driven Architecture)이란? | devlog.akasai"><meta data-vue-tag="ssr" property="og:description" content=" 최근 기존 구조를 고도화하는 작업을 진행했습니다. 동기 처리되던 로직을 비동기로 변경하면서 EDA(Event Driven Architecture)를 도입하였습니다. 관련된 내용을 정리해보려고 합니다. EDA(Eventt Driven Architecture)란? 분산된..."><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="viewport" content="width=device-width, initial-scale=1"><meta data-vue-tag="ssr" name="description" content="akasai&#x27;s 기술블로그" vmid="description"><meta data-vue-tag="ssr" name="author" content="akasai"><meta data-vue-tag="ssr" property="og:type" content="article"><meta data-vue-tag="ssr" property="og:url" content="https://akasai.github.io/what-is-eda/"><meta data-vue-tag="ssr" property="og:image" content="https://res.cloudinary.com/akasai/image/upload/v1600232989/cover_1_pmz69m.png"><meta data-vue-tag="ssr" property="og:site_name" content="devlog.akasai"><meta data-vue-tag="ssr" property="og:locale" content="ko_KR"><link rel="preload" href="/assets/css/0.styles.08c663b8.css" as="style"><link rel="preload" href="/assets/js/app.efbc0d0b.js" as="script"><link rel="preload" href="/assets/js/page--src--templates--post-vue.2bd71745.js" as="script"><link rel="prefetch" href="/assets/js/page--src--pages--404-vue.c551f324.js"><link rel="prefetch" href="/assets/js/page--src--pages--index-vue.7f3f2b32.js"><link rel="prefetch" href="/assets/js/page--src--pages--tags-vue.09ceebfc.js"><link rel="prefetch" href="/assets/js/page--src--templates--tag-vue.6da357af.js"><link rel="stylesheet" href="/assets/css/0.styles.08c663b8.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  <meta name="naver-site-verification" content="2a8d2d084769745cbe9723b381819a4528d2e1de" />
+  <meta name="google-site-verification" content="8Yt77fz2UWRfBVa9EHtF0hp8fE2F7nqMZAOE3ZoyfDc" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://akasai.github.io/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://akasai.github.io/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="https://akasai.github.io/favicon/favicon-96x96.png">
+  <link rel="shortcut icon" type="image/x-icon" href="https://akasai.github.io/favicon/favicon.ico">
+  <script data-ad-client="ca-pub-7791595479585064" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body >
+<main role="main" data-server-rendered="true" id="app" class="layout"><header class="header"><a href="/" class="active"><h1>🐋 devlog.akasai</h1></a><!----></header><main><article class="post__wrapper"><aside class="left"></aside><section class="post"><section class="post__title"><h3 id="category">프로그래밍 / 아키텍처</h3><h1 id="title">EDA(Event Driven Architecture)이란?</h1><!----><span class="post__title-info"><ul><li><svg aria-hidden="true" data-prefix="fas" data-icon="user" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-user fa-w-14 icon"><path fill="currentColor" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path></svg> akasai
+            </li><li><svg aria-hidden="true" data-prefix="far" data-icon="clock" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-clock fa-w-16 icon"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"></path></svg>2월 10 수, 2021
+                 · 7 min read
+            </li></ul></span><section class="tag__wrapper" data-v-fc5a9040><svg aria-hidden="true" data-prefix="fas" data-icon="tags" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="svg-inline--fa fa-tags fa-w-20 medium icon" data-v-fc5a9040 data-v-fc5a9040><path fill="currentColor" d="M497.941 225.941L286.059 14.059A48 48 0 00252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0014.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0133.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z" data-v-fc5a9040 data-v-fc5a9040></path></svg><ul data-v-fc5a9040><li class="medium" data-v-fc5a9040><a href="/tag/%EC%9D%B4%EB%B2%A4%ED%8A%B8%20%EB%93%9C%EB%A6%AC%EB%B8%90/" data-v-fc5a9040>
+        이벤트 드리븐
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" data-v-fc5a9040>
+        아키텍처
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/Event%20Driven/" data-v-fc5a9040>
+        Event Driven
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/Architecture/" data-v-fc5a9040>
+        Architecture
+      </a></li></ul></section></section><!----><ins data-ad-client="ca-pub-7791595479585064" data-ad-slot="1631172523" data-ad-format="auto" data-full-width-responsive="true" class="adsbygoogle top-ads" style="display:block;"></ins><section class="post__content"><article><p><img class="g-image g-image--lazy g-image--loading" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 1600 900' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-4eca26324b8f519ea351baaccc52f3f9'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='40'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-4eca26324b8f519ea351baaccc52f3f9)' width='1600' height='900' xlink:href='data:image/jpeg%3bbase64%2c/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAkAEADASIAAhEBAxEB/8QAGwAAAQUBAQAAAAAAAAAAAAAABgADBAUHAgj/xAAxEAACAQMDAgMHAgcAAAAAAAABAgMABBEFEiEGMQcTQSIyUWFxgaFDsRQVIzNCUnL/xAAXAQEBAQEAAAAAAAAAAAAAAAAAAQID/8QAIREAAgMAAQMFAAAAAAAAAAAAAAECESEDIkHBEmGBodH/2gAMAwEAAhEDEQA/AN2606mtulNHXUb2GSWJplhxGwBBIY5JP/P5FBnTXjPpGv6/YaTb6VqcM15KIkkkMe1TzycHOOKL%2bvumLjqjQ0sLe5azdZ1m8zDdgrKR7JB/y/GPWs26J8GrrRuqNN1g6xJKLKcStFLYtEXGDwCWPxrscdNo8xQcc5B/1NVU9pLHExTUdVlGfcRk3cn4lfT6%2blW4tyCTtkyTk8tTc9rK8eIpJYWyDuxu%2b2DU01hWW1pM8WW1LVY89kkMZYfcKf3qwuruK2t5pnDkRxtIQqnJCjJx86chtZETEjyStn3sFePhgVzd2JubWaE%2bavmxtHuBJxkYzg8U0vSDR6zVQd2h6uDgnGyPJwMnA3c0UxOJYkkT3XUMPoRmh2LQr2OWW3jvbpFcHMgso9pJHPPf8URwW7QwRxqrlY1CAkfAYqRTTdu/osmpRVRp99vwiv8AEjWrrp/pC81KwMQuImjC%2baCV9p1U9vkayPwp8W%2bo%2bpuu7LSdT/lzWkqylv4eAhztQkYO4%2bo%2bFab4xyPH4fai0fvB4cewH/VX0OP3FYJ4GX2oTeKOmJMi7ClxjNmkX6beoQH81lLpbF9SR6niuwzKskbxsRk7uw%2bWfjUK/SO7dH86aNVyqtHdGLdyM9u/IqeiTZBeUdsEBePrUSaxEsBhmh80BiVkBCkZOft9qynb001SO9NVbdPK3yurZcPJMZT6ZGTTWszyvpWopBFNkQPskjPOSp5X1yPlXUltbosbTxJDDCDg59Tj4fSq/V5RLpGpvaTRkxQMyPESHTKn2uB39RUd3hVRmcixiSaOO36hlVMp5kd1IvO0Ee%2bwIxkEnFFeianHqnVWnSvpWpx3McAjeWS3JQHacMXBK8896G2sbJhPOdY1FJgHZf60jOTtwpHs45xzmjPpGZE6m1G0bWBeXKwoZIN8eVIAGSq8rjOMYA5pGDjJuq9vx2zfJyxnxQTfqfZ6n8ppb4oMLiGOeB4pkDxuMMp7EVGtNPtbabzIYQr4xncTx9zSpVTmTaVKlQHE0Uc0ZSVFdD6MMim7e1t7diYIY4ye%2b1cZpUqAYGm2ol3iNtwbd/cbv9M1JjtoI53mSGNZX95wgDH6mlSoD//Z' /%3e%3c/svg%3e" width="1600" data-srcset="/assets/static/eda_1.82a2fbd.44b6014efa2517f0e3015313aa2c67f1.jpg 480w, /assets/static/eda_1.cbab2cf.44b6014efa2517f0e3015313aa2c67f1.jpg 1024w, /assets/static/eda_1.b1f4eea.44b6014efa2517f0e3015313aa2c67f1.jpg 1600w" data-sizes="(max-width: 1600px) 100vw, 1600px" data-src="/assets/static/eda_1.b1f4eea.44b6014efa2517f0e3015313aa2c67f1.jpg"><noscript><img class="g-image g-image--lazy g-image--loaded" src="/assets/static/eda_1.b1f4eea.44b6014efa2517f0e3015313aa2c67f1.jpg" width="1600"></noscript></p>
+<p>최근 기존 구조를 고도화하는 작업을 진행했습니다.</p>
+<p>동기 처리되던 로직을 비동기로 변경하면서 EDA(Event Driven Architecture)를 도입하였습니다.</p>
+<p>관련된 내용을 정리해보려고 합니다.</p>
+<hr>
+<h2 id="edaeventt-driven-architecture란"><a href="#edaeventt-driven-architecture%EB%9E%80" aria-hidden="true"><span class="icon icon-link"></span></a>EDA(Eventt Driven Architecture)란?</h2>
+<p>분산된 시스템에서 <strong>이벤트</strong>를 생성(발행)하고 발행된 이벤트를 수신자에게 전송하는 구조로 수신자는 그 이벤트를 처리하는 방식의 <code class="language-text">아키텍처</code>입니다.</p>
+<p>분산 아키텍처 환경에서 상호 간 결합도를 낮추기 위해 <strong>비동기 방식으로 메시지를 전달하는 패턴</strong>으로 주로 Message Broker(<code class="language-text">Kafka</code>, <code class="language-text">RabbitMQ</code>)와 결합하여 구성됩니다.</p>
+<hr>
+<h2 id="eda의-구성요소"><a href="#eda%EC%9D%98-%EA%B5%AC%EC%84%B1%EC%9A%94%EC%86%8C" aria-hidden="true"><span class="icon icon-link"></span></a>EDA의 구성요소</h2>
+<ol>
+<li>
+<p><strong>Event Generator (Publisher, Producer, Creater)</strong></p>
+<p>표준화된 형식의 이벤트를 생성(발행)합니다. 생성된 이벤트는 <code class="language-text">Event Channel</code>로 전송합니다.</p>
+</li>
+<li>
+<p><strong>Event Channel (Bus)</strong></p>
+<p><code class="language-text">Event Generator</code>에서 <code class="language-text">Event Processing Engine</code>으로 수집된 데이터를 전파하는 메커니즘입니다.</p>
+<p>즉, 이벤트를 필요로 하는 시스템까지 발송하는 역할입니다.</p>
+</li>
+<li>
+<p><strong>Event Processing Engine (Consumer, Processor)</strong></p>
+<p>수신한 이벤트를 식별/처리하는 역할을 합니다. 처리 결과에 따라 새로운 이벤트를 생성할 수 있습니다.</p>
+<p><code class="language-text">Consumer</code>는 이벤트의 송신자에 대한 정보를 알 필요가 없습니다.</p>
+</li>
+</ol>
+<p><img class="g-image g-image--lazy g-image--loading" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 782 356' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-b79dbd500c3beff616618e0fa3004f89'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='40'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-b79dbd500c3beff616618e0fa3004f89)' width='782' height='356' xlink:href='data:image/webp%3bbase64%2cUklGRngCAABXRUJQVlA4IGwCAABwDACdASpAAB0APm00k0ckIyGhKBgMAIANiWwAyBdVft/D003AA/AGiA6AG8AegB5Znsi1nCuy/vf5FWILl04wYxtn9vEfOh3FzmD0R%2bvkIs/z3n2Slvz7mUmH1gXhYTE6LpYaR98akJGETAAA/v92MOaliDBNL8iRqpyrkJZ1sCCC%2bDiTf0vtpOFXsAChSHP2acCk3JV1djhvxRhXr460iv/COdi8T516ns//xauvr%2b4uQKl%2bbwHTqLbp71Ur3K5tZjbIJ6aAuXJPzn0gPetL3ztfP5PP/w4N5VhYlwPMGN/js2sARMIxvy7H%2bZMQZS2tHRSaOktFDj/U9O9UoVHzTLsk9Si6QRFQ8tlE3T2KK%2b2H%2bfw89P9L198WeRPNR%2bbo4lAxqUZAxmhX4daRPGkFI7sbNBZ7GEZossGIPsPEakSGE2a/zOBQglOrXMaNVneiPa0SMoDbCG3uZycQr%2bt6o40T0LqHpwaGYFAh85bcj2HPtgG3aMph2qpMJ/1Uc5%2b%2bw/a1tU2dVbMOkQFJn9rL3CmHVK0IddaX/m56cbHlBf9YYFo0sqIte7Rm3EeGdN0zvuk45L8rb86lA3EjFCKYK8TwDuhlS8k%2bFM3NgKdR15d4ZE4x9g7TS9X90h8OXeXdyWb%2bX4g%2bqBDuM7QRlQMLr36chujhk%2bgzTNJTLbJFlqmilTrnOp66z/EhlidDEZAuOfp10AfXXDdOBWZADG8/9JUZpNO/4ReNTcp%2beMW21RFGToQ7WEqc3%2b1Ws7zPNQFwklF/5UpUHD4utODHyCybWjtw1pfDb/TOpqYI01XSW069LwKVtOveU4AAAA==' /%3e%3c/svg%3e" width="782" data-srcset="/assets/static/eda_2.82a2fbd.c281ca3843c645c19e735dd11a992999.webp 480w, /assets/static/eda_2.d25c033.c281ca3843c645c19e735dd11a992999.webp 782w" data-sizes="(max-width: 782px) 100vw, 782px" data-src="/assets/static/eda_2.d25c033.c281ca3843c645c19e735dd11a992999.webp"><noscript><img class="g-image g-image--lazy g-image--loaded" src="/assets/static/eda_2.d25c033.c281ca3843c645c19e735dd11a992999.webp" width="782"></noscript></p>
+<hr>
+<h2 id="eda의-동작-방식"><a href="#eda%EC%9D%98-%EB%8F%99%EC%9E%91-%EB%B0%A9%EC%8B%9D" aria-hidden="true"><span class="icon icon-link"></span></a>EDA의 동작 방식</h2>
+<ol>
+<li>
+<p>Message 생성 (Publish/Subscribe)</p>
+<p><strong>이벤트</strong>가 생성되면 <code class="language-text">Subscriber(수신자)</code>에게 전달합니다. </p>
+<p>이벤트는 반복되어 전달되지 않으며, 수신자는 송신자의 정보를 알 필요가 없습니다.</p>
+</li>
+<li>
+<p>Event Source</p>
+<p><code class="language-text">Event Processor</code>에게 이벤트를 전달하는 역할을 합니다. </p>
+<p><code class="language-text">Event Source</code>는 1개 이상일 수 있으며, 1개 이상의 <code class="language-text">Event Processor</code>에게 전달합니다.</p>
+</li>
+<li>
+<p>Event Processor</p>
+<p>수신된 이벤트에 대한 여러 <code class="language-text">Action</code>을 수행하는 역할입니다.</p>
+<p>단일 이벤트에 대하여 타임스템프를 추가한다거나, 파생 이벤트를 만드는 등의 작업을 수행합니다.</p>
+</li>
+<li>
+<p>Event Consumer</p>
+<p>이벤트에 대한 처리를 합니다. 실질적인 <strong>Biz Logic</strong>을 수행합니다.</p>
+</li>
+</ol>
+<h3 id="event-processing-style"><a href="#event-processing-style" aria-hidden="true"><span class="icon icon-link"></span></a>Event Processing Style</h3>
+<p>각 특징에 맞게 4가지로 구분된 Event Process Style이 있습니다.</p>
+<ol>
+<li>
+<p>Simple Event Processing</p>
+<p>각 이벤트가 직접적으로 수행할 <code class="language-text">Action</code>과 매핑됩니다. </p>
+<p>일반적으로 실시간 <strong>작업의 흐름(Flow of Work)</strong>을 처리할 때 사용합니다.</p>
+<p>처리 시간과 비용이 적습니다.</p>
+</li>
+<li>
+<p>Event Streaming Processing</p>
+<p>일반적인 이벤트와 중요한 이벤트가 모두 발생하며 이를 필터링하여 수신자에게 전달합니다.</p>
+<p>일반적으로 실시간 <strong>정보의 흐름(Flow of Information)</strong>을 처리할 때 사용합니다.</p>
+</li>
+<li>
+<p>Complex Event Processing</p>
+<p>일반적인 이벤트 패턴을 통해 복잡한 이벤트를 추론하는 방법입니다.</p>
+<p>예를 들면 일반적인 주식의 등락을 파악하여 투자할 타이밍을 추론할 수 있습니다.</p>
+</li>
+<li>
+<p>Online Event Processing</p>
+<p>비동기 분산 이벤트 로그를 사용하여 복잡한 이벤트를 처리하며 지속해 데이터를 관리합니다.</p>
+<p><strong>높은 확정성과 일관성</strong>을 가지며 유연하게 대처 가능한 패턴입니다.</p>
+<p>하지만 처리 시간을 보장할 수 없습니다.</p>
+</li>
+</ol>
+<hr>
+<h2 id="토폴로지-구성"><a href="#%ED%86%A0%ED%8F%B4%EB%A1%9C%EC%A7%80-%EA%B5%AC%EC%84%B1" aria-hidden="true"><span class="icon icon-link"></span></a>토폴로지 구성</h2>
+<p>일반적으로 한가지 작업만 필요한 단순한 단일 이벤트일 경우에는 <code class="language-text">Broker Topology</code>를</p>
+<p>이벤트 조율이 필요한 복잡한 이벤트 플로우일 경우 <code class="language-text">Mediator Topology</code>를 사용합니다.</p>
+<ol>
+<li>
+<p><strong>Mediator Topology (중재자 토폴로지)</strong></p>
+<p>여러 단계의 과정을 중재자를 통해 조율할 필요성이 있으면 일반적으로 사용합니다.</p>
+<p>동시에 처리하지 않거나 실행 전에 처리해야 할 요소가 있으 사용하는 토폴로지입니다.</p>
+<p>큐를 이용하여 사전처리를 진행한 후 관련된 <code class="language-text">Consumer</code>에게 전달합니다.</p>
+</li>
+</ol>
+<p><img class="g-image g-image--lazy g-image--loading" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 1295 1053' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-ef680d4d2581b6a49cd38020a959f49a'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='40'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-ef680d4d2581b6a49cd38020a959f49a)' width='1295' height='1053' xlink:href='data:image/png%3bbase64%2ciVBORw0KGgoAAAANSUhEUgAAAEAAAAA0CAIAAAC1uKleAAAACXBIWXMAADIjAAAyIwHN55PYAAAYAklEQVRo3s1aZ3Bb15Xm7iTZ/bObWSee8diOLSu2XBP3KHIkd8uSFceOSyw3ZW3LVpdFN0m2KkVS7BQJgg2FBEGikGhEI3rvAAmARK/sBSDBToIVe4BHQbQsab0/NLNvDu/cd993zznfPefd8sCMublZhUYvVmglKp1EqU0KVFQ6qVovkKmcbk/iOtfq6iqUYa9XTGiQEYiyBqKM2ChrbErWodLQKCVTRkdH08ibdGXI1bpqQQfV0teo9ZMNYZIh3KgLNOqCRG2AZOrNRhP6eroBt7y8vHLVtbQM7XXv7mb9123CJzbz73uYf%2b9DnDvu4W96hLfxfv6G%2b5pvuQ1z9txqisFNJACDXa90c51RUXCWYR1k2oYEvim%2bd4LnjonD8dxaSsDnvfYoAodEgvzmO8q77vV/f8ab%2ba33mxNdez71nzwFYn/7PentG4oPHoqvC9dNISDTGKr45q/zKrNxzFMVjUezy35ANZRQJSz7MNczcaa8nkomdXRYDQaDcd1lMpk0KtXeI0eKNv9Fs/EB9ZNbjC%2b/Znr1df22Fw0vbNc/%2b5L2ic3iOzeWHD5y0wlA0jfpgjhRRyVbR1A48GJrDd9UL%2b%2biGIIM%2b9CFqsZ2iykej09OTk79%2bJqIxTp9vvpdb8g2bJJuuF/33MvOzG9tnx/oPHBE9fhm%2bX0Pi%2b6%2br%2bTQ4ZtOQCBVNmiD8oGEuGdRFIqLuheSlXC8zT8t6Vs5W9Hgdbuul0JQEF//u%2bq3d%2bg3PmB84FHL08%2bYH99sfuxP%2bnsfNv7%2bQcmtd%2bTt279wswmEu7uLqgnZKFw2Cpsq1yQHhcsqw%2bYVl0UiI1d5gNQX4vGB4WFczsXiHa8V7vxr4fadBS9tz3/51YJXXi3c8Vrxzr9mvfwqtaEhcbNfYviLRUe6g/6eUOAq6Q76JifH1/udpjE8POxyu0ejo4srK31TU%2bGxse5YrHv8ssRi4bFY78T40spy4iZfGT8zuAhsaWkJXPd4PENDQzCx3uw5/mcRgMkwOcdfR5aXlkCQdWBgoN/jdneHw0uLi%2bB5qt8SlCvLN5SVmyjgQMbPGXiYc4LBUCw2kfj/d2XAuBo08najxmJQI2LWKc16lc2iM%2bmUIgGPTiEyW0h6tczebkg9VaWR15R2YxJj0CigexKvV0EFWow6pVGrvHHf/5OAz1qVPMOglvaoCTMudszOGLczJjqZsy72tKPVr6izcCq6hLVj1pZZN3eyizVup8PTGwvARjtoUC4F2mbdnFErDRpB%2bbSzdd7LjXuTev5XJT9Hxmz0laCAX5edYdErJxysxIBidUABZaJPHutkeRX1vQbKUlicGFSudktXwmKQZbjtkd5AVsKSxLDaLaunVJxqxV3g1uWwMBcIJccby7%2bvLzlOqz4rJRfNeHigcLVbcn0l4tUeyXJIfEOMZCkkSsQMGnp5ksCYjZYYUI67OGM2hkdW12egxAOCxJAq0S9P9EiSHAaUqyPqxKgu0StN9MmuJ6vwdEAx5eb6lQSfghBUN/bqyUEV0Ssn2NpqXRL8kLl5CTDjhhsogSFYBbsxPbh0bXPQOKxeBiYRjaqlNMOsU8TsdBj49994saH0ZKyrdayTFbUxh9rpw%2b30UTuzS4TzKRuYmKyai5mTTs5wO22kg35NiVoZkQ7GmJ0JsCkXB8oJB3vSyZ1ycWHgQW2nENspxOSd2NujI4GJn6qCFhOnMqgm5p34HDiPO9hXYeAWXDK0okEDkFQ2pwhMdDIWAkIN7RJkvE9R7xRj3VI8iFOC69Y21Rd/21By/OO3Xnng93cNWVouP8UhmHTFJcWDyQ5%2bNbjokuBSgk2LR4Y3taJOH/0IX/jtr37xCxXtUkDZAJhUd5xbgkurOnvsI8i9f/vVL7EFX/cbKQ5R2lxSwDq4dD5zj5CYn5i2KKglkEKKmA0iIBvqYHjUFLeK7FVTXYoml5IE4lGRHXLSiJUJ/hnZaBgSh7zRk8RQ3EpSUlRkuHUryQENaTksghQa72K5FMmOoM2VAiT1KMlQCWgpgyaqhFQ47%2bO7lEk9yb5rGkhI3aVohDlD1FgQtdKDWor7MiYJUK/dgnsj7bTEqHYthaadrJF2ei6muZLfgWrVl9KUtSJ7jdBaK7KhuUZozMNQ1C0lIVV9JZGK4rVXsA2XmJrqtg44CaF5ZritFljP1bbIW1CJXnE1FnOJbUZzDOUsOCq1A6BGaKvkmUEKqLJ6dHbUTGbT6/ObVZU8E4ptqOAYK7hGwKC5pkqusYiurakq7tfWSxi1RS0K6IVi6wED5kAhaAPNZRxLTmHxsp%2bnYZRnmHSKWVerX0PCCtvlvYuNand%2bA%2bdiHaugkZeNpdHM3cqBlWqegYO/EGmn4rhKSfeiODhzvoZa0MgtbZZk4%2bh8d0zeu1AttJJrchMhfg2Z1haYE/mnCojcM%2bimrBrqWXQTUemShufo9khJwfllL7OZTmY6J6ClQek4UYq7UNtSRBJghRZogb65hYWTVnIbAw94aGkx95wsxYOq0ygiXmIVBabF4YXz5ZgRE1nPqkhGAAgEteRqnp7vnSTrA1VcfV4DB840Z6sp0Fngn0az1Ly6bCCAYUm43kmOM4piKMsZipQoGbZBgW8CBolaezERbqtuojIdYxxn5FKL9GwV5VKLDJxrUDr5nhjJ2Hup4PySh9lCI1Hah3juMYLCmY1jXCSwy%2bkKosoFB0OWI5ZbVDBhJQsZdWRTL9cVpXf0o5iqMpq8jK7Aiq1gneOeOF9aPWKmXCEQ0JJreHqBf6a2zXQKRTyWWwHjV0wREeRdwuAsmqUCAtGOZgxLyvVMchzRUqoYgpCDZxYQeYyO/jbvFQI1pGZwgmkdhIEA587VULOxdDgecV2jZCBQCBFg0ehkINDmGa9gafII7CxMS1ZNc720c41AYQFEQMisA8KgGYYS9BQ08WFYwShFH%2bB5p8%2bVVq0RWEshdVMV3yTtXSbpQ%2bVMdSFZVM0zVbRqyfqgcjCB5ug4uAsRC6WGJRd1L7X5Z/DSzjwiD5CQtRz3uKxvGd1mJVXnJMJ8NJHKDczzvVNN2kBJswzFVJcz1M3mPnF3vNkaKc47CylEaW6idY2LQ/NwGESxNMVUCapV26j1i0Nz0De7IEmAR8NROkbE4XloL2OowCU0W1/JMXCcY6Ke5bMQASSFYCGbcrbChF1cgS7AUYtwlBICrZRAK65vKalvyattyq0hnTifbWqtgN1BdS06D0spwDQV4amlBHpJCpZf23SxhnQ8u5DfUJAYlDfVoaFLIZZUiKcU17XkYcigrQBDyq1uPFNSjS89lRiQiRm12WhCIZZciANMc8ocrQhPyalsOIeqK845uRxos4obcivxhThyEY4KhtakviW3mnihsvH0qe9gy6MDAkaNLGqhJHolA3qiiVFiYpYYGcWIWFpLZY053NozXglmxs1eDYtG2ylmZqkJhFFipCcxUNHTipmV33fy0ZMO1kpYOOVgWNllRkaJmVWqpuRjcw53sMt0LYXMqh%2bs7HLYWa2EhHEvx8FHG1PmTGALVNGL2lvLWFU/aJsLhkzk5aAAOPgkNca0S2uYUmFdlrDufLeakBhSyEgFGX6fR8an6aQcg4Jn0QjXRC0wKfntGqFSwBCyyWa1QC1iqkRMrZRtVrWlxZQqDXIuj04EvEbSChgoTSo%2btIMSwNdXX7LpxHoZh8cggh54CqrUYpZRyV%2bnhw/dOzRCHqMRPAEwAEDApfXmoHuHTgzeytvoiF0%2bk5xx45PA%2bMRE/8DAjU9e8Ki7t%2b%2baj%2bLxuMlkTh6gFxZ6entvoAdpD4XD0OXGLg0PR0ZGIunbjMsn3ZRALfWtYXZmptNu9/m8FotZo1H7/T6Xy%2bl2u9Li8bi7ujo7O%2b1QcTi6FAoFVNYDEIzNZiWTSIGAH8DKa2FAQDPAXE4nmFMo5IjOqzBOpwMaEd8ikZHRaDRFYAUk4zosh3U6XTQa7erqMplMcALu6YERXLugDgDk89bIyEgwGNRoNH19fb0/uQApkUgADBitVtvf379eTxojk8nC4fDg4CBgAoHAVaoAMDAwIBaLl1KHW9AGRq9E4FrfCxOAlkqlyQ8WsRjovSr0CEav13O5XOSk35tKj58OBPStq6uDyuLiYu9PUgipz83NAWZ2djb5qfj6KYTFYoE/QiASiVyXAPKtgUQi0Wi0VLwiMADpj7tIH4QADG1VVRVU5ufnfT5fKvvWrrR2r9ebnZ2NvAxQX/%2bReP2B%2b/Tp01AieIRJGpOGgR6wAhVIh2tHIL6wMDsfn4snS3B1YnJqemZ2cnIS4Y2gYSARDMji8srs7NxYbHxpeTkUCqUx4GJaz8LS0vzC4uhYDF5iGN00BpybQzDxBdC0tLIyEonCo/URgNv5lCGQ%2bSRmNTo6trC4GE1d14rA6nJiYSYlU4mF6anhnvj0BBDoS0VgLfSrK/AoiYlPJxan50cHx4cHVpZXgn5/Yt1nr8TiXAo2nYhPLU9Gxwd7lhYWQldhluaTSpKwqdWZWLQ3OQShQGA%2bFYHL%2bRC/bG4KZLQnsLwQj45EIsPDPyKwkqpRxPr3C5r3oVo/quC/Vc59F8WraNOOTIx3p94BiDyUUpP9w8LmL8pZeyp4gHmngpfVLI1MTgRSUy3EDUpPqOeTIureMtYnKO7bKIDxviKKvP0DIeRdSiXGWCz2ZSXzk1LmZyjOuygwx/ushtsR7OkZGpyZn18juBC/QOB9XML4HMXejeL/vZz7URWfb3FEpyYG1v1ucvnL3NLMS1/jM/a0ZRyQ3L7z3LNP/uPFv/zzk%2bffbtx/gHL4qJbDXUyhPsgiZLzH%2bJeDil%2b/WbTtqfde2LLn/W3vYj/d23zkS1E9YT71k0cFSZDxJuFfj6j//b3aLX/68NmnP3znuQ%2bK3/mAfuTL1pLS8clkrgvkmox3CRkHFf%2b6h/zU1s%2bee/qD17bszvr7B4yjx2hnzvX3J4ejp6/3l2%2bXZexXZHzGfvD5w88%2b%2bd7OrXsyX3qTeSyT9NU3PocD4XAlAo0C7evniNu%2brSh7fHPvs9ucz79ge%2brP%2bie36O55IG/L1t4UaaGu429n6l7Oajr11Db/4496duy0PvakcesLht8/eOn%2bh9vdbsB0eUO7s4nPnW3Yt%2bM9z0MP%2bHbscGx91vL8K%2b2PPl3%2bm9tkEglgYCU6WNbyyvmmt/5xSHf3Xf6XXna/usP46FOWzVtJt9xGKEcl17652dNY9msXyDv2ZbFuvz38yivgUuf210zPPM/99a2oY5lLKQYZ69/0yfGYQiVnvfmOZfvrnV9%2b3XngiDcr1/H27qJntoWGhhDkWGQk1O2jv/eB6pnnXMdPdXz4366Tp60vbK985DGdzYaoWorHzZ1W/pmzqie3eHPyuo5%2b5Tp5yvfFQeyG%2bwSpmRf5XOkNeNkVKN7GB7v2HwVD9v2HXZ8fZGzYhCsqTg5raj4ciw7LmS2U3220v/9P16lzXUcyHfuPSO6%2br%2bzwkbn1LzFCIBYbF6lU9F1/s/zlBcvbu82v/c20603zU1sKtz4XHl4jEBmJ2Px%2b6u6PFPc%2bZNn1pu7Pz5p2vmH649PoPz6ht9uQeMbn41q7nX32vHLTIx1v7za%2btMOwfZflT1tr7tgg5PORpQNKpz9AK69o23h/x%2btvmXa%2bbty%2by7ztRfqdG/ElJWkCAyMRDrWZ/uCj7S/u0D7znHbzVstf35L/8alLBw/NpT%2bvpwlMjI%2bLFArWG295/7k3eLHAd/wHx94Dnvf3lGx7Pnw5AqORSKff3/yPD7R/eCKUlev96rjn6%2bPO7buqH35MZ78SAZ3dzjl1Vv/o0659h33ffu89edqz%2b2Ps7zYKefx0BFyBAP1SuXjTI74jxzyZ34I57%2bcHWu/ZhC%2b%2bEoGhSIRLprD%2b8GTou%2b/BkOfLr33fHDe9sqvsi/3XIhCLSXXaxld3CX57O/%2be%2b/l33Qsivn3D%2bS1bw6mZC67oyIgjGCB%2btIf1n78V3vtQ24ZN/Lvvk9x2d94Djxg7OxFVi/E41Nk5F%2bn/8RsRgrnrXvndm4puvb2Nf4WA2%2b%2bnVVVTb71DtGFTW8qc9J776265rbak9AqBkRE%2bk4m/8x7xnRvBpba77xNu2ES75baiQ2u/vv2IQBRG1%2bEwyRUlh4%2bUHcssz/yq9Oix3C/2UQgN85fXF1ib3V5vV0dHWeZXZV9mAgzk4uf7MGVlsHVFMLBsWSyW/t4e9ImTZV8eK8vMvHQsM/%2bL/agL2T19fen13mazwR6JWFB46chRUILK/Lpg34Gi776zpwYCWYl7urthF9mKw5ccApe%2bApfAt9yDh2Dbl/jpSwzOdXR0JHN0ZWUp1TISi/kvL2RrJKNRu92edGIVVr4EGJlbWuqCRWrdBQu2RqtF3oc1zOLiGmbdZsRsNo%2bNjSXNQdal2h0%2bX3odQMwBQ3%2bqY9ql7uHh/qsWsvTN6OgobD%2bRl2w5ZWNqcnLkMhrBgEnYMCJpgOxYYG2C/cn6H6AgAuBcGpNMqsXFodRbtH43BQMB0wYSECQmsG1Zv5VAdj7d3d2IKgQDLo3HYlcTQDSqVar6Ovz6vRRkApVCXt/idDor0RXrKcE2E4OpXW91bGw0Py8PcSW9Y6tEo2Hjub4jqrwMzhJp68ktJwaT3jIhjbSWZoGgbb0DdBrNoNene10h4Pb68ovLvjnxg6HdKlVqpCqN3txeXlVzOPMbp9uDsA%2bFuzF4whcHD2vN7TJVEqMxmolk6qdfHDBZOhCPBwYHmRz%2bx5/uFctVCq1BptIqtQa%2bSLLn08/bRJLp6WkkVzV6075DR/FEktZokam1ICqdYe%2bBw4QmMpJXMzPTFqv9%2bKmzF4tKzNZO0APmDO22r747WVBaPji0lhcZ6VEsIQuY9mGqKUzSh5p0wSZ9kGwMt1h6OM6xAiLXbDJNTYxXNAtb2gdY9qF6hZNi7AZko9bfbOrmeWL5TQKRJHmEqCa3NupDrZ3DDSo3QeUmGUIAIxtCHGe0VmSra6QkR1EgrxHZmbYBki4AeogaH2AoxnCrfZCg9pZhGhLLizK1vopvobX30q0DOGlngzKpqkHtZXdFmtsHctH1o6nffzOQfYTX58OLrWzHaF4D51wN9TS6KQfPPF6Cy61vFYfmq3kGLocTjYxgeTpBYFbgn85r4H5TUAuwLEwLyz4sDs1V8kyUFgaoqqEJOZ5JrmusolVz8lL9iRL892UEsj4g8E81t/eXVmFXFufpYg3J2JOZW3GiFH%2b%2bpvkUivhdERYsflNYw%2boavViBmxyLilT6Rl3g26Lai/Xsw%2bdKTpbVZ2PpoO14MZZq7s3FrP0TxxoBnz9Q22biecbRbG0N34gTW3ESW22buU7WKQzMoFs1fB5vNBrBcDR83xTDOkCQO8oYilqBBQAc5yhQquDoqXRmkkCLoNUZo7f3NWl91TwjRmDBCttplj5QTjZ2X6rGwTpHE6qoloEanjGfyKvhm7Ci1P83yLrAIrMzAgSmx8dESi3JEMaLbdVcA1bUgRG2g4fgGDjD7BzJqW4KBfw/IoAVWhgdA2cqSSAXsPRsHCO3npXfwGnzTVaykwTGkgTUotD8d0WYH8ob8ht5FwlsQJ5BN3EcUTTHsEaAJmC7YjBagEl9DGzOJ3IhCJBpMHJJAovxFoGS0RmFwEIEzlVTQU9OHSsbR6%2bT2rneqVwUBggIFVpIV6oheOR8aR6RC4YKGvkQc%2bADWXChsiEU9P8ohar4RmFonm4dwopsWLGdoPLUiqwEpVvev4piaZAUqmpVSfpWqKYeaMdKkhis2AYJKutbruCamijNye00hcf1z7C6IpDZGJGtXu6sk3XVCCyCwEyLdbiwvCqxvEDmSmmdo2zXGKR%2bFd/coPTgZQ6M2MawDfEDc1mlVTMTYzypktI%2bCAEHPXVyJ17aBeaq%2bWaqqVvSu3K2vC7o9105D8DkUIFvyq6oy60iFGBIIHk1jUiZU1n/Q05RZ3J1XK1vZmaV4/JqiPm1TfAUynwoMU3Q62ROsUKhAFUsvggwuVUN%2bbVJDSkAqQBLBswP%2beXU5hbAaI3m82UYaAFVhVgyWEEU5lUTTxdVVtVi4eADSXGxsj4HXZ%2b0gjwFlwBcTTxfhr1YUj6W2uFnpKfq6cmJkN8bCviSZVJ8QaT0eYcGBhDM7Mx0OBiAxpQkYcHLZX9fD7LHXFyI94Rh/byCSSvsDgUWFpDFYWWwvxc0X7aCKEl1CfhmUlMtoCLDQ4gPoSuYpIdQImsZXP8DZyQjCV%2baEgAAAAAASUVORK5CYII=' /%3e%3c/svg%3e" width="1295" data-srcset="/assets/static/eda_3.82a2fbd.b5c31c1e662a0bfea82c9b7816a90fad.png 480w, /assets/static/eda_3.670b0e6.b5c31c1e662a0bfea82c9b7816a90fad.png 1295w" data-sizes="(max-width: 1295px) 100vw, 1295px" data-src="/assets/static/eda_3.670b0e6.b5c31c1e662a0bfea82c9b7816a90fad.png"><noscript><img class="g-image g-image--lazy g-image--loaded" src="/assets/static/eda_3.670b0e6.b5c31c1e662a0bfea82c9b7816a90fad.png" width="1295"></noscript></p>
+<ol start="2">
+<li>
+<p><strong>Broker Topology (브로커 토폴로지)</strong></p>
+<p><strong>큐나 중재자 없이</strong> 이벤트와 응답을 직접적으로 연관시키고자 할 때 사용합니다.</p>
+<p>이벤트 플로우가 단순한 중앙집중식 토폴로지이며 <code class="language-text">Message Broker</code>와 <code class="language-text">Consumer</code>가 가장 중요한 요소입니다.</p>
+<p>모든 작업은 비동기로 처리되며 이벤트에 대한 조율이 필요 없습니다.</p>
+</li>
+</ol>
+<p><img class="g-image g-image--lazy g-image--loading" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 1231 832' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-8902cc3722d514c0e2c687ff6d1d70d9'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='40'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-8902cc3722d514c0e2c687ff6d1d70d9)' width='1231' height='832' xlink:href='data:image/png%3bbase64%2ciVBORw0KGgoAAAANSUhEUgAAAEAAAAArCAIAAABHOBkQAAAACXBIWXMAADIjAAAyIwHN55PYAAAR50lEQVRo3q1ZaWxbV3ZWArSdAYr2R4EWBTqZQZuknaYZFDOYFmjnx6AB2gyKAl2ng2I6iOPYcSZIvMSWLVuiFi4ixX0nH/f9vcddpLiK%2byLJkrXb1kbtq21J1r5S7CGfzcixZavJXBxcXJ73%2bO757j3n3O%2b8V1H4zbXV1dUHDx48fGl79OjR4eHhC/9%2bdHQE/eLCQiYZbUvHs6lYOhGBMQyyyWg6GYVxJhElrkI/NzcH91d8c7uJiZeWlkKhUF9fX1dX150TGlyNRqMDAwNwfz6ff/5JoArY1cvd2GqfY6XPsTPkBVntd64PuneGW7bue7aHvNCDZrkbN8hYj9c2Kp63Jn9CIww9CcDExMTg4OAJln1528LCAiA56bb9w6OYW12YjezmQmmHsKtF1umVRjFOm0vY40d6A8r%2boKo/pMpPRQsLcZWgYWJqpuKF03yNHZicnLx79y4MNjY2tp9tOzs7jx8/zuVyBIDu7u6TABwAAJe6MNO6P%2bId8Ik77Nw7zYLxhHY8bepw8rpcvA4HZ8Avyed8hfmY%2boUADo%2bOhkZH%2bvv7B/oHBvv7BwcGQAYGB/t6e6dKPpc/PPzKzhA%2bDTtAAHi8/GBhenJxdrosS3Mzs5Pj46PDRRdfWiJ24ODg4Lkdzu8d5NNe3f2YXq3XYg4rZsfMVtxuUT7ownxOA4xBg9lxpVbdF1LrReRnAORLdmTcbsV337R9/wfWd38Igr71DvYX72Lf/4H97Xf4P/rbu/fulVw1//wOwAKPjI5ub67/%2bKr6Dy9av3MF/5PLX8obV%2b3/SLZ29A6uP37cdbILgQVJF2I2KsmmKBuP1chsNGOIrLAxbl5g6D1Ma5Ks8VC0HoqxlcmkCchXpmfnvwRwVALg5/JCf/RG11/%2bdfdP/mH0k89HPvpk9MJnbX/%2bbu9f/dD4nT9lUKn9AwPHwxTG4PrNzc3/9P77E5OTszNTv/s/8oqzLa996K4AOeOq%2bKAor59vebPKYw3Ed7c2MdwKO/yVh/T09GQy6V/%2b6gwmqXdiqnpdgGH0NSgdTLS1WqClXz/L0NiYWJSqbabpPBRDsL72BrfhWQDEDgTkiOH3/iD0vbf9b70T/clPW3/8d5G/%2bfuWN95s/e5bvD9%2bQ6vRrq2tHc%2bVMF5eXp6fn3c6nffv34cnWINJjiUgxEMia1jmSsjcCYE1zEGDakdoa3sL0mg8Hl9fX4esRTxhcRHcagmeMzc3m8q0RR3KuXZTU%2b0V8q1LNNJlcvUlbt3F2XazQ0WrvfEZteYyjXSltvLXcQtTzX/WhQhPmJ2eEV%2b9xj1/AYR95iz77Ecg3Au/5p77mFlZmZuYeD7Qy0F8r%2bRghG9sbmz0dbUvzUwMdt9ef7xauq2oB3NhsU8M4qNCm8/QFdTITLjW7laYcbnZptYo7ocQFDeprG4lalOidqHGmHLJdC8M4uJTCoWto/x2UY6eSh40B4VXpFEiiPcPDkCxtbUViUT9gYDL5Ybji9ATAI5nIegz4DrpNPTZbCYaT7nVDNSibTBGWGi4RoI2GgJkpZ1Sea7J4GFZ42S1m6J2QQzQGRRu3aXp2YUXpNFijIIJL5RTpFHiJLl9%2b/bY2BgkTWLJwc2Im78CAHIueBSMAfDuzs7a5nbKrXSYJNdFGEmK3RQa65Sua3SRqP5TmlRHQhzVEgtJit6UWCm1lULa9Wdi4BuexMcBQIoEs0wmk9lsdjgcCIKAr58EoK2trfwTDrKoU7XSjbrVjThCsSqomJzikNeu9Fo7PRJU2mBFqKA0CUn9PrGcXfNiF/qGAMq%2b8cJQeR5ANps9fn8iEjBKaVYVE0UYKELHEAamaDLJ6LiCiRU1RbEqmXoRRSribWxsVhyV2ukNPSWAJ974tJ0GwJOjIJ9/8HB5bmFpfvEBITBeKPVlDaHc2Nx6Qub2Dw63dva3dvbKsrm9V9LsP9Xvb%2b/CXf8/AC8mm68CQBAK8CU4lfdLslcS0Ow/1cD4MP/EmArwzqjHkg2ibSE8G8RA2kNYR9jaVhofEzTgNj8qxeJJafQlAIjIPo0LdXdm4836jN%2bSDaBpvyUTsIA9xbHPDMqyxNw6oNlFAKl4ZKHdWJgKr/bZd4c9eyPe9UHnco91b6SlJF7od4c8wBA7nHyvx/P1AJxyBw7yhSAuz49694ZbHvfZ90dbdoY8j%2b7gm3ddh7kAjA9GW3aHvfujvsK4T8VrWFh8WAGVwXKfo/AgMxDRtmjpToTc7VdYpXVhEzNsZrW7xW4lZaHbWVjt6PUjOIa%2bEsD65tbG1vZx2dzeWXm8Nj07S5QNLwEAvhF3awrTkd3JSNDI9OsZEQs7aGjy6%2bg%2bPSOGciMoJ%2b0U5ecShTlgo6WTOJ2Irg24VnrtXc3CjI0L0ueTbt7zLHXhGRunzcFL4Ow%2bv2zrfvNgWIlj2Kt34HC3cLjzjOR3D3bWHy3OniaNxt3aw5xvOKqCqUGydm4updsdCw4EZGkrO23jtDv5ozH10WRQK6QUAdzOJoejap7aqPK3Ia6YzNHKMnqdWnaLVSG0RzX%2bjNQeEtmjAoWyWVHnsNuKieJZRk3Q6VxunKAS1Yjjvxstv2Jh/8s8Lvh1iW1%2bcQnKzng8AeUBFAn7%2b/sQgXBiEOwaomRn7zDj0YTscmBTukCb1B6WOmM8pS5uYagwu8rfjriicleUoXPbNBw1lzQxPVvR1ZbsbEFuilGgqbVy63WOplbjr6u7xZeISWofaKoExjqFkyQ2cWs%2bCYcCz3t5mUpAm5zIffsXyooL8dfOhyrOhSrOh4tyLvT6p/E/q201uENw54ULn1CpVGB%2bQELBfwgKWHpIkS0lHHKjUQ02kFXOaxxNvcpVj1hrr3xI07ioOl%2b12AKHcYM%2bQG0ks2svzswtFHdgKKpmCGU0BUaRGWlyU41Ay6Vcs6i49VITVW6kSA00JX6LTNNzKv/93/7VgqL9/X3AFDqfNhhDsetyufqLxW7%2bLMvyU5LlZ2T8X%2bjOn1Gs/0yzv0/G36tDz7AsYxNTG%2btrer0e7O7t7QVf6i01eAKQ6nQqdfHyF04VI%2bpS1Ir0NMQEU9NV%2bE0a08C5xkdUFASlliyEqxxKpZh%2bY2pmrgKq/bV%2bRwzjsuov8ylX%2bbRKTt3F%2bxHVfCcmbrzGpXwhoF1j1l1qVpF7fLJLly4C%2by%2b/fYABOAP04A9A8Yma%2bHB/u7C7sbG8ODLQs736cHEqt/5oIb%2b9vre5RgRxMpkE1weatPS0EW8r5ufnzBbMj0pW%2buyyputcMkxdyW64oudW7Yy0QDSz6i7zqVf51Gvsus/vhRG9mDoxOVPR2ZYcDCmb1Ji6tUfqTgptERbWqpfSUYOM50yrgrcF1laxO8NR6HHRzWDAf9yFgNavltozAEohAZdQDDdZULFENjU9U/7Xy%2bk0HJVZr6YZlXHtCW34jsDWKm5Os1QWu7RGZHYqQz0SdwKMZFrCeoSlYN2anJ4rxsBtr/yG0FyvdNZIsUqOhqTx1ZKq%2bGJhjdIDDlclMNQi9mqRgXXrfLPLUZ4bPB7iD%2bwGT4D84/V6wZHKV6empmCNV1ZWAB5QUUD4QjL3lbZ3cBSzSo0GVbXSU4/YrrLVEAN1crzm0gdUtaNB3XxLZL4lMtVrAw2UOhbp82IMZNPxyTaTUCahI0a6VNuEGGrYEiXnlg8VU8UahlzHkGnpiKGBSsaEVS6no7zGUOtD6iybUi5oitlwfx/woCiK47jb7RYIBMRLqFMAyGd9%2boxXSRGpmhA9XaZlIMYaMiWgpciVSKPMAMaAnsSRKtjVSjZpErJQR1um1ycdbkXC2oZWPaUk5HthxUzWmETpYR05YqAENQ09XqFNVgt1YxkArDosc/lnuaAh2BssPNSZsAng3GD0QamaeSUAIDheVDGd1mRwJjE19CmsCUrKuwEpjJ9aSBkMSLjUqtn5xYrd3T1vs9OoVWJmHWbSlkRn0ikNGgVq1JY1FoPaoNPMlE5TYm7w%2bOnp6eM78DWoxPM3jI2OmvRqS3HqJ/ZYjBqDBjHpVE%2bN0YKpOrU8GAzAunydeuA0AAj29ko6/c1bBcyyAAkMivnpKZBp6GempqcmiZ%2bEzM5Mz85MQb47OjWAr70DUFvCjIQ9hBnT02V7nlhFXN0k6oH79wYjKK%2b3%2bOZR0R9SDYTVfQHFYFjdH1TCz74A9Mpun7wvgNiV9MHBu2Wn/40DIGrukNvc4RJ0%2bxCYFwwgzIBxH2FPEAYKsKfDLcT1yM7uXkUyFl656yo8SE%2b1o1NZy1SbZfY21u2TPei2z3XiD3sd85341oivsNLeF0KsOPZKALt7e3v7B8/K4c7u7tr6%2bitdCMhcxKkqzMf2JlrvR7Vzt3GwAdZuImN82OOYacegB5PyM7HCUkLFry9moWwy9qjHUVhMjEQUPlW9U1p9NyhPWnmt5qaQjpKxsmzimwu3zYXVbI9fjpXoNJFSII0SWeirO3C4Xzg6eEbgdN7dmp%2bZeiWA4stdp7owHd4b88XNdJ8aEiO12ytO2fk%2bDTlipAW05CTadDQVKtJpfsMksFGoax7ewTvDxtYWc8JvSQaxsFv3sM8JNUC0xRQPoPGAJdhs6I0Y73jEXq/neBo9vgPlNJq83YuH25yxDkf0S7FF2n2J9sODA%2bAgLz8HUl7dYpc16NLF/SgYE/VZOoL6gzF/d9Qc86NxvwXE71AvdOI6EbVIp4FKgPeTJGa2PUXV%2b%2boU9lqtn8%2bsUyrEdfowE43UKRw0Y6hOqDHzq65euQwkDhI82NHa2kocZASe8fGJsVxucX7u938pqfjA/toHWEVRcEJe/8jxdqWtOZLe2ljr7Oo6cQfyhbRbiRvl9foQxxYnIXaqIQicEmm8TNfYmdYkReul6lrqtH4Rr1FKv14kc0AlulrkNwRGuAa2VovNwKJJ1ZU8Ib%2bmRKdrZHiD2lPFVYkaPvv5f/2H0%2bkaGhoC1gCUBggPWL9fakBLx8Zy66vL3/tYWvGh8VvnDN86b/yts7rf/sjwO%2bcM3z5v/tF1Q7yje2PtcXtHRzFUdnf3jzVwS6Abc4sP43apyaCoUbU0qJxVAjNF1wKLW3flDFVpo%2bh8JLm1Vm4DOl1fX/OETrel43PtJrOaz%2bJyODwWT8gFqm2TN7R5EA6XxeGxuTw2XBI01TjlJIlYNDA4CNQX3AAAdHR0ADGGgc1me%2b%2b99wBY8RPG/FxuYnJkLHd/aAQqmMmZmdHceG5iamKyGANAPDEMgydAIdb%2btMEYGHUiHv/Pn/8CRxpHUyY2p4mYms3nMsg3u9wCTCto4rBAw%2bWDhRSrrF7BqS0FcSq21IU1Y3KJTCiV8qRSvoDfBMl0OGmGsVwukEp4AiHXbRRAdkNRCxHEsPDEF4ryOQW0nihNCI8Clo3jVr8/oDcYjp/f5SCG246ebfDIpYfLaa9uImOSywQymVAm5QtFXIOcudxj86AysVQAGplUwOcxIKUCnR4HOg0uBFX8TZGFicUgBkhyW72hlcWolyGSWl2IYQ4BFaUaS45Iu9jsdp7yrcTa2loul4PIHhsbI6joaU5iiIGEEzEbFTA1C4vWyKw0U4istHNrP6VrXU14nPjA0WBs5bIbhZQviu9Gu9pTXV7ZTYG%2b0RQEvlqL2KpVnpqqyzwBu14XIAObVTjBESubpJzqj73NrpcAKH/kg5PA7/dHIpHSO%2bcs0NIyG4UE8LJzIF9IuRQmnQRKSqrWQwIAhkAVV0O%2beoaqwBtNYWDXDWCSxkequc5tuFKMgVS89VGfNWyXy8UshYSplLFFXErKxsulzTBWSIpKmYhpkdHChkabFT8JQPkrZckZDsfHx4myE7YlnU4DQTglnU56NAtdmJqYWspCoOfWATUGC8EMUIJVQg4liXNUvNqiCw0PDXmN3JRd6NfR/Xo69AFDU8wqTDnEIRPTV1L6dI1Jm1DWdCsajZ4EAJgzLPnIyAjAAKMhoEdHR8F/iB5KBdAPDw8DGKiBXkIlAs14DOdDAVmamgH2hC2chF0ct/KL5oExenrQyAybOTwG%2bdHySpGNDt4bCkfj8VQ2nsyAxBLpaDwZiSdhQGgSqWwkluy8010urF7YYHXhaJspNRjAOT1dasRg5mkDB3sJWQKKlkhno/EUMXXJnlQ0lgBNrKxJZiKxxGQprf0fCmBdxJTIIEsAAAAASUVORK5CYII=' /%3e%3c/svg%3e" width="1231" data-srcset="/assets/static/eda_4.82a2fbd.7ba919f10f436c2f2d6684ad2226252f.png 480w, /assets/static/eda_4.0314d39.7ba919f10f436c2f2d6684ad2226252f.png 1231w" data-sizes="(max-width: 1231px) 100vw, 1231px" data-src="/assets/static/eda_4.0314d39.7ba919f10f436c2f2d6684ad2226252f.png"><noscript><img class="g-image g-image--lazy g-image--loaded" src="/assets/static/eda_4.0314d39.7ba919f10f436c2f2d6684ad2226252f.png" width="1231"></noscript></p>
+<hr>
+<h2 id="eda의-장단점"><a href="#eda%EC%9D%98-%EC%9E%A5%EB%8B%A8%EC%A0%90" aria-hidden="true"><span class="icon icon-link"></span></a>EDA의 장단점</h2>
+<h3 id="장점"><a href="#%EC%9E%A5%EC%A0%90" aria-hidden="true"><span class="icon icon-link"></span></a>장점</h3>
+<ol>
+<li>
+<p>Loosely Coupling</p>
+<p>분산 시스템간 <strong>느슨한 결합도</strong>를 제공합니다.</p>
+</li>
+<li>
+<p>분산된 시스템간 의존성 배제</p>
+<p><strong>약속된 Message를 통해 통신</strong>하기 때문에 다른 시스템의 정보를 알 필요가 없으므로 시스템 간 의존성이 배제됩니다.</p>
+</li>
+<li>확장성, 탄력성 향상</li>
+</ol>
+<h3 id="단점"><a href="#%EB%8B%A8%EC%A0%90" aria-hidden="true"><span class="icon icon-link"></span></a>단점</h3>
+<ol>
+<li>
+<p>Broker Dependency</p>
+<p>시스템 간 의존도는 낮아지지만 <strong>메시지브로커에 대한 의존성</strong>이 발생합니다.</p>
+<p>만약 메시지 브로커의 장애가 발생하면 큰 장애로 확산될 가능성이 있습니다.</p>
+</li>
+<li>
+<p>Transaction 단위 분리</p>
+<p>장애나 이슈발생시 <strong>Retry/Rollback</strong>에 대한 고려가 필요합니다.</p>
+</li>
+<li>시스템 Flow파악이 어려움</li>
+<li>디버깅이 어려움</li>
+</ol>
+<hr>
+<h2 id="eda를-선택할-때-고려할-특징"><a href="#eda%EB%A5%BC-%EC%84%A0%ED%83%9D%ED%95%A0-%EB%95%8C-%EA%B3%A0%EB%A0%A4%ED%95%A0-%ED%8A%B9%EC%A7%95" aria-hidden="true"><span class="icon icon-link"></span></a>EDA를 선택할 때 고려할 특징</h2>
+<ol>
+<li>
+<p>Multicast 통신</p>
+<p>한 개의 이벤트 <code class="language-text">Publisher</code>는 다양한 <code class="language-text">Consumer</code>에게 이벤트를 전달할 수 있습니다.</p>
+</li>
+<li>
+<p>실시간 전송</p>
+<p>실시간으로 발생하는 이벤트에 대한 처리가 가능합니다.</p>
+</li>
+<li>
+<p>비동기 통신</p>
+<p>비동기로 통신이 이루어지므로 <code class="language-text">Publisher</code>는 처리 결과를 기다릴 필요가 없습니다.</p>
+</li>
+<li>
+<p>세밀한 통신</p>
+<p>한 덩어리의 큰 이벤트(데이터)보다 작고 자세한 이벤트로 통신이 이루어집니다.</p>
+</li>
+<li>
+<p>이벤트 온톨로지</p>
+<p>이벤트들은 확실하게 구분된 특징을 지니며 그에 상응하는 <code class="language-text">Consumer</code>에게 전달됩니다.</p>
+</li>
+<li>
+<p>자유로운 배포</p>
+<p>느슨할 결합도를 제공하므로 새로운 서비스의 배포가 자유롭습니다.</p>
+</li>
+</ol>
+<hr>
+<h2 id="요약"><a href="#%EC%9A%94%EC%95%BD" aria-hidden="true"><span class="icon icon-link"></span></a>요약</h2>
+<p><img class="g-image g-image--lazy g-image--loading" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 1216 531' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-2f977644232f2aa573f943d37ca3194e'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='40'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-2f977644232f2aa573f943d37ca3194e)' width='1216' height='531' xlink:href='data:image/png%3bbase64%2ciVBORw0KGgoAAAANSUhEUgAAAEAAAAAcCAYAAADRJblSAAAACXBIWXMAAA7CAAAOwgEVKEqAAAAMdElEQVRYw91ZCXSU1RWe2tMNl1q6KFZQsAoqpKAVAQUUsCAEBasitVZE3OrGoVWhoBYsR7QikQBhEwMYCATCEnYiSzABQ5LJypJ9nyGZyTLrv3%2b9971/ICDUoB572jnny3vz5p9//nvfvd9374vj9c913Jusou86Fb9LVHFHopz3Wati%2bGYV921SUdlqgV%2bWZUExAJ9GUC3424wCuhxbwgaaQ/o3QlPwDLw2mtqMYd1E5MXPdbEvy5Lfd4zaquEHCxT8apmC36xU8IulCn5J8%2bs%2bUXDlEgU/WqjAHeQfsFDVpODo8SpkHa%2bEs6SW5pXIL3cjs6gcGfnF%2bIJGnld5w/QdoN5voj5gXTRcBE/oDLzngNfq/QaayFGWaYCfTjuagNCKcQgnTEL406fOg4kIr/ozwkmvwAp4pBPou477t2hwzFfw/VgFt3yqovMK6YifkfE/WaTg5%2bSQyQc1tCoWGsPA7kNHsWH7XuzYn4Ftn32O49UNqPYGUeZuQWGFCydrPXBRKPC1DaGLRyPBRc4r8FgoJOQTnI0Wcgl5NnituBmobjXhD6nCmPCm1xB4%2b3oE378DwX/1PT8%2buBOBOX2Ek6xQi4yAqek6hlGYD1ivYuAGiUGEfvR%2b5BYVE1M1dFwSxsC1rShv8KPBp6CSIqGmWUFdiyoM9SgSTRT%2bXlUacoqi5lRk/E%2bwr3EHTALtMN0vn4zsvUY%2by70b5fPcs5HTUUN/eq5eCSqe2kubQr9V7lVAX4GeMg3%2b2T0RnDsAwXkDEYwZjOBH99A4qM2cxvlDEHjvdoTXPEOR4IWjPfnSGDTRedYRXPbGQaRX%2bETIid0KX9jAiBO%2bascj17DzGsmJrcQphV5LGBlFTujyiYrBZPwftmvCKRyhPVareGynhsd367hmqR/j9tIDHdsKPxkWnNsfgdm3UjR0g//NLgj84waad4V/RmcE3rqexmvlZ1M6QKGocdSR10tbOKQsnGw2BYptlNF6Ca0z3ziLq/FQYh06xAYQ4zRQ67cEN7iFwWTMaePbH%2b58PTuRoym3zIUSVwtqA0B6nUlpqKJrvCrSckiyJiKSI%2bKajxWBh3doSCw2MfWQgvgimQaqM1mEeuCdHgguHI7Q0jEILY5GaNlDCH38qIiO0LKxghPYGeENk%2bEYv0vD1csVdLDz/crFCn5K%2bDGRXxfy9k2rVBzzGiBiF69nPtMFQTJRBTSZs%2b5zdr09iFzLqVPi9mHXgQzkldbivs06ntitYXmhIRy9KN9A/DE5Li8yEJtrYG6OgXVkfJhVh/9wTJq6JMPcjfC/fR38f78a/re6wD%2b9k3z/FmE6rRFPBGbdSBFwKUXA3%2bB4MEXD5XHSaJZBzjEONXbKNR9TGH4aRqd3C/DG%2bhycaFRRRzuUWm3iQK2Jwy5SBp%2bFFgVfMv5MdJw9us/HAQEDeXTjEZulBO%2bpMhGyJZXBuS4lF8LpAXuNybKmVYdumGdLnOskzIosmJU5MKucNGZL0NyiNaMsHXrxPpjNtXAwATpiwmLH2QmXLpLjFXFSBS6LC%2bNPK7JwyXQn%2bqxqwcgUHTeuZJlU0Y3C9FYK0Xm0Ux4K5Tpbwogj0cykGJaIzJvt9UgKeGwO4ejaXA6MIEUqbzERtCPLE4kSex5RCSZKT9gSUltDRMzBqbQcgyd/DrxF8%2bAtXoymkqXnhbdkCQwrLB3FKrCxhENKxzuZOv7ZBjO/0MkwXYSbSh5OrTYwYa%2bO7qtlXkZIih3BaaTRUzBX8E7xvSZRqnC6PEuYmCrfP79PrqVR9HAkPE6hzszOtchgyu9FBbKgKSGF4munHNIxjVTqlYM6Xj5A8wwdk9PonvTZ%2b9mGKMhaQ4r4TsuJBSjZ0BUVKbejfHMUoSeh19nYEoWy5B6o//xpGEqTlMH2qIBfNaGoOmZlGiL/70qSacLV4m9pjCYDZtNn72UZeI0qy7s3yMi4nVJqQJK8jgmsZ4IMcTZ6zDYNd66T1/DaDRRN4ze6MW1bOebnKLg1QRNsz6x/21r5nZvtOoXxR3L6oToLMdlBrDhJEXFsISp3DEDVriGo2j0U1XtHEu7/MlJH0XV3wX3kZRhaa/scYNDGcCE08wsDN9ND/X6zJrR5NPEHz4cTuGYYnaLibjKYHRSVoODXxNbM3szivcmIa%2bnB2WiOGF5jQ5h32Ik9yeDRywvR6wMnpqS2ok%2biTk5RhGPupWuHkgP4vqwA/D2uA6amG%2bgY50O31VQPHF%2bPul0DUbFzMCq23YmyTTefgx6EW8TI0VGS1BmujOfg%2bNDJ4anhaSp4uOjhG08gPLlHwwv76TNaq/QE8dIuL25cJR%2bWd5V3hY1jleDcJR5DiOCiHH3xoIX7UwwMTjaEkx4iDb9no3QWY1%2bNiYXE6uysB2wncop4Ayoa6EZFVOnxOkfWoyR3z1HIj9vJz6iLNY4G7mGYa8qbdVEW86u5dBUqt/ejUO8loqDmswcIo208gOo9w1GTGo2afWNRsfU2sXaaBJn4usVLje1ECtCFQv3yxSo6LQvhsmnpuGJqGsan%2bDF%2bt0GhqQgC7L5KQdRaHTP2e3HwSDYOOY9j/xEnMrILkF1YjPSsPNQ1h%2bEVJGidJkGh/yHJ5ExozB0L8gxMPkQEqMv1CEkyIoTIc0GAggyllLr9Uga5rhdcULISpUldCdeRI/pQzvPu9yRu6Cvm5Vt6CyeVJHWhlBgBR7TdDHEvwD0A5yTnXsclsh9gknt5Uxmyyk4JrV1JmuyYF8bq4wb6JioYs92At7kVOw4cxrZ96didlkn9Qib1CI2obdVEiXuh%2boCJkKXMQ5XmrkpTpNeDxA0Z9SY0U8peW%2bnz2XIYtOesAtUkg9o5Muh3bUVT8Tw0l8SeRlPJR6dHT8EcNObOgq9qExwvHtCE0TfZ4c21NxNW13iZvxzuokSlH62gGuDyJTrePKyLHxq1VaeU0cUOunk3bGO5uovgjPHndwIXQkXVHqRn5uDgsXr0WmtQbmvYVmFizQkDG0tNrD1pIsGec/XHzt9JDhM1gt0MteSkoWrpTNR88i5qV8agdnXsWahbvQC18TFwJ688y1kOhRguqEn4NQ5TS9TjQd1ep5FVoN7rx4NratBz2SmQ9FIVRnm%2bWRF5ySRZ57fOKnG/qi9o64BSdyvS80tRSc1WDTn5sMvE9XYZzBsTlSA3gqWXy2MmV%2b4N0kgF4nKCSCNFcy2egaxHeqLg%2bWEoeIHw/JAv44WhyH92MGri36WkMdspg/Zhw6J0F4XLXiSlFcDHZOdpRd85aZiw9iTIT6KPv9hGqG0/wF0kV4Uc2twGR62RstmNDB7WRjZZSbgW4Rpi3C4dHeb7EL2H7hU/G86Jd6PgL/eh8MXhKHxlFIpeHSXGtvOiV6OR9/QgESl8kOJoj/FMTB3j/Hh9byN8gbBgerenGXfNzcC4hFKEqEZwBdvfB1wIzAlMctzzs2xyrcGlOSsCyy4XTBwN3VfJdriGoi6zVoGbNsSbsgLOJ/uj8KURyCNH5Izvg5xxUXIc3/vMnMfHeuPo6G6UGnPhmE7V1YgtsudmneVQYw7oL84DqOUkzeZDEyaoSN/vojBlkorebmHSfllS1ge%2b3gHI%2bQ5E%2bF7ZpyyBXPsAxNkgD0NyaDxK60VeSjsKRd0wpArQ37o1H9HuDkTuhP449tcxOP76IxJTx%2bHEtPEomjya3j%2bM4pkTkf0oKUPsNDhG2idCV5AMsmeZ/DoulTLI0sj5dgkpRJabui/a6QrS3VofyRXxwsgtCibsUaESC9bQmjgC%2bxbgIjL1hCT4LIIRmcvRgMunw69I6TPNM2eCdYmxyBrbnQzsBecTd4gdz32ir3CKmD/ZD3mTBuHIsKtQHvMaHLz7l5ADHHPDoitkouFKy/FhGJfGyeaI%2bwXxQxZrtgmf6I2pyNmq4plUVcxbqC0NKN8efDb858BHvxNUjdNGRw5EI4ec/L5h5xrUr1uA%2bqRFhDjUr6dx/UJ7vlC8r0ucD1/RUThmkKRxiA%2b2j51YBocky5KWW2X%2brCEkf0SjH5VOkN7m3OSmJeKc7/oljCecccLFP4TjmzwAS9FLVEcI5xjyQb5rRAw/a0680C5QNDtM%2boJxPpjyplOo/Ry7TRP/HxiarIoDVI4QPrzot04SJdcNMgr%2bC2HQRrHOdUh74Pgq7/I/Sr7HHBEjOYJLZj4%2b4/fMD9we8/ngf90BX/PluFBuRRzAcvhDu1e4ajmfEMl/nnD/wGCV4CLo/9YB3A5zjcBFCRch3C9E2fPImUBj6H/XAf8Gb8Bc6PhNSCwAAAAASUVORK5CYII=' /%3e%3c/svg%3e" width="1216" data-srcset="/assets/static/eda_5.82a2fbd.6919f370881ad1787877db4ae1342b65.png 480w, /assets/static/eda_5.087b3d3.6919f370881ad1787877db4ae1342b65.png 1216w" data-sizes="(max-width: 1216px) 100vw, 1216px" data-src="/assets/static/eda_5.087b3d3.6919f370881ad1787877db4ae1342b65.png"><noscript><img class="g-image g-image--lazy g-image--loaded" src="/assets/static/eda_5.087b3d3.6919f370881ad1787877db4ae1342b65.png" width="1216"></noscript></p>
+<p>프로그래밍 관점뿐만아니라 다방면에서 적용가능한 아키텍처 패턴입니다.</p>
+<p>복잡성/역동성에 가장 효율적으로 대응가능한 아키텍처입니다. </p>
+<p>이벤트를 통해 데이터간 연결이 생성된다는 점이 가장 중요하므로 <strong>EDA에는 고정된 구조가 없습니다.</strong></p>
+<hr>
+<h2 id="reference"><a href="#reference" aria-hidden="true"><span class="icon icon-link"></span></a>Reference</h2>
+<span class="reference">
+<p><a href="https://www.xenonstack.com/blog/eda-for-cloud-native-kubernetes/" target="_blank" rel="nofollow noopener noreferrer">Event-Driven Architecture for Cloud-Native in Kubernetes</a></p>
+<p><a href="https://blog.theodo.com/2019/08/event-driven-architectures-rabbitmq/" target="_blank" rel="nofollow noopener noreferrer">Introduction to Event-driven Architectures With RabbitMQ</a></p>
+<p><a href="https://www.oreilly.com/library/view/software-architecture-patterns/9781491971437/ch02.html" target="_blank" rel="nofollow noopener noreferrer">Event-Driven Architecture</a></p>
+<p><a href="https://jaehue.github.io/post/event-driven/#fn:3" target="_blank" rel="nofollow noopener noreferrer">내 멋대로 구현한 이벤트 드리븐</a></p>
+</span>
+</article></section><ins data-ad-client="ca-pub-7791595479585064" data-ad-slot="6759499833" data-ad-format="auto" data-full-width-responsive="true" class="adsbygoogle bottom-ads" style="display:block;"></ins><section class="related"><h3 class="related__title">&quot;프로그래밍&quot; Related Contents</h3><article class="related__wrapper"><ul><li><a href="/nodejs-3/" title="비동기와 논블로킹"><section class="related__wrapper__content"><h6 id="date">2020.10.12</h6><h3 id="title">비동기와 논블로킹</h3><p id="des">Node.js Non-Blocking, AIO에 대해 알아봅니다.</p></section></a></li><li><a href="/nodejs-4/" title="Node.js의 스레드"><section class="related__wrapper__content"><h6 id="date">2020.10.13</h6><h3 id="title">Node.js의 스레드</h3><p id="des">Node.js 싱글스레드에 대하여 알아봅니다.</p></section></a></li><li><a href="/typescript-enum/" title="[Typescript] Enum"><section class="related__wrapper__content"><h6 id="date">2020.10.28</h6><h3 id="title">[Typescript] Enum</h3><p id="des">Typescript의 enum에 대하여 간단히 알아봅니다..</p></section></a></li></ul></article></section><div id="comment"></div></section><aside class="right"><section class="bar"><section class="bar__anchor"><h4 class="title">Contents</h4><ul><li class="depth-2"><a href="#edaeventt-driven-architecture란"> EDA(Eventt Driven Architecture)란? </a></li><li class="depth-2"><a href="#eda의-구성요소"> EDA의 구성요소 </a></li><li class="depth-2"><a href="#eda의-동작-방식"> EDA의 동작 방식 </a></li><li class="depth-3"><a href="#event-processing-style"> Event Processing Style </a></li><li class="depth-2"><a href="#토폴로지-구성"> 토폴로지 구성 </a></li><li class="depth-2"><a href="#eda의-장단점"> EDA의 장단점 </a></li><li class="depth-3"><a href="#장점"> 장점 </a></li><li class="depth-3"><a href="#단점"> 단점 </a></li><li class="depth-2"><a href="#eda를-선택할-때-고려할-특징"> EDA를 선택할 때 고려할 특징 </a></li><li class="depth-2"><a href="#요약"> 요약 </a></li><li class="depth-2"><a href="#reference"> Reference </a></li></ul></section><section class="bar__recent"><h4 class="title">Recent Updated</h4><ul><li><a href="/what-is-eda/" aria-current="page" class="active--exact active">
+          EDA(Event Driven Architecture)이란?
+        </a></li><li><a href="/what-is-isolation-level/">
+          Isolation Level이란?
+        </a></li><li><a href="/what-is-transction-and-acid/">
+          트랜잭션과 ACID
+        </a></li><li><a href="/why-redis-is-single-thread/">
+          Redis가 싱글스레드인 이유?
+        </a></li><li><a href="/what-is-redis/">
+          Redis란?
+        </a></li></ul></section><section class="bar__tags"><h4 class="title">Trending Tags</h4><section class="tag__wrapper" data-v-fc5a9040><!----><ul data-v-fc5a9040><li class="medium" data-v-fc5a9040><a href="/tag/Algorithm/" data-v-fc5a9040>
+        Algorithm
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/HackerRank/" data-v-fc5a9040>
+        HackerRank
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/Javascript/" data-v-fc5a9040>
+        Javascript
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/Leetcode/" data-v-fc5a9040>
+        Leetcode
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/Typescript/" data-v-fc5a9040>
+        Typescript
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/Programmers/" data-v-fc5a9040>
+        Programmers
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/Queue/" data-v-fc5a9040>
+        Queue
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/Github/" data-v-fc5a9040>
+        Github
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/Git/" data-v-fc5a9040>
+        Git
+      </a></li><li class="medium" data-v-fc5a9040><a href="/tag/%EA%B0%9C%EB%B0%9C%EC%9E%90/" data-v-fc5a9040>
+        개발자
+      </a></li></ul></section></section></section></aside></article></main><div class="top hidden">Top</div><div class="footer"><div class="footer-links">
+      Built with <a target="_blank" href="//gridsome.org" class="link">Gridsome</a> Edited By
+      <a target="_blank" href="https://github.com/akasai" class="link">akasai</a> /
+      <a target="_blank" href="/sitemap.xml">Sitemap</a> /
+      <a target="_blank" href="/feed.xml">RSS</a></div></div></main>
+<script src="/assets/js/app.efbc0d0b.js" defer></script><script src="/assets/js/page--src--templates--post-vue.2bd71745.js" defer></script>
+</body>
+</html>
