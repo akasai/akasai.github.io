@@ -3,6 +3,7 @@ category: "DB"
 sub_category: "DynamoDB"
 series_name: ""
 series_num: 0
+title: "TTL을 이용한 DynamoDB Stream Trigger"
 url: "use-the-dynamodb-stream"
 description: "DynamoDB의 Stream과 TTL을 이용해봅니다."
 tags: ["AWS", "DynamoDB", "Event Stream", "TTL", "Lambda", "Serverless"]
