@@ -14,7 +14,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -b master -d dist"
+    "deploy": "gh-pages -b master -d public"
   },
   "dependencies": {
     "@types/typography": "^0.16.4",
