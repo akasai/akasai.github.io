@@ -27,11 +27,11 @@ const TagUl = styled.ul`
     display: inline-block;
   }
 
-  @media only screen and (max-width: 768px) {
-    &::-webkit-scrollbar {
-      display: none;
-    }
+  //@media only screen and (max-width: 768px) {
+  &::-webkit-scrollbar {
+    display: none;
   }
+  //}
 `
 
 export const TagListSmall: React.FC<TagsProps> = ({ tagList }) => {
