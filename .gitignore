@@ -3,3 +3,4 @@ node_modules/
 .cache/
 public
 temp
+.DS_Store
