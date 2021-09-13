@@ -29,6 +29,7 @@
     "gatsby-plugin-robots-txt": "^1.6.10",
     "gatsby-plugin-sass": "^4.8.0",
     "gatsby-plugin-sharp": "^3.8.0",
+    "gatsby-plugin-styled-components": "^4.13.0",
     "gatsby-plugin-typescript": "^3.8.0",
     "gatsby-plugin-typography": "^3.8.0",
     "gatsby-remark-autolink-headers": "^4.6.0",
