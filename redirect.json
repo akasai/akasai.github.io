@@ -1,0 +1,198 @@
+[
+  {
+    "from": "/typescript-enum/",
+    "to": "/typescript/about_enum/"
+  },
+  {
+    "from": "/closure-and-private/",
+    "to": "/typescript/about_closure/"
+  },
+  {
+    "from": "/typescript_4_1/",
+    "to": "/typescript/about_typescript_4_1/"
+  },
+  {
+    "from": "/ts-solid-1/",
+    "to": "/typescript/typescript_solid_1/"
+  },
+  {
+    "from": "/ts-solid-2/",
+    "to": "/typescript/typescript_solid_2/"
+  },
+  {
+    "from": "/nodejs-2/",
+    "to": "/node_js/about_node_js_2/"
+  },
+  {
+    "from": "/nodejs-4/",
+    "to": "/node_js/about_node_js_4/"
+  },
+  {
+    "from": "/nodejs-top10/",
+    "to": "/node_js/about_node_js_package_top10/"
+  },
+  {
+    "from": "/nodejs-5/",
+    "to": "/node_js/about_node_js_5/"
+  },
+  {
+    "from": "/hr-await-bottle-neck/",
+    "to": "/node_js/solving_promise_bottleneck/"
+  },
+  {
+    "from": "/what-is-eda/",
+    "to": "/architecture/about_event_driven_architecture/"
+  },
+  {
+    "from": "/cuncurrency-parallelism/",
+    "to": "/basic/about_concurrency_and_parallelism/"
+  },
+  {
+    "from": "/nodejs-1/",
+    "to": "/node_js/about_node_js_1/"
+  },
+  {
+    "from": "/what-is-msa/",
+    "to": "/architecture/about_msa/"
+  },
+  {
+    "from": "/nodejs-3/",
+    "to": "/node_js/about_node_js_3/"
+  },
+  {
+    "from": "/intro-docker/",
+    "to": "/docker/docker_question/"
+  },
+  {
+    "from": "/what-is-aws-vpc/",
+    "to": "/aws/about_vpc/"
+  },
+  {
+    "from": "/about-presigned-url/",
+    "to": "/aws/about_presigned_url/"
+  },
+  {
+    "from": "/what-is-webserver-and-was/",
+    "to": "/basic/about_was/"
+  },
+  {
+    "from": "/developer-roadmap/",
+    "to": "/etc/about_roadmap_2020/"
+  },
+  {
+    "from": "/devday-2020/",
+    "to": "/etc/devday_2020/"
+  },
+  {
+    "from": "/if-kakao-2020/",
+    "to": "/etc/kakao_2020/"
+  },
+  {
+    "from": "/what-is-redis/",
+    "to": "/redis/about_redis_1/"
+  },
+  {
+    "from": "/use-the-dynamodb-stream/",
+    "to": "/dynamo-db/about_dynamodb_ttl/"
+  },
+  {
+    "from": "/why-redis-is-single-thread/",
+    "to": "/redis/about_redis_2/"
+  },
+  {
+    "from": "/connect-to-github/",
+    "to": "/git/how_to_add_remote/"
+  },
+  {
+    "from": "/db-index/",
+    "to": "/db/about_index/"
+  },
+  {
+    "from": "/what-is-transction-and-acid/",
+    "to": "/db/about_acid/"
+  },
+  {
+    "from": "/developer-roadmap-2021/",
+    "to": "/etc/about_roadmap_2021/"
+  },
+  {
+    "from": "/db-lock/",
+    "to": "/db/about_lock/"
+  },
+  {
+    "from": "/what-is-isolation-level/",
+    "to": "/db/about_isolation/"
+  },
+  {
+    "from": "/lc-add-two-numbers/",
+    "to": "/Algorithm/A_Add_two_numbers/"
+  },
+  {
+    "from": "/lc-count-and-say/",
+    "to": "/Algorithm/A_Count_and_say/"
+  },
+  {
+    "from": "/hr-extra-long-factorials/",
+    "to": "/Algorithm/A_Extra_Long_Factorials/"
+  },
+  {
+    "from": "/lc-merge-b-tree/",
+    "to": "/Algorithm/A_Merge_two_btree/"
+  },
+  {
+    "from": "/lc-first-bad-version/",
+    "to": "/Algorithm/A_First_Bad_Version/"
+  },
+  {
+    "from": "/hr-modified-kaprekar-numbers/",
+    "to": "/Algorithm/A_Kaprekar_Numbers/"
+  },
+  {
+    "from": "/hr-absolute-permutation/",
+    "to": "/Algorithm/A_Absolute_Permutation/"
+  },
+  {
+    "from": "/lc-majority-element/",
+    "to": "/Algorithm/A_Majority_element/"
+  },
+  {
+    "from": "/lc-string-compression/",
+    "to": "/Algorithm/A_String_Compression/"
+  },
+  {
+    "from": "/hr-equalize-the-array/",
+    "to": "/Algorithm/A_Equalize_the_Array/"
+  },
+  {
+    "from": "/hr-bomberman-game/",
+    "to": "/Algorithm/A_bomber_man/"
+  },
+  {
+    "from": "/lc-sliding-window-maximum/",
+    "to": "/Algorithm/A_Sliding_window_maximum/"
+  },
+  {
+    "from": "/hr-grid-search/",
+    "to": "/Algorithm/A_grid_search/"
+  },
+  {
+    "from": "/hr-larry-array/",
+    "to": "/Algorithm/A_larry_array/"
+  },
+  {
+    "from": "/hr-move-zeroes/",
+    "to": "/Algorithm/A_move_zeroes/"
+  },
+  {
+    "from": "/hr-remove-duplicates/",
+    "to": "/Algorithm/A_remove_duplicates/"
+  },
+  {
+    "from": "/hr-truck/",
+    "to": "/Algorithm/A_truck/"
+  },
+  {
+    "from": "/hr-remove-element/",
+    "to": "/Algorithm/A_remove_element/"
+  }
+]

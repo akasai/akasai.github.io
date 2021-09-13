@@ -1,0 +1,38 @@
+@import '../../styles/mixin';
+
+.related {
+  margin: 30px 0;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--app-main-border-color);
+
+  h3#title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  &__wrapper {
+    margin: 0 15px;
+
+    ul {
+      max-width: var(--width-size);
+      overflow-x: auto;
+
+      li {
+        width: 230px;
+        margin-right: 10px;
+
+        @include related-li;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 500px) {
+  .related {
+    padding: 0 12px 30px 12px;
+  }
+
+  .related__wrapper {
+    overflow-x: scroll;
+  }
+}
