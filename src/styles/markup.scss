@@ -1,0 +1,193 @@
+hr {
+  margin: 2rem 0;
+}
+
+.gatsby-highlight {
+  margin-top: 2rem;
+  position: relative;
+
+  &:before {
+    position: absolute;
+    content: attr(data-language);
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    font-size: 0.75rem;
+    right: 2.5%;
+    top: 10px;
+  }
+}
+
+.gatsby-highlight-code-line {
+  background-color: hsla(207, 95%, 15%, 1);
+  display: block;
+  margin-right: -1.2em;
+  margin-left: -1.2em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.35em solid #0687f0;
+}
+
+blockquote {
+  color: #999;
+  position: relative;
+  padding: 0 0 0 30px;
+  margin: 25px 0;
+  border: none;
+  width: 95%;
+
+  &:before {
+    position: absolute;
+    left: 5px;
+    background-image: url('../../contents/assets/png/quote-dark.png');
+    display: inline-block;
+    background-size: contain;
+    opacity: var(--blockquote-opacity);
+    width: 15px;
+    height: 15px;
+    z-index: 1;
+    content: "";
+  }
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  color: var(--code-font-color);
+  //background: var(--code-box-bg-color);
+  font-family: 'Fira Code', 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.6;
+  font-size: 1.2rem;
+
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+
+  -ms-overflow-style: none; // IE 10+
+  overflow: -moz-scrollbars-none; // Firefox
+}
+
+//code[class*="language-"], pre[class*="language-"] {
+//  .operator {
+//    background: none;
+//  }
+//}
+
+pre[class*='language-']::-webkit-scrollbar {
+  display: none; // Safari and Chrome
+}
+
+/* Code blocks */
+pre[class*='language-'] {
+  padding: 1.2em;
+  margin: 1.5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background: var(--code-box-bg-color);
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  padding: 0.1em 0.3em;
+  margin: 0 2px;
+  border-radius: 0.2em;
+  white-space: normal;
+  background: #ECE5F1A8;
+  color: #000000;
+  vertical-align: text-top;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: green;
+}
+
+.token.punctuation {
+  color: var(--code-font-color);
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+  color: #e2777a;
+}
+
+.token.function-name {
+  color: #6196cc;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+  color: #003ae6;
+}
+
+.token.property,
+.token.symbol {
+  color: #ffff00;
+}
+
+.token.class-name {
+  color: #45d794;
+}
+
+.token.constant {
+  //color: #049d00;
+}
+.token.keyword {
+  color: #039BE5;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.builtin {
+  color: #b388ff;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+  color: #ff9100;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  //color: #67cdcc;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.inserted {
+  color: green;
+}

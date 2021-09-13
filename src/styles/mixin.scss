@@ -1,0 +1,68 @@
+@mixin series-li {
+  .series_content {
+    display: flex;
+
+    .num {
+      width: 18px;
+      font-size: 1.5rem;
+      color: var(--app-font-color);
+      margin: auto 5px auto 0;
+    }
+
+    .title {
+      font-size: 1.8rem;
+      color: var(--title-font-color);
+      margin: auto 10px auto 0;
+      transition: color 0.15s ease-in-out;
+
+      &:hover {
+        color: var(--series-hover-font-color);
+        transition: color 0.15s ease-in-out;
+      }
+    }
+
+    .date {
+      font-size: 1.5rem;
+      color: var(--info-font-color);
+      margin: auto;
+      flex: 1;
+    }
+  }
+}
+
+@mixin related-li {
+  .related_content {
+    height: 80px;
+    padding: 10px 15px;
+    border-radius: 3px;
+    border: 1px solid var(--app-main-border-color);
+
+    h6#date {
+      font-size: 1.1rem;
+      color: var(--info-font-color);
+      margin: 0 0 4px 0;
+    }
+
+    h3#title {
+      color: var(--title-font-color);
+      font-size: 1.7rem;
+      margin: 0 0 10px 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    //p#des {
+    //  min-height: 50px;
+    //  font-size: 1.3rem;
+    //  color: var(--app-font-color);
+    //  word-break: keep-all;
+    //  overflow: hidden;
+    //  text-overflow: ellipsis;
+    //}
+
+    &:hover {
+      background: var(--app-hover-bg-color);
+    }
+  }
+}
