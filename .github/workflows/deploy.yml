@@ -18,10 +18,10 @@ jobs:
           node-version: 12.x
       - name: Install Dependencies
         shell: bash
-        run: npm ci
+        run: yarn
       - name: Predeploy
         shell: bash
-        run: npm run predeploy
+        run: yarn predeploy
       - name: test
         shell: bash
         run: echo 'test'

@@ -1,0 +1,46 @@
+@import '../../styles/mixin';
+
+.series {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--app-main-border-color);
+
+  h3#title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  &__wrapper {
+    margin-left: 15px;
+    font-size: 1.5rem;
+
+    & > ul {
+      display: inline-block;
+
+      li {
+        @include series-li;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 500px) {
+  .series__wrapper {
+    overflow-x: scroll;
+  }
+  .series_content {
+    .title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 250px;
+    }
+    .date {
+      display: none;
+    }
+  }
+}

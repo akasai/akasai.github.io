@@ -16,7 +16,7 @@
 <br/>
 
 [akasai](https://github.com/akasai) 의 개인 기술블로그 입니다.  
-Vue.js기반 [Gridsome](https://gridsome.org/)으로 제작한 블로그 테마입니다.
+React기반 [Gatsby](https://gridsome.org/)으로 제작한 블로그 테마입니다.
 
 **Github Action**과 **Github-pages**를 이용하여 자동배포됩니다.
 
@@ -24,8 +24,8 @@ Vue.js기반 [Gridsome](https://gridsome.org/)으로 제작한 블로그 테마�
 
 **Built with:**
 
-- Gridsome
-- Vue
+- Gatsby
+- React
 - GraphQL
 - TypeScript
 - SASS (SCSS)
