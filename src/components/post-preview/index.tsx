@@ -31,7 +31,7 @@ export const PostPreview = ({ node }: PreviewProps) => {
 }
 
 const Preview = styled.article`
-  padding: 4px 9px 12px 9px;
+  padding: 2rem;
   border-bottom: 1px solid var(--app-main-border-color);
 
   &:hover {
@@ -42,8 +42,6 @@ const Preview = styled.article`
 `
 
 const PostTitle = styled.section`
-  margin-bottom: .2rem;
-  margin-top: 2.2rem;
   display: inline-block;
 
   h3#post_category {
@@ -79,7 +77,7 @@ const PostContent = styled.p`
 
 const PostInfo = styled.section`
   font-size: 1.3rem;
-  color: var(--info-font-color);
+  color: var(--preview-info-font-color);
   display: flex;
   align-items: center;
 
