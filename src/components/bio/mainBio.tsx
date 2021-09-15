@@ -110,7 +110,7 @@ const ProfileImageWrapper = styled.section`
   img {
     border-radius: 50%;
     width: 65% !important;
-    margin: auto;
+    margin: auto !important;
   }
 `
 

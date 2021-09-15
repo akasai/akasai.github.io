@@ -34,9 +34,9 @@ const PostTemplate: React.FC<PageProps<PostQueryResponse, PageContext>> = React.
           {/*<RelatedPost category={category} relatedList={related.nodes}/>*/}
           <hr/>
           <PostBio/>
-          {/*<Navigator next={next} previous={previous}/>*/}
           {/*/!* TODO: share*!/*/}
           <hr/>
+          <Navigator next={next} previous={previous}/>
           <Comment repo={comment.utterances}/>
         </PostWrapper>
       </Main>
