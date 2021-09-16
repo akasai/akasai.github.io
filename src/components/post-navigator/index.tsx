@@ -36,12 +36,12 @@ const NavLink = styled(Link)`
   font-size: 1.7rem;
   padding: 10px 15px;
   border-radius: 3px;
-  border: 1px solid var(--app-main-border-color);
+  border: 1px solid hsla(0,0%,0%,0.3);
   height: 6.5rem;
   display: flex;
   
   &:hover {
-    border-bottom-color: var(--app-main-border-color);;
+    border-bottom-color:  hsla(0,0%,0%,0.3);;
   }
 `
 

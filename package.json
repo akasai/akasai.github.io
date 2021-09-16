@@ -17,6 +17,7 @@
     "deploy": "gh-pages -b master -d public"
   },
   "dependencies": {
+    "@lyket/react": "^1.4.7",
     "@types/typography": "^0.16.4",
     "gatsby": "^3.6.2",
     "gatsby-plugin-advanced-sitemap": "^2.0.0",

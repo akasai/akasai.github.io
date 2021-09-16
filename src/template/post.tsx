@@ -1,4 +1,15 @@
-import { Comment, Main, PostBio, PostContents, PostHeader, PostTagList, PostWrapper, Navigator, SEO } from '@components'
+import {
+  Clap,
+  Comment,
+  Main,
+  Navigator,
+  PostBio,
+  PostContents,
+  PostHeader,
+  PostTagList,
+  PostWrapper,
+  SEO
+} from '@components'
 import { PageContext, PageProps, PostQueryResponse } from '@constant'
 import Layout from '@layout'
 import { graphql } from 'gatsby'
@@ -31,6 +42,7 @@ const PostTemplate: React.FC<PageProps<PostQueryResponse, PageContext>> = React.
           <hr/>
           <PostContents html={html}/>
           <PostTagList tagList={tags}/>
+          <Clap slug={slug}/>
           {/*<RelatedPost category={category} relatedList={related.nodes}/>*/}
           <hr/>
           <PostBio/>

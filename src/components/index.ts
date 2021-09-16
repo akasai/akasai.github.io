@@ -1,4 +1,5 @@
 export * from './bio'
+export * from './clap-button'
 export * from './comment'
 export * from './elements'
 export * from './footer'

@@ -1,8 +1,8 @@
-import SchemaOrg from '@components/seo/SchemaOrg'
 import { SEOResponse } from '@constant'
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import SchemaOrg from './SchemaOrg'
 
 interface SEOProps {
   postMeta?: {
@@ -70,6 +70,7 @@ export const SEO: React.FC<SEOProps> = ({ postMeta = {}, isBlogPost = false }) =
         siteUrl={seo.siteUrl}
         datePublished={datePublished}
       />
+      {/*<Scripts/>*/}
     </React.Fragment>
   )
 }

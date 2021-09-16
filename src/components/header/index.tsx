@@ -30,6 +30,7 @@ const HeadRight = styled.span`
 const HeadLeft = styled.span`
   h1 {
     color: #cdd9e5;
+    font-family: 'Roboto Mono', monospace;
     font-size: 13.5px;
     font-weight: 200;
   }
