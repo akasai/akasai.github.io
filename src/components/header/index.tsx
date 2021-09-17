@@ -3,6 +3,7 @@ import { HeaderQueryResponse } from '@constant'
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
+import Logo from '@assets/svg/logo.svg'
 
 const HeadDiv = styled.header`
   width: 100%;
@@ -28,11 +29,26 @@ const HeadRight = styled.span`
 `
 
 const HeadLeft = styled.span`
+`
+
+const LogoLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  
+  svg {
+    fill: #cdd9e5;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    margin-top: -5px;
+  }
+
   h1 {
     color: #cdd9e5;
     font-family: 'Roboto Mono', monospace;
     font-size: 13.5px;
     font-weight: 200;
+    margin-left: 10px;
   }
 `
 
@@ -41,9 +57,10 @@ export const Header: React.FC = () => {
   return (
     <HeadDiv>
       <HeadLeft>
-        <Link to={'/'}>
+        <LogoLink to={'/'}>
+          <Logo/>
           <h1>{siteMetadata.site_name}</h1>
-        </Link>
+        </LogoLink>
       </HeadLeft>
       <HeadRight>
         <ThemeToggle/>
