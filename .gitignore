@@ -10,3 +10,4 @@ dist
 .idea/*
 public
 temp
+**/.DS_Store

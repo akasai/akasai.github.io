@@ -1,3 +1,4 @@
+import { EventTracker } from '@components'
 import { NaviNode } from '@constant'
 import { Link } from 'gatsby'
 import React from 'react'
@@ -36,12 +37,12 @@ const NavLink = styled(Link)`
   font-size: 1.7rem;
   padding: 10px 15px;
   border-radius: 3px;
-  border: 1px solid hsla(0,0%,0%,0.3);
+  border: 1px solid hsla(0, 0%, 0%, 0.3);
   height: 6.5rem;
   display: flex;
-  
+
   &:hover {
-    border-bottom-color:  hsla(0,0%,0%,0.3);;
+    border-bottom-color: hsla(0, 0%, 0%, 0.3);;
   }
 `
 
@@ -81,29 +82,34 @@ const Title = styled.span`
 `
 
 export const Navigator: React.FC<NaviProps> = ({ next, previous }: NaviProps) => {
+  const CATEGORY = 'navigator Button'
   return (
     <NavigationWrapper>
       <NaviUl>
         <li>
           {previous && (
-            <NavLink to={previous.fields.slug}>
-              <Icon>≪</Icon>
-              <PrevContents>
-                <Label>previous</Label>
-                <Title>{previous.frontmatter.title}</Title>
-              </PrevContents>
-            </NavLink>
+            <EventTracker category={CATEGORY} label={previous.frontmatter.title}>
+              <NavLink to={previous.fields.slug}>
+                <Icon>≪</Icon>
+                <PrevContents>
+                  <Label>previous</Label>
+                  <Title>{previous.frontmatter.title}</Title>
+                </PrevContents>
+              </NavLink>
+            </EventTracker>
           )}
         </li>
         <li>
           {next && (
-            <NavLink to={next.fields.slug}>
-              <NextContents>
-                <Label>next</Label>
-                <Title>{next.frontmatter.title}</Title>
-              </NextContents>
-              <Icon>≫</Icon>
-            </NavLink>
+            <EventTracker category={CATEGORY} label={next.frontmatter.title}>
+              <NavLink to={next.fields.slug}>
+                <NextContents>
+                  <Label>next</Label>
+                  <Title>{next.frontmatter.title}</Title>
+                </NextContents>
+                <Icon>≫</Icon>
+              </NavLink>
+            </EventTracker>
           )}
         </li>
       </NaviUl>

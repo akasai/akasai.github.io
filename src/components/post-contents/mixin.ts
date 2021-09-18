@@ -6,7 +6,7 @@ export const contentText = css`
     font-size: 2.2rem;
     padding: 1.5rem 0;
     font-weight: bold;
-    margin: 1rem 0;
+    margin: 5rem 0 1rem;
   }
 
   h3 {
@@ -27,7 +27,7 @@ export const contentText = css`
   }
 
   a {
-    font-weight: bold;
+    font-weight: 600;
   }
 
   ul {
@@ -55,33 +55,6 @@ export const contentText = css`
 
     &.red {
       color: red;
-    }
-  }
-
-  /* 출처 */
-  .reference {
-    font-size: 1.7rem;
-    display: inline-block;
-    margin: 0;
-    //padding-bottom: 30px;
-
-    > p {
-      margin: 5px 0;
-    }
-
-    * {
-      color: var(--reference-font-color) !important;
-      transition: color 0.15s ease-in-out;
-
-      &:hover {
-        color: var(--reference-hover-font-color) !important;
-        transition: color 0.15s ease-in-out;
-      }
-    }
-
-    a:before {
-      content: '🔗';
-      margin-right: 5px;
     }
   }
 `
