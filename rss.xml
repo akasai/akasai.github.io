@@ -1,4 +1,201 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Your Site's RSS Feed]]></title><description><![CDATA[👨‍💻 Backend Developer]]></description><link>https://akasai.space</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 19 Sep 2021 15:32:27 GMT</lastBuildDate><item><title><![CDATA[해피해킹 키보드 튜닝하기]]></title><description><![CDATA[해피해킹(HHKB)키보드를 쓴지도 3년 정도 되었습니다. Lindy…]]></description><link>https://akasai.space/etc/tune-hhkb-bt/</link><guid isPermaLink="false">https://akasai.space/etc/tune-hhkb-bt/</guid><pubDate>Sat, 18 Sep 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;해피해킹(&lt;strong&gt;HHKB&lt;/strong&gt;)키보드를 쓴지도 3년 정도 되었습니다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Your Site's RSS Feed]]></title><description><![CDATA[👨‍💻 Backend Developer]]></description><link>https://akasai.space</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 20 Sep 2021 18:53:30 GMT</lastBuildDate><item><title><![CDATA[Pod란?]]></title><description><![CDATA[CKA를 준비하며 공부하고 있는 내용을 정리해보려고 합니다. 공부 순서대로 정리를 하고 있어서 다소 부족한 부분도 많을 수 있습니다. 파드(Pod…]]></description><link>https://akasai.space/kubernetes/about_pod/</link><guid isPermaLink="false">https://akasai.space/kubernetes/about_pod/</guid><pubDate>Tue, 21 Sep 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 21.666666666666668%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAC4jAAAuIwF4pT92AAAA6ElEQVQY042QsUtCYRTFf896ohKOgri5uOoSNjnLG8QhEFR8ImRIkEG2FQpiaggOuoqLg3+CNbQ2RWPQEuQLUQQxkHToiw8+cfXA5dx77rnDuQQLY8O4m3yYrenPyZU1CJWECzjUXR4HOxyxL8JF663/uBQv779/hc5MeLNrA/BpNr0q18ApcA9IPQvEgSQQA3LAGZAGEkCGSOl73BstxdPranPRnYnA+cIE3JrN3gZugApQBmpAQx2m1NwEpL8OXAMP+M2vSPR2Mk81p+L40hrCswaC/KeQAeyqtvF1xZriA/kepcve+Q8C3EC8g2Ea6wAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;kubernetes&quot;
+        title=&quot;kubernetes&quot;
+        src=&quot;/static/e41528f5257d89d58028ff39c3c2f712/c1b63/kubernetes.png&quot;
+        srcset=&quot;/static/e41528f5257d89d58028ff39c3c2f712/5a46d/kubernetes.png 300w,
+/static/e41528f5257d89d58028ff39c3c2f712/0a47e/kubernetes.png 600w,
+/static/e41528f5257d89d58028ff39c3c2f712/c1b63/kubernetes.png 1200w,
+/static/e41528f5257d89d58028ff39c3c2f712/4929c/kubernetes.png 1727w&quot;
+        sizes=&quot;(max-width: 1200px) 100vw, 1200px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;CKA&lt;/strong&gt;를 준비하며 공부하고 있는 내용을 정리해보려고 합니다.&lt;/p&gt;
+&lt;p&gt;공부 순서대로 정리를 하고 있어서 다소 부족한 부분도 많을 수 있습니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;파드pod란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%8C%8C%EB%93%9Cpod%EB%9E%80&quot; aria-label=&quot;파드pod란 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;파드(Pod)란?&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 256px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 97.26562500000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAAsTAAALEwEAmpwYAAADgUlEQVQ4y1WUTWhdRRTHb9MIbt3qyoWxpUmac1+sXwsrovWjaPwAXYibRJuXmSjxo0IRba0Ev3BhgjR0GSRtFmq1UGwlCrYQCy1F0EUXReic+959t/cG9KVp8u6bv5yZubEuhpn33pzf+58z538i0hwNahOR5q2xNltIcRQrE5Hi+0jxIim2sTaIlQEpvk6K50jx9lhz5O5q00OKe2LF0d6xLIqGdABo96NcepgUnyTFIAFpBypJcxnOsjqkeJ40x7EOsYqjmuIoGg4H0vw4KV6SAFETa2NjLYFuhyx/Nh2n2H126xvSvCtWHupkk+J7HMgr6pKSILbDk4zhSUnZLznXJh3c+jv+z0jxKim+g5TZBE7FDsg3KkWDdWP7xoy9a9RgZ91gYNxAznePGTs0UYGc4vXYK31CWNUDHPNF98oEtvsdRv3LBma+TfHrpQw/X8jw+WKK0S8aePBNxk4PdUpD6ocppHwrKf4z1KUUNY+8y/hsMcUvFzM0Wzk6awXWVwuYRo4ff8vw4XwTD0wxgtJO6IBTcUh5GynuClBqJClNzDRw5WqO789lmPshdSpnv0tx9GQLp89nuPxXjmcPJdixz9ia5q4Dar5Kmm8T4MvhQUoBbnvVuFTX2gXafxfAeuFAJ85mwEaB6+0CeZ5j5GCCfg+UOtqQ9i5pl9lQ4M7NwJWicOkK+PhSC0sXMgdrZTmS5iYQAVgG4OsCXK6aN6QMPdtAeaNAdi13kK/P+FRX/yncH4nykDJqk2zpvzouSMorAdgVpfJ6u/czFn5qoSgKoFzB/OkWzpzPgO6KU/3ViRT3vlG1jXdOYPwhQE3auaMMF1zbSOovTSc49/s1BxeFp5Yz7H0/Qd+YwZD6Xy/Kowjwqcq/R4K9NsjZzrti+2veYk9/kLg1UDeQ7yr3VFYM9Xt70ynRo5D9bOjFTehg3bg6iaK+USPuwf1TFch1xkZwybwIk2kloJ5gv9tJcVo1uAQ/fzixL04neOGjRM545dOGdIANj1HV7eLQBN8SGFu8lzX3hv0hqYUMgP59pjt1pGk/OZbat+aa9uOF1O4/2rQBWModUlyQ4jsDbGvwsp+HsTK9sYfWa5qdC9RMAyOHEjz5XoI9BxI8czDBYwdcJ1Tja0+A+dhqfC0/N+KG5E3pHyfXQtzuH+c1WQPjvLZD9jq3A2zaxWjurfn6uWH9L3XCn00QYRyvAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;pod1&quot;
+        title=&quot;pod1&quot;
+        src=&quot;/static/d90e05b32983203b564bf6aa8836f048/6f3f2/pod1.png&quot;
+        srcset=&quot;/static/d90e05b32983203b564bf6aa8836f048/6f3f2/pod1.png 256w&quot;
+        sizes=&quot;(max-width: 256px) 100vw, 256px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Pod(이하 파드)&lt;/code&gt;는 쿠버네티스가 만들 수 있는 가장 작은 오브젝트이며, 기본이 되는 &lt;strong&gt;배포 단위&lt;/strong&gt;입니다.&lt;/p&gt;
+&lt;p&gt;파드는 하나 이상의 컨테이너를 포함하며, 컨테이너를 개별적으로 배포하기 보다 컨테이너들의 그룹인 파드를 배포하며 운영하게 됩니다.&lt;/p&gt;
+&lt;h2 id=&quot;파드는-왜-필요할까&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%8C%8C%EB%93%9C%EB%8A%94-%EC%99%9C-%ED%95%84%EC%9A%94%ED%95%A0%EA%B9%8C&quot; aria-label=&quot;파드는 왜 필요할까 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;파드는 왜 필요할까?&lt;/h2&gt;
+&lt;p&gt;컨테이너는 &lt;code class=&quot;language-text&quot;&gt;단일 프로세스&lt;/code&gt;를 실행하는 것을 목적으로 설계되었습니다. (&lt;em&gt;단, 프로세스가 자식 프로세스를 생성하는 것은 제외합니다.&lt;/em&gt;)&lt;/p&gt;
+&lt;p&gt;이런 단일 컨테이너(혹은 컨테이너 그룹)를 직접 관리하는 것이 아닌 &lt;strong&gt;파드&lt;/strong&gt;라는 한 개의 단위로 통합 관리하면 많은 편의성을 얻을 수 있습니다.&lt;/p&gt;
+&lt;p&gt;일반적으로 쿠버네티스에서 사용자가 직접 &lt;strong&gt;싱글톤 파드&lt;/strong&gt;를 포함하여 &lt;strong&gt;개별 파드&lt;/strong&gt;를 만드는 경우는 거의 없습니다.&lt;/p&gt;
+&lt;p&gt;이는 파드가 상대적으로 &lt;code class=&quot;language-text&quot;&gt;일회용 엔티티&lt;/code&gt;로 설계되었기 때문입니다.&lt;/p&gt;
+&lt;p&gt;파드가 생성될 때(사용자가 직접 또는 컨트롤러가 간접적으로), 새 파드는 클러스터의 &lt;code class=&quot;language-text&quot;&gt;노드&lt;/code&gt;에서 실행되도록 스케줄링 됩니다.&lt;/p&gt;
+&lt;p&gt;파드는 파드 실행이 완료되거나, 삭제되거나, 리소스 부족으로 인해 축출되거나, 노드가 실패할 때까지 스케줄링된 노드에 남아있습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;파드 내 컨테이너를 다시 시작하는 것과 파드를 다시 시작하는 것은 다릅니다.&lt;/p&gt;
+&lt;p&gt;파드는 프로세스가 아니라 &lt;strong&gt;컨테이너를 실행하기 위한 환경&lt;/strong&gt;일 뿐입니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;파드의-사용&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%8C%8C%EB%93%9C%EC%9D%98-%EC%82%AC%EC%9A%A9&quot; aria-label=&quot;파드의 사용 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;파드의 사용&lt;/h3&gt;
+&lt;p&gt;쿠버네티스 클러스터에서 파드는 두 가지 주요 방식으로 사용됩니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;단일 컨테이너를 실행하는 파드&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;”&lt;strong&gt;파드 당 하나의 컨테이너&lt;/strong&gt;” 모델은 가장 일반적인 쿠버네티스 &lt;code class=&quot;language-text&quot;&gt;Use-Case&lt;/code&gt;입니다. 파드를 단일 컨테이너를 둘러싼 &lt;code class=&quot;language-text&quot;&gt;래퍼(Wrapper)&lt;/code&gt;라고 할 수 있습니다. 쿠버네티스는 컨테이너를 직접 관리하는 대신 파드를 관리합니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;다중 컨테이너를 실행하는 파드&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;파드끼리 밀접하게 결합되어 있고 리소스를 공유해야 할 때, 여러 개의 컨테이너로 구성된 애플리케이션을 캡슐화할 수 있습니다. 이와 같이 함께 배치된 컨테이너는 하나의 결합된 서비스 단위를 형성합니다. &lt;em&gt;ex) 사이드카 패턴&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;단일 파드에서 함께 배치 또는 관리되는 여러 컨테이너를 그룹화하는 것은 비교적 고급 &lt;code class=&quot;language-text&quot;&gt;Use-Case&lt;/code&gt;입니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;스케일링&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%8A%A4%EC%BC%80%EC%9D%BC%EB%A7%81&quot; aria-label=&quot;스케일링 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;스케일링&lt;/h3&gt;
+&lt;p&gt;일반적으로 한개의 파드는 애플리케이션의 단일 인스턴스를 실행합니다.&lt;/p&gt;
+&lt;p&gt;더 많은 인스턴스를 실행하여 더 많은 리소스를 제공하기 위해 애플리케이션을 수평적으로 확장(&lt;code class=&quot;language-text&quot;&gt;Scale Out&lt;/code&gt;)하려면, 각 인스턴스에 하나씩, 여러개 파드를 사용해야 합니다.&lt;/p&gt;
+&lt;p&gt;즉, &lt;code class=&quot;language-text&quot;&gt;Scale Out&lt;/code&gt;을 할 때 단일 파드 안에서 여러 개의 어플리케이션을 실행하는 것이 아니라, 구별된 파드 자체를 쿠버네티스 클러스터 또는 노드에서 추가시키는 방식입니다.&lt;/p&gt;
+&lt;p&gt;만약 사용자가 수용량(Pod의 추가) 이상으로 증가한다면 노드를 추가하므로서 &lt;strong&gt;물리적인 수용량&lt;/strong&gt;을 증가시킵니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Containers running your application to scale up. You &lt;strong&gt;create new pods&lt;/strong&gt; and to scale down. You &lt;strong&gt;delete existing pod&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 471px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 80%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsTAAALEwEAmpwYAAACbUlEQVQ4y32U3W/TMBTF92fvbeoj8ALjaQLEG0+IbWUfHYwBEkjQrlO77pO067amTbq1TdvYsRMnOehelq6FMktX1/Zxfj52bC8AQJqmyIoxBlEUIUkS+L6PRqMBpRQGgwFGoxH3k05BY7NCDIqFDDYcDtHpdNDtduG6Lvr9PizLwuLiIlZWVrC0tIRcLodms4ler8fjKOgbmiyDLlCFZiZIHCczbqkupITnDTHwPPR6/X9ckWMCe57HfQxst9ssZCWZgv5d5kkEJsYE2HEcpGmCQBu0ezGqh0cobK7i6OgU9k0EpQ10aGDfGlQPj7GztY5a7RitmwhSkeOUV0imGOjcAc+vBCoXGt9PJT6UHOxVBqhehji/8mFdC1SbirWP+y4+Vfo4vAxx0vTnAyMTo94S2KpoPN0SePFZ41lBYuNA4de14Ml2a3fansZyQWKtpFC3Be897eMM0JgYVksw4NWewJtvAq+/CGyUFcMIulNVeDmlre8r/iZO0v8DyxcR3v4IkN9XnKlNQIrq1axWqoe8qgeB5x2D3ZrC1xPN+axtJsC6O6ud2NHDDmm2tVKAx/kxlrd9zqvFgJdLsXmg8Gj9XiOX9w7n/RRbIl9WeJIf43nB50z7lAG3K5pBmfauGKBhS8TxHIf0p84ufRQtjfflAIWK4kxt6qcoN0hTE+2npXHa9BlEx2Zy9eiUp2mMkUxgtSTatwp2V3Gm9ljG8IME1vWsVm9JeH5Mdwu2bd/fFCkld5gohNYaY6HgC8U5DEPup6D6tKa0hjEhG6KXiYHZYxAEARzX5b24mQrX/fP6ZDGt0VjHcdlQ9tr8BpNcpT6Zzyw8AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;pod2&quot;
+        title=&quot;pod2&quot;
+        src=&quot;/static/1d87c531d4ad299953365ee1435d0081/1f09d/pod2.png&quot;
+        srcset=&quot;/static/1d87c531d4ad299953365ee1435d0081/5a46d/pod2.png 300w,
+/static/1d87c531d4ad299953365ee1435d0081/1f09d/pod2.png 471w&quot;
+        sizes=&quot;(max-width: 471px) 100vw, 471px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;파드의-특징&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%8C%8C%EB%93%9C%EC%9D%98-%ED%8A%B9%EC%A7%95&quot; aria-label=&quot;파드의 특징 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;파드의 특징&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;파드 내의 컨테이너는 &lt;strong&gt;IP와 Port를 공유&lt;/strong&gt;합니다.&lt;/p&gt;
+&lt;p&gt;같은 파드안의 어플리케이션들은 &lt;code class=&quot;language-text&quot;&gt;localhost&lt;/code&gt;로 통신하며 같은 네트워크에 존재한다고 볼 수 있습니다.&lt;/p&gt;
+&lt;p&gt;예를 들어, A컨테이너가 &lt;strong&gt;8080&lt;/strong&gt;, B컨테이너가 &lt;strong&gt;7001&lt;/strong&gt;로 배포되었다면, B가 A를 호출할 때 &lt;strong&gt;localhost:8080&lt;/strong&gt; 으로 호출하면 되고, 반대는 &lt;strong&gt;localhost:7001&lt;/strong&gt;로 호출하면 됩니다.&lt;/p&gt;
+&lt;p&gt;따라서, 파드 안 컨테이너에서 실행 중인 프로세스가 같은 &lt;strong&gt;포트 번호를 사용하지 않도록 주의해야 합니다&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pod 내에 배포된 컨테이너간에는 디스크 볼륨을 공유할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;일반적인 컨테이너 환경은 &lt;code class=&quot;language-text&quot;&gt;파일 시스템&lt;/code&gt;이 분리되기 때문에, 애플리케이션이 배포된 컨테이너의 파일 시스템 공유가 불가능하지만, 쿠버네티스의 경우 하나의 파드 내에서는 컨테이너들끼리 &lt;strong&gt;볼륨을 공유&lt;/strong&gt;할 수 있기 때문에 다른 컨테이너의 파일을 읽을 수 있습니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;템플릿&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%85%9C%ED%94%8C%EB%A6%BF&quot; aria-label=&quot;템플릿 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;템플릿&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;yaml&lt;/code&gt;파일은 기본적으로 4개의 &lt;code class=&quot;language-text&quot;&gt;TOP(root)-level property&lt;/code&gt;를 갖습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;
+&lt;span class=&quot;token comment&quot;&gt;# Pod.yaml&lt;/span&gt;
+&lt;span class=&quot;token key atrule&quot;&gt;apiVersion&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; v1 
+&lt;span class=&quot;token key atrule&quot;&gt;kind&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Pod 
+&lt;span class=&quot;token key atrule&quot;&gt;metadata&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; my&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;app
+  &lt;span class=&quot;token key atrule&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; my&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;app
+&lt;span class=&quot;token key atrule&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;containrs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; nginx&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;pod
+    &lt;span class=&quot;token key atrule&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; nginx 
+    &lt;span class=&quot;token key atrule&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;containerPort&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;8080&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;apiVersion&lt;/p&gt;
+&lt;p&gt;스크립트를 실행을 위한 쿠버네티스 &lt;strong&gt;API 버전&lt;/strong&gt;. 보통 &lt;code class=&quot;language-text&quot;&gt;v1&lt;/code&gt; 사용.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;kind&lt;/p&gt;
+&lt;p&gt;리소스의 종류&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;metadata&lt;/p&gt;
+&lt;p&gt;리소스의 각종 메타 데이타. 라벨(&lt;code class=&quot;language-text&quot;&gt;label&lt;/code&gt;)이나 리소스의 이름(&lt;code class=&quot;language-text&quot;&gt;name&lt;/code&gt;)등의 식별자.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;spec&lt;/p&gt;
+&lt;p&gt;리소스에 대한 상세한 스펙.&lt;/p&gt;
+&lt;p&gt;위에서는 Pod에 대한 리소스(컨테이너)를 정의하고 있습니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;이름: &lt;code class=&quot;language-text&quot;&gt;nginx-pod&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;컨테이너 이미지: &lt;code class=&quot;language-text&quot;&gt;nginx&lt;/code&gt; (일반적으로 &lt;strong&gt;Docker&lt;/strong&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;컨테이너 포트: &lt;code class=&quot;language-text&quot;&gt;8080&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;명령-실행&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%AA%85%EB%A0%B9-%EC%8B%A4%ED%96%89&quot; aria-label=&quot;명령 실행 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;명령 실행&lt;/h2&gt;
+&lt;p&gt;파드를 생성하는 방법은 여러가지가 있다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;run&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;$ kubectl run nginx --image&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;nginx&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;create/apply&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;$ kubectl create -f Pod.yaml
+
+$ kubectl apply -f Pod.yaml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dry-run&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;$ kubectl cerate -f Pod.yaml --dry-run&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;client -o yaml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pod 확인&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;$ kubectl get pod&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;NAME                    READY   STATUS     RESTARTS   AGE
+nginx-pod               &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;/1     Running    &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;          10s&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;reference&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://kubernetes.io/ko/docs/concepts/workloads/pods/&quot;&gt;Kubernetes - POD&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://bcho.tistory.com/1256?category=731548&quot;&gt;쿠버네티스 #2 - 개념 이해 (1/2)&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[해피해킹 키보드 튜닝하기]]></title><description><![CDATA[해피해킹(HHKB)키보드를 쓴지도 3년 정도 되었습니다. Lindy…]]></description><link>https://akasai.space/etc/tune-hhkb-bt/</link><guid isPermaLink="false">https://akasai.space/etc/tune-hhkb-bt/</guid><pubDate>Sat, 18 Sep 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;해피해킹(&lt;strong&gt;HHKB&lt;/strong&gt;)키보드를 쓴지도 3년 정도 되었습니다.&lt;/p&gt;
 &lt;p&gt;Lindy케이블을 연결하여 매우 만족스럽게 사용하고 있었지만, 있었지만 선이 좀 거추장스러워서
 블루투스 지원 키보드 구매를 고려하고 있었습니다.&lt;/p&gt;
 &lt;p&gt;우연히 &lt;strong&gt;블루투스&lt;/strong&gt; 튜닝에 대한 내용을 알게되어 직접 튜닝을 해보았습니다.&lt;/p&gt;
