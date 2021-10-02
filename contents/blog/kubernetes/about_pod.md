@@ -103,9 +103,9 @@ metadata:
 spec:
   containrs:
     - name: nginx-pod
-    image: nginx 
-    ports:
-      - containerPort: 8080
+      image: nginx 
+      ports:
+        - containerPort: 8080
 
 ```
 
