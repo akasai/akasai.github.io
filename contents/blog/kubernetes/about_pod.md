@@ -167,6 +167,17 @@ spec:
     NAME                    READY   STATUS     RESTARTS   AGE
     nginx-pod               1/1     Running    0          10s
     ```
+
+* pod 확인 (Detail)
+
+    ```shell
+    $ kubectl get pod -o wide
+    ```
+
+    ```shell
+    NAME                    READY   STATUS     RESTARTS   AGE   IP    NODE ...
+    nginx-pod               1/1     Running    0          10s
+    ```
 ***
 
 ## Reference
