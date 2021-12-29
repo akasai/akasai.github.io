@@ -1,7 +1,7 @@
 import Clock from '@assets/svg/clock.svg'
+import { HitCounter } from "@components"
 import React from 'react'
 import styled from 'styled-components'
-
 
 interface PostHeaderProps {
   data: {
@@ -9,11 +9,12 @@ interface PostHeaderProps {
     title: string
     date: string
     timeToRead: number
+    url: string
   }
 }
 
 export const PostHeader = React.memo<PostHeaderProps>(({ data }) => {
-  const { category, title, date, timeToRead } = data
+  const { category, title, date, timeToRead, url } = data
   return (
     <PostHeaderSection>
       <PostCategory>{category}</PostCategory>
@@ -22,6 +23,7 @@ export const PostHeader = React.memo<PostHeaderProps>(({ data }) => {
         <Clock className="icon"/>{date} · {timeToRead} min read
         {/*{{edited($page.post)}}*/}
       </PostDate>
+      <HitCounter url={url}/>
     </PostHeaderSection>
   )
 })

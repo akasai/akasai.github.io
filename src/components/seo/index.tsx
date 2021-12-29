@@ -20,7 +20,7 @@ export const SEO: React.FC<SEOProps> = ({ postMeta = {}, isBlogPost = false }) =
   const { site: { siteMetadata: seo } } = useStaticQuery<SEOResponse>(seoQuery)
   const title = isBlogPost ? `${postMeta.title} | ${seo.site_name}` : seo.site_name
   const description = postMeta.description || seo.site_description
-  const url = postMeta.slug ? `${seo.siteUrl}/${postMeta.slug}/` : seo.siteUrl
+  const url = postMeta.slug ? `${seo.siteUrl}${postMeta.slug}` : seo.siteUrl
   const profileImage = `${seo.siteUrl}/${seo.profile_url}`
   const image = postMeta.main_image ? `${seo.siteUrl}${postMeta.main_image}` : seo.site_image
   const keywords = postMeta.tags ? postMeta.tags.join(',') : 'web,blog,tech,node-js,typescript,backend'

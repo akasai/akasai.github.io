@@ -80,6 +80,7 @@ export interface PageContext {
 export interface PostQueryResponse {
   site: {
     siteMetadata: {
+      siteUrl: string
       comment: {
         utterances: string
       }

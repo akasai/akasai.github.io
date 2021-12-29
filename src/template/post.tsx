@@ -21,14 +21,14 @@ import '../styles/markup.scss'
 const PostTemplate: React.FC<PageProps<PostQueryResponse, PageContext>> = React.memo(({ pageContext, data }) => {
   const { series_name, category, next, previous } = pageContext
   const { site, post, series, related } = data
-  const { siteMetadata: { comment } } = site
+  const { siteMetadata: { siteUrl, comment } } = site
   const { id, html, excerpt, timeToRead, fields: { slug }, frontmatter: { title, tags, series_num, date } } = post
 
-  const headerData = { category, title, date, timeToRead }
+  const headerData = { category, title, date, timeToRead, url: `${siteUrl}${slug.replace(/\/$/g,'')}` }
   const postMeta = {
     title,
     description: excerpt,
-    slug: slug.replace(/[^\w\d-]/g, ''),
+    slug: slug.replace(/\/$/g,''), //.replace(/[^\w\d-]/g, ''),
     tags,
     created_at: date
   }
@@ -63,6 +63,7 @@ export const pageQuery = graphql`
   query BlogPostBySlug($id: String! $slug: String! $category: String) {
     site {
       siteMetadata {
+        siteUrl
         comment {
           utterances
         }

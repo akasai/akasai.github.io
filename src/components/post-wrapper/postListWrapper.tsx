@@ -1,4 +1,4 @@
-import { MainBio, PostPreview } from '@components'
+import { HitCounter, MainBio, PostPreview } from '@components'
 import { Post } from '@constant'
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
@@ -22,6 +22,7 @@ export const PostListWrapper: React.FC<Props> = ({ rawPost }) => {
   return (
     <Section>
       <MainBio/>
+      <HitCounter display={true}/>
       <hr/>
       {refinedPosts.map(({ node }) => <PostPreview key={node.id} node={node}/>)}
     </Section>
