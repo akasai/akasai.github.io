@@ -24,7 +24,9 @@ const PostTemplate: React.FC<PageProps<PostQueryResponse, PageContext>> = React.
   const { siteMetadata: { siteUrl, comment } } = site
   const { id, html, excerpt, timeToRead, fields: { slug }, frontmatter: { title, tags, series_num, date } } = post
 
-  const headerData = { category, title, date, timeToRead, url: `${siteUrl}${slug.replace(/\/$/g,'')}` }
+  const isLocal = process.env.NODE_ENV === 'development'
+  const baseDomain = isLocal ? 'http://localhost:8000' : siteUrl
+  const headerData = { category, title, date, timeToRead, url: `${baseDomain}${slug.replace(/\/$/g,'')}` }
   const postMeta = {
     title,
     description: excerpt,
