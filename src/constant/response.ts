@@ -1,4 +1,5 @@
 import { NaviNode, RelatedNode, SeriesNode } from '@constant'
+import { Repo } from '@constant/types'
 import { ImageDataLike } from 'gatsby-plugin-image/dist/src/components/hooks'
 
 export interface SEOResponse {
@@ -82,7 +83,9 @@ export interface PostQueryResponse {
     siteMetadata: {
       siteUrl: string
       comment: {
-        utterances: string
+        giscus: Repo
+        repo_id: string
+        category_id: string
       }
     }
   }

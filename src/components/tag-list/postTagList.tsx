@@ -5,7 +5,7 @@ import Tags from '@assets/svg/tags.svg'
 
 const TagWrapper = styled.section`
   color: var(--app-font-color);
-  margin: 10rem 0 2rem;
+  margin: 8rem 0 2rem;
   display: flex;
 
   @media only screen and (max-width: 768px) {

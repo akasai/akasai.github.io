@@ -18,7 +18,9 @@ module.exports = {
     // leetcode: 'https://leetcode.com/akasai'
   },
   comment: {
-    utterances: 'akasai/akasai.github.io'
+    giscus: 'akasai/akasai.github.io',
+    repo_id: 'MDEwOlJlcG9zaXRvcnkyOTMzMTQ4NzA=',
+    category_id: 'DIC_kwDOEXuhNs4CAnjz'
   },
   // configs: {
   //   countOfInitialPost: 10, // Config your initial count of post

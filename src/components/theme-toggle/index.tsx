@@ -1,4 +1,4 @@
-import { THEME_MODE, UT_THEME } from '@constant/enum'
+import { GISCUS_THEME, THEME_MODE } from '@constant/enum'
 import { addClassToHTML, removeClassToHTML } from '@utils/dom'
 import { getTheme, setTheme } from '@utils/storage'
 import React, { useEffect, useState } from 'react'
@@ -12,9 +12,9 @@ export const ThemeToggle: React.FC = () => {
     const m = !isLight ? THEME_MODE.LIGHT : THEME_MODE.DARK
     toggleTheme(m, setCurMode)
 
-    const message = { type: 'set-theme', theme: !isLight ? UT_THEME.LIGHT : UT_THEME.DARK }
-    const utterances = document.querySelector<HTMLIFrameElement>('iframe.utterances-frame')?.contentWindow
-    utterances?.postMessage(message, 'https://utteranc.es')
+    const message = { setConfig: { theme: isLight ? GISCUS_THEME.DARK : GISCUS_THEME.LIGHT } }
+    const giscus = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame')?.contentWindow
+    giscus?.postMessage({ giscus: message }, 'https://giscus.app')
   }
 
   useEffect(() => {
@@ -46,7 +46,7 @@ const toggleTheme = (theme: THEME_MODE, fn: (a: THEME_MODE) => void): void => {
 
 const Wrapper = styled.span`
   margin-left: 10px;
-  
+
   svg {
     width: 24px;
     height: 24px;

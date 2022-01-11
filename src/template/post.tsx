@@ -51,7 +51,7 @@ const PostTemplate: React.FC<PageProps<PostQueryResponse, PageContext>> = React.
           {/*/!* TODO: share*!/*/}
           <hr/>
           <Navigator next={next} previous={previous}/>
-          <Comment repo={comment.utterances}/>
+          <Comment data={comment}/>
         </PostWrapper>
       </Main>
     </Layout>
@@ -67,7 +67,9 @@ export const pageQuery = graphql`
       siteMetadata {
         siteUrl
         comment {
-          utterances
+          giscus
+          repo_id
+          category_id
         }
       }
     }
