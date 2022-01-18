@@ -18,7 +18,7 @@ export const Comment: React.FC<CommentProps> = ({ data }) => {
     'data-category': 'General',
     'data-category-id': data.category_id,
     'data-mapping': 'title',
-    'data-reactions-enabled': BOOLEAN_STRING.FALSE,
+    'data-reactions-enabled': BOOLEAN_STRING.TRUE,
     'data-emit-metadata': BOOLEAN_STRING.FALSE,
     'data-theme': mode === THEME_MODE.DARK ? GISCUS_THEME.DARK : GISCUS_THEME.LIGHT,
     'data-lang': 'ko',

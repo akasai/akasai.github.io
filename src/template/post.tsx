@@ -44,13 +44,13 @@ const PostTemplate: React.FC<PageProps<PostQueryResponse, PageContext>> = React.
           <hr/>
           <PostContents html={html}/>
           <PostTagList tagList={tags}/>
-          <Clap slug={slug}/>
+          {/*<Clap slug={slug}/>*/}
+          <Navigator next={next} previous={previous}/>
           {/*<RelatedPost category={category} relatedList={related.nodes}/>*/}
           <hr/>
           <PostBio/>
           {/*/!* TODO: share*!/*/}
           <hr/>
-          <Navigator next={next} previous={previous}/>
           <Comment data={comment}/>
         </PostWrapper>
       </Main>
