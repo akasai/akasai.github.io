@@ -33,7 +33,7 @@ exports.createPages = async ({ graphql, actions }) => {
     createRedirect({ fromPath, toPath, isPermanent, redirectInBrowser })
   )
 
-  const component = path.resolve(__dirname, './src/template/post.tsx')
+
   const { data, error } = await graphql(`{
         allMarkdownRemark (
           filter: { frontmatter: { draft: { ne: true } } }
@@ -44,7 +44,7 @@ exports.createPages = async ({ graphql, actions }) => {
             node {
               id
               fields { slug }
-              frontmatter { category series_name }
+              frontmatter { title category series_name }
             }
             previous {
               fields { slug }
@@ -57,6 +57,27 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }`)
+
+  /**
+   * dashboard
+   */
+  createPage({
+    path: '/dashboard',
+    component: path.resolve(__dirname, './src/pages/dashboard.tsx'),
+    context: {
+      data: data.allMarkdownRemark.edges.map(({ node }) => ({
+        url: node.fields.slug,
+        title: node.frontmatter.title
+      }))
+    },
+    defer: true
+  })
+
+  /**
+   * post
+   */
+  const component = path.resolve(__dirname, './src/template/post.tsx')
+
 
   if (error) throw error
 
