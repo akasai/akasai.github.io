@@ -51,9 +51,9 @@ const Section = styled.section`
   }
 `
 
-const DashboardPage: React.FC<PageProps<any, { data: PanelData[] }>> = React.memo(({ pageContext }) => {
-  const { data } = pageContext
-  const target = (data || []).map(({ url, title }) => ({ url: `${BASE_URL}${url}`.replace(/\/$/, ''), title }))
+const DashboardPage: React.FC<PageProps<any, { pageData: PanelData[] }>> = React.memo(({ pageContext }) => {
+  const { pageData } = pageContext
+  const target = pageData.map(({ url, title }) => ({ url: `${BASE_URL}${url}`.replace(/\/$/, ''), title }))
   return (
     <Layout>
       <Main>
@@ -61,7 +61,7 @@ const DashboardPage: React.FC<PageProps<any, { data: PanelData[] }>> = React.mem
           <h1>Dashboard</h1>
           <section>
             {
-              target.map(({ url, title }) => (<UnitPanel url={url} title={title}/>))
+              target.map(({ url, title }, idx) => (<UnitPanel url={url} title={title} key={idx}/>))
             }
           </section>
         </Section>
