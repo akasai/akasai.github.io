@@ -53,7 +53,7 @@ const Section = styled.section`
 
 const DashboardPage: React.FC<PageProps<any, { data: PanelData[] }>> = React.memo(({ pageContext }) => {
   const { data } = pageContext
-  const target = data.map(({ url, title }) => ({ url: `${BASE_URL}${url}`.replace(/\/$/, ''), title }))
+  const target = (data || []).map(({ url, title }) => ({ url: `${BASE_URL}${url}`.replace(/\/$/, ''), title }))
   return (
     <Layout>
       <Main>
