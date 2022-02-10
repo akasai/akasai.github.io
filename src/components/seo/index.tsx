@@ -31,8 +31,8 @@ export const SEO: React.FC<SEOProps> = ({ postMeta = {}, isBlogPost = false }) =
       <Helmet>
         {/*General tags*/}
         <title>{title}</title>
-        <meta charSet="utf-8" />
-        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+        <meta charSet="utf-8"/>
+        <meta httpEquiv="x-ua-compatible" content="ie=edge"/>
         <meta name="author" content={seo.nickname}/>
         <meta name="description" content={description}/>
         <meta name="keywords" content={keywords}/>
@@ -71,6 +71,8 @@ export const SEO: React.FC<SEOProps> = ({ postMeta = {}, isBlogPost = false }) =
         datePublished={datePublished}
       />
       {/*<Scripts/>*/}
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7596204383080174"
+              crossOrigin="anonymous"></script>
     </React.Fragment>
   )
 }
