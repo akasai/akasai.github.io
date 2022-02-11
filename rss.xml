@@ -1,4 +1,171 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Your Site's RSS Feed]]></title><description><![CDATA[👨‍💻 Backend Developer]]></description><link>https://akasai.space</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 10 Feb 2022 14:46:50 GMT</lastBuildDate><item><title><![CDATA[2021년 회고]]></title><description><![CDATA[블로그를 새로 만들고 나서 첫 번째 회고인 것 같다. 기념으로 미디엄에 썼던 예전 회고를 읽어 보았는데, 다시 쓰려니 감회가 새롭다. 발버둥 치던 2021년이 끝나고 벌써 2022년의…]]></description><link>https://akasai.space/etc/2021_retrospective/</link><guid isPermaLink="false">https://akasai.space/etc/2021_retrospective/</guid><pubDate>Mon, 17 Jan 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;블로그를 새로 만들고 나서 &lt;strong&gt;첫 번째 회고&lt;/strong&gt;인 것 같다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Your Site's RSS Feed]]></title><description><![CDATA[👨‍💻 Backend Developer]]></description><link>https://akasai.space</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 11 Feb 2022 16:57:20 GMT</lastBuildDate><item><title><![CDATA[OLTP와 OLAP]]></title><description><![CDATA[OLTP와 OLAP는 오래전부터 데이터 처리의 목적성에 따라 구분되어 사용된 용어입니다. 비슷하지만 다른 두 용어에 대해 알아보았습니다. OLTP (OnLine Transaction Processing…]]></description><link>https://akasai.space/basic/about-oltp-olap/</link><guid isPermaLink="false">https://akasai.space/basic/about-oltp-olap/</guid><pubDate>Sat, 12 Feb 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;OLTP와 OLAP는 오래전부터 데이터 처리의 목적성에 따라 구분되어 사용된 용어입니다.&lt;/p&gt;
+&lt;p&gt;비슷하지만 다른 두 용어에 대해 알아보았습니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;oltp-online-transaction-processing&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#oltp-online-transaction-processing&quot; aria-label=&quot;oltp online transaction processing permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;OLTP (OnLine Transaction Processing)&lt;/h2&gt;
+&lt;p&gt;네트워크상 온라인 사용자들의 요청을 처리하는 방법입니다.&lt;/p&gt;
+&lt;p&gt;사용자들의 요청을 &lt;strong&gt;트랜잭션&lt;/strong&gt;이라고 하며, 이에 대한 CRUD 처리를 수행합니다.&lt;/p&gt;
+&lt;p&gt;따라서, &lt;code class=&quot;language-text&quot;&gt;Commit&lt;/code&gt;과 &lt;code class=&quot;language-text&quot;&gt;Rollback&lt;/code&gt; 작업이 가능해야 합니다.&lt;/p&gt;
+&lt;p&gt;수많은 트랜잭션은 Insert, Update, Delete 과정에서 &lt;strong&gt;무결성이 보장&lt;/strong&gt;되어야 하며, 그 결과를 Select 하는 것까지를 의미합니다.&lt;/p&gt;
+&lt;h3 id=&quot;사용-예&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%82%AC%EC%9A%A9-%EC%98%88&quot; aria-label=&quot;사용 예 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;사용 예&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;온라인 뱅킹에서의 사용자 요청처리 (송금, 예금 등)&lt;/li&gt;
+&lt;li&gt;항공/기차 등의 티켓팅 서비스&lt;/li&gt;
+&lt;li&gt;e-커머스 사이트에서의 온라인 거래/주문&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;olap-online-analytical-processing&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#olap-online-analytical-processing&quot; aria-label=&quot;olap online analytical processing permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;OLAP (OnLine Analytical Processing)&lt;/h2&gt;
+&lt;p&gt;OLTP와 반대로 이미 저장된 Data를 바탕으로 &lt;strong&gt;유의미한 정보&lt;/strong&gt;를 제공하는 처리 방법 입니다.&lt;/p&gt;
+&lt;p&gt;따라서 기존에 저장된 데이터를 활용하여 처리함으로 &lt;strong&gt;처리 시간 등이 보장&lt;/strong&gt;되어야 합니다.&lt;/p&gt;
+&lt;h3 id=&quot;사용-예-1&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%82%AC%EC%9A%A9-%EC%98%88-1&quot; aria-label=&quot;사용 예 1 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;사용 예&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;지난 1년 간 사용자들의 항공/기차 별 예매 추이&lt;/li&gt;
+&lt;li&gt;e-커머스 사이트 방문 유저의 1년간 구매 제품 판매량&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;차이점&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%B0%A8%EC%9D%B4%EC%A0%90&quot; aria-label=&quot;차이점 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;차이점&lt;/h2&gt;
+&lt;p&gt;OLTP는 데이터 처리가 얼마나 정확하고 무결한지가 중요합니다. 즉, 요청받은 현재 &lt;strong&gt;트랜잭션의 효율적인 처리에 중점&lt;/strong&gt;을 둔 처리 방법입니다. 따라서 컴퓨터에 더 친화적인 용어입니다.&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;반면 OLAP는 저장된 Data를 바탕으로 &lt;strong&gt;어떤 정보를 추출하고 제공&lt;/strong&gt;하는지가 더 중요합니다. 이를 바탕으로 의사결정을 내리고 분석하는 것에 더 중점을 둔 처리 방법 입니다. 사용자에게 더 친화적인 용어입니다.&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;span class=&quot;em red&quot;&gt;그러므로 OLTP가 반드시 선행되어야 OLAP가 성립됨을 알 수 있습니다.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 41.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAAsTAAALEwEAmpwYAAABuklEQVQY0xXL3W+TQAAAcP5to29Gk0WzZNkS44M+NOtibMz8WJzKNOuy2m8KpeX7Ci3CAQfHccdBaYyY/d5/Qtu2BvDP3n58c3ENvLDTEy+vB8+OOyOQnuv89YIY7J879q9Ox/2uYgx3X05G549vvGXUtq3Qtq28co7O3h2/6nV74tOXnecnF+8//Lj12JNB9ugO3aG/9i9w+WLw+eh++snod5dfT8cU8YdM94ec19YWxoQpXuTExRYRWje4rEPCQ8IR5RnltosAohsfo5zhqiZNw/cHAbMqJ0VV1ymhIii+OYUJCWMU4TxOkjTLUpwzRqd+0Vvjya5AuMCEoAyzqhZotQ+CP45jZxibfr3aHSw3imAAIbRM07bsNImznGn+3oHNwj3cz4EsTU3TKqtKYHUDbGs8GrkbV3KbW73RAAS2qS5VWZY1TUsimBel5je9IRfVw++5dSN+l+YS41wgvI5x7gVw4wdWkG9itgK+4YCl6SiKEoRhQktE6FDdXQ23P2fefA2CBGnOBsboIfsIT1f6UFEXujFRV/3JbDBXJMv1tjtS0Ig3XpxKmqGY1kheztZGSEp9G4Rx8h9SJ5tXx45vzgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;olap&quot;
+        title=&quot;olap&quot;
+        src=&quot;/static/96cffd5182c098c3d44d2d7e129e5fa2/c1b63/olap.png&quot;
+        srcset=&quot;/static/96cffd5182c098c3d44d2d7e129e5fa2/5a46d/olap.png 300w,
+/static/96cffd5182c098c3d44d2d7e129e5fa2/0a47e/olap.png 600w,
+/static/96cffd5182c098c3d44d2d7e129e5fa2/c1b63/olap.png 1200w,
+/static/96cffd5182c098c3d44d2d7e129e5fa2/2cefc/olap.png 1400w&quot;
+        sizes=&quot;(max-width: 1200px) 100vw, 1200px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;reference&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://jins-dev.tistory.com/entry/%EA%B0%84%EB%9E%B5%ED%95%98%EA%B2%8C-%EC%A0%95%EB%A6%AC%ED%95%B4%EB%B3%B4%EB%8A%94-OLTP-OLAP-%EC%9D%98-%EA%B0%9C%EB%85%90&quot;&gt;간략하게 정리해보는 OLTP / OLAP 의 개념&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.linkedin.com/pulse/explain-example-oltp-vs-olap-michelle-xie/&quot;&gt;Explain By Example: OLTP vs. OLAP&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Scale Up과 Scale Out]]></title><description><![CDATA[다양한 환경에서 서버 구성을 하다 보면 늘어나는 접속자 또는 처리량에 따라 스케일링(Scaling) 을 고려해야 하는 상황이 옵니다. 스케일링에 있어 대표적인 두 가지를 비교해보았습니다. Scale Up…]]></description><link>https://akasai.space/devops/scaling/</link><guid isPermaLink="false">https://akasai.space/devops/scaling/</guid><pubDate>Sat, 12 Feb 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;다양한 환경에서 서버 구성을 하다 보면 늘어나는 접속자 또는 처리량에 따라 &lt;strong&gt;스케일링(Scaling)&lt;/strong&gt; 을 고려해야 하는 상황이 옵니다.&lt;/p&gt;
+&lt;p&gt;스케일링에 있어 대표적인 두 가지를 비교해보았습니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;scale-up-스케일-업&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#scale-up-%EC%8A%A4%EC%BC%80%EC%9D%BC-%EC%97%85&quot; aria-label=&quot;scale up 스케일 업 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Scale Up (스케일 업)&lt;/h2&gt;
+&lt;p&gt;기존 서버의 &lt;strong&gt;성능 자체를 올리는 작업&lt;/strong&gt;입니다.&lt;/p&gt;
+&lt;p&gt;Disk의 증설(저장공간의 추가), CPU/Memory 등의 추가 또는 성능 업그레이드 등을 통해 서버 한 개의 능력을 향상하는 방법입니다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;수직 스케일링(Vertical Scaling)&lt;/code&gt;이라고도 합니다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1088px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 33.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAABfElEQVQoz32R6yuDYRjG/VFymjBsybK1nMayKNEoySdWCyX5B/wBPvjgUJZDDhtePvBJDB9Ys2yOY0rk2Wuvdz95X5tDctXV033fz3U9T/eVwy+k02mNH1BVNVtnek/PL4TPYkTOrzSGIxdcXMWz8xz9svpD9HEqytvXI5CtZ3xbVNUPYnd6sDu92JqHaOkcRQhZN9w7CNE7ME6fZ5zhsQlEUh/EohE2N9YIBvdYD6yQVlOfhusYTB2YbV2Ybd0YLW6a2jzI8qtuuBrYocDootDoxNrQQyr1yl1CENgOs+g/Yk06Ycl/jLQT0QSTU/PklbowlNdRXOHAUOGkprYDIYRuuOzfJbeklfwyF5a6XpKyjEgqXF4/EU8Ibu5euL0XRC8fNcGsL0BRZTtmmxuT1Y2xuhNH6wDJzA/PY3Gm5iRmfBILK7ukFIX/MD0nYbJ7sTr6qXF4sDR6aW4f+drhX6LvyWaoqnpgiYdH9oOnHB6HNR4chjgJRVE/U34HFPzV/MYqkOcAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;scaleup&quot;
+        title=&quot;scaleup&quot;
+        src=&quot;/static/a847089c56e17e0ef14d9c4462b2bd2e/c6ff8/scaleup.png&quot;
+        srcset=&quot;/static/a847089c56e17e0ef14d9c4462b2bd2e/5a46d/scaleup.png 300w,
+/static/a847089c56e17e0ef14d9c4462b2bd2e/0a47e/scaleup.png 600w,
+/static/a847089c56e17e0ef14d9c4462b2bd2e/c6ff8/scaleup.png 1088w&quot;
+        sizes=&quot;(max-width: 1088px) 100vw, 1088px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&quot;특징&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%8A%B9%EC%A7%95&quot; aria-label=&quot;특징 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;특징&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;추가적인 &lt;strong&gt;네트워크 구성&lt;/strong&gt;이 필요 없습니다.&lt;/li&gt;
+&lt;li&gt;성능 향상에는 물리적 &lt;strong&gt;한계&lt;/strong&gt;가 있습니다.&lt;/li&gt;
+&lt;li&gt;상황에 따라 &lt;strong&gt;서비스 다운타임(Donw time)&lt;/strong&gt; 이 발생할 수 있습니다.&lt;/li&gt;
+&lt;li&gt;빠르고 정확한 처리가 필요한 &lt;code class=&quot;language-text&quot;&gt;OLTP&lt;/code&gt; 환경에서 효율적입니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;scale-out-스케일-아웃&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#scale-out-%EC%8A%A4%EC%BC%80%EC%9D%BC-%EC%95%84%EC%9B%83&quot; aria-label=&quot;scale out 스케일 아웃 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Scale Out (스케일 아웃)&lt;/h2&gt;
+&lt;p&gt;Scale Up과 다르게 서버를 &lt;strong&gt;추가, 확장하는 작업&lt;/strong&gt;입니다.&lt;/p&gt;
+&lt;p&gt;서버의 처리능력이 한계에 도달했을 때 비슷한 성능의 서버를 추가합니다.&lt;/p&gt;
+&lt;p&gt;다수의 서버가 부하를 분담하여 처리하기 때문에 &lt;strong&gt;분산 병렬처리&lt;/strong&gt;와 유사합니다.&lt;/p&gt;
+&lt;p&gt;추가/확장 개념에서 &lt;code class=&quot;language-text&quot;&gt;수평 스케일링(horizontal Scaling)&lt;/code&gt;이라고도 합니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;대부분의 클라우드서비스에서는 &lt;strong&gt;스케일 아웃&lt;/strong&gt;을 기본으로 오토스케일링(Auto-Scaling)을 지원합니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1150px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 43.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAABvElEQVQoz3WS70tTYRTH/Y9MTGgi2C9CSoc15ybmVEImik7mYiWtV4WgKbU3/gv2RqkchWXT4Qt1WoEFU8RWwzbG7p23dCreZ5+4z5h34PzC9znnOec53/PAORUAuhDoui6Zz+eNkLRFCiHO/NzRCYe5Y2mPjgu+wdNTXdZVFAVKIcT5mAFV1XAPTdLk8NPnncT3ZApbRwCr8xGfIxsFQeOIft0iNL8imUwpMqFpWf7sJUinUyQScaMNirJPs8NDleUu99o8uHpGuHLVSZXFxtz7RVNweCRITX0HNfUuwpGoTKyux5h9s8D8wgpvQ0vsxtPsawd09o5ywzpId98oHn+QxlY/t5q9fFqMmoJD/gkqLXYuWRyEI2sysbGZ4vtWls2YwrcfGWI7Kmr2Lw8GXtBg89EzOI4vMEWL6ylW52PCkS+m4My7ZcZeTTMefM32ToKLkMlksbUPc7nOjv2+l253gNrr7VTXtRL6sHTxUAqTNanrQsYVVcPlfs61O/109T5j4OFLbrf4uGn18DG8Zv6wUCjO1qMoWtrAgLEau/Ekse3f0u4lM/z8lZT+v4OcKVi6c+UEy93LwXjzH2hYaGnSoUIaAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;scaledown&quot;
+        title=&quot;scaledown&quot;
+        src=&quot;/static/aa95f6425e27b0c5a057c0c157526f8b/33d1d/scaledown.png&quot;
+        srcset=&quot;/static/aa95f6425e27b0c5a057c0c157526f8b/5a46d/scaledown.png 300w,
+/static/aa95f6425e27b0c5a057c0c157526f8b/0a47e/scaledown.png 600w,
+/static/aa95f6425e27b0c5a057c0c157526f8b/33d1d/scaledown.png 1150w&quot;
+        sizes=&quot;(max-width: 1150px) 100vw, 1150px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&quot;특징-1&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%8A%B9%EC%A7%95-1&quot; aria-label=&quot;특징 1 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;특징&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;기존 운영 중인 서버에 영향이 없기 때문에 &lt;strong&gt;안정성&lt;/strong&gt;이 높습니다.&lt;/li&gt;
+&lt;li&gt;서버가 늘어나므로 로드 밸런싱 등의 &lt;strong&gt;아키텍처&lt;/strong&gt; 고려가 필요합니다.&lt;/li&gt;
+&lt;li&gt;서버의 증가는 &lt;strong&gt;관리 포인트의 증가&lt;/strong&gt;를 의미합니다.&lt;/li&gt;
+&lt;li&gt;대량의 데이터와 복잡한 쿼리 수행을 위한 &lt;code class=&quot;language-text&quot;&gt;OLAP&lt;/code&gt; 환경에 적합합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 638px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAQACBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAe2obiP/xAAXEAEBAQEAAAAAAAAAAAAAAAABABAh/9oACAEBAAEFAkjexf/EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABYQAAMAAAAAAAAAAAAAAAAAAAAgMf/aAAgBAQAGPwIi/wD/xAAZEAEAAwEBAAAAAAAAAAAAAAABABExUSH/2gAIAQEAAT8hDk3oII5HtXFeURWe7P/aAAwDAQACAAMAAAAQxM//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAVEQEBAAAAAAAAAAAAAAAAAAAQIf/aAAgBAgEBPxCn/8QAGxABAQEAAwEBAAAAAAAAAAAAAREAITFBYXH/2gAIAQEAAT8QErTeYC3KMhFL7gKhPmlUGO+ZrRdGdv5mFE9b/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;scale&quot;
+        title=&quot;scale&quot;
+        src=&quot;/static/505e0145b5b76b267d5911eca329b699/8608d/scale.jpg&quot;
+        srcset=&quot;/static/505e0145b5b76b267d5911eca329b699/f93b5/scale.jpg 300w,
+/static/505e0145b5b76b267d5911eca329b699/b4294/scale.jpg 600w,
+/static/505e0145b5b76b267d5911eca329b699/8608d/scale.jpg 638w&quot;
+        sizes=&quot;(max-width: 638px) 100vw, 638px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;reference&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://tecoble.techcourse.co.kr/post/2021-10-12-scale-up-scale-out/&quot;&gt;Scale-up과 Scale-out에 대해 알아보자!&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://akasai.space/basic/about-oltp-olap&quot;&gt;OLTP와 OLAP&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[2021년 회고]]></title><description><![CDATA[블로그를 새로 만들고 나서 첫 번째 회고인 것 같다. 기념으로 미디엄에 썼던 예전 회고를 읽어 보았는데, 다시 쓰려니 감회가 새롭다. 발버둥 치던 2021년이 끝나고 벌써 2022년의…]]></description><link>https://akasai.space/etc/2021_retrospective/</link><guid isPermaLink="false">https://akasai.space/etc/2021_retrospective/</guid><pubDate>Mon, 17 Jan 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;블로그를 새로 만들고 나서 &lt;strong&gt;첫 번째 회고&lt;/strong&gt;인 것 같다.&lt;/p&gt;
 &lt;p&gt;기념으로 미디엄에 썼던 예전 회고를 읽어 보았는데, 다시 쓰려니 감회가 새롭다.&lt;/p&gt;
 &lt;p&gt;발버둥 치던 2021년이 끝나고 벌써 2022년의 1월도 절반이 지나갔다.&lt;/p&gt;
 &lt;p&gt;달마다 간단한 느낌이나 생각을 정리해봤는데, 이걸 바탕으로 뒤늦은 회고를 적어본다.&lt;/p&gt;
