@@ -1,4 +1,5 @@
 import {
+  Adsense,
   Clap,
   Comment,
   Main,
@@ -44,6 +45,7 @@ const PostTemplate: React.FC<PageProps<PostQueryResponse, PageContext>> = React.
           <hr/>
           <PostContents html={html}/>
           <PostTagList tagList={tags}/>
+          <Adsense/>
           {/*<Clap slug={slug}/>*/}
           <Navigator next={next} previous={previous}/>
           {/*<RelatedPost category={category} relatedList={related.nodes}/>*/}
