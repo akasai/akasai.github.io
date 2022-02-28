@@ -11,7 +11,7 @@ interface NaviProps {
 
 const NavigationWrapper = styled.section`
   width: 100%;
-  margin: 0 0 2rem 0;
+  margin: 2rem 0 2rem 0;
 `
 
 const NaviUl = styled.ul`
