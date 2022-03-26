@@ -332,6 +332,7 @@ data-styled.g50[id="theme-toggle__Wrapper-sc-1uxhbns-0"]{content:"cxBlUU,"}/*!sc
 <p>일반적인 컨테이너 환경은 <code class="language-text">파일 시스템</code>이 분리되기 때문에, 애플리케이션이 배포된 컨테이너의 파일 시스템 공유가 불가능하지만, 쿠버네티스의 경우 하나의 파드 내에서는 컨테이너들끼리 <strong>볼륨을 공유</strong>할 수 있기 때문에 다른 컨테이너의 파일을 읽을 수 있습니다.</p>
 </li>
 </ol>
+<hr>
 <h2 id="템플릿" style="position:relative;"><a href="#%ED%85%9C%ED%94%8C%EB%A6%BF" aria-label="템플릿 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>템플릿</h2>
 <p><code class="language-text">yaml</code>파일은 기본적으로 4개의 <code class="language-text">TOP(root)-level property</code>를 갖습니다.</p>
 <div class="gatsby-highlight" data-language="yaml"><pre class="language-yaml"><code class="language-yaml">
@@ -379,9 +380,10 @@ data-styled.g50[id="theme-toggle__Wrapper-sc-1uxhbns-0"]{content:"cxBlUU,"}/*!sc
 </ul>
 </li>
 </ol>
+<hr>
 <h2 id="명령-실행" style="position:relative;"><a href="#%EB%AA%85%EB%A0%B9-%EC%8B%A4%ED%96%89" aria-label="명령 실행 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>명령 실행</h2>
 <p>파드를 생성하는 방법은 여러가지가 있다.</p>
-<ul>
+<ol>
 <li>
 <p>run</p>
 <div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell">$ kubectl run nginx --image<span class="token operator">=</span>nginx</code></pre></div>
@@ -408,7 +410,7 @@ nginx-pod               <span class="token number">1</span>/1     Running    <sp
 <div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell">NAME                    READY   STATUS     RESTARTS   AGE   IP    NODE <span class="token punctuation">..</span>.
 nginx-pod               <span class="token number">1</span>/1     Running    <span class="token number">0</span>          10s</code></pre></div>
 </li>
-</ul>
+</ol>
 <hr>
 <h2 id="reference" style="position:relative;"><a href="#reference" aria-label="reference permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
 <ul>

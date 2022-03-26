@@ -1,4 +1,165 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Your Site's RSS Feed]]></title><description><![CDATA[👨‍💻 Backend Developer]]></description><link>https://akasai.space</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 07 Mar 2022 12:05:49 GMT</lastBuildDate><item><title><![CDATA[extends와 implements의 상속개념]]></title><description><![CDATA[OOP…]]></description><link>https://akasai.space/basic/about-Inheritance/</link><guid isPermaLink="false">https://akasai.space/basic/about-Inheritance/</guid><pubDate>Sat, 05 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Your Site's RSS Feed]]></title><description><![CDATA[👨‍💻 Backend Developer]]></description><link>https://akasai.space</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 26 Mar 2022 15:50:11 GMT</lastBuildDate><item><title><![CDATA[KubeConfig란?]]></title><description><![CDATA[CKA를 준비하며 공부하고 있는 내용을 정리하고 있습니다. 부족한 부분도 많을 수 있습니다. 언제든 말씀해주시면 더 공부하고 수정하겠습니다. KubeConfig란? REST API 또는 kubtctl…]]></description><link>https://akasai.space/kubernetes/about-kubeconfig/</link><guid isPermaLink="false">https://akasai.space/kubernetes/about-kubeconfig/</guid><pubDate>Sat, 26 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 21.666666666666668%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAC4jAAAuIwF4pT92AAAA6ElEQVQY042QsUtCYRTFf896ohKOgri5uOoSNjnLG8QhEFR8ImRIkEG2FQpiaggOuoqLg3+CNbQ2RWPQEuQLUQQxkHToiw8+cfXA5dx77rnDuQQLY8O4m3yYrenPyZU1CJWECzjUXR4HOxyxL8JF663/uBQv779/hc5MeLNrA/BpNr0q18ApcA9IPQvEgSQQA3LAGZAGEkCGSOl73BstxdPranPRnYnA+cIE3JrN3gZugApQBmpAQx2m1NwEpL8OXAMP+M2vSPR2Mk81p+L40hrCswaC/KeQAeyqtvF1xZriA/kepcve+Q8C3EC8g2Ea6wAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;kubernetes&quot;
+        title=&quot;kubernetes&quot;
+        src=&quot;/static/e41528f5257d89d58028ff39c3c2f712/c1b63/kubernetes.png&quot;
+        srcset=&quot;/static/e41528f5257d89d58028ff39c3c2f712/5a46d/kubernetes.png 300w,
+/static/e41528f5257d89d58028ff39c3c2f712/0a47e/kubernetes.png 600w,
+/static/e41528f5257d89d58028ff39c3c2f712/c1b63/kubernetes.png 1200w,
+/static/e41528f5257d89d58028ff39c3c2f712/4929c/kubernetes.png 1727w&quot;
+        sizes=&quot;(max-width: 1200px) 100vw, 1200px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;CKA&lt;/strong&gt;를 준비하며 공부하고 있는 내용을 정리하고 있습니다.&lt;/p&gt;
+&lt;p&gt;부족한 부분도 많을 수 있습니다.&lt;/p&gt;
+&lt;p&gt;언제든 말씀해주시면 더 공부하고 수정하겠습니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;kubeconfig란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#kubeconfig%EB%9E%80&quot; aria-label=&quot;kubeconfig란 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;KubeConfig란?&lt;/h2&gt;
+&lt;p&gt;REST API 또는 kubtctl 명령을 이용하여 정보를 호출할 때 추가적인 옵션을 통해 TLS인증을 거쳐야만 정상적인 정보를 받아볼 수 있습니다.&lt;/p&gt;
+&lt;br&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;REST API&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;curl&lt;/span&gt; https://k8s.io:6443/api/v1/pods &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;
+    --key admin.key &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;
+    --cert admin.crt &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;
+    --cacert ca.crt
+
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;kind&quot;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;PodList&quot;&lt;/span&gt;,
+    &lt;span class=&quot;token string&quot;&gt;&quot;apiVersion&quot;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;v1&quot;&lt;/span&gt;,
+    &lt;span class=&quot;token string&quot;&gt;&quot;metadata&quot;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token string&quot;&gt;&quot;selfLink&quot;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/api/v1/pods&quot;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;,
+    &lt;span class=&quot;token string&quot;&gt;&quot;items&quot;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;kubectl&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;$ kubectl get pods &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;
+      --server k8s.io:6443 &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;
+      --client-key admin.key &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;
+      --client-certificate admin crt &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;
+      --certificate-authority ca.crt
+
+No resources found.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;위처럼 각종 &lt;strong&gt;인증정보(key, crt 등)&lt;/strong&gt; 를 같이 보내야만 정상적인 결과를 받을 수 있습니다.&lt;/p&gt;
+&lt;p&gt;이 방법은 정보를 조회할 때만다 동일한 옵션을 추가해야하는 &lt;strong&gt;번거로움(단점)&lt;/strong&gt; 이 있습니다.&lt;/p&gt;
+&lt;p&gt;이런 불편함을 줄이고 활용도를 높이기 위해 인증정보를 저장하는 &lt;code class=&quot;language-text&quot;&gt;Object&lt;/code&gt;가 &lt;span class=&quot;em red&quot;&gt;KubeConfig 입니다.&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&quot;기본-정보&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B8%B0%EB%B3%B8-%EC%A0%95%EB%B3%B4&quot; aria-label=&quot;기본 정보 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;기본 정보&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;기본 디렉토리: &lt;code class=&quot;language-text&quot;&gt;$HOME/.kube/config&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;다른 오브젝트들 처럼 생성/배포하는 개념이 아니라, 작업자의 Local환경에 저장하는 &lt;strong&gt;환경파일의 일종&lt;/strong&gt;입니다. ssh의 &lt;code class=&quot;language-text&quot;&gt;known_hosts&lt;/code&gt;와 비슷하다고 볼 수 있습니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;kubeconfig-구성&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#kubeconfig-%EA%B5%AC%EC%84%B1&quot; aria-label=&quot;kubeconfig 구성 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;KubeConfig 구성&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 39.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABcSAAAXEgFnn9JSAAABmUlEQVQoz22Sy27aQBiF/UB9jL5Xl1XXfYNK6a6LdhUpi3bThEvrJhhiEyDGGONgGxMbXxnPfBWGNL190tGcxegfzX+OppRCSoUCpDqeT5JSsl6vW+33NQcO9w80TdP6v6VxQkl5MurolaIRgm/9Pp1uj4W3IoqiXw9UVcX/0IpSMLmLQOyx3UeyooJGkJYChOB+OuHqx5DhIiBNM4q8oK73FGXOJgl4TGOSNKHMK8IwRHvbeeDFqw665/Fe/8T5skeU5JxNM7JSsly6dHsdrPGIwfCG2XSMqiqyNGG8/M5g9ZmRd4m/cZhO7tFeX7q8PDP4YEwwnHdc2x8xZx5f9RlBmODaNvpNFz+csfSnBLFDI2qKbYrjWVz7F+jeOaPgC4O7PtrFIueNnmLGCeHuijDR2e1q4iCjymsWCwfDGGJak/bLT/vONjEPa5d5NGIe3uLGFtZ88BzKP0jR7nJu28xsh9U6Jn5MqcsSkedtYOqY4R/SGqnYS3WsjDpUQZ4qcJy73W4ZGgaWeYtpmoS+3w4TovmtYM8p/wQVRFn4ql/83AAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;kubeconfig&quot;
+        title=&quot;kubeconfig&quot;
+        src=&quot;/static/c4aae236fbc495b311898fc46ebb7411/c1b63/kubeconfig.png&quot;
+        srcset=&quot;/static/c4aae236fbc495b311898fc46ebb7411/5a46d/kubeconfig.png 300w,
+/static/c4aae236fbc495b311898fc46ebb7411/0a47e/kubeconfig.png 600w,
+/static/c4aae236fbc495b311898fc46ebb7411/c1b63/kubeconfig.png 1200w,
+/static/c4aae236fbc495b311898fc46ebb7411/05244/kubeconfig.png 1752w&quot;
+        sizes=&quot;(max-width: 1200px) 100vw, 1200px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&quot;clusters&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#clusters&quot; aria-label=&quot;clusters permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;clusters&lt;/h3&gt;
+&lt;p&gt;실제 유저가 접속하는 대상이 되는 서버(k8s-cluster)정보입니다.&lt;/p&gt;
+&lt;p&gt;서버와 관련된 정보(Host, IP, Port)를 저장합니다.&lt;/p&gt;
+&lt;h3 id=&quot;users&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#users&quot; aria-label=&quot;users permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;users&lt;/h3&gt;
+&lt;p&gt;클러스터로 접속하는 유저의 계정정보입니다.&lt;/p&gt;
+&lt;p&gt;접근하려는 유저계정의 인증정보(key, ca, crt 등)를 저장합니다.&lt;/p&gt;
+&lt;h3 id=&quot;contexts&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#contexts&quot; aria-label=&quot;contexts permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;contexts&lt;/h3&gt;
+&lt;p&gt;cluster와 user의 정보를 바탕으로 하는 접속정보&lt;/p&gt;
+&lt;p&gt;어떤 user가 어떤 cluster로 접근할 것인지에 대한 정보를 정의합니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;새로운 계정이나 클러스터를 생성하는 것이 아니라 존재하는 정보를 바탕으로 정의하는 것.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;apiVersion&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; v1
+&lt;span class=&quot;token key atrule&quot;&gt;kind&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Config
+&lt;span class=&quot;token key atrule&quot;&gt;current-context&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; kube&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;admin@my&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;kube &lt;span class=&quot;token comment&quot;&gt;# contexts.name&lt;/span&gt;
+&lt;span class=&quot;token key atrule&quot;&gt;clusters&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# Array&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; my&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;kube
+  &lt;span class=&quot;token key atrule&quot;&gt;cluster&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;certificate-authority&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ca.crt
+    &lt;span class=&quot;token key atrule&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; https&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;//k8s.io&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;6443&lt;/span&gt;
+&lt;span class=&quot;token key atrule&quot;&gt;contexts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# Array&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; kube&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;admin@my&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;kube
+  &lt;span class=&quot;token key atrule&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;cluster&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; my&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;kube &lt;span class=&quot;token comment&quot;&gt;# clusters.name&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; kube&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;admin &lt;span class=&quot;token comment&quot;&gt;# users.name&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;namespace&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; prod &lt;span class=&quot;token comment&quot;&gt;# 해당 클러스터 내의 특정 namespace를 설정&lt;/span&gt;
+&lt;span class=&quot;token key atrule&quot;&gt;users&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# Array&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; kube&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;admin
+  &lt;span class=&quot;token key atrule&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;client-certificate&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; admin.crt
+    &lt;span class=&quot;token key atrule&quot;&gt;client-key&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; admin.key&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;미리 정의된 여러가지 context들 중에서 &lt;strong&gt;기준이 될 context&lt;/strong&gt;를 &lt;code class=&quot;language-text&quot;&gt;current-context&lt;/code&gt;에 세팅합니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;명령&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%AA%85%EB%A0%B9&quot; aria-label=&quot;명령 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;명령&lt;/h2&gt;
+&lt;p&gt;kubeconfig를 확인하는 다양한 방법이 있다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;현재 정의된 config파일의 내용 확인&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;$ kubectl config view&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Custom-config&lt;/code&gt;파일의 내용 확인. 단, &lt;strong&gt;default는 기준 디렉토리 내의 config파일&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;$ kubectl config view --kubeconfig&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;custom-file&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;current-context&lt;/code&gt;를 변경. config파일 내용도 자동으로 변경됨.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;$ kubectl config use-context &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;context_name&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;다른-정의-방법&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%8B%A4%EB%A5%B8-%EC%A0%95%EC%9D%98-%EB%B0%A9%EB%B2%95&quot; aria-label=&quot;다른 정의 방법 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;다른 정의 방법&lt;/h2&gt;
+&lt;p&gt;기본적으로 KubeConfig는 &lt;strong&gt;인증정보(key, crt)&lt;/strong&gt; 를 &lt;code class=&quot;language-text&quot;&gt;경로(path)&lt;/code&gt;로 지정합니다.&lt;/p&gt;
+&lt;p&gt;하지만 다른 방법으로도 해당정보들을 정의할 수 있습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;apiVersion&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; v1
+&lt;span class=&quot;token key atrule&quot;&gt;kind&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Config
+
+&lt;span class=&quot;token key atrule&quot;&gt;clusters&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 
+&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; my&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;kube
+  &lt;span class=&quot;token key atrule&quot;&gt;cluster&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;certificate-authority-data&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&amp;lt;Base64&gt;LS0t .... TUVPbnJ&quot;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# Base64&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; ca.crt &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; base64
+// base64 encoding된 인증서 문자열
+
+$ &lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;LS0t .... TUVPbnJ&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; base64 --decode
+// base64 decoding된 인증서 내용&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;reference&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://kubernetes.io/ko/docs/concepts/configuration/organize-cluster-access-kubeconfig/&quot;&gt;Kubernetes - KubeConfig&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[extends와 implements의 상속개념]]></title><description><![CDATA[OOP…]]></description><link>https://akasai.space/basic/about-Inheritance/</link><guid isPermaLink="false">https://akasai.space/basic/about-Inheritance/</guid><pubDate>Sat, 05 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; &quot;
     &gt;
@@ -1041,6 +1202,7 @@ b&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&q
 &lt;p&gt;일반적인 컨테이너 환경은 &lt;code class=&quot;language-text&quot;&gt;파일 시스템&lt;/code&gt;이 분리되기 때문에, 애플리케이션이 배포된 컨테이너의 파일 시스템 공유가 불가능하지만, 쿠버네티스의 경우 하나의 파드 내에서는 컨테이너들끼리 &lt;strong&gt;볼륨을 공유&lt;/strong&gt;할 수 있기 때문에 다른 컨테이너의 파일을 읽을 수 있습니다.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;hr&gt;
 &lt;h2 id=&quot;템플릿&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%85%9C%ED%94%8C%EB%A6%BF&quot; aria-label=&quot;템플릿 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;템플릿&lt;/h2&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;yaml&lt;/code&gt;파일은 기본적으로 4개의 &lt;code class=&quot;language-text&quot;&gt;TOP(root)-level property&lt;/code&gt;를 갖습니다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;
@@ -1088,9 +1250,10 @@ b&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&q
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;hr&gt;
 &lt;h2 id=&quot;명령-실행&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%AA%85%EB%A0%B9-%EC%8B%A4%ED%96%89&quot; aria-label=&quot;명령 실행 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;명령 실행&lt;/h2&gt;
 &lt;p&gt;파드를 생성하는 방법은 여러가지가 있다.&lt;/p&gt;
-&lt;ul&gt;
+&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;run&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;$ kubectl run nginx --image&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;nginx&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -1117,7 +1280,7 @@ nginx-pod               &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;NAME                    READY   STATUS     RESTARTS   AGE   IP    NODE &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;.
 nginx-pod               &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;/1     Running    &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;          10s&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 &lt;hr&gt;
 &lt;h2 id=&quot;reference&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
 &lt;ul&gt;
@@ -6443,27 +6606,6 @@ Javascript는 브라우저, Node.js환경이 런타임이 될 수 있다.&lt;/p&
 &lt;h2 id=&quot;reference&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
 &lt;span class=&quot;reference&quot;&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/akasai/Algorithm-Solutions/blob/master/HackerRank/Implementation/36.Absolute_Permutation.js&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
-&lt;/span&gt;</content:encoded></item><item><title><![CDATA[[Leetcode] Remove Duplicates from Sorted Array]]></title><description><![CDATA[Remove Duplicates from Sorted Array Solution Reference Github]]></description><link>https://akasai.space/Algorithm/A_remove_duplicates/</link><guid isPermaLink="false">https://akasai.space/Algorithm/A_remove_duplicates/</guid><pubDate>Mon, 28 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Leetcode/leetcode-logo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;br&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/remove-duplicates-from-sorted-array&quot;&gt;Remove Duplicates from Sorted Array&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;solution&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#solution&quot; aria-label=&quot;solution permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Solution&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;removeDuplicates&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;nums&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;nums&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
-
-  &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; j &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; nums&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;nums&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;j&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!==&lt;/span&gt; nums&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; nums&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;j&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; nums&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; j &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;hr&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;reference&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
-&lt;span class=&quot;reference&quot;&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/akasai/Algorithm-Solutions/blob/master/Leetcode/Solution/4.Remove_Duplicates_from_Sorted_Array.ts&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
 &lt;/span&gt;</content:encoded></item><item><title><![CDATA[[Leetcode] Move Zeros]]></title><description><![CDATA[Move Zeros Solution Reference Github]]></description><link>https://akasai.space/Algorithm/A_move_zeroes/</link><guid isPermaLink="false">https://akasai.space/Algorithm/A_move_zeroes/</guid><pubDate>Mon, 28 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Leetcode/leetcode-logo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;br&gt;
 &lt;blockquote&gt;
@@ -6485,6 +6627,27 @@ Javascript는 브라우저, Node.js환경이 런타임이 될 수 있다.&lt;/p&
 &lt;h2 id=&quot;reference&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
 &lt;span class=&quot;reference&quot;&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/akasai/Algorithm-Solutions/blob/master/Leetcode/Solution/2.Move_Zeroes.ts&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
+&lt;/span&gt;</content:encoded></item><item><title><![CDATA[[Leetcode] Remove Duplicates from Sorted Array]]></title><description><![CDATA[Remove Duplicates from Sorted Array Solution Reference Github]]></description><link>https://akasai.space/Algorithm/A_remove_duplicates/</link><guid isPermaLink="false">https://akasai.space/Algorithm/A_remove_duplicates/</guid><pubDate>Mon, 28 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Leetcode/leetcode-logo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/remove-duplicates-from-sorted-array&quot;&gt;Remove Duplicates from Sorted Array&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;solution&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#solution&quot; aria-label=&quot;solution permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Solution&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;removeDuplicates&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;nums&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;nums&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; j &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; nums&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;nums&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;j&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!==&lt;/span&gt; nums&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; nums&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;j&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; nums&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; j &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;reference&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;span class=&quot;reference&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/akasai/Algorithm-Solutions/blob/master/Leetcode/Solution/4.Remove_Duplicates_from_Sorted_Array.ts&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
 &lt;/span&gt;</content:encoded></item><item><title><![CDATA[[Leetcode] Remove Element]]></title><description><![CDATA[Remove Element Solution Reference Github]]></description><link>https://akasai.space/Algorithm/A_remove_element/</link><guid isPermaLink="false">https://akasai.space/Algorithm/A_remove_element/</guid><pubDate>Mon, 28 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/akasai/Algorithm-Solutions/master/Leetcode/leetcode-logo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;br&gt;
 &lt;blockquote&gt;
