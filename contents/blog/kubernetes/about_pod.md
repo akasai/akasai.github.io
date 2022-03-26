@@ -5,7 +5,7 @@ series_name: ""
 series_num: 0
 tags: ["Kubernetes", "쿠버네티스", "Pod", "파드", "Devops", "CKA"]
 date: 2021-09-21
-preview_image: "/imag/logo/kubernetes.png"
+preview_image: "/img/logo/kubernetes.png"
 ---
 
 ![](../img/logo/kubernetes.png)
@@ -87,6 +87,8 @@ preview_image: "/imag/logo/kubernetes.png"
 
    일반적인 컨테이너 환경은 `파일 시스템`이 분리되기 때문에, 애플리케이션이 배포된 컨테이너의 파일 시스템 공유가 불가능하지만, 쿠버네티스의 경우 하나의 파드 내에서는 컨테이너들끼리 **볼륨을 공유**할 수 있기 때문에 다른 컨테이너의 파일을 읽을 수 있습니다.
 
+---
+
 ## 템플릿
 
 `yaml`파일은 기본적으로 4개의 `TOP(root)-level property`를 갖습니다.
@@ -133,17 +135,19 @@ spec:
     
     * 컨테이너 포트: `8080`
 
+---
+
 ## 명령 실행
 
 파드를 생성하는 방법은 여러가지가 있다.
 
-* run
+1. run
 
     ```shell
     $ kubectl run nginx --image=nginx
     ```
 
-* create/apply
+2. create/apply
 
     ```shell
     $ kubectl create -f Pod.yaml
@@ -151,13 +155,13 @@ spec:
     $ kubectl apply -f Pod.yaml
     ```
 
-* Dry-run
+3. Dry-run
 
     ```shell
     $ kubectl cerate -f Pod.yaml --dry-run=client -o yaml
     ```
 
-* pod 확인
+4. pod 확인
 
     ```shell
     $ kubectl get pod
@@ -168,7 +172,7 @@ spec:
     nginx-pod               1/1     Running    0          10s
     ```
 
-* pod 확인 (Detail)
+5. pod 확인 (Detail)
 
     ```shell
     $ kubectl get pod -o wide
@@ -178,6 +182,7 @@ spec:
     NAME                    READY   STATUS     RESTARTS   AGE   IP    NODE ...
     nginx-pod               1/1     Running    0          10s
     ```
+
 ***
 
 ## Reference
